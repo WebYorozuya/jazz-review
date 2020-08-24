@@ -1,0 +1,139 @@
+body {
+  margin: 0 auto;
+  min-height: 200vh;
+  display: flex;
+  flex-direction: column;
+  outline: 1px solid;
+}
+
+header {
+  height: 50px;
+  display: flex;
+  border:2px solid #000000; 
+}
+
+.header-container{
+    flex: 1;
+
+}
+
+.header-start{
+    width:300px;
+    padding-left:20px ;
+    vertical-align: center;
+    height: 100%;
+}
+
+.header-sitoname{
+    border:2px solid #000000;   
+
+}
+
+.header-middle{
+    width:40px;
+
+}
+.header-search{
+    border:2px solid #000000; 
+    padding-top: 8px;
+
+}
+
+.header-search-btn{
+}
+
+.header-end{
+    flex: 1;
+}
+
+.header-post{
+    padding-top: 8px;
+    border:2px solid #000000;
+}
+
+.header-post-btn{
+    height: 30px;
+    display: block;
+    margin: 0 0 0 auto;
+    margin-right: 20px;
+   
+}
+
+.header-loginuser{
+    padding-top: 8px;
+    float: right;
+    border:2px solid #000000; 
+}
+
+.header-loginuser-btn{
+    height: 30px;
+    display: block;
+    margin: 0 0 0 auto;
+    margin-right: 20px;
+}
+
+div {
+  display: flex;
+  flex: 1;
+}
+
+main {
+  flex: 1;
+  border:2px solid #000000; 
+}
+
+nav {
+  width: 150px;
+  border:2px solid #000000; 
+}
+
+nav ul{
+    padding: 0px;
+    list-style: none;
+}
+
+aside {
+  width: 150px;
+  border:2px solid #000000; 
+}
+
+.ad1{
+    height: 100px;
+    width: 100px;   
+}
+
+.ad2{
+    height: 100px;
+    width: 100px;    
+}
+
+
+footer {
+  height: 200px;
+  border:2px solid #000000; 
+}
+
+
+@media screen and (max-width: 900px) {
+  body, nav, aside {
+      width: 100%;
+  }
+  .container {
+      flex-direction: column;
+  }
+
+  nav ul{
+    display: flex;
+  
+  }
+  nav ul li{
+    width: 25%;
+    text-align:center;
+  }
+
+  aside{
+    display: flex;
+  }
+}
+
+
