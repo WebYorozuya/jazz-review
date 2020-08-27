@@ -67,18 +67,17 @@ header {
   margin-right: 20px;
 }
 
+.container{
+
+}
+
 div {
   display: flex;
   flex: 1;
 }
 
-main {
-  flex: 1;
-  outline: 1px solid #000000;
-}
-
 nav {
-  width: 150px;
+  width: 300px;
   outline: 1px solid #000000;
 }
 
@@ -105,8 +104,14 @@ nav ul li {
   display: none;
 }
 
+
+main {
+  flex: 1;
+  outline: 1px solid #000000;
+}
+
 aside {
-  width: 150px;
+  width: 250px;
   outline: 1px solid #000000;
 }
 
@@ -125,7 +130,24 @@ footer {
   outline: 1px solid #000000;
 }
 
-@media screen and (max-width: 900px) {
+
+@media screen and (max-width: 1000px) { 
+  .right-container {
+    flex-direction: column;
+  }
+  aside {
+    margin: 0 auto;
+  }
+  .ad1{
+    width:100%;
+  }
+  .ad2{
+    width:100%;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
   body,
   nav,
   aside {
