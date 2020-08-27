@@ -1,5 +1,7 @@
+/* 共通部分 */
 body {
-  margin: 0 auto;
+  width: 1140px;
+  width: 100%;
   min-height: 200vh;
   display: flex;
   flex-direction: column;
@@ -8,41 +10,51 @@ body {
 
 header {
   height: 50px;
-  display: flex;
   outline: 1px solid #000000;
 }
 
 .header-container {
-  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  max-width: 1100px;
+  padding: 0px 16px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header-start {
-  width: 40%;
-  padding-left: 20px;
-  vertical-align: center;
-  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.header-sitoname {
+.header-siteName {
+  padding-left: 16px;
+  flex: 1;
+  padding: 12px 5px 12px 5px;
   outline: 1px solid #000000;
 }
 
-.header-middle {
-  width: 30%;
-}
 .header-search {
   outline: 1px solid #000000;
   padding-top: 8px;
 }
 
-.header-search-btn1,.header-search-btn2{
+.header-search-btn1,
+.header-search-btn2 {
 }
 
 .header-end {
-  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-post {
+  flex: 1;
   padding-top: 8px;
   outline: 1px solid #000000;
 }
@@ -54,64 +66,149 @@ header {
   margin-right: 20px;
 }
 
-.header-loginuser {
+.header-loginUser {
+  flex: 1;
   padding-top: 8px;
   float: right;
   outline: 1px solid #000000;
 }
 
-.header-loginuser-btn {
+.header-loginUser-btn {
   height: 30px;
   display: block;
   margin: 0 0 0 auto;
   margin-right: 20px;
 }
 
-.container{
-
+.home {
+  padding: 32px 16px 0px 16px;
+  flex:1;
 }
 
-div {
+.home-container {
   display: flex;
-  flex: 1;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left:  auto;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
 nav {
-  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 200px;
+  position: sticky;
+  top: 1em;
   outline: 1px solid #000000;
 }
 
 nav ul {
   padding: 0px;
+  width: 100%;
   list-style: none;
   text-align: center;
-  
 }
 
 nav ul li {
   padding-top: 30px;
 }
 
-.mobile-nav{
+.mobile-nav {
   display: none;
 }
 
-.pulldown{
+.pulldown {
   display: none;
 }
 
-.pulldown-select{
+.pulldown-select {
   display: none;
 }
-
 
 main {
-  flex: 1;
+  flex-grow: 1;
+  min-width: 0;
   outline: 1px solid #000000;
 }
 
+/* index.php */
+
+.main-newReview {
+  display: flex;
+  flex-direction: column;
+  outline: 1px solid #000000;
+}
+.main-newReview-upperColumn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-newReview-upperColumn-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-newReviewerFig {
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+}
+
+.main-newReviewerName {
+  min-width: 100px;
+  padding: 5px;
+}
+
+.main-newReview-upperColumn-right {
+ 
+}
+
+.main-newReviewUploadDate {
+  height: 40px;
+  padding: 5px;
+}
+
+.main-newReviewPerformerName {
+  height: 20px;
+  min-width: 100px;
+  padding: 5px;
+}
+.main-newReviewPlace {
+  height: 20px;
+  min-width: 100px;
+  padding: 5px;
+}
+
+.main-newReview-middleColumn {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-newReview-lowerColumn {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-newReviewText {
+  flex:1;
+  height: 60px;
+}
+
+.main-newReviewOpen {
+  text-align: end;
+  vertical-align: text-bottom;
+}
+
 aside {
-  width: 250px;
+  width: 300px;
   outline: 1px solid #000000;
 }
 
@@ -130,22 +227,20 @@ footer {
   outline: 1px solid #000000;
 }
 
-
-@media screen and (max-width: 1000px) { 
+@media screen and (max-width: 1000px) {
   .right-container {
+    display: flex;
     flex-direction: column;
   }
-  aside {
-    margin: 0 auto;
+
+  .ad1 {
+    width: 100%;
   }
-  .ad1{
-    width:100%;
-  }
-  .ad2{
-    width:100%;
+
+  .ad2 {
+    width: 100%;
   }
 }
-
 
 @media screen and (max-width: 700px) {
   body,
@@ -153,7 +248,9 @@ footer {
   aside {
     width: 100%;
   }
-  .container {
+
+  .home-container {
+    display: flex;
     flex-direction: column;
   }
 
@@ -179,7 +276,7 @@ footer {
   .header-middle {
     display: none;
   }
-  
+
   nav {
     display: none;
   }
@@ -187,25 +284,25 @@ footer {
   .header-search-btn2 {
     display: none;
   }
-  
-  .mobile-nav{
+
+  .mobile-nav {
     display: flex;
     margin: 0 auto;
   }
 
-  .mobile-nav p{
+  .mobile-nav p {
     margin: 5px;
   }
 
-  .pulldown{
-    display: block;
-  }
-  
-  .pulldown-select{
+  .pulldown {
     display: block;
   }
 
-  .mobile-nav{
+  .pulldown-select {
+    display: block;
+  }
+
+  .mobile-nav {
     display: flex;
   }
 }
