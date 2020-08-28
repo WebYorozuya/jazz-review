@@ -60,11 +60,23 @@ header {
   display: none;
 }
 
-.header-search-text {
+.header-search-text1 {
   border: none;
   background: rgba(255, 255, 255, 0);
   height: 20px;
   width: 130px;
+}
+
+.search-box{
+  display: flex;
+  align-items: center;
+}
+
+.header-search-text2 {
+  display: none;
+  height: 20px;
+  width: 480px;
+  margin: 5px 50px;
 }
 
 .header-end {
@@ -135,15 +147,20 @@ nav {
   top: 1em;
 }
 
+.pc-nav {
+  
+}
+
 nav ul {
   padding: 0px;
   width: 100%;
   list-style: none;
   text-align: center;
+  font-size: 15px;
 }
 
 nav ul li {
-  padding: 20px 20px;
+  padding: 20px 10px;
   display: flex;
   flex-direction: row;
 }
@@ -207,12 +224,14 @@ main {
   flex-direction: row;
 }
 
-.hreatImg {
+.likeImg {
+  display: flex;
+  align-items: center;
   margin: 10px 0px;
   height: 30px;
 }
 
-.heart-number {
+.like-counter {
   display: flex;
   align-items: center;
   width: 30px;
@@ -271,12 +290,14 @@ aside {
 .ad1 {
   height: 200px;
   width: 200px;
+  margin: 10px;
   outline: 1px solid #000000;
 }
 
 .ad2 {
   height: 300px;
-  width: 300px;
+  width: 260px;
+  margin: 10px;
   outline: 1px solid #000000;
 }
 
@@ -295,27 +316,10 @@ footer {
 }
 
 .footer-left {
-}
-
-.footer-left-upperColumn {
   padding: 10px;
 }
 
 .siteLogo {
-}
-
-.footer-left-lowerColumn {
-  padding: 10px;
-}
-
-.facebook-logo {
-  padding: 5px;
-  margin-right: 10px;
-}
-
-.twitter-logo {
-  padding: 5px;
-  margin-right: 10px;
 }
 
 .footer-right {
@@ -326,12 +330,12 @@ footer {
 }
 
 .footer-right-information1 {
-  height: 180px;
+  height: 100px;
   flex: 1;
 }
 
 .footer-right-information2 {
-  height: 180px;
+  height: 100px;
   flex: 1;
 }
 
@@ -381,6 +385,14 @@ footer {
     justify-content: space-around;
   }
 
+  .header-search-text1 {
+    display: none;
+  }
+
+  .header-search-text2 {
+    display: block;
+  }
+
   .li-newInformation,
   .li-player,
   .li-livehouse,
@@ -400,6 +412,10 @@ footer {
   .li-newInformation-text {
     height: 20px;
     width: 60px;
+  }
+
+  .header-search-text1{
+    display: none;
   }
 
   aside {
@@ -425,9 +441,6 @@ footer {
     display: none;
   }
 
-  .header-search-text {
-    display: none;
-  }
 
   .mobile-nav {
     display: flex;
@@ -444,7 +457,7 @@ footer {
   }
 
   footer {
-    height: 800px;
+    height: 300px;
   }
 
   .footer-container {
@@ -456,7 +469,12 @@ footer {
     display: block;
   }
 
+  .pc-nav {
+    display: none;
+  }
+
   .mobile-nav {
+    display: block;
     display: flex;
   }
 }
