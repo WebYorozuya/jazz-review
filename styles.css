@@ -203,17 +203,24 @@ main {
 .main-newReview-upperColumn-left {
   display: flex;
   flex-direction: row;
+  width: 160px;
 }
 
 .main-newReviewerFig {
   height: 40px;
   width: 40px;
   padding: 5px;
+  margin-right: 10px;
 }
 
 .main-newReviewerName {
-  min-width: 100px;
-  padding: 5px;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  justify-content:center;
+  min-width:100px;
+  height: 50px;
 }
 
 .main-newReview-upperColumn-right {
@@ -247,18 +254,18 @@ main {
 }
 
 .main-newReviewDate {
-  height: 20px;
+  height: 30px;
   min-width: 100px;
   padding: 5px;
 }
 
 .main-newReviewPerformerName {
-  height: 20px;
+  height: 30px;
   min-width: 100px;
   padding: 5px;
 }
 .main-newReviewPlace {
-  height: 20px;
+  height: 30px;
   min-width: 100px;
   padding: 5px;
 }
@@ -266,6 +273,7 @@ main {
 .main-newReview-middleColumn {
   display: flex;
   flex-direction: row;
+  
 }
 
 .main-newReview-lowerColumn {
@@ -328,18 +336,18 @@ footer {
 
 .footer-right {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 300px;
   padding: 10px;
 }
 
 .footer-right-information1 {
-  height: 100px;
+  height: 50px;
   flex: 1;
 }
 
 .footer-right-information2 {
-  height: 100px;
+  height: 50px;
   flex: 1;
 }
 
