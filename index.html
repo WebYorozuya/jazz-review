@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="styles.css">
     <title>Jazz Log</title>
 </head>
@@ -13,13 +14,13 @@
         <div class="header-container">
             <div class="header-start">
                 <div class="header-siteName">
-                    <img src="images/JazzLog-logo-black.png" class="siteLogo">
+                    <a href=""><img src="images/JazzLog-logo-black.png" class="siteLogo"></a>
                 </div>
                 <from class="header-search" action="cgi-bin/example.cgi" method="post">
                     <div class="search-units">
                         <input class="header-search-btn" type="submit" name="submit" value="">
                         <img src="images/icons8-search-24.png" class="searchImg">
-                        <input class="header-search-text" type="search" name="search" placeholder="キーワードで検索">
+                        <input class="header-search-text1" type="search" name="search" placeholder="キーワードで検索">
                     </div>
 
                 </from>
@@ -35,26 +36,27 @@
                 </div>
             </div>
         </div>
+        <div class="search-box"><input class="header-search-text2" type="search" name="search" placeholder="キーワードで検索"></div>
     </header>
 
     <div class="home">
         <div class="home-container">
             <nav>
-                <ul>
+                <ul class="pc-nav">
                     <li class="li-newInformation">
-                        <img src="images/icons8-music-24-black.png" class="li-newInformationImg">  
+                        <a href=""><img src="images/icons8-music-24-black.png" class="li-newInformationImg"> </a>  
                         <div class="li-newInformation-text">新着順</div>
                     </li>
                     <li class="li-player">
-                        <img src="images/icons8-myspace-24-black.png" class="li-playerImg">  
+                        <a href=""><img src="images/icons8-myspace-24-black.png" class="li-playerImg"></a>     
                         <div class="li-player-text">プレイヤー</div>
                     </li>
                     <li class="li-livehouse">
-                        <img src="images/icons8-home-24-black.png" class="li-livehouseImg">  
+                        <a href=""><img src="images/icons8-home-24-black.png" class="li-livehouseImg"></a>                    
                         <div class="li-livehouse-text">ライブハウス</div>
                     </li>
                     <li class="li-reviewer">
-                        <img src="images/icons8-speech-bubble-24-black.png" class="li-reviewerImg">  
+                        <a href=""><img src="images/icons8-speech-bubble-24-black.png" class="li-reviewerImg"> </a> 
                         <div class="li-reviewer-text">レビュアー</div>
                     </li>
                 </ul>
@@ -86,8 +88,8 @@
 
                             <div class="main-newReview-upperColumn-right">
                                 <div class="main-newReviewEvaluation">
-                                    <img src="images/icons8-heart-24-black.png" class="hreatImg">
-                                    <div class="heart-number">16</div>
+                                    <img src="images/icons8-like-24-black.png" class="likeImg">
+                                    <div class="like-counter">16</div>
                                 </div>
                                 <div class="main-newReviewUploadDate">2days ago</div>
                             </div>
@@ -101,7 +103,6 @@
                             <div class="main-newReviewText">本文</div>
                             <div class="main-newReviewOpen">全文を表示する</div>
                         </div>
-                    </div>
                     <div class="main-newReview">
                         <div class="main-newReview-upperColumn">
                             <div class="main-newReview-upperColumn-left">
@@ -113,8 +114,8 @@
 
                             <div class="main-newReview-upperColumn-right">
                                 <div class="main-newReviewEvaluation">
-                                    <img src="images/icons8-heart-24-black.png" class="hreatImg">
-                                    <div class="heart-number">16</div>
+                                    <img src="images/icons8-like-24-black.png" class="likeImg">
+                                    <div class="like-counter">16</div>
                                 </div>
                                 <div class="main-newReviewUploadDate">2days ago</div>
                             </div>
@@ -128,7 +129,58 @@
                             <div class="main-newReviewText">本文</div>
                             <div class="main-newReviewOpen">全文を表示する</div>
                         </div>
-                    </div>
+                        <div class="main-newReview">
+                            <div class="main-newReview-upperColumn">
+                                <div class="main-newReview-upperColumn-left">
+                                    <div class="main-newReviewerFig">
+                                        <img src="images/icons8-user-male-30-black.png" class="userMaleImg">
+                                    </div>
+                                    <div class="main-newReviewerName">mike</div>
+                                </div>
+    
+                                <div class="main-newReview-upperColumn-right">
+                                    <div class="main-newReviewEvaluation">
+                                        <img src="images/icons8-like-24-black.png" class="likeImg">
+                                        <div class="like-counter">16</div>
+                                    </div>
+                                    <div class="main-newReviewUploadDate">2days ago</div>
+                                </div>
+                            </div>
+                            <div class="main-newReview-middleColumn">
+                                <div class="main-newReviewDate">2020/8/26</div>
+                                <div class="main-newReviewPerformerName">演奏者名</div>
+                                <div class="main-newReviewPlace">@ 東京</div>   
+                            </div>
+                            <div class="main-newReview-lowerColumn">
+                                <div class="main-newReviewText">本文</div>
+                                <div class="main-newReviewOpen">全文を表示する</div>
+                            </div>
+                            <div class="main-newReview">
+                                <div class="main-newReview-upperColumn">
+                                    <div class="main-newReview-upperColumn-left">
+                                        <div class="main-newReviewerFig">
+                                            <img src="images/icons8-user-male-30-black.png" class="userMaleImg">
+                                        </div>
+                                        <div class="main-newReviewerName">mike</div>
+                                    </div>
+        
+                                    <div class="main-newReview-upperColumn-right">
+                                        <div class="main-newReviewEvaluation">
+                                            <img src="images/icons8-like-24-black.png" class="likeImg">
+                                            <div class="like-counter">16</div>
+                                        </div>
+                                        <div class="main-newReviewUploadDate">2days ago</div>
+                                    </div>
+                                </div>
+                                <div class="main-newReview-middleColumn">
+                                    <div class="main-newReviewDate">2020/8/26</div>
+                                    <div class="main-newReviewPerformerName">演奏者名</div>
+                                    <div class="main-newReviewPlace">@ 東京</div>   
+                                </div>
+                                <div class="main-newReview-lowerColumn">
+                                    <div class="main-newReviewText">本文</div>
+                                    <div class="main-newReviewOpen">全文を表示する</div>
+                                </div>
                     <div class="main-newReview">
                         <div class="main-newReview-upperColumn">
                             <div class="main-newReview-upperColumn-left">
@@ -140,8 +192,8 @@
 
                             <div class="main-newReview-upperColumn-right">
                                 <div class="main-newReviewEvaluation">
-                                    <img src="images/icons8-heart-24-black.png" class="hreatImg">
-                                    <div class="heart-number">16</div>
+                                    <img src="images/icons8-like-24-black.png" class="likeImg">
+                                    <div class="like-counter">16</div>
                                 </div>
                                 <div class="main-newReviewUploadDate">2days ago</div>
                             </div>
@@ -155,7 +207,6 @@
                             <div class="main-newReviewText">本文</div>
                             <div class="main-newReviewOpen">全文を表示する</div>
                         </div>
-                    </div>
                     <div class="main-newReview">
                         <div class="main-newReview-upperColumn">
                             <div class="main-newReview-upperColumn-left">
@@ -167,8 +218,8 @@
 
                             <div class="main-newReview-upperColumn-right">
                                 <div class="main-newReviewEvaluation">
-                                    <img src="images/icons8-heart-24-black.png" class="hreatImg">
-                                    <div class="heart-number">16</div>
+                                    <img src="images/icons8-like-24-black.png" class="likeImg">
+                                    <div class="like-counter">16</div>
                                 </div>
                                 <div class="main-newReviewUploadDate">2days ago</div>
                             </div>
@@ -183,119 +234,12 @@
                             <div class="main-newReviewOpen">全文を表示する</div>
                         </div>
                     </div>
-                    <div class="main-newReview">
-                        <div class="main-newReview-upperColumn">
-                            <div class="main-newReview-upperColumn-left">
-                                <div class="main-newReviewerFig">
-                                    <img src="images/icons8-user-male-30-black.png" class="userMaleImg">
-                                </div>
-                                <div class="main-newReviewerName">mike</div>
-                            </div>
-
-                            <div class="main-newReview-upperColumn-right">
-                                <div class="main-newReviewEvaluation">
-                                    <img src="images/icons8-heart-24-black.png" class="hreatImg">
-                                    <div class="heart-number">16</div>
-                                </div>
-                                <div class="main-newReviewUploadDate">2days ago</div>
-                            </div>
-                        </div>
-                        <div class="main-newReview-middleColumn">
-                            <div class="main-newReviewDate">2020/8/26</div>
-                            <div class="main-newReviewPerformerName">演奏者名</div>
-                            <div class="main-newReviewPlace">@ 東京</div>   
-                        </div>
-                        <div class="main-newReview-lowerColumn">
-                            <div class="main-newReviewText">本文</div>
-                            <div class="main-newReviewOpen">全文を表示する</div>
-                        </div>
-                    </div>
-                    <div class="main-newReview">
-                        <div class="main-newReview-upperColumn">
-                            <div class="main-newReview-upperColumn-left">
-                                <div class="main-newReviewerFig">
-                                    <img src="images/icons8-user-male-30-black.png" class="userMaleImg">
-                                </div>
-                                <div class="main-newReviewerName">mike</div>
-                            </div>
-
-                            <div class="main-newReview-upperColumn-right">
-                                <div class="main-newReviewEvaluation">
-                                    <img src="images/icons8-heart-24-black.png" class="hreatImg">
-                                    <div class="heart-number">16</div>
-                                </div>
-                                <div class="main-newReviewUploadDate">2days ago</div>
-                            </div>
-                        </div>
-                        <div class="main-newReview-middleColumn">
-                            <div class="main-newReviewDate">2020/8/26</div>
-                            <div class="main-newReviewPerformerName">演奏者名</div>
-                            <div class="main-newReviewPlace">@ 東京</div>   
-                        </div>
-                        <div class="main-newReview-lowerColumn">
-                            <div class="main-newReviewText">本文</div>
-                            <div class="main-newReviewOpen">全文を表示する</div>
-                        </div>
-                    </div>
-                    <div class="main-newReview">
-                        <div class="main-newReview-upperColumn">
-                            <div class="main-newReview-upperColumn-left">
-                                <div class="main-newReviewerFig">
-                                    <img src="images/icons8-user-male-30-black.png" class="userMaleImg">
-                                </div>
-                                <div class="main-newReviewerName">mike</div>
-                            </div>
-
-                            <div class="main-newReview-upperColumn-right">
-                                <div class="main-newReviewEvaluation">
-                                    <img src="images/icons8-heart-24-black.png" class="hreatImg">
-                                    <div class="heart-number">16</div>
-                                </div>
-                                <div class="main-newReviewUploadDate">2days ago</div>
-                            </div>
-                        </div>
-                        <div class="main-newReview-middleColumn">
-                            <div class="main-newReviewDate">2020/8/26</div>
-                            <div class="main-newReviewPerformerName">演奏者名</div>
-                            <div class="main-newReviewPlace">@ 東京</div>   
-                        </div>
-                        <div class="main-newReview-lowerColumn">
-                            <div class="main-newReviewText">本文</div>
-                            <div class="main-newReviewOpen">全文を表示する</div>
-                        </div>
-                    </div>
-                    <div class="main-newReview">
-                        <div class="main-newReview-upperColumn">
-                            <div class="main-newReview-upperColumn-left">
-                                <div class="main-newReviewerFig">
-                                    <img src="images/icons8-user-male-30-black.png" class="userMaleImg">
-                                </div>
-                                <div class="main-newReviewerName">mike</div>
-                            </div>
-
-                            <div class="main-newReview-upperColumn-right">
-                                <div class="main-newReviewEvaluation">
-                                    <img src="images/icons8-heart-24-black.png" class="hreatImg">
-                                    <div class="heart-number">16</div>
-                                </div>
-                                <div class="main-newReviewUploadDate">2days ago</div>
-                            </div>
-                        </div>
-                        <div class="main-newReview-middleColumn">
-                            <div class="main-newReviewDate">2020/8/26</div>
-                            <div class="main-newReviewPerformerName">演奏者名</div>
-                            <div class="main-newReviewPlace">@ 東京</div>   
-                        </div>
-                        <div class="main-newReview-lowerColumn">
-                            <div class="main-newReviewText">本文</div>
-                            <div class="main-newReviewOpen">全文を表示する</div>
-                        </div>
-                    </div>
+      
                    
                 </main>
                 <aside>
-                    <div class="ad1">advertisement1</div>
-                    <div class="ad2">advertisement2</div>
+                    <a href=""><div class="ad1">advertisement1</div></a>
+                    <a href=""><div class="ad2">advertisement2</div></a>
                 </aside>
             </div>
         </div>
@@ -303,25 +247,17 @@
     <footer>
         <div class="footer-container">
             <div class="footer-left">
-                <div class="footer-left-upperColumn">
-                    <img src="images/JazzLog-logo-black.png" class="siteLogo">
+                <div class="footer-left">
+                    <a href=""><img src="images/JazzLog-logo-black.png" class="siteLogo"></a>
                     <div class="">サブタイトル</div>
-                </div>
-                <div class="footer-left-lowerColumn">
-                    <img src="images/icons8-facebook-24-black.png" class="facebook-logo">
-                    <img src="images/icons8-twitter-24-black.png" class="twitter-logo">
-                    <img src="images/icons8-instagram-24-black.png" class="twitter-logo">
                 </div>
             </div>
             <div class="footer-right">
-                <div class="footer-right-information1">
-                    利用規約</br>
-                    ガイドライン</br>
-                    ヘルプ</br>
+                <a href=""><div class="footer-right-information1"></a>
+                   お問い合わせ
                 </div>
-                <div class="footer-right-information2">
-                    ブログ</br>
-                    採用情報</br>
+                <a href=""><div class="footer-right-information2"></a>
+                    利用規約
                 </div>
             </div>
         </div>
