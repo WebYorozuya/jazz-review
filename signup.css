@@ -1,0 +1,106 @@
+header {
+    height: 50px;
+    outline: 1px solid #000000;
+    background-color: #0378a6;
+  
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    max-width: 1100px;
+    padding: 0px 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .header-start {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .header-siteName {
+    flex: 1;
+    margin-top: 10px;
+    padding: 0px 16px 0px 5px;
+    min-width: 100px;
+  }
+  
+  .siteLogo {
+    width: 150px;
+    /* margin: 10px; */
+  }
+  
+body {
+    margin: 0;
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  .welcom {
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: 0.1px;
+    font-size: 30px;
+    font-weight: 400;
+    color: #0f1813;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  form {
+    position: ;
+    width: 400px;
+    padding: 50px;
+    /* border-radius: 10px; */
+    /* 見やすくするために色つけてるだけ */
+    background: #6ea7bd;
+  }
+
+  label {
+    display:;
+    width: 120px;
+  }
+  
+
+  .signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 30px;
+    min-height: auto;
+  }
+  
+   .signup_form {  
+    justify-content: center;
+    align-content: center; 
+    text-align: center;
+    width: 280px;
+   	letter-spacing: 0.1px;
+    border-radius: 8px;
+    border-width: 0.5px;
+    padding: 0.5em;
+    font-size: 1em;
+  } 
+
+  .btn_signup{
+    text-align: center;
+  }
+
+
+  footer {
+    position: absolute;
+    bottom: 0;
+  }
+
+
+ 
