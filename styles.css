@@ -6,20 +6,19 @@ body {
   display: flex;
   flex-direction: column;
   outline: 1px solid;
-  margin:0;
 }
 
 header {
-  height: 80px;
-  background-color:#333333;
+  height: 50px;
   outline: 1px solid #000000;
+  background-color: #0378a6;
 }
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 50px;
   max-width: 1100px;
   padding: 0px 16px;
   margin-left: auto;
@@ -35,13 +34,13 @@ header {
 
 .header-siteName {
   flex: 1;
-  padding: 0px 16px 0px 0px;
+  margin-top: 10px;
+  padding: 0px 16px 0px 5px;
   min-width: 100px;
 }
 
 .siteLogo {
-  height: 60px;
-  margin-top:8px;
+  width: 150px;
   /* margin: 10px; */
 }
 
@@ -62,23 +61,11 @@ header {
   display: none;
 }
 
-.header-search-text1 {
+.header-search-text {
   border: none;
   background: rgba(255, 255, 255, 0);
   height: 20px;
-  width: 150px;
-}
-
-.search-box{
-  display: flex;
-  align-items: center;
-}
-
-.header-search-text2 {
-  display: none;
-  height: 20px;
-  width: 480px;
-  margin: 5px 50px;
+  width: 130px;
 }
 
 .header-end {
@@ -149,20 +136,15 @@ nav {
   top: 1em;
 }
 
-.pc-nav {
-  
-}
-
 nav ul {
   padding: 0px;
   width: 100%;
   list-style: none;
   text-align: center;
-  font-size: 15px;
 }
 
 nav ul li {
-  padding: 20px 10px;
+  padding: 20px 20px;
   display: flex;
   flex-direction: row;
 }
@@ -203,24 +185,17 @@ main {
 .main-newReview-upperColumn-left {
   display: flex;
   flex-direction: row;
-  width: 160px;
 }
 
 .main-newReviewerFig {
   height: 40px;
   width: 40px;
   padding: 5px;
-  margin-right: 10px;
 }
 
 .main-newReviewerName {
-  
-  display: flex;
-  flex-direction: row;
-  align-items: center; 
-  justify-content:center;
-  min-width:100px;
-  height: 50px;
+  min-width: 100px;
+  padding: 5px;
 }
 
 .main-newReview-upperColumn-right {
@@ -233,14 +208,12 @@ main {
   flex-direction: row;
 }
 
-.likeImg {
-  display: flex;
-  align-items: center;
+.hreatImg {
   margin: 10px 0px;
   height: 30px;
 }
 
-.like-counter {
+.heart-number {
   display: flex;
   align-items: center;
   width: 30px;
@@ -254,18 +227,18 @@ main {
 }
 
 .main-newReviewDate {
-  height: 30px;
+  height: 20px;
   min-width: 100px;
   padding: 5px;
 }
 
 .main-newReviewPerformerName {
-  height: 30px;
+  height: 20px;
   min-width: 100px;
   padding: 5px;
 }
 .main-newReviewPlace {
-  height: 30px;
+  height: 20px;
   min-width: 100px;
   padding: 5px;
 }
@@ -273,7 +246,6 @@ main {
 .main-newReview-middleColumn {
   display: flex;
   flex-direction: row;
-  
 }
 
 .main-newReview-lowerColumn {
@@ -300,22 +272,21 @@ aside {
 .ad1 {
   height: 200px;
   width: 200px;
-  margin: 10px;
   outline: 1px solid #000000;
 }
 
 .ad2 {
   height: 300px;
-  width: 260px;
-  margin: 10px;
+  width: 300px;
   outline: 1px solid #000000;
 }
 
 footer {
-  /* margin-top: 15px; */
   height: 200px;
   outline: 1px solid #000000;
-  background-color:#333333;
+  background-color: #0f1813;
+  color: #dfd4d0;
+
 }
 
 .footer-container {
@@ -328,26 +299,43 @@ footer {
 }
 
 .footer-left {
+}
+
+.footer-left-upperColumn {
   padding: 10px;
 }
 
 .siteLogo {
 }
 
+.footer-left-lowerColumn {
+  padding: 10px;
+}
+
+.facebook-logo {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.twitter-logo {
+  padding: 5px;
+  margin-right: 10px;
+}
+
 .footer-right {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 300px;
   padding: 10px;
 }
 
 .footer-right-information1 {
-  height: 50px;
+  height: 180px;
   flex: 1;
 }
 
 .footer-right-information2 {
-  height: 50px;
+  height: 180px;
   flex: 1;
 }
 
@@ -374,6 +362,7 @@ footer {
   }
 
   .siteLogo {
+    width: 100px;
     /* margin: 10px; */
   }
 
@@ -396,14 +385,6 @@ footer {
     justify-content: space-around;
   }
 
-  .header-search-text1 {
-    display: none;
-  }
-
-  .header-search-text2 {
-    display: block;
-  }
-
   .li-newInformation,
   .li-player,
   .li-livehouse,
@@ -423,10 +404,6 @@ footer {
   .li-newInformation-text {
     height: 20px;
     width: 60px;
-  }
-
-  .header-search-text1{
-    display: none;
   }
 
   aside {
@@ -452,6 +429,9 @@ footer {
     display: none;
   }
 
+  .header-search-text {
+    display: none;
+  }
 
   .mobile-nav {
     display: flex;
@@ -468,7 +448,7 @@ footer {
   }
 
   footer {
-    height: 300px;
+    height: 800px;
   }
 
   .footer-container {
@@ -480,12 +460,7 @@ footer {
     display: block;
   }
 
-  .pc-nav {
-    display: none;
-  }
-
   .mobile-nav {
-    display: block;
     display: flex;
   }
 }

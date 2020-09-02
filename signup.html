@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title> 新規登録 </title>
+</head>
+
+<body>
+    <header>
+     <div class="header-container">
+        <div class="header-start">
+            <div class="header-siteName">
+                <img src="images/JazzLog-logo-black.png" class="siteLogo">
+            </div>
+        </div>
+     </div>
+    </header>
+
+  <div class="main">
+    
+ 　　<div class="welcom">
+       <h1> Welcome to <span>Jazz Log</span> </h1>
+         <p> ♪ 新規登録してね ♪ </p>
+    </div>
+ 
+    <div class="signup">
+      <form action="" accept-charset="UTF-8" method="post">
+        <div class="signup_form">
+            <label> アカウント名 <input type="text" name="account" required></label>
+         　　<input type="hidden" name="hidden" value="hidden">
+        </div>
+        <div class="signup_form"> 
+            <label> メールアドレス <input class="btn_signup" type="email" name="email" required></label>
+            <input type="hidden" name="hidden" value="hidden">
+        </div>
+        <div class="signup_form">
+            <label> パスワード <input class="btn_signup" type="password" name="password" requiredt></label>
+            <input type="hidden" name="hidden" value="hidden">
+        </div>
+        <div class="btn_signup">
+           <input type="submit" name="commit" value="登録する">
+           <input type="hidden" name="redirect_to" value="hidden">
+        </div>
+      </form> 
+    </div>
+
+    <p> すでにアカウントをお持ちの場合：<a href=""> ログイン </a></p> 
+    <p> 登録せずに利用する場合：<a href=""> こちら </a></p>
+
+  </div>
+
+  <footer>
+    <p><small> &copy; Jazz Log </small></p>
+  </footer>
+
+</body>
+
+
+</html>
