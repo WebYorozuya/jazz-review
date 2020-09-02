@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: fantasy;
+    background: linear-gradient(120deg,#0378a6,#123d5a);
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.main {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #3c4a57;
+    background: white;
+    border-radius: 10px;
+}
+.main h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 6px solid #3c4a57;
+}
+
+.main form {
+    padding: 0 40px;
+    box-sizing: border-box;
+    margin: 10px 0;
+    border-bottom: 2px solid #3c4a57;
+
+}
+    
+form .login_form {
+    position: relative;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+    font-size: 20px;
+    
+}
+
+.login_form input{
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.login_form label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #3c4a57;
+    font-size: 16px;
+    pointer-events: none;
+
+}
+
+.pass {
+    margin: -5px 0 20px 5px;
+    cursor: pointer;
+    color: darkgoldenrod;
+}
+
+.pass:hover{
+    text-decoration: underline;
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: pink;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    outline: none;
+}
+
+
+
+
+
