@@ -1,3 +1,11 @@
+
+body {
+  width: 1140px;
+  width: 100%;
+  min-height: 200vh;
+  margin: 0;
+}
+
 header {
     height: 50px;
     outline: 1px solid #000000;
@@ -29,16 +37,10 @@ header {
     padding: 0px 16px 0px 5px;
     min-width: 100px;
   }
-  
+
   .siteLogo {
     width: 150px;
     /* margin: 10px; */
-  }
-  
-body {
-    margin: 0;
-    width: 100vw;
-    min-height: 100vh;
   }
 
   .welcom {
@@ -51,49 +53,62 @@ body {
     font-family: 'Courier New', Courier, monospace;
   }
   
-  p {
+  .welcom p {
     margin: 0;
     font-size: 20px;
   }
 
-  form {
-    position: ;
-    width: 400px;
-    padding: 50px;
-    /* border-radius: 10px; */
-    /* 見やすくするために色つけてるだけ */
-    background: #6ea7bd;
-  }
-
-  label {
-    display:;
-    width: 120px;
-  }
-  
-
   .signup {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100vw;
-    margin-top: 30px;
-    min-height: auto;
+    justify-content: space-around;
+    align-items: center;
+    height: 40vh;
   }
   
-   .signup_form {  
-    justify-content: center;
-    align-content: center; 
-    text-align: center;
-    width: 280px;
-   	letter-spacing: 0.1px;
-    border-radius: 8px;
-    border-width: 0.5px;
-    padding: 0.5em;
-    font-size: 1em;
+  .signup_form input {
+    width: 100%;
+    height: 100%;
+    color:#0f1813; 
+    font-size: 20px;
   } 
 
-  .btn_signup{
+  .btn_signup {
     text-align: center;
+  }
+
+  input[type="submit"] {
+    width: 50%;
+    height: 50px;
+    border: 1px solid;
+    background: #0378a6;
+    border-radius: 25px;
+    margin-top: 30px;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    outline: none;
+  }
+
+  hr {
+    width: 30%;
+  }
+
+  .access {
+    text-align: center;
+    position: relative;
+    margin-top: 40px;
+  }
+
+  .access p a {
+    line-height: 0.5;
+    font-size: 1em;
+
+  }
+
+  a {
+    text-decoration-line: none;
+    font-size: 1em;
   }
 
 
