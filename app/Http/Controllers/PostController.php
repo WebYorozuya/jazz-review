@@ -29,7 +29,7 @@ class PostController extends Controller
             'venue' => $request->venue,
             'text' => $request->text,
         ];
-        DB::insert('insert into reviews (live_date, musician, venue, text) values (:live_date, :musician, :venue, :text)', $param);
+        DB::insert('insert into reviews (live_date, musician, venue, text, created_at) values (:live_date, :musician, :venue, :text, NOW())', $param);
         return redirect('/');
     }
 }
