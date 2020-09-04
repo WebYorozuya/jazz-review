@@ -5,23 +5,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <link rel="stylesheet" href="styles.css">
   <title>Jazz Log</title>
-  <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+  <style>
+    html, body {
+      background-color: #f5F5F5;
+      color: #636b6f;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 200;
+      height: 100vh;
+      margin: 0;
+    }
+    .form_container {
+      width: 70%;
+      height: 800px;
+      margin: 100px auto;
+      background-color: #fff;
+    }
+    form {
+      width: 80%;
+      margin: 2px auto;
+      display: flex;
+      flex-direction: column;
+    }
+    label, input, textarea {
+      padding: 3px 0;
+    }
+    input, textarea {
+      border: .5px solid rgb(219, 217, 217);
+    }
+    button {
+      width: 240px;
+      font-size: 15px;
+      text-align: center;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      background-color: rgb(252, 180, 48);
+      color: rgb(39, 37, 37);
+      margin: 30px auto;
+      padding: 8px;
+    }
+  </style>
 </head>
 <body>
-  <form action="" id="create-account">
-      <h1>{{$user}}さん、ライブの感想をどうぞ</h1>
-      <label for="live_date">ライブに行った日</label>
-      <input type="date" id="live_date">
-      <label for="musician">ミュージシャン</label>
-      <input type="text" id="musician">
-      <label for="venue">ライブ会場</label>
-      <input type="text" id="venue">
-      <label for="review">ライブの感想</label>
-      <textarea name="" id="review" cols="30" rows="10"></textarea>
-      <p>1000文字以内</p>
-      <button>投稿する</button>
-    </form>
+  <div class="form_container">
+    <form action="" id="create-account">
+        <h1>{{$user}}さん、ライブの感想を記録しましょう</h1>
+        <label for="live_date">ライブに行った日</label>
+        <input type="date" id="live_date">
+        <label for="musician">ミュージシャン</label>
+        <input type="text" id="musician">
+        <label for="venue">ライブ会場</label>
+        <input type="text" id="venue">
+        <label for="review">ライブの感想</label>
+        <textarea name="" id="review" cols="30" rows="10"></textarea>
+        <p>1000文字以内</p>
+        <button>投稿する</button>
+      </form>
+  </div><!-- /.form_container -->
 </body>
 </html>
