@@ -21,9 +21,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+//投稿画面の表示
+Route::get('post', 'PostController@post');
 
-Route::get('/home', 'HomeController@index')->name('home');
+//投稿内容をDBへ登録
+Route::post('post', 'PostController@create');
 
-//投稿画面
-Route::get('post', 'PostController@index');
+//PostControllerのindexを呼び出す postではなくgetだ
+Route::get('index', 'PostController@index');
