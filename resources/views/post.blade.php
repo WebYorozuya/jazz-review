@@ -24,6 +24,7 @@
     form {
       width: 80%;
       margin: 2px auto;
+      padding-top: 40px;
       display: flex;
       flex-direction: column;
     }
@@ -32,8 +33,9 @@
     }
     input, textarea {
       border: .5px solid rgb(219, 217, 217);
+      padding: 5px 8px;
     }
-    button {
+    .submit {
       width: 240px;
       font-size: 15px;
       text-align: center;
@@ -49,18 +51,19 @@
 </head>
 <body>
   <div class="form_container">
-    <form action="" id="create-account">
+    <form action="insert" id="create-account" method="POST">
+      @csrf
         <h1>{{$user}}さん、ライブの感想を記録しましょう</h1>
         <label for="live_date">ライブに行った日</label>
-        <input type="date" id="live_date">
+        <input type="date" id="live_date" name="live_date">
         <label for="musician">ミュージシャン</label>
-        <input type="text" id="musician">
+        <input type="text" id="musician" name="musician">
         <label for="venue">ライブ会場</label>
-        <input type="text" id="venue">
-        <label for="review">ライブの感想</label>
-        <textarea name="" id="review" cols="30" rows="10"></textarea>
-        <p>1000文字以内</p>
-        <button>投稿する</button>
+        <input type="text" id="venue" name="venue">
+        <label for="text">ライブの感想</label>
+        <textarea name="text" id="text" cols="30" rows="10"></textarea>
+        <p style="text-align: right; font-size: 0.8rem;">（1000文字以内）</p>
+        <input type="submit" class="submit">
       </form>
   </div><!-- /.form_container -->
 </body>
