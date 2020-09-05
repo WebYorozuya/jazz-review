@@ -6,23 +6,38 @@
     <link rel="stylesheet" href="login.css">
     <title>ログイン画面</title>
 </head>
-<body>
-    <div class="main">
-      <h1>ログイン</h1>
+
+
+<body class="UI_Build_Assistant">
+  <header>
+      <div class="header-container">  
+          <div class="header-siteName">
+            <a href="#"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
+          </div>
+      </div>
+  </header>              
+
+  <div class="main">
+      <h1>Jazz Log にログイン</h1>
+    <div class="login">
       <form action="" accept-charset="UTF-8" method="post">
       <div class="login_form">
-          <input type="text" placeholder="アカウント名 or メールアドレス" name="account" required>
-          <label></label>
+         <input type="text" placeholder="アカウント名 or メールアドレス" name="account" required>
       </div>
       <div class="login_form">
-        <input type="password" placeholder="パスワード" required>
-        <label></label>
+         <input type="password" placeholder="パスワード" required>
       </div>
-      <div class="pass">パスワードを忘れた</div>
+      <div class="pass">パスワードを忘れた場合</div>
+      <div class="login_btn">
         <input type="submit" name="login" value="ログイン">
       </div> 
-    　</form> 
+     </form> 
     </div>
+  </div>
+
+  <footer>
+    <p><small> &copy; Jazz Log </small></p>
+  </footer>
     
 </body>
 </html>
