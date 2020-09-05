@@ -1,13 +1,14 @@
-
-
 /* 共通部分 */
 body {
+  font-family: -apple-system, "Segoe UI", "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
   width: 1140px;
   width: 100%;
   min-height: 200vh;
   display: flex;
   flex-direction: column;
   outline: 1px solid;
+  color: rgb(51, 51, 51);
   /* margin:0; */
 }
 
@@ -51,7 +52,7 @@ header {
 
 .search-units {
   font-weight: bold;
-  color: #333333;
+  color: rgb(51, 51, 51);
   background-color: #fff;
   border: 1px solid #333333;
   border-radius: 10px;
@@ -65,9 +66,10 @@ header {
 
 .header-search-text {
   border: none;
-  background: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
   height: 20px;
   width: 150px;
+  font-size: 12px;
 }
 
 .search-box {
@@ -75,7 +77,6 @@ header {
   align-items: center;
   text-align: center;
 }
-
 
 .header-end {
   display: flex;
@@ -96,7 +97,8 @@ header {
 
 .header-post-btn {
   display: block;
-  color: #FFFFFF;
+  color: #ffffff;
+  font-size: 12px;
 }
 
 .header-loginUser {
@@ -107,7 +109,7 @@ header {
 }
 
 .userMaleImg {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   border-radius: 20px;
   margin: 5px;
 }
@@ -115,12 +117,14 @@ header {
 .header-loginUser-btn {
   display: block;
   margin: 5px 30px 5px 0px;
-  color: #FFFFFF;
+  color: #ffffff;
+  font-size: 12px;
 }
 
 .home {
   padding: 32px 16px 0px 16px;
   flex: 1;
+  background-color: #f6f6f4;
 }
 
 .home-container {
@@ -161,18 +165,25 @@ nav ul {
 nav ul li {
 }
 
-.li-newInformation, .li-player, .li-livehouse, .li-reviewer {
+.li-newInformation,
+.li-player,
+.li-livehouse,
+.li-reviewer {
   text-decoration: none;
   padding: 20px 10px;
   display: flex;
-  flex-direction: row; 
-  color: black;
+  flex-direction: row;
+  color:rgb(51, 51, 51);
+  font-size: 12px;
 }
 
-.li-newInformationImg, .li-playerImg, .li-livehouseImg, .li-reviewerImg {
+.li-newInformationImg,
+.li-playerImg,
+.li-livehouseImg,
+.li-reviewerImg {
   margin-right: 10px;
+  height: 20px;
 }
-
 
 .mobile-nav {
   display: none;
@@ -196,41 +207,51 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
+  z-index: 20;
+  font-size: 12px;
+  margin-top: 10px;
 }
 
-.main-upload-backBtn{
+.main-upload-forwardBtn {
   display: flex;
   flex-direction: row;
   text-decoration: none;
 }
 
-.main-upload-backBtnText{
-  color: black;
+.main-upload-forwardBtnText {
+  color: rgb(51, 51, 51);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
 }
 
-.main-upload-forwardBtn{
+.main-upload-backBtn {
   display: flex;
   flex-direction: row;
   text-decoration: none;
 }
 
-.main-upload-forwardBtnText{
-  color: black;
+.main-upload-backBtnText {
+  display: flex;
+  align-items: center;
+  color: rgb(51, 51, 51);
 }
 
 .main-newReview-title {
   text-align: center;
-  border: 1px solid #000000;
+  border: 1px solid transparent;
+  margin-top: 10px;
 }
 
 .main-newReview {
   display: flex;
   flex-direction: column;
-  border: 1px solid #000000;
+  border: 1px solid transparent;
 }
 
-.main-userMaleImg{
-  border: 1px solid #000000;
+.main-userMaleImg {
+  border: 1px solid rgb(51, 51, 51);
   border-radius: 20px;
   margin: 5px;
 }
@@ -238,19 +259,21 @@ main {
 .main-newReview-upperColumn {
   display: flex;
   justify-content: space-between;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 20;
 }
 
 .main-newReview-upperColumn-left {
   display: flex;
   flex-direction: row;
   width: 160px;
+  height: 40px;
 }
 
 .main-newReviewerFig {
-  height: 40px;
-  width: 40px;
-  padding: 5px;
+  height: 30px;
+  width: 30px;
   margin-right: 10px;
 }
 
@@ -260,7 +283,7 @@ main {
   align-items: center;
   justify-content: center;
   min-width: 100px;
-  height: 50px;
+  height: 40px;
 }
 
 .main-newReview-upperColumn-right {
@@ -276,21 +299,25 @@ main {
 .likeImg {
   display: flex;
   align-items: center;
-  margin: 10px 0px;
-  height: 30px;
+  height: 20px;
+ margin-top: 5px;
 }
 
 .like-counter {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   width: 30px;
   text-align: center;
+  font-size: 12px;
+  padding-top: 7px;
 }
 
 .main-newReviewUploadDate {
-  padding: 0px 10px;
+  padding: 7px 10px 0px 10px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  font-size: 12px;
 }
 
 .main-newReviewDate {
@@ -310,82 +337,91 @@ main {
   padding: 5px;
 }
 
+input[type="checkbox"] {
+  position: absolute;
+  left: -100vw;
+}
+
 .main-newReview-middleColumn {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+}
+
+#main-newReview-lowerColumn {
   display: flex;
   flex-direction: row;
 }
 
-.main-newReview-lowerColumn {
-  display: flex;
-  flex-direction: column;
-}
-
-#main-newReviewTextShort {
-  flex: 1;
-  font-size: 15px;
-  height: 30px;
-}
-
 #main-newReviewText {
+  height: 20px;
   flex: 1;
   font-size: 15px;
-  height: 70px;
-  display:none;
+  background-color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  padding: 0px 20px;
 }
 
-#openImg{
-  width: 10px;
+#openImg {
+  width: 15px;
+  background-color: #fff;
+  
 }
 
-
-#closeImg{
-  width: 10px;
+#closeImg {
+  width: 15px;
   display: none;
-}
-
-#openColse{
-  opacity: 0;
+  background-color: #fff;
 }
 
 #main-newReviewOpenClose {
   display: flex;
-  justify-content: center;
-  align-items:center;
-  height:12px;
-  background-color:#f5f5f5;
-  outline: 1px solid #000000;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #fff;
 }
 
 /* index.php end*/
 
 aside {
   width: 300px;
+  position: relative;
+  z-index: 20;
+  background-color: #f6f6f4;
 }
 
 .ad1 {
   height: 200px;
   width: 200px;
   margin: 10px;
-  text-decoration: none; 
+  text-decoration: none;
   color: black;
-  outline: 1px solid #000000;
+  border: 1px solid transparent;
+  background-color: #fff;
 }
 
 .ad2 {
   height: 300px;
   width: 260px;
   margin: 10px;
-  text-decoration: none; 
+  text-decoration: none;
   color: black;
-  outline: 1px solid #000000;
+  border: 1px solid transparent;
+  background-color: #fff;
 }
 
 footer {
   /* margin-top: 15px; */
   height: 200px;
-  outline: 1px solid #000000;
+  outline: 1px solid #0f1813;
   background-color: #0f1813;
-  color: #FFFFFF;
+  color: #ffffff;
+  position: relative;
+  z-index: 40;
 }
 
 .footer-container {
@@ -402,11 +438,11 @@ footer {
 }
 
 .footer-siteLogo {
-  height:100px;
+  height: 100px;
 }
 
-.footer-subTitle{
-  margin-left:20px;
+.footer-subTitle {
+  margin-left: 20px;
 }
 
 .footer-right {
@@ -418,14 +454,14 @@ footer {
 
 .footer-right-information1 {
   flex: 1;
-  text-decoration: none; 
+  text-decoration: none;
   color: white;
 }
 
 .footer-right-information2 {
   height: 20px;
   flex: 1;
-  text-decoration: none; 
+  text-decoration: none;
   color: white;
 }
 
@@ -435,11 +471,7 @@ footer {
     flex-direction: column;
   }
 
-  .ad1 {
-    width: 100%;
-  }
-
-  .ad2 {
+  aside {
     width: 100%;
   }
 }
@@ -456,14 +488,14 @@ footer {
   }
 
   .header-search-text {
-    position: absolute; 
-    top:80px; 
-    left:30px; 
+    position: absolute;
+    top: 80px;
+    left: 30px;
     width: 300px;
     height: 30px;
     z-index: 1;
   }
-  
+
   .home {
     padding: 0px 16px 0px 16px;
     flex: 1;
@@ -490,15 +522,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
-  }
-
-  .header-search-text1 {
-    display: none;
-  }
-
-  .header-search-text2 {
-    display: block;
-    text-align: center;
   }
 
   .li-newInformation,
