@@ -92,7 +92,7 @@
                 <main>
                     <div class="main-newReview">
                     @foreach ($items as $item)
-                     <div class="main-newReview-upperColumn">
+                    <div class="main-newReview-upperColumn">
                             <div class="main-newReview-upperColumn-left">
                                 <div class="main-newReviewerFig">
                                     <img src="images/icons8-user-male-30-black.png" class="userMaleImg">
@@ -119,8 +119,6 @@
                         </div>
                         @endforeach
                     </div>
-      
-                   
                 </main>
                 <aside>
                     <a href=""><div class="ad1">advertisement1</div></a>
