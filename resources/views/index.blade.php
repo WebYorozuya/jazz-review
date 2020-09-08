@@ -11,70 +11,74 @@
 </head>
 
 <body class="UI_Build_Assistant">
+
     <header>
         <div class="header-container">
             <div class="header-start">
                 <div class="header-siteName">
-                    <a href=""><img src="images/JazzLog-logo-black.png" class="siteLogo"></a>
+                    <a href="#"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
                 </div>
+
                 <from class="header-search" action="cgi-bin/example.cgi" method="post">
                     <div class="search-units">
                         <input class="header-search-btn" type="submit" name="submit" value="">
                         <img src="images/icons8-search-24.png" class="searchImg">
-                        <input class="header-search-text1" type="search" name="search" placeholder="キーワードで検索">
+                        <input class="header-search-text" type="search" name="search" placeholder="キーワードで検索">
                     </div>
 
                 </from>
             </div>
             <div class="header-end">
                 <div class="header-post">
-                    <img src="images/icons8-edit-24-black.png" class="editImg">
+                    <img src="images/icons8-edit-24-white.png" class="editImg">
                     <input class="header-post-btn" type="submit" name="post" value="投稿">
                 </div>
-                <div class="flex-center position-ref full-height">
-                <img src="images/icons8-user-male-30-black.png" class="userMaleImg">
                 @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="header-loginUser">
+                    <img src="images/icons8-user-male-30-white.png" class="userMaleImg">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
+                    <a href="{{ route('login') }}">Login</a>
+                    <img src="images/icons8-user-male-30-white.png" class="userMaleImg">
+                    @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
                 </div>
-            @endif
-
-
+                @endif
             </div>
         </div>
-        <div class="search-box"><input class="header-search-text2" type="search" name="search" placeholder="キーワードで検索"></div>
     </header>
-
     <div class="home">
         <div class="home-container">
             <nav>
                 <ul class="pc-nav">
-                    <li class="li-newInformation">
-                        <a href=""><img src="images/icons8-music-24-black.png" class="li-newInformationImg"> </a>  
-                        <div class="li-newInformation-text">新着順</div>
+                    <li>
+                        <a href="#" class="li-newInformation">
+                            <img src="images/icons8-music-24-black.png" class="li-newInformationImg">
+                            <div class="li-newInformation-text">新着順</div>
+                        </a>
                     </li>
-                    <li class="li-player">
-                        <a href=""><img src="images/icons8-myspace-24-black.png" class="li-playerImg"></a>     
-                        <div class="li-player-text">プレイヤー</div>
+                    <li>
+                        <a href="#" class="li-player">
+                            <img src="images/icons8-myspace-24-black.png" class="li-playerImg">
+                            <div class="li-player-text">プレイヤー</div>
+                        </a>
                     </li>
-                    <li class="li-livehouse">
-                        <a href=""><img src="images/icons8-home-24-black.png" class="li-livehouseImg"></a>                    
-                        <div class="li-livehouse-text">ライブハウス</div>
+                    <li>
+                        <a href="#" class="li-livehouse">
+                            <img src="images/icons8-home-24-black.png" class="li-livehouseImg">
+                            <div class="li-livehouse-text">ライブハウス</div>
+                        </a>
                     </li>
-                    <li class="li-reviewer">
-                        <a href=""><img src="images/icons8-speech-bubble-24-black.png" class="li-reviewerImg"> </a> 
-                        <div class="li-reviewer-text">レビュアー</div>
+                    <li>
+                        <a href="#" class="li-reviewer">
+                            <img src="images/icons8-speech-bubble-24-black.png" class="li-reviewerImg">
+                            <div class="li-reviewer-text">レビュアー</div>
+                        </a>
                     </li>
                 </ul>
-
                 <form method="get" action="" class="mobile-nav">
                     <p class="pulldown">
                         <select name="pulldown" required>
@@ -90,12 +94,22 @@
             </nav>
             <div class="right-container">
                 <main>
+                    <div class="main-upload-btns">
+                        <a href="" class="main-upload-backBtn">
+                            <img src="images/icons8-back-24-black.png" class="main-upload-backBtnImg">
+                            <div class="main-upload-backBtnText">前の10件</div>
+                        </a>
+                        <a href="" class="main-upload-forwardBtn">
+                            <div class="main-upload-forwardBtnText">次の10件</div>
+                            <img src="images/icons8-forward-24-black.png" class="main-upload-forwardBtnImg">
+                        </a>
+                    </div>
+                    <div class="main-newReview-title">新着順</div>
                     <div class="main-newReview">
-                    @foreach ($items as $item)
-                    <div class="main-newReview-upperColumn">
+                        <div class="main-newReview-upperColumn">
                             <div class="main-newReview-upperColumn-left">
                                 <div class="main-newReviewerFig">
-                                    <img src="images/icons8-user-male-30-black.png" class="userMaleImg">
+                                    <img src="images/icons8-user-male-30-black.png" class="main-userMaleImg">
                                 </div>
                                 <div class="main-newReviewerName">mike</div>
                             </div>
@@ -109,20 +123,228 @@
                             </div>
                         </div>
                         <div class="main-newReview-middleColumn">
-                            <div class="main-newReviewDate">{{$item->live_date}}</div>
-                            <div class="main-newReviewPerformerName">{{$item->musician}}</div>
-                            <div class="main-newReviewPlace">{{$item->venue}}</div>   
+                            <div class="main-newReviewDate">2020/8/26</div>
+                            <div class="main-newReviewPerformerName">演奏者名</div>
+                            <div class="main-newReviewPlace">@ 東京</div>
                         </div>
-                        <div class="main-newReview-lowerColumn">
-                            <div class="main-newReviewText">{{$item->text}}</div>
-                            <div class="main-newReviewOpen">全文を表示する</div>
+                        <div id="main-newReview-lowerColumn">
+                            <input id="openCloseCheckBox" type="checkbox" />
+                            <div id="main-newReviewText">
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                            </div>
+
+                            <div id="main-newReviewOpenClose">
+                                <img src="images/icons8-double-down-24-black.png" id="openImg">
+                                <img src="images/icons8-double-up-24-black.png" id="closeImg">
+                            </div>
                         </div>
-                        @endforeach
+                    </div>
+                    <div class="main-newReview">
+                        <div class="main-newReview-upperColumn">
+                            <div class="main-newReview-upperColumn-left">
+                                <div class="main-newReviewerFig">
+                                    <img src="images/icons8-user-male-30-black.png" class="main-userMaleImg">
+                                </div>
+                                <div class="main-newReviewerName">mike</div>
+                            </div>
+
+                            <div class="main-newReview-upperColumn-right">
+                                <div class="main-newReviewEvaluation">
+                                    <img src="images/icons8-like-24-black.png" class="likeImg">
+                                    <div class="like-counter">16</div>
+                                </div>
+                                <div class="main-newReviewUploadDate">2days ago</div>
+                            </div>
+                        </div>
+                        <div class="main-newReview-middleColumn">
+                            <div class="main-newReviewDate">2020/8/26</div>
+                            <div class="main-newReviewPerformerName">演奏者名</div>
+                            <div class="main-newReviewPlace">@ 東京</div>
+                        </div>
+                        <div id="main-newReview-lowerColumn">
+                            <input id="openCloseCheckBox" type="checkbox" />
+                            <div id="main-newReviewText">
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                            </div>
+
+                            <div id="main-newReviewOpenClose">
+                                <img src="images/icons8-double-down-24-black.png" id="openImg">
+                                <img src="images/icons8-double-up-24-black.png" id="closeImg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-newReview">
+                        <div class="main-newReview-upperColumn">
+                            <div class="main-newReview-upperColumn-left">
+                                <div class="main-newReviewerFig">
+                                    <img src="images/icons8-user-male-30-black.png" class="main-userMaleImg">
+                                </div>
+                                <div class="main-newReviewerName">mike</div>
+                            </div>
+
+                            <div class="main-newReview-upperColumn-right">
+                                <div class="main-newReviewEvaluation">
+                                    <img src="images/icons8-like-24-black.png" class="likeImg">
+                                    <div class="like-counter">16</div>
+                                </div>
+                                <div class="main-newReviewUploadDate">2days ago</div>
+                            </div>
+                        </div>
+                        <div class="main-newReview-middleColumn">
+                            <div class="main-newReviewDate">2020/8/26</div>
+                            <div class="main-newReviewPerformerName">演奏者名</div>
+                            <div class="main-newReviewPlace">@ 東京</div>
+                        </div>
+                        <div id="main-newReview-lowerColumn">
+                            <input id="openCloseCheckBox" type="checkbox" />
+                            <div id="main-newReviewText">
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                            </div>
+
+                            <div id="main-newReviewOpenClose">
+                                <img src="images/icons8-double-down-24-black.png" id="openImg">
+                                <img src="images/icons8-double-up-24-black.png" id="closeImg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-newReview">
+                        <div class="main-newReview-upperColumn">
+                            <div class="main-newReview-upperColumn-left">
+                                <div class="main-newReviewerFig">
+                                    <img src="images/icons8-user-male-30-black.png" class="main-userMaleImg">
+                                </div>
+                                <div class="main-newReviewerName">mike</div>
+                            </div>
+
+                            <div class="main-newReview-upperColumn-right">
+                                <div class="main-newReviewEvaluation">
+                                    <img src="images/icons8-like-24-black.png" class="likeImg">
+                                    <div class="like-counter">16</div>
+                                </div>
+                                <div class="main-newReviewUploadDate">2days ago</div>
+                            </div>
+                        </div>
+                        <div class="main-newReview-middleColumn">
+                            <div class="main-newReviewDate">2020/8/26</div>
+                            <div class="main-newReviewPerformerName">演奏者名</div>
+                            <div class="main-newReviewPlace">@ 東京</div>
+                        </div>
+                        <div id="main-newReview-lowerColumn">
+                            <input id="openCloseCheckBox" type="checkbox" />
+                            <div id="main-newReviewText">
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                            </div>
+
+                            <div id="main-newReviewOpenClose">
+                                <img src="images/icons8-double-down-24-black.png" id="openImg">
+                                <img src="images/icons8-double-up-24-black.png" id="closeImg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-newReview">
+                        <div class="main-newReview-upperColumn">
+                            <div class="main-newReview-upperColumn-left">
+                                <div class="main-newReviewerFig">
+                                    <img src="images/icons8-user-male-30-black.png" class="main-userMaleImg">
+                                </div>
+                                <div class="main-newReviewerName">mike</div>
+                            </div>
+
+                            <div class="main-newReview-upperColumn-right">
+                                <div class="main-newReviewEvaluation">
+                                    <img src="images/icons8-like-24-black.png" class="likeImg">
+                                    <div class="like-counter">16</div>
+                                </div>
+                                <div class="main-newReviewUploadDate">2days ago</div>
+                            </div>
+                        </div>
+                        <div class="main-newReview-middleColumn">
+                            <div class="main-newReviewDate">2020/8/26</div>
+                            <div class="main-newReviewPerformerName">演奏者名</div>
+                            <div class="main-newReviewPlace">@ 東京</div>
+                        </div>
+                        <div id="main-newReview-lowerColumn">
+                            <input id="openCloseCheckBox" type="checkbox" />
+                            <div id="main-newReviewText">
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                            </div>
+
+                            <div id="main-newReviewOpenClose">
+                                <img src="images/icons8-double-down-24-black.png" id="openImg">
+                                <img src="images/icons8-double-up-24-black.png" id="closeImg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-newReview">
+                        <div class="main-newReview-upperColumn">
+                            <div class="main-newReview-upperColumn-left">
+                                <div class="main-newReviewerFig">
+                                    <img src="images/icons8-user-male-30-black.png" class="main-userMaleImg">
+                                </div>
+                                <div class="main-newReviewerName">mike</div>
+                            </div>
+
+                            <div class="main-newReview-upperColumn-right">
+                                <div class="main-newReviewEvaluation">
+                                    <img src="images/icons8-like-24-black.png" class="likeImg">
+                                    <div class="like-counter">16</div>
+                                </div>
+                                <div class="main-newReviewUploadDate">2days ago</div>
+                            </div>
+                        </div>
+                        <div class="main-newReview-middleColumn">
+                            <div class="main-newReviewDate">2020/8/26</div>
+                            <div class="main-newReviewPerformerName">演奏者名</div>
+                            <div class="main-newReviewPlace">@ 東京</div>
+                        </div>
+                        <div id="main-newReview-lowerColumn">
+                            <input id="openCloseCheckBox" type="checkbox" />
+                            <div id="main-newReviewText">
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                            </div>
+
+                            <div id="main-newReviewOpenClose">
+                                <img src="images/icons8-double-down-24-black.png" id="openImg">
+                                <img src="images/icons8-double-up-24-black.png" id="closeImg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-upload-btns">
+                        <a href="" class="main-upload-backBtn">
+                            <img src="images/icons8-back-24-black.png" class="main-upload-backBtnImg">
+                            <div class="main-upload-backBtnText">前の10件</div>
+                        </a>
+                        <a href="" class="main-upload-forwardBtn">
+                            <div class="main-upload-forwardBtnText">次の10件</div>
+                            <img src="images/icons8-forward-24-black.png" class="main-upload-forwardBtnImg">
+                        </a>
                     </div>
                 </main>
                 <aside>
-                    <a href=""><div class="ad1">advertisement1</div></a>
-                    <a href=""><div class="ad2">advertisement2</div></a>
+                    <a href="#">
+                        <div class="ad1">advertisement1</div>
+                    </a>
+                    <a href="#">
+                        <div class="ad2">advertisement2</div>
+                    </a>
                 </aside>
             </div>
         </div>
@@ -131,20 +353,43 @@
         <div class="footer-container">
             <div class="footer-left">
                 <div class="footer-left">
-                    <a href=""><img src="images/JazzLog-logo-black.png" class="siteLogo"></a>
-                    <div class="">サブタイトル</div>
+                    <a href="#"><img src="images/JazzLog-logo-white.png" class="footer-siteLogo"></a>
+                    <div class="footer-subTitle">♪♪ Jazz for all people ♪♪</div>
                 </div>
             </div>
             <div class="footer-right">
-                <a href=""><div class="footer-right-information1"></a>
-                   お問い合わせ
-                </div>
-                <a href=""><div class="footer-right-information2"></a>
-                    利用規約
-                </div>
+                <a href="#" class="footer-right-information1">お問い合わせ</a>
+                <a href="#" class="footer-right-information2">利用規約</a>
             </div>
         </div>
     </footer>
-</body>
+    <script>
+        const openCloseBtn = document.getElementById("main-newReviewOpenClose");
+        
 
+        function openClose() {
+            
+            const oI = document.getElementById("openImg");
+            const cI = document.getElementById("closeImg");
+            const checkbox = document.getElementById("openCloseCheckBox")
+            const newReviewTextHeight = document.querySelector("#main-newReviewText");
+            const textHeight = newReviewTextHeight.getBoundingClientRect().height;
+
+            if (checkbox.checked == true) {
+                checkbox.checked = false;
+                oI.style.display = "block";
+                cI.style.display = "none";
+                newReviewTextHeight.style.height = (textHeight - 50) + "px";
+            } else {
+                checkbox.checked = true;            
+                oI.style.display = "none";
+                cI.style.display = "block";
+                newReviewTextHeight.style.height = (textHeight + 50) + "px";
+            }
+        }
+
+        openCloseBtn.addEventListener("click", openClose, false);
+
+    </script>
+</body>
 </html>
