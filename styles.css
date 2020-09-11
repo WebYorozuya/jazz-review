@@ -47,10 +47,7 @@ header {
   /* margin: 10px; */
 }
 
-.header-search {
-}
-
-.search-units {
+#search-units {
   font-weight: bold;
   color: rgb(51, 51, 51);
   background-color: #fff;
@@ -64,7 +61,7 @@ header {
   display: none;
 }
 
-.header-search-text {
+#header-search-text {
   border: none;
   background-color: rgba(255, 255, 255, 0);
   height: 20px;
@@ -85,27 +82,112 @@ header {
 }
 
 .header-post {
-  flex: 1;
   display: flex;
-  justify-content: row;
-  min-width: 40px;
+  align-items: center;
+  background: #2a6897;
+  border-radius: 10px;
+  width: 100px;
+  height: 50px;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.header-post a {
+  display: flex;
+  flex-direction: row;
+  justify-content: column;
+  width: 100%;
+  color: #fff;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header-post a span {
+  display: flex;
+  align-items: center;
 }
 
 .editImg {
   margin: 5px;
 }
 
-.header-post-btn {
-  display: block;
-  color: #ffffff;
-  font-size: 12px;
+.header-post:hover {
+  opacity: 0.8;
 }
 
 .header-loginUser {
   flex: 1;
   display: flex;
   justify-content: row;
-  min-width: 70px;
+}
+
+.header-loginUser-acd-label {
+  flex: 1;
+  display: flex;
+  justify-content: row;
+  align-items: center;
+  color: #ffffff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  background: #2a6897;
+  border-radius: 10px;
+  height: 50px;
+  width:100px;
+}
+
+
+.header-loginUser-acd-label:hover {
+  opacity: 0.8;
+}
+
+.header-loginUser-acd-content {
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+  display: block;
+  transition: 0.1s;
+  visibility: hidden;
+  position: absolute;
+  top: 60px;
+  width: 100px;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.header-loginUser-acd-content a {
+  text-decoration: none;
+}
+
+.header-loginUser-acd-content-login,
+.header-loginUser-acd-content-logout,
+.header-loginUser-acd-content-account {
+  border: 0.5px solid #dddddd;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 5px;
+  align-items: center;
+  color: rgb(51, 51, 51);
+}
+
+.header-loginUser-acd-content-login:hover,
+.header-loginUser-acd-content-logout:hover,
+.header-loginUser-acd-content-account:hover {
+  background-color: #dddddd; 
+}
+
+
+.header-loginUser-acd-check:checked + .header-loginUser-acd-label:after {
+}
+
+.header-loginUser-acd-check:checked
+  + .header-loginUser-acd-label
+  + .header-loginUser-acd-content {
+  opacity: 1;
+  visibility: visible;
 }
 
 .userMaleImg {
@@ -149,6 +231,7 @@ nav {
   width: 200px;
   position: sticky;
   top: 1em;
+  margin-right: 10px;
 }
 
 .pc-nav {
@@ -159,10 +242,25 @@ nav ul {
   width: 100%;
   list-style: none;
   text-align: center;
-  font-size: 15px;
 }
 
 nav ul li {
+  margin-bottom: 10px;
+}
+
+nav ul li a:hover {
+  background-color: rgb(192, 192, 192, 0.6);
+  border-radius: 8px;
+}
+
+nav ul li img {
+  margin-right: 10px;
+  height: 20px;
+}
+
+.li-newInformation {
+  background-color: #d6e8f0;
+  border-radius: 8px;
 }
 
 .li-newInformation,
@@ -173,16 +271,8 @@ nav ul li {
   padding: 20px 10px;
   display: flex;
   flex-direction: row;
-  color:rgb(51, 51, 51);
+  color: rgb(51, 51, 51);
   font-size: 12px;
-}
-
-.li-newInformationImg,
-.li-playerImg,
-.li-livehouseImg,
-.li-reviewerImg {
-  margin-right: 10px;
-  height: 20px;
 }
 
 .mobile-nav {
@@ -202,46 +292,53 @@ main {
   min-width: 0;
 }
 
-/* index.php */
+/* uploadボタン*/
 .main-upload-btns {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: relative;
-  z-index: 20;
-  font-size: 12px;
+  height: 40px;
   margin-top: 10px;
 }
 
-.main-upload-forwardBtn {
+.main-upload-btns a {
   display: flex;
   flex-direction: row;
   text-decoration: none;
+  border-style: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: inherit;
+  height: 40px;
+  width: 100px;
 }
 
-.main-upload-forwardBtnText {
+.main-upload-btns a:hover {
+  background-color: #d6e8f0;
+  border-radius: 10px;
+  transition: background-color 0.8s;
+}
+
+.main-upload-btns img {
+  vertical-align: text-bottom;
+}
+
+.main-upload-btns a span {
   color: rgb(51, 51, 51);
   font-size: 12px;
+  height: 100%;
   display: flex;
   align-items: center;
+  border-style: none;
 }
 
-.main-upload-backBtn {
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
+.main-upload-btns a:hover span {
 }
 
-.main-upload-backBtnText {
-  display: flex;
-  align-items: center;
-  color: rgb(51, 51, 51);
-}
+/* uploadボタン終わり*/
 
 .main-newReview-title {
   text-align: center;
-  border: 1px solid transparent;
-  margin-top: 10px;
 }
 
 .main-newReview {
@@ -296,14 +393,20 @@ main {
   flex-direction: row;
 }
 
-.likeImg {
+.main-newReviewEvaluation img {
   display: flex;
   align-items: center;
   height: 20px;
- margin-top: 5px;
+  margin-top: 5px;
 }
 
-.like-counter {
+.main-newReviewEvaluation:hover img {
+  background-color:rgb(255, 200, 200);
+  border-radius: 10px;
+  transition: background-color 0.8s;
+}
+
+.main-newReviewEvaluation span {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -311,6 +414,11 @@ main {
   text-align: center;
   font-size: 12px;
   padding-top: 7px;
+}
+
+.main-newReviewEvaluation:hover span {
+  color:  rgb(255, 200, 200);
+  transition: color 0.8s;
 }
 
 .main-newReviewUploadDate {
@@ -349,7 +457,7 @@ input[type="checkbox"] {
   font-size: 12px;
 }
 
-#main-newReview-lowerColumn {
+.main-newReview-lowerColumn {
   display: flex;
   flex-direction: row;
 }
@@ -363,12 +471,12 @@ input[type="checkbox"] {
   text-overflow: ellipsis;
   font-size: 15px;
   padding: 0px 20px;
+  transition: height 0.2s 0.1s;
 }
 
 #openImg {
   width: 15px;
   background-color: #fff;
-  
 }
 
 #closeImg {
@@ -377,12 +485,15 @@ input[type="checkbox"] {
   background-color: #fff;
 }
 
-#main-newReviewOpenClose {
+.main-newReviewOpenClose {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   background-color: #fff;
+}
+
+.openCloseCheckBox {
 }
 
 /* index.php end*/
@@ -394,7 +505,7 @@ aside {
   background-color: #f6f6f4;
 }
 
-.ad1 {
+/* .ad1 {
   height: 200px;
   width: 200px;
   margin: 10px;
@@ -402,9 +513,9 @@ aside {
   color: black;
   border: 1px solid transparent;
   background-color: #fff;
-}
+} */
 
-.ad2 {
+/* .ad2 {
   height: 300px;
   width: 260px;
   margin: 10px;
@@ -412,7 +523,7 @@ aside {
   color: black;
   border: 1px solid transparent;
   background-color: #fff;
-}
+} */
 
 footer {
   /* margin-top: 15px; */
@@ -487,13 +598,14 @@ footer {
     /* margin: 10px; */
   }
 
-  .header-search-text {
+  #header-search-text {
     position: absolute;
     top: 80px;
     left: 30px;
     width: 300px;
     height: 30px;
     z-index: 1;
+    display: none;
   }
 
   .home {
@@ -513,36 +625,33 @@ footer {
   nav ul {
     display: flex;
     align-items: center;
-    font-size: 10px;
   }
 
   nav ul li {
-    width: 25%;
+    width: 33.3%;
     padding-top: 0px;
     display: flex;
     align-items: center;
     justify-content: space-around;
   }
 
+  nav ul li a span {
+    font-size: 5px;
+  }
+
   .li-newInformation,
   .li-player,
   .li-livehouse,
   .li-reviewer {
-  }
-
-  .li-newInformationImg,
-  .li-livehouseImg,
-  .li-reviewerImg,
-  .li-playerImg {
-    height: 20px;
-    width: 20px;
-  }
-  .li-livehouse-text,
-  .li-player-text,
-  .li-reviewer-text,
-  .li-newInformation-text {
-    height: 20px;
-    width: 60px;
+    width: 120px;
+    text-decoration: none;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    color: rgb(51, 51, 51);
+    font-size: 10px;
   }
 
   aside {
@@ -564,14 +673,40 @@ footer {
     display: none;
   }
 
-  nav {
-    display: none;
+  .mobile-nav {
+    display: block;
+    margin-bottom: 10px;
   }
 
-  .mobile-nav {
+  .mobile-nav-form {
     display: flex;
-    margin: 0 auto;
-    font-size: 2px;
+    flex-direction: row;
+    font-size: 10px;
+  }
+
+  .pulldown {
+    height: 20px;
+    width: 200px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+
+  .pulldown-option {
+    height: 20px;
+    width: 200px;
+  }
+
+  .pulldown-select {
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    margin: 3px;
+    height: 14px;
+    width: 25px;
+    background-color: #cccccc;
+    text-align: center;
+    vertical-align: center;
   }
 
   .mobile-nav p {
@@ -597,10 +732,5 @@ footer {
 
   .pc-nav {
     display: none;
-  }
-
-  .mobile-nav {
-    display: block;
-    display: flex;
   }
 }
