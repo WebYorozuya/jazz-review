@@ -133,9 +133,8 @@ header {
   background: #2a6897;
   border-radius: 10px;
   height: 50px;
-  width:100px;
+  width: 100px;
 }
-
 
 .header-loginUser-acd-label:hover {
   opacity: 0.8;
@@ -176,9 +175,8 @@ header {
 .header-loginUser-acd-content-login:hover,
 .header-loginUser-acd-content-logout:hover,
 .header-loginUser-acd-content-account:hover {
-  background-color: #dddddd; 
+  background-color: #dddddd;
 }
-
 
 .header-loginUser-acd-check:checked + .header-loginUser-acd-label:after {
 }
@@ -401,7 +399,7 @@ main {
 }
 
 .main-newReviewEvaluation:hover img {
-  background-color:rgb(255, 200, 200);
+  background-color: rgb(255, 200, 200);
   border-radius: 10px;
   transition: background-color 0.8s;
 }
@@ -417,7 +415,7 @@ main {
 }
 
 .main-newReviewEvaluation:hover span {
-  color:  rgb(255, 200, 200);
+  color: rgb(255, 200, 200);
   transition: color 0.8s;
 }
 
@@ -559,21 +557,22 @@ footer {
 .footer-right {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 150px;
   padding: 30px 0px 60px 0px;
 }
 
-.footer-right-information1 {
+.information1,
+.information2 {
   flex: 1;
   text-decoration: none;
   color: white;
 }
 
-.footer-right-information2 {
-  height: 20px;
-  flex: 1;
-  text-decoration: none;
-  color: white;
+.information1:hover, .information2:hover {
+  text-decoration-line: underline;
+  text-decoration-color: #FFF;
+  text-decoration-style: solid;
+  text-decoration-thickness: 4px;
 }
 
 @media screen and (max-width: 1000px) {
