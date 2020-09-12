@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('index');
 // });
 //トップページの呼び出し。PostControllerのindexを呼び出す postではなくgetだ
-Route::get('', 'PostController@index');
+Route::get('/', 'PostController@index');
 
 Auth::routes();
 
