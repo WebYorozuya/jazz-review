@@ -1,12 +1,15 @@
 /* 共通部分 */
 body {
+    display: flex;
+    flex-direction: column;
     width: 1140px;
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    outline: 1px solid;
-    /* margin:0; */
+    margin: 0;
+    padding: 0;
+    background-color:#f6f6f4;
+    font-family: fantasy, -apple-system, "Segoe UI", "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;/* margin:0; */
   }
   
 header {
@@ -189,6 +192,7 @@ header {
     width: 50%;
     margin: 20px 0;
     padding: 30px;
+    background-color: white;
 }
 
 .main-container h1 {
