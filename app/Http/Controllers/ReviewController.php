@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Review; //追加
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
