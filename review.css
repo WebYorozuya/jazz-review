@@ -1,6 +1,193 @@
-.main-container {
+/* 共通部分 */
+body {
+    width: 1140px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid;
+    /* margin:0; */
+  }
+  
+header {
+    /* height: 80px; */
+    background-color: #0378a6;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* height: 80px; */
+    max-width: 1100px;
+    padding: 0px 16p;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .header-start {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .header-siteName {
+    flex: 1;
+    /* padding: 0px 16px 0px 0px; */
+    min-width: 100px;
+  }
+  
+  .siteLogo {
+    height: 60px;
+    margin-top: 8px;
+    /* margin: 10px; */
+  }
+  
+  .header-search {
+  }
+  
+  .search-units {
+    font-weight: bold;
+    color: #333333;
+    background-color: #fff;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-search-btn {
+    display: none;
+  }
+  
+  .header-search-text {
+    border: none;
+    background: rgba(255, 255, 255, 0);
+    height: 20px;
+    width: 150px;
+  }
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .header-end {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  
+  .header-post {
+    flex: 1;
+    display: flex;
+    justify-content: row;
+    min-width: 40px;
+  }
+  
+  .editImg {
+    margin: 5px;
+  }
+  
+  .header-post-btn {
+    display: block;
+    color: #ffffff;
+  }
+  
+  .header-loginUser {
+    flex: 1;
+    display: flex;
+    justify-content: row;
+    min-width: 70px;
+  }
+  
+  .userMaleImg {
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    margin: 5px;
+  }
+  
+  .header-loginUser-btn {
+    display: block;
+    margin: 5px 30px 5px 0px;
+    color: #ffffff;
+  }
+  
+  /* review.php */
+  .home {
+    padding: 32px 16px 0px 16px;
+    flex: 1;
+  }
+  
+  .home-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 300px;
+    position: sticky;
+    top: 1em;
+  }
+  
+  .pc-nav {
+  }
+  
+  nav ul {
+    padding: 0px;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    font-size: 15px;
+  }
+  
+  nav ul li {
+  }
+  
+  .li-newInformation,
+  .li-player,
+  .li-livehouse,
+  .li-reviewer {
+    text-decoration: none;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: row;
+    color: black;
+  }
+  
+  .li-newInformationImg,
+  .li-playerImg,
+  .li-livehouseImg,
+  .li-reviewerImg {
+    margin-right: 10px;
+  }
+  
+  .mobile-nav {
+    display: none;
+  }
+  
+  .pulldown {
+    display: none;
+  }
+  
+  .pulldown-select {
+    display: none;
+  }
+
+
+  .main-container {
     width: 50%;
-    margin: 20px auto;
+    margin: 20px 0;
     padding: 30px;
 }
 
@@ -47,7 +234,7 @@
     margin: 5px;
   }
 .title:after,
-.report:after {
+.review:after {
     content: " *";
     color: red;
     }
@@ -67,17 +254,23 @@ textarea {
 }
 
 .input-field select {
+    width: 30%;
     font-size: 20px;
 }
 
-input[type="submit"] {
+.upload {
     display: flex;
     justify-content: center;
     width: 80px;
-    margin: 0 0 0 auto;
-    padding: 10px 15px;
+    margin: 20px 0 0 auto;
+    padding: 10px 20px;
     background-color: #9b9b9b;
     color: #ffffff;
     border-radius: 7px;
     font-size: 15px;
 }
+
+
+
+
+ 
