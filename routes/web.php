@@ -29,4 +29,7 @@ Route::get('post', 'PostController@post');
 //投稿内容をDBへ登録
 Route::post('insert', 'PostController@create');
 
+//model追加
+Route::get('review', 'ReviewController@index');
+
 
