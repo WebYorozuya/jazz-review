@@ -25,11 +25,10 @@ class PostController extends Controller
     public function create(Request $request) {
         $param = [
             'live_date' => $request->live_date,
-            'musician' => $request->musician,
-            'venue' => $request->venue,
+            'title' => $request->title,
             'text' => $request->text,
         ];
-        DB::insert('insert into reviews (live_date, musician, venue, text, created_at) values (:live_date, :musician, :venue, :text, NOW())', $param);
+        DB::insert('insert into reviews (live_date, title, text, created_at, updated_at) values (:live_date, :title, :text, NOW(), NOW())', $param);
         return redirect('/');
     }
 }
