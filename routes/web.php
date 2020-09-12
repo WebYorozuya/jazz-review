@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //トップページの呼び出し
+  
 Route::get('/', 'PostController@index');
 
 Auth::routes();
