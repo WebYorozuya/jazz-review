@@ -28,7 +28,7 @@ class PostController extends Controller
             'title' => $request->title,
             'text' => $request->text,
         ];
-        DB::insert('insert into reviews (live_date, title, text, created_at, updated_at) values (:live_date, :title, :text, NOW(), NOW())', $param);
+        DB::insert('insert into reviews (live_date, title, text, created_at, updated_at, user_id) values (:live_date, :title, :text, NOW(), NOW(), 1)', $param);
         return redirect('/');
     }
 }
