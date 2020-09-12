@@ -1,0 +1,747 @@
+/* 共通部分 */
+body {
+  font-family: -apple-system, "Segoe UI", "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
+  width: 1140px;
+  width: 100%;
+  min-height: 200vh;
+  display: flex;
+  flex-direction: column;
+  outline: 1px solid;
+  color: rgb(51, 51, 51);
+}
+
+/* ヘッダー部分 */
+header {
+  background-color: #0378a6;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  padding: 0px 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ヘッダー左部分 */
+.header-start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+/* サイトロゴ */
+.header-siteName {
+  flex: 1;
+  min-width: 100px;
+}
+
+.siteLogo {
+  height: 60px;
+  margin-top: 8px;
+}
+/* 検索機能 */
+#search-units {
+  font-weight: bold;
+  color: rgb(51, 51, 51);
+  background-color: #fff;
+  border: 1px solid #333333;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.header-search-btn {
+  display: none;
+}
+
+#header-search-text {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  height: 20px;
+  width: 150px;
+  font-size: 12px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+/* ヘッダー左部分 */
+.header-end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 投稿機能 */
+.header-post {
+  display: flex;
+  align-items: center;
+  background: #2a6897;
+  border-radius: 10px;
+  width: 100px;
+  height: 50px;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.header-post a {
+  display: flex;
+  flex-direction: row;
+  justify-content: column;
+  width: 100%;
+  color: #fff;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header-post a span {
+  display: flex;
+  align-items: center;
+}
+
+.editImg {
+  margin: 5px;
+}
+
+.header-post:hover {
+  opacity: 0.8;
+}
+/* ログイン機能 */
+.header-loginUser {
+  flex: 1;
+  display: flex;
+  justify-content: row;
+}
+
+.header-loginUser-acd-label {
+  flex: 1;
+  display: flex;
+  justify-content: row;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  background: #2a6897;
+  border-radius: 10px;
+  height: 50px;
+  width: 80px;
+}
+
+.header-loginUser-acd-label:hover {
+  opacity: 0.8;
+}
+
+.header-loginUser-acd-content {
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+  display: block;
+  transition: 0.1s;
+  visibility: hidden;
+  position: absolute;
+  top: 60px;
+  width: 95px;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.header-loginUser-acd-content a {
+  text-decoration: none;
+}
+
+.header-loginUser-acd-content-login,
+.header-loginUser-acd-content-logout,
+.header-loginUser-acd-content-account {
+  border: 0.5px solid #dddddd;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 5px;
+  align-items: center;
+  color: rgb(51, 51, 51);
+}
+
+.header-loginUser-acd-content-login:hover,
+.header-loginUser-acd-content-logout:hover,
+.header-loginUser-acd-content-account:hover {
+  background-color: #dddddd;
+}
+
+.header-loginUser-acd-check:checked + .header-loginUser-acd-label:after {
+}
+
+.header-loginUser-acd-check:checked
+  + .header-loginUser-acd-label
+  + .header-loginUser-acd-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.userMaleImg {
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.loginSortDownImg {
+  height: 15px;
+}
+
+.header-loginUser-btn {
+  display: block;
+  margin: 5px 30px 5px 0px;
+  color: #ffffff;
+  font-size: 12px;
+}
+/* ホーム部分 */
+.home {
+  padding: 32px 16px 0px 16px;
+  flex: 1;
+  background-color: #f6f6f4;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+/* ナビゲーション */
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 300px;
+  position: sticky;
+  top: 1em;
+  margin-right: 10px;
+}
+
+.pc-nav {
+}
+
+nav ul {
+  padding: 0px;
+  width: 100%;
+  list-style: none;
+  text-align: center;
+}
+
+nav ul li {
+  margin-bottom: 10px;
+}
+
+nav ul li a:hover {
+  background-color: rgb(192, 192, 192, 0.6);
+  border-radius: 8px;
+}
+
+nav ul li img {
+  margin-right: 10px;
+  height: 20px;
+}
+
+.li-newInformation {
+  background-color: #d6e8f0;
+  border-radius: 8px;
+}
+
+.li-newInformation,
+.li-player,
+.li-livehouse,
+.li-reviewer {
+  text-decoration: none;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: row;
+  color: rgb(51, 51, 51);
+  font-size: 12px;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.pulldown {
+  display: none;
+}
+
+.pulldown-select {
+  display: none;
+}
+
+/* メイン部分 */
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+/* uploadボタン*/
+.main-upload-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.main-upload-btns a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  border-style: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: inherit;
+  height: 40px;
+  width: 100px;
+}
+
+.main-upload-btns a:hover {
+  background-color: #d6e8f0;
+  border-radius: 10px;
+  transition: background-color 0.8s;
+}
+
+.main-upload-btns img {
+  vertical-align: text-bottom;
+}
+
+.main-upload-btns a span {
+  color: rgb(51, 51, 51);
+  font-size: 12px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-style: none;
+}
+
+.main-upload-btns a:hover span {
+}
+
+/* main ライブハウスレビュー欄*/
+/* ライブハウス情報 */
+.main-livehouse {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+
+.main-livehouse-upperColumn-left {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.livehouseName {
+  height: 50px;
+  width: 100%;
+  padding: 20px 0px 0px 20px;
+  font-weight: 800;
+}
+
+.main-livehouse-upperColumn-left a {
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+}
+
+.livehouse-homepage-link {
+  margin: 30px 0px 0px 30px;
+}
+
+.livehouse-address {
+  margin: 20px 0px 0px 30px;
+}
+
+iframe {
+  width: 300px;
+  height: 300px;
+}
+
+/* ライブハウスレビュー欄 上段 */
+.main-reviewText-upperColumn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.main-reviewText-upperColumn-left {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+
+.main-reviewText-upperColumn-right {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  padding-right: 20px;
+}
+
+.main-reviewText-upperColumn-right img {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  margin: 5px 0px 5px 5px;
+}
+
+.main-reviewText-upperColumn-right:hover img {
+  background-color: rgb(255, 200, 200);
+  border-radius: 10px;
+  transition: background-color 0.8s;
+}
+
+.main-reviewText-upperColumn-right span {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 30px;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 6px;
+}
+
+.main-newReviewEvaluation:hover span {
+  color: rgb(255, 200, 200);
+  transition: color 0.8s;
+}
+
+.main-liveDate {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* ライブハウスレビュー欄 中段 */
+.main-reviewText-middleColumn {
+  display: flex;
+  flex-direction: row;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  left: -100vw;
+}
+
+#main-reviewText {
+  height: 20px;
+  flex: 1;
+  font-size: 15px;
+  background-color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  padding: 0px 20px;
+  transition: height 0.2s 0.1s;
+}
+
+#openImg {
+  width: 15px;
+  background-color: #fff;
+}
+
+#closeImg {
+  width: 15px;
+  display: none;
+  background-color: #fff;
+}
+
+.main-reviewOpenClose {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #fff;
+}
+
+.openCloseCheckBox {
+}
+
+/* ライブハウスレビュー欄 下段 */
+.main-reviewText-lowerColumn {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  justify-content: flex-end;
+}
+
+.reviewDate {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  padding: 0px 5px 0px 5px;
+}
+
+.main-reviewText-reviewDate {
+  height: 30px;
+  min-width: 100px;
+  padding: 5px;
+}
+
+.main-userMaleImg{
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  margin:0px 5px 0px 5px;
+}
+
+.main-reviewerName{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right:20px;
+  width:100px;
+  font-size: 12px;
+}
+
+/* 広告エリア */
+aside {
+  width: 300px;
+  position: relative;
+  z-index: 20;
+  background-color: #f6f6f4;
+}
+
+/* .ad1 {
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid transparent;
+  background-color: #fff;
+} */
+
+/* .ad2 {
+  height: 300px;
+  width: 260px;
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid transparent;
+  background-color: #fff;
+} */
+
+footer {
+  height: 200px;
+  outline: 1px solid #0f1813;
+  background-color: #0f1813;
+  color: #ffffff;
+  position: relative;
+  z-index: 40;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+}
+
+.footer-left {
+  padding: 10px;
+}
+
+.footer-siteLogo {
+  height: 100px;
+}
+
+.footer-subTitle {
+  margin-left: 20px;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  padding: 30px 0px 60px 0px;
+}
+
+.information1,
+.information2 {
+  flex: 1;
+  text-decoration: none;
+  color: white;
+}
+
+.information1:hover,
+.information2:hover {
+  text-decoration-line: underline;
+  text-decoration-color: #fff;
+  text-decoration-style: solid;
+  text-decoration-thickness: 4px;
+}
+
+@media screen and (max-width: 1000px) {
+  .right-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  aside {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body,
+  nav,
+  aside {
+    width: 100%;
+  }
+
+  .siteLogo {
+    /* margin: 10px; */
+  }
+
+  #header-search-text {
+    position: absolute;
+    top: 80px;
+    left: 30px;
+    width: 300px;
+    height: 30px;
+    z-index: 1;
+    display: none;
+  }
+
+  .home {
+    padding: 0px 16px 0px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+  }
+
+  nav ul li {
+    width: 33.3%;
+    padding-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  nav ul li a span {
+    font-size: 5px;
+  }
+
+  .li-newInformation,
+  .li-player,
+  .li-livehouse,
+  .li-reviewer {
+    width: 120px;
+    text-decoration: none;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    color: rgb(51, 51, 51);
+    font-size: 10px;
+  }
+
+  aside {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .header-start {
+    padding-left: 0px;
+  }
+
+  .siteLogo {
+    width: 100px;
+    /* margin: 10px; */
+  }
+
+  .header-middle {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .mobile-nav-form {
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+  }
+
+  .pulldown {
+    height: 20px;
+    width: 200px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+
+  .pulldown-option {
+    height: 20px;
+    width: 200px;
+  }
+
+  .pulldown-select {
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    margin: 3px;
+    height: 14px;
+    width: 25px;
+    background-color: #cccccc;
+    text-align: center;
+    vertical-align: center;
+  }
+
+  .mobile-nav p {
+    margin: 5px;
+  }
+
+  .pulldown {
+    display: block;
+  }
+
+  footer {
+    height: 300px;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pulldown-select {
+    display: block;
+  }
+
+  .pc-nav {
+    display: none;
+  }
+}
