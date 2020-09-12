@@ -18,7 +18,7 @@ class PostController extends Controller
         $data = [
             'user'=>'ゲスト',
         ];
-        return view('post', $data); //(folder.)file
+        return view('post', $data);
     }
 
     //formの値を取得しよう
