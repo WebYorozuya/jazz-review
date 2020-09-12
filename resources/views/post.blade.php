@@ -56,10 +56,8 @@
         <h1>{{$user}}さん、ライブの感想を記録しましょう</h1>
         <label for="live_date">ライブに行った日</label>
         <input type="date" id="live_date" name="live_date">
-        <label for="musician">ミュージシャン</label>
-        <input type="text" id="musician" name="musician">
-        <label for="venue">ライブ会場</label>
-        <input type="text" id="venue" name="venue">
+        <label for="title">レビューのタイトル</label>
+        <input type="text" id="title" name="title">
         <label for="text">ライブの感想</label>
         <textarea name="text" id="text" cols="30" rows="10"></textarea>
         <p style="text-align: right; font-size: 0.8rem;">（1000文字以内）</p>
