@@ -247,10 +247,10 @@ textarea {
     resize: vertical;
   }
  
-.input-date {
-    text-align: end;
+.input-field .input-date {
+    text-align: center;
     width: 50%;
-    padding: 10px 5px;
+    padding: 10px;
     border: 1px solid rgb(131, 152, 182);
     border-radius: 7px;
     font-size: 15px;
@@ -258,6 +258,8 @@ textarea {
 }
 
 .input-field select {
+    display: inline-block;
+    text-align: center;
     width: 30%;
     font-size: 20px;
 }

@@ -1,0 +1,28 @@
+.star {
+    position: absolute;
+}
+.star input { 
+    display: none;
+}
+
+.star label {
+    float: right;
+    margin: 0 5px;
+    color: lightgray;
+    text-shadow: 1px 1px rgb(173, 170, 170);
+    font-size: 20px;
+}
+
+.star label::before {
+    content: "★";
+}
+
+.star input[type="radio"]:checked ~ label {
+    color: rgb(243, 209, 16);
+}
+
+.star input[type="radio"]:checked > label:hover,
+.star input[type="radio"]:checked > label:hover ~ label {
+    color: rgb(243, 209, 16);
+
+}
