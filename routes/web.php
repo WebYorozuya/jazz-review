@@ -13,10 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('', function () {
-//     return view('index');
-// });
-//トップページの呼び出し。PostControllerのindexを呼び出す postではなくgetだ
+//トップページの呼び出し
+  
 Route::get('/', 'PostController@index');
 
 Auth::routes();
