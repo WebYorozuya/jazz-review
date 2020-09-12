@@ -4,40 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="review.css">
-
-    <title>review</title>
+    <title>レビュー投稿</title>
 </head>
+
 <body>
-    <div class="main_container">
-      <h1>review</h1>
-      <div class="form">
+    <div class="main-container">
+      <h1>レビュー投稿</h1>
         <form action="#" method="post">
-         <div class="input_field">
-           <label>日付</label>
-           <input type="date" name="date">
+         <div class="input-field">
+            <label>ライブの日にち</label>
+            <input type="date" name="date" class="input-date">
          </div>
-         <div class="input_field">
-           <label>プレイヤー</label>
-           <input type="text" name="player">
+         <div class="input-field">
+            <label>ライブ会場</label>
+            <input type="text" name="">
          </div>
-         <div class="input_field">
-           <label>ライブハウス</label>
-           <input type="text" name="livehouse">
+         <div class="input-field">
+            <label class="title">タイトル</label>
+              <p>( 例 : 小沼ようすけ ブルーノート東京 )</p>
+              <input type="text" name="" required>
          </div>
-         <div class="input_field">
-           <label>料金</label>
-            <input type="text" name="fee">
+         <div class="input-field">
+            <label>オススメ度</label>
+             <select name="">
+                <option value="5" selected>★★★★★</option>
+                <option value="4">★★★★☆</option>
+                <option value="3">★★★☆☆</option>
+                <option value="2">★★☆☆☆</option>
+                <option value="1">★☆☆☆☆</option>
+                <option value="0">なし</option>
+             </select>
          </div>
-         <div class="input_field">
-          <label>レビュー</label>
-           <textarea name="review" cols="40" rows="8"></textarea> 
+         <div class="input-field">
+            <label class="report">ライブの感想</label>
+              <textarea name="review" required cols="40" rows="8"></textarea>
          </div>
          <div class="upload">
-           <input type="submit" value="投稿する">
+            <input type="submit" value="投稿する">
          </div>
         </div>
        </form>
-    </div>
+      </div>
     
 </body>
 </html>
