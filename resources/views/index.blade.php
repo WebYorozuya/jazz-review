@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="styles.css">
     <title>Jazz Log</title>
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
 </head>
 
 <body class="UI_Build_Assistant">
