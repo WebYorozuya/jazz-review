@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <title>問い合わせデモ</title>
+  </head>
+
+  <body class="UI_Build_Assistant">
+    <header>
+      <div class="header-container">
+        <div class="header-start">
+          <div class="header-siteName">
+            <a href="#"
+              ><img src="images/JazzLog-logo-white.png" class="siteLogo"
+            /></a>
+          </div>
+          <from
+            class="header-search"
+            action="cgi-bin/example.cgi"
+            method="post"
+          >
+            <div id="search-units">
+              <input
+                class="header-search-btn"
+                type="submit"
+                name="submit"
+                value=""
+              />
+              <img src="images/icons8-search-24.png" class="searchImg" />
+              <input
+                id="header-search-text"
+                type="search"
+                name="search"
+                placeholder="キーワードで検索"
+              />
+              <input id="header-search-text-checkBox" type="checkbox" />
+            </div>
+          </from>
+        </div>
+        <div class="header-end">
+          <div class="header-post">
+            <a href="#"
+              ><img
+                src="images/icons8-edit-24-white.png"
+                class="editImg"
+              /><span>投稿する</span></a
+            >
+          </div>
+          <div class="header-loginUser">
+            <input
+              id="header-loginUser-acd-check"
+              class="header-loginUser-acd-check"
+              type="checkbox"
+            />
+            <label
+              class="header-loginUser-acd-label"
+              for="header-loginUser-acd-check"
+            >
+              <img
+                src="images/icons8-user-male-30-white.png"
+                class="userMaleImg"
+              /><span>ログイン</span></label
+            >
+            <div class="header-loginUser-acd-content">
+              <a href="#">
+                <div class="header-loginUser-acd-content-login">ログイン</div>
+              </a>
+              <a href="#">
+                <div class="header-loginUser-acd-content-logout">
+                  ログアウト
+                </div>
+              </a>
+              <a href="#">
+                <div class="header-loginUser-acd-content-account">
+                  アカウント登録
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="home">
+      <div class="home-container">
+        <nav>
+          <ul class="pc-nav">
+            <li>
+              <a href="#" class="li-newInformation"
+                ><img src="images/icons8-music-24-black.png" />
+                <span>新着レビュー</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="li-player"
+                ><img src="images/icons8-myspace-24-black.png" />
+                <span>レビュワータグ</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="li-livehouse"
+                ><img src="images/icons8-home-24-black.png" />
+                <span>ライブハウスタグ</span></a
+              >
+            </li>
+          </ul>
+          <div class="mobile-nav">
+            <form method="get" action="" class="mobile-nav-form">
+              <div class="pulldown">
+                <select name="pulldown" class="pulldown-option" required>
+                  <option value="">選択してください</option>
+                  <option value="選択肢1">新着順</option>
+                  <option value="選択肢2">プレイヤー</option>
+                  <option value="選択肢3">ライブハウス</option>
+                </select>
+              </div>
+              <div class="pulldown-select">
+                <input type="submit" value="選択" />
+              </div>
+            </form>
+          </div>
+        </nav>
+        <div class="right-container">
+          <main>
+            <div class="main-container">
+              <!-- <div class="developer">開発者</div> -->
+
+              <div class="contact">お問い合わせ</div>
+              <form action="" accept-charset="UTF-8" method="post">
+                <div class="contact-form">
+                  <label class="email">メールアドレス</label>
+                  <input type="email" name="email" required>
+                  <input type="hidden" name="" value="hidden" />
+                </div>
+                <div class="contact-form">
+                    <label class="message-title">Jazz Log アカウント名</label>
+                    <input type="text" name="">
+                    <input type="hidden" name="" value="hidden" />
+                  </div>
+                <div class="contact-form">
+                  <label class="message-title">件名</label>
+                  <input type="text" name="">
+                  <input type="hidden" name="" value="hidden" />
+                </div>
+                <div class="contact-form">
+                  <label class="message">お問い合わせの内容</label>
+                  <textarea name="" cols="40" rows="8" required></textarea>
+                  <input type="hidden" name="" value="hidden" />
+                </div>
+                <div class="send-btn">
+                  <input type="submit" name="" value="送信する" />
+                  <input type="hidden" name="" value="hidden" />
+                </div>
+              </form>
+            </div>
+          </main>
+          <aside>
+            <!-- <a href="#">
+                    <div class="ad1">advertisement1</div>
+                </a>
+                <a href="#">
+                    <div class="ad2">advertisement2</div>
+                </a> -->
+          </aside>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p><small> &copy; Jazz Log </small></p>
+    </footer>
+  </body>
+</html>
