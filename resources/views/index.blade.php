@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="styles.css">
     <title>Jazz Log</title>
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
 </head>
 
 <body class="UI_Build_Assistant">
@@ -30,8 +30,12 @@
             </div>
             <div class="header-end">
                 <div class="header-post">
+<<<<<<< HEAD
                     <img src="images/icons8-edit-24-white.png" class="editImg">
                     <input class="header-post-btn" type="submit" name="post" value="投稿">
+=======
+                    <a href="/post"><img src="images/icons8-edit-24-white.png" class="editImg"><span>投稿する</span></a>
+>>>>>>> 5c56c15902e4199307e641708311c57db8101433
                 </div>
                 @if (Route::has('login'))
                 <div class="header-loginUser">
@@ -123,9 +127,15 @@
                             </div>
                         </div>
                         <div class="main-newReview-middleColumn">
+<<<<<<< HEAD
                             <div class="main-newReviewDate">2020/8/26</div>
                             <div class="main-newReviewPerformerName">演奏者名</div>
                             <div class="main-newReviewPlace">@ 東京</div>
+=======
+                            <div class="main-newReviewDate">{{$item->live_date}}</div>
+                            <div class="main-newReviewPerformerName">{{$item->title}}</div>
+                            <!-- <div class="main-newReviewPlace">{{$item->venue}}</div>    -->
+>>>>>>> 5c56c15902e4199307e641708311c57db8101433
                         </div>
                         <div id="main-newReview-lowerColumn">
                             <input id="openCloseCheckBox" type="checkbox" />
