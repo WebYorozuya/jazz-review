@@ -1,282 +1,578 @@
 /* 共通部分 */
 body {
-    display: flex;
-    flex-direction: column;
-    width: 1140px;
-    width: 100%;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-color:#f6f6f4;
-    font-family: fantasy, -apple-system, "Segoe UI", "Helvetica Neue",
-    "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;/* margin:0; */
-  }
-  
-header {
-    /* height: 80px; */
-    background-color: #0378a6;
-  }
-  
-  .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* height: 80px; */
-    max-width: 1100px;
-    padding: 0px 16p;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .header-start {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  
-  .header-siteName {
-    flex: 1;
-    /* padding: 0px 16px 0px 0px; */
-    min-width: 100px;
-  }
-  
-  .siteLogo {
-    height: 60px;
-    margin-top: 8px;
-    /* margin: 10px; */
-  }
-  
-  .header-search {
-  }
-  
-  .search-units {
-    font-weight: bold;
-    color: #333333;
-    background-color: #fff;
-    border: 1px solid #333333;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .header-search-btn {
-    display: none;
-  }
-  
-  .header-search-text {
-    border: none;
-    background: rgba(255, 255, 255, 0);
-    height: 20px;
-    width: 150px;
-  }
-  
-  .search-box {
-    display: flex;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .header-end {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 20px;
-  }
-  
-  .header-post {
-    flex: 1;
-    display: flex;
-    justify-content: row;
-    min-width: 40px;
-  }
-  
-  .editImg {
-    margin: 5px;
-  }
-  
-  .header-post-btn {
-    display: block;
-    color: #ffffff;
-  }
-  
-  .header-loginUser {
-    flex: 1;
-    display: flex;
-    justify-content: row;
-    min-width: 70px;
-  }
-  
-  .userMaleImg {
-    border: 1px solid #ffffff;
-    border-radius: 20px;
-    margin: 5px;
-  }
-  
-  .header-loginUser-btn {
-    display: block;
-    margin: 5px 30px 5px 0px;
-    color: #ffffff;
-  }
-  
-  /* review.php */
-  .home {
-    padding: 32px 16px 0px 16px;
-    flex: 1;
-  }
-  
-  .home-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    max-width: 1100px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 300px;
-    position: sticky;
-    top: 1em;
-  }
-  
-  .pc-nav {
-  }
-  
-  nav ul {
-    padding: 0px;
-    width: 100%;
-    list-style: none;
-    text-align: center;
-    font-size: 15px;
-  }
-  
-  nav ul li {
-  }
-  
-  .li-newInformation,
-  .li-player,
-  .li-livehouse,
-  .li-reviewer {
-    text-decoration: none;
-    padding: 20px 10px;
-    display: flex;
-    flex-direction: row;
-    color: black;
-  }
-  
-  .li-newInformationImg,
-  .li-playerImg,
-  .li-livehouseImg,
-  .li-reviewerImg {
-    margin-right: 10px;
-  }
-  
-  .mobile-nav {
-    display: none;
-  }
-  
-  .pulldown {
-    display: none;
-  }
-  
-  .pulldown-select {
-    display: none;
-  }
-
-
-  .main-container {
-    width: 50%;
-    margin: 20px 0;
-    padding: 30px;
-    background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 1140px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  color: rgb(51, 51, 51);
+  font-family: fantasy, -apple-system, "Segoe UI", "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
 }
 
-.main-container h1 {
-    text-align: center;
-    font-size: 25px;
-    font-weight: 800;
-    margin-bottom: 50px;
+header {
+  /* height: 80px; */
+  background-color: #0378a6;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* height: 80px; */
+  max-width: 1100px;
+  padding: 0px 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.header-siteName {
+  flex: 1;
+  /* padding: 0px 16px 0px 0px; */
+  min-width: 100px;
+}
+
+.siteLogo {
+  height: 60px;
+  margin-top: 8px;
+  /* margin: 10px; */
+}
+
+#search-units {
+  font-weight: bold;
+  color: rgb(51, 51, 51);
+  background-color: #fff;
+  border: 1px solid #333333;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.header-search-btn {
+  display: none;
+}
+
+#header-search-text {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  height: 20px;
+  width: 150px;
+  font-size: 12px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.header-end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-post {
+  display: flex;
+  align-items: center;
+  background: #2a6897;
+  border-radius: 10px;
+  width: 100px;
+  height: 50px;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.header-post a {
+  display: flex;
+  flex-direction: row;
+  justify-content: column;
+  width: 100%;
+  color: #fff;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header-post a span {
+  display: flex;
+  align-items: center;
+}
+
+.editImg {
+  margin: 5px;
+}
+
+.header-post:hover {
+  opacity: 0.8;
+}
+
+.header-loginUser {
+  flex: 1;
+  display: flex;
+  justify-content: row;
+}
+
+.header-loginUser-acd-label {
+  flex: 1;
+  display: flex;
+  justify-content: row;
+  align-items: center;
+  color: #ffffff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  background: #2a6897;
+  border-radius: 10px;
+  height: 50px;
+  width: 100px;
+}
+
+.header-loginUser-acd-label:hover {
+  opacity: 0.8;
+}
+
+.header-loginUser-acd-content {
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+  display: block;
+  transition: 0.1s;
+  visibility: hidden;
+  position: absolute;
+  top: 60px;
+  width: 100px;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.header-loginUser-acd-content a {
+  text-decoration: none;
+}
+
+.header-loginUser-acd-content-login,
+.header-loginUser-acd-content-logout,
+.header-loginUser-acd-content-account {
+  border: 0.5px solid #dddddd;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 5px;
+  align-items: center;
+  color: rgb(51, 51, 51);
+}
+
+.header-loginUser-acd-content-login:hover,
+.header-loginUser-acd-content-logout:hover,
+.header-loginUser-acd-content-account:hover {
+  background-color: #dddddd;
+}
+
+.header-loginUser-acd-check:checked + .header-loginUser-acd-label:after {
+}
+
+.header-loginUser-acd-check:checked
+  + .header-loginUser-acd-label
+  + .header-loginUser-acd-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.userMaleImg {
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.header-loginUser-btn {
+  display: block;
+  margin: 5px 30px 5px 0px;
+  color: #ffffff;
+  font-size: 12px;
+}
+/* header終了 */
+
+/* メイン全体 */
+.home {
+  display: flex;
+  padding: 50px 0;
+  background-color: #f6f6f4;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 40%;
+  max-width: 1100px;
+  min-height: 100vh;
+  margin-right: auto;
+  margin-left: auto;
+  position: sticky;
+  top: 1em;
+}
+
+.pc-nav {
+}
+
+nav ul {
+  padding: 0 50px;
+  width: 100%;
+  list-style: none;
+  text-align: center;
+}
+
+nav ul li {
+  margin-bottom: 10px;
+}
+
+nav ul li a:hover {
+  background-color: rgb(192, 192, 192, 0.6);
+  border-radius: 8px;
+}
+
+nav ul li img {
+  margin-right: 10px;
+  height: 20px;
+}
+
+.li-newInformation {
+  background-color: #d6e8f0;
+  border-radius: 8px;
+}
+
+.li-newInformation,
+.li-player,
+.li-livehouse,
+.li-reviewer {
+  text-decoration: none;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: row;
+  color: rgb(51, 51, 51);
+  font-size: 12px;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.pulldown {
+  display: none;
+}
+
+.pulldown-select {
+  display: none;
+}
+
+/* レビュー投稿エリア */
+main {
+  flex-grow: 1;
+  width: 100%;
+  min-width: 0;
+}
+
+.main-container {
+  justify-content: center;
+  width: 100%;
+  padding: 30px;
+  background-color: white;
+}
+
+.review-title {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 800;
+  margin-bottom: 50px;
 }
 
 .input-field {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .input-field label {
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    min-width: 150px;
-    font-size: 20px;
-    font-weight: 600;
-    color: #0f1813;
+  width: 100%;
+  min-width: 150px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  min-width: 150px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .input-field p {
-    margin: 0;
+  margin: 0;
 }
 
 .input-field input,
 .input-field select,
 .input-field textarea {
-    display: flex;
-    display: inline-block;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px 5px;
-    border: 1px solid rgb(131, 152, 182);
-    border-radius: 7px;
-    font-size: 15px;
-    margin: 5px;
-  }
+  width: 100%;
+  padding: 10px 5px;
+  border: 1px solid rgb(131, 152, 182);
+  border-radius: 7px;
+  font-size: 15px;
+  margin: 5px;
+}
+
 .title:after,
 .review:after {
-    content: " *";
-    color: red;
-    }
+  content: " *";
+  color: red;
+}
 
 textarea {
-    resize: vertical;
-  }
- 
+  resize: vertical;
+}
+
 .input-field .input-date {
-    text-align: center;
-    width: 50%;
-    padding: 10px;
-    border: 1px solid rgb(131, 152, 182);
-    border-radius: 7px;
-    font-size: 15px;
-    margin: 5px;
+  text-align: center;
+  width: 50%;
+  padding: 10px;
+  border: 1px solid rgb(131, 152, 182);
+  border-radius: 7px;
+  font-size: 15px;
+  margin: 5px;
 }
 
 .input-field select {
-    display: inline-block;
-    text-align: center;
-    width: 30%;
-    font-size: 20px;
+  display: inline-block;
+  text-align: center;
+  width: 30%;
+  font-size: 20px;
 }
 
 .upload {
-    display: flex;
-    justify-content: center;
-    width: 80px;
-    margin: 20px 0 0 auto;
-    padding: 10px 20px;
-    background-color: #9b9b9b;
-    color: #ffffff;
-    border-radius: 7px;
-    font-size: 15px;
+  display: flex;
+  justify-content: center;
+  width: 80px;
+  margin: 20px 0 0 auto;
+  padding: 10px 20px;
+  background-color: #9b9b9b;
+  color: #ffffff;
+  border-radius: 7px;
+  font-size: 15px;
 }
 
+aside {
+  width: 30%;
+  position: relative;
+  z-index: 20;
+  background-color: #f6f6f4;
+}
 
+/* .ad1 {
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid transparent;
+    background-color: #fff;
+  } */
 
+/* .ad2 {
+    height: 300px;
+    width: 260px;
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid transparent;
+    background-color: #fff;
+  } */
 
- 
+footer {
+  position: relative;
+  height: 20px;
+  z-index: 40;
+  background-color: #f6f6f4;
+  color: #0f1813;
+}
+
+@media screen and (max-width: 1000px) {
+  .right-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  aside {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body,
+  nav,
+  aside {
+    width: 100%;
+  }
+
+  .siteLogo {
+    /* margin: 10px; */
+  }
+
+  #header-search-text {
+    position: absolute;
+    top: 80px;
+    left: 30px;
+    width: 300px;
+    height: 30px;
+    z-index: 1;
+    display: none;
+  }
+
+  .home {
+    padding: 0px 16px 0px 16px;
+    flex: 1;
+  }
+
+  .home-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+  }
+
+  nav ul li {
+    width: 33.3%;
+    padding-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  nav ul li a span {
+    font-size: 5px;
+  }
+
+  .li-newInformation,
+  .li-player,
+  .li-livehouse,
+  .li-reviewer {
+    width: 120px;
+    text-decoration: none;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    color: rgb(51, 51, 51);
+    font-size: 10px;
+  }
+
+  aside {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .header-start {
+    padding-left: 0px;
+  }
+
+  .siteLogo {
+    width: 100px;
+    /* margin: 10px; */
+  }
+
+  .header-middle {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .mobile-nav-form {
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+  }
+
+  .pulldown {
+    height: 20px;
+    width: 200px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+
+  .pulldown-option {
+    height: 20px;
+    width: 200px;
+  }
+
+  .pulldown-select {
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    margin: 3px;
+    height: 14px;
+    width: 25px;
+    background-color: #cccccc;
+    text-align: center;
+    vertical-align: center;
+  }
+
+  .mobile-nav p {
+    margin: 5px;
+  }
+
+  .pulldown {
+    display: block;
+  }
+
+  footer {
+    height: 300px;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pulldown-select {
+    display: block;
+  }
+
+  .pc-nav {
+    display: none;
+  }
+}
