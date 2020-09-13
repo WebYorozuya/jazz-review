@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="styles.css">
     <title>Jazz Log</title>
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
 </head>
 
 <body class="UI_Build_Assistant">
@@ -28,8 +28,7 @@
             </div>
             <div class="header-end">
                 <div class="header-post">
-                    <img src="images/icons8-edit-24-black.png" class="editImg">
-                    <input class="header-post-btn" type="submit" name="post" value="投稿">
+                    <a href="/post"><img src="images/icons8-edit-24-white.png" class="editImg"><span>投稿する</span></a>
                 </div>
                 <div class="flex-center position-ref full-height">
                 <img src="images/icons8-user-male-30-black.png" class="userMaleImg">
