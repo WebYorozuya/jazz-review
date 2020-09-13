@@ -187,6 +187,11 @@ header {
   visibility: visible;
 }
 
+input[type="checkbox"] {
+  position: absolute;
+  left: -100vw;
+}
+
 .userMaleImg {
   border: 1px solid #ffffff;
   border-radius: 20px;
