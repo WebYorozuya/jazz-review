@@ -30,12 +30,7 @@
             </div>
             <div class="header-end">
                 <div class="header-post">
-<<<<<<< HEAD
-                    <img src="images/icons8-edit-24-white.png" class="editImg">
-                    <input class="header-post-btn" type="submit" name="post" value="投稿">
-=======
                     <a href="/post"><img src="images/icons8-edit-24-white.png" class="editImg"><span>投稿する</span></a>
->>>>>>> 5c56c15902e4199307e641708311c57db8101433
                 </div>
                 @if (Route::has('login'))
                 <div class="header-loginUser">
@@ -110,6 +105,7 @@
                     </div>
                     <div class="main-newReview-title">新着順</div>
                     <div class="main-newReview">
+                    @foreach ($items as $item)
                         <div class="main-newReview-upperColumn">
                             <div class="main-newReview-upperColumn-left">
                                 <div class="main-newReviewerFig">
@@ -127,15 +123,9 @@
                             </div>
                         </div>
                         <div class="main-newReview-middleColumn">
-<<<<<<< HEAD
-                            <div class="main-newReviewDate">2020/8/26</div>
-                            <div class="main-newReviewPerformerName">演奏者名</div>
-                            <div class="main-newReviewPlace">@ 東京</div>
-=======
                             <div class="main-newReviewDate">{{$item->live_date}}</div>
                             <div class="main-newReviewPerformerName">{{$item->title}}</div>
                             <!-- <div class="main-newReviewPlace">{{$item->venue}}</div>    -->
->>>>>>> 5c56c15902e4199307e641708311c57db8101433
                         </div>
                         <div id="main-newReview-lowerColumn">
                             <input id="openCloseCheckBox" type="checkbox" />
@@ -151,6 +141,7 @@
                                 <img src="images/icons8-double-up-24-black.png" id="closeImg">
                             </div>
                         </div>
+                        @endforeach
                     </div>
                     <div class="main-newReview">
                         <div class="main-newReview-upperColumn">
@@ -301,6 +292,7 @@
                         </div>
                     </div>
                     <div class="main-newReview">
+                     
                         <div class="main-newReview-upperColumn">
                             <div class="main-newReview-upperColumn-left">
                                 <div class="main-newReviewerFig">
@@ -336,6 +328,7 @@
                                 <img src="images/icons8-double-up-24-black.png" id="closeImg">
                             </div>
                         </div>
+                        
                     </div>
                     <div class="main-upload-btns">
                         <a href="" class="main-upload-backBtn">
