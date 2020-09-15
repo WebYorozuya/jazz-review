@@ -13,11 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// });
-//トップページの呼び出し。PostControllerのindexを呼び出す postではなくgetだ
-Route::get('/', 'PostController@index');
+//トップページの呼び出し
+//Route::get('/', 'PostController@index');
+//model追加
+Route::get('/', 'ReviewController@index');
 
 Auth::routes();
 
@@ -28,5 +27,7 @@ Route::get('post', 'PostController@post');
 
 //投稿内容をDBへ登録
 Route::post('insert', 'PostController@create');
+
+
 
 
