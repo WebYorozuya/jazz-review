@@ -37,10 +37,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-}
+//}
 
-class User extends Model //かく追加
-{
+//class User extends Model //かく追加 //<--エラー出たので上のclassの中に入れてみた。実験中。あとで整理。でも表示できたぽい
+//{
     //
     public function review() //reviewメソッド
     {//reviewsテーブルとのリレーション。おそらく投稿者一覧ページで使える

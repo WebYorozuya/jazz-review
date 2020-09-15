@@ -17,7 +17,12 @@ class Review extends Model
 
     public function user()
     {
-        return $this->belongTo('App\User'); //主テーブルusersへの関連付け
+        return $this->belongsTo('App\User'); //主テーブルusersへの関連付け
+    }
+
+    public function getData()
+    {
+        return $this->user->name;
     }
 }
 
