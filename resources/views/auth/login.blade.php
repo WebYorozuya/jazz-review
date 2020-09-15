@@ -1,17 +1,30 @@
-@extends('layouts.app')
+@extends('layouts.loginscene')
 
-@section('content')
-<div class="container">
+@section('title','ログイン画面')
+
+@section('content') 
+
+<body class="UI_Build_Assistant">
+  <header>
+      <div class="header-container">  
+          <div class="header-siteName">
+            <a href="#"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
+          </div>
+      </div>
+  </header>  
+<div class="main">
+    <h1>Jazz Log にログイン</h1>
+
+  <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
 
-                <div class="card-body">
+                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="form-group row">
+                        <div class="login_form">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
@@ -25,7 +38,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="login_form">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
@@ -65,9 +78,13 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
+                </div>   
         </div>
     </div>
+ </div>
 </div>
 @endsection
+
+<footer>
+    <p><small> &copy; Jazz Log </small></p>
+  </footer>
