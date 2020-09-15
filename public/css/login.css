@@ -41,6 +41,7 @@ header {
   
   .form-check-label {
     margin-bottom: 0;
+    justify-content: flex-end;
   }
   .navbar-brand {
     display: inline-block;
@@ -59,14 +60,14 @@ header {
     margin-right: auto !important;
     /* position: fixed; */
     justify-content: flex-end;
-    display: flex;
   }
 
   .ml-auto,
   .mx-auto {
     margin-right: auto !important;
-    position: fixed; 
     justify-content: flex-end;
+    position: fixed; 
+    
     
   }
 
