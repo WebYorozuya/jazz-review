@@ -111,7 +111,7 @@
                                 <div class="main-newReviewerFig">
                                     <img src="images/icons8-user-male-30-black.png" class="main-userMaleImg">
                                 </div>
-                                <div class="main-newReviewerName">mike</div>
+                                <div class="main-newReviewerName">{{$item->getData()}}</div>
                             </div>
 
                             <div class="main-newReview-upperColumn-right">
