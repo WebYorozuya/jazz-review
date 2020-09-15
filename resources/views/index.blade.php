@@ -130,10 +130,7 @@
                         <div id="main-newReview-lowerColumn">
                             <input id="openCloseCheckBox" type="checkbox" />
                             <div id="main-newReviewText">
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                            {{$item->text}}
                             </div>
 
                             <div id="main-newReviewOpenClose">
@@ -143,4 +140,45 @@
                         </div>
                     </div>
                     @endforeach
-                    
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-left">
+                <a href="#"><img src="images/JazzLog-logo-white.png" class="footer-siteLogo"></a>
+                    <div class="footer-subTitle">♪♪ Jazz for all people ♪♪</div>
+                </div>
+            </div>
+            <div class="footer-right">
+            <a href="#" class="footer-right-information1">お問い合わせ</a>
+                <a href="#" class="footer-right-information2">利用規約</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        const openCloseBtn = document.getElementById("main-newReviewOpenClose");
+        
+        function openClose() {
+            
+            const oI = document.getElementById("openImg");
+            const cI = document.getElementById("closeImg");
+            const checkbox = document.getElementById("openCloseCheckBox")
+            const newReviewTextHeight = document.querySelector("#main-newReviewText");
+            const textHeight = newReviewTextHeight.getBoundingClientRect().height;
+            if (checkbox.checked == true) {
+                checkbox.checked = false;
+                oI.style.display = "block";
+                cI.style.display = "none";
+                newReviewTextHeight.style.height = (textHeight - 50) + "px";
+            } else {
+                checkbox.checked = true;            
+                oI.style.display = "none";
+                cI.style.display = "block";
+                newReviewTextHeight.style.height = (textHeight + 50) + "px";
+            }
+        }
+        openCloseBtn.addEventListener("click", openClose, false);
+    </script>
+</body>
+</html>
