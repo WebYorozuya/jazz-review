@@ -21,3 +21,4 @@ class Review extends Model
         return $this->id . ': ' . $this->title;
     }
 }
+
