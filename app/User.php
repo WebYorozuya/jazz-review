@@ -47,3 +47,4 @@ class User extends Model //かく追加
         return $this->hasMany('App\Review'); //hasManyメソッド
     }
 
+}
