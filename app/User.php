@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model; //かく追加Model
 
 class User extends Authenticatable
 {
@@ -37,3 +38,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+
+class User extends Model //かく追加
+{
+    //
+    public function review() //reviewメソッド
+    {//reviewsテーブルとのリレーション。おそらく投稿者一覧ページで使える
+        return $this->hasMany('App\Review'); //hasManyメソッド
+    }
+
