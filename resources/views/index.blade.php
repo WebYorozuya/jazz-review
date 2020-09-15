@@ -140,6 +140,18 @@
                         </div>
                     </div>
                     @endforeach
+                </main>
+                <aside>
+                    <a href="#">
+                        <div class="ad1">advertisement1</div>
+                    </a>
+                    <a href="#">
+                        <div class="ad2">advertisement2</div>
+                    </a>
+                </aside>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-container">
@@ -155,7 +167,7 @@
             </div>
         </div>
     </footer>
-    
+
     <script>
         const openCloseBtn = document.getElementById("main-newReviewOpenClose");
         
