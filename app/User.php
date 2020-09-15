@@ -42,5 +42,8 @@ class User extends Authenticatable
 class User extends Model //かく追加
 {
     //
-}
+    public function review() //reviewメソッド
+    {//reviewsテーブルとのリレーション。おそらく投稿者一覧ページで使える
+        return $this->hasMany('App\Review'); //hasManyメソッド
+    }
 
