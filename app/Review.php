@@ -15,10 +15,9 @@ class Review extends Model
         'message' => 'required'
     );
 
-    //データの内容をテキストで返す
-    public function getData()
+    public function user()
     {
-        return $this->id . ': ' . $this->title;
+        return $this->belongTo('App\User'); //主テーブルusersへの関連付け
     }
 }
 
