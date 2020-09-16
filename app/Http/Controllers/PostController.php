@@ -8,12 +8,14 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-    public function index(Request $request)
-    {
-        $items = DB::select('select * from reviews');
-        return view('index', ['items' => $items]);
-    }
+    //ReviewControllerへ移動
+    // public function index(Request $request)
+    // {
+    //     $items = DB::select('select * from reviews');
+    //     return view('index', ['items' => $items]);
+    // }
 
+    //投稿ページを呼び出す
     public function post(Request $request) {
         $data = [
             'user'=>'ゲスト',
@@ -21,7 +23,7 @@ class PostController extends Controller
         return view('post', $data);
     }
 
-    //formの値を取得しよう
+    //formの値を取得してDBにレコード追加
     public function create(Request $request) {
         $param = [
             'live_date' => $request->live_date,
