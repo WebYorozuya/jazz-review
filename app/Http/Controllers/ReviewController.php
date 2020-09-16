@@ -15,7 +15,12 @@ class ReviewController extends Controller
     //投稿ページを表示
     public function post(Request $request)
     {
-        return('post');
+        if (Auth::user()) { //ログインユーザー情報取得
+            $user = Auth::user()->id;
+        } else {
+            $user = 'ゲスト';
+        }
+        return view('post', ['user' => $user]);
     }
     //フォームの値を取得しDBにレコード挿入
     public function create(Request $request)
