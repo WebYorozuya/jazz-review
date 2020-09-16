@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Review; //追加
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth; //post用に追加
 
 class ReviewController extends Controller
 {
@@ -16,7 +17,7 @@ class ReviewController extends Controller
     public function post(Request $request)
     {
         if (Auth::user()) { //ログインユーザー情報取得
-            $user = Auth::user()->id;
+            $user = Auth::user();
         } else {
             $user = 'ゲスト';
         }
