@@ -36,7 +36,7 @@
                 <div class="header-loginUser">
                     <img src="images/icons8-user-male-30-white.png" class="userMaleImg">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">こんにちは、{{$user}}さん</a>
                     @else
                     <a href="{{ route('login') }}">Login</a>
                     <img src="images/icons8-user-male-30-white.png" class="userMaleImg">
