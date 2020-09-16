@@ -21,10 +21,10 @@ class ReviewController extends Controller
     public function create(Request $request)
     {
         $this->validate($request, Review::$rules); //バリデーションの実行
-        $board = new Review; //Reviewインスタンス作成
+        $review = new Review; //Reviewインスタンス作成
         $form = $request->all(); //送信されたフォームの値を保管
         unset($form['_token']); //CSRF非表示フィールド_token削除
-        $board->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
+        $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
         return redirect('/'); //トップページへ
     }
 
