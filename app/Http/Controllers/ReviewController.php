@@ -3,20 +3,25 @@
 namespace App\Http\Controllers;
 use App\Review; //追加
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth; //post用に追加
+use Illuminate\Support\Facades\Auth; //ログインユーザ情報取得用に追加
 
 class ReviewController extends Controller
 {
     //トップページを表示
     public function index(Request $request)
     {
-        $items = Review::all();
-        return view('index', ['items' => $items]);
+        $items = Review::all(); //reviewsテーブルから取得
+        if (Auth::user()) { //ログインユーザ情報取得
+            $user = Auth::user()->name;
+        } else {
+            $user = 'ゲスト';
+        }
+        return view('index', ['items' => $items, 'user' => $user]);
     }
     //投稿ページを表示
     public function post(Request $request)
     {
-        if (Auth::user()) { //ログインユーザー情報取得
+        if (Auth::user()) { //ログインユーザ情報取得
             $user = Auth::user();
         } else {
             $user = 'ゲスト';
