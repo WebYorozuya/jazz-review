@@ -9,11 +9,51 @@ body {
   flex-direction: column;
   outline: 1px solid;
   color: rgb(51, 51, 51);
-  /* margin:0; */
+  background-color: #f6f6f4;
 }
 
+input[type="checkbox"] {
+  position: absolute;
+  left: -100vw;
+}
+
+.closeImg {
+  width: 15px;
+  margin: 3px;
+  display: none;
+  background-color: #fff;
+}
+
+.openImg {
+  width: 15px;
+  margin: 3px;
+  background-color: #fff;
+}
+
+.editImg {
+  margin: 5px;
+}
+
+.userMaleImg {
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.main-userMaleImg {
+  border: 1px solid #111111;
+  border-radius: 20px;
+  margin: 0px 5px 0px 5px;
+}
+
+.loginSortDownImg {
+  height: 15px;
+}
+
+/* 共通情報 おわり*/
+
+/* ヘッダー部分 */
 header {
-  /* height: 80px; */
   background-color: #0378a6;
 }
 
@@ -21,32 +61,30 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* height: 80px; */
   max-width: 1100px;
   padding: 0px 16px;
   margin-left: auto;
   margin-right: auto;
 }
-
+/* ヘッダー左部分 */
 .header-start {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-
+/* サイトロゴ */
 .header-siteName {
   flex: 1;
-  /* padding: 0px 16px 0px 0px; */
   min-width: 100px;
 }
 
 .siteLogo {
   height: 60px;
   margin-top: 8px;
-  /* margin: 10px; */
 }
 
+/* 検索機能 */
 #search-units {
   font-weight: bold;
   color: rgb(51, 51, 51);
@@ -74,13 +112,15 @@ header {
   align-items: center;
   text-align: center;
 }
-
+/* ヘッダー左部分 おわり */
+/* ヘッダー右部分 */
 .header-end {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* 投稿機能 */
 .header-post {
   display: flex;
   align-items: center;
@@ -107,24 +147,23 @@ header {
   align-items: center;
 }
 
-.editImg {
-  margin: 5px;
-}
-
 .header-post:hover {
   opacity: 0.8;
 }
 
+/* ログイン機能 */
 .header-loginUser {
   flex: 1;
   display: flex;
   justify-content: row;
 }
 
+/* ログイン機能のアコーディオンメニュー */
 .header-loginUser-acd-label {
   flex: 1;
   display: flex;
   justify-content: row;
+  justify-content: center;
   align-items: center;
   color: #ffffff;
   font-size: 12px;
@@ -133,7 +172,7 @@ header {
   background: #2a6897;
   border-radius: 10px;
   height: 50px;
-  width: 100px;
+  width: 80px;
 }
 
 .header-loginUser-acd-label:hover {
@@ -148,7 +187,7 @@ header {
   visibility: hidden;
   position: absolute;
   top: 60px;
-  width: 100px;
+  width: 95px;
   z-index: 50;
   display: flex;
   flex-direction: column;
@@ -188,26 +227,21 @@ header {
   visibility: visible;
 }
 
-.userMaleImg {
-  border: 1px solid #ffffff;
-  border-radius: 20px;
-  margin: 5px;
-}
-
 .header-loginUser-btn {
   display: block;
   margin: 5px 30px 5px 0px;
   color: #ffffff;
   font-size: 12px;
 }
+/* ログイン機能のアコーディオンメニュー おわり*/
+/* ログイン機能 おわり */
+/* ヘッダー部分 おわり */
 
+/* ホーム部分(index.html,tagpage.html,userpage.html) */
 .home {
   padding: 32px 16px 0px 16px;
   flex: 1;
   background-color: #f6f6f4;
-}
-
-.home-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -220,13 +254,15 @@ header {
   display: flex;
   flex-direction: row;
   width: 100%;
+  background-color: #f6f6f4;
 }
 
+/* ナビゲーション (index.html,tagpage.html,userpage.html)*/
 nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 200px;
+  width: 300px;
   position: sticky;
   top: 1em;
   margin-right: 10px;
@@ -244,37 +280,12 @@ nav ul {
 
 nav ul li {
   margin-bottom: 10px;
-}
-
-nav ul li a:hover {
-  background-color: rgb(192, 192, 192, 0.6);
-  border-radius: 8px;
+  font-size: 12px;
 }
 
 nav ul li img {
   margin-right: 10px;
   height: 20px;
-}
-
-.li-newInformation {
-  background-color: #d6e8f0;
-  border-radius: 8px;
-}
-
-.li-newInformation,
-.li-player,
-.li-livehouse,
-.li-reviewer {
-  text-decoration: none;
-  padding: 20px 10px;
-  display: flex;
-  flex-direction: row;
-  color: rgb(51, 51, 51);
-  font-size: 12px;
-}
-
-.mobile-nav {
-  display: none;
 }
 
 .pulldown {
@@ -285,12 +296,120 @@ nav ul li img {
   display: none;
 }
 
+/*ナビゲーション (index.html) */
+.top-li-newInformation {
+  text-decoration: none;
+  background-color: #0378a6;
+  border-radius: 8px;
+  color: #fff;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.top-li-newInformation:hover {
+  background-color: #01648b;
+  border-radius: 8px;
+}
+
+.top-li-player,
+.top-li-livehouse {
+  text-decoration: none;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: row;
+  color: rgb(51, 51, 51);
+  font-size: 12px;
+}
+
+.top-li-player:hover,
+.top-li-livehouse:hover {
+  background-color: rgb(192, 192, 192, 0.6);
+  border-radius: 8px;
+}
+/*ナビゲーション (index.html)おわり */
+/*ナビゲーション (tagpage.html) */
+
+.tagPage-li-player {
+  text-decoration: none;
+  background-color: #0378a6;
+  border-radius: 8px;
+  color: #fff;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.tagPage-li-player:hover {
+  background-color: #01648b;
+  border-radius: 8px;
+}
+
+.tagPage-li-newInformation,
+.tagPage-li-livehouse {
+  text-decoration: none;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: row;
+  color: rgb(51, 51, 51);
+  font-size: 12px;
+}
+
+.tagPage-li-newInformation:hover,
+.tagPage-li-livehouse:hover {
+  background-color: rgb(192, 192, 192, 0.6);
+  border-radius: 8px;
+}
+/*ナビゲーション (tagpage.html)おわり */
+
+/* ナビゲーション (userpage.html) */
+
+.userPage-li-livehouse {
+  text-decoration: none;
+  background-color: #0378a6;
+  border-radius: 8px;
+  color: #fff;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.userPage-li-livehouse:hover {
+  background-color: #01648b;
+  border-radius: 8px;
+}
+
+.userPage-li-newInformation,
+.userPage-li-player {
+  text-decoration: none;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: row;
+  color: rgb(51, 51, 51);
+  font-size: 12px;
+}
+
+.userPage-li-newInformation:hover,
+.userPage-li-player:hover {
+  background-color: rgb(192, 192, 192, 0.6);
+  border-radius: 8px;
+}
+/* ナビゲーション (userpage.html)おわり */
+
+/* メイン部分 (index.html,tagpage.html,userpage.html)*/
 main {
   flex-grow: 1;
   min-width: 0;
 }
 
-/* uploadボタン*/
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #ffffff;
+}
+
+/* uploadボタン (index.html,tagpage.html,userpage.html)*/
 .main-upload-btns {
   display: flex;
   flex-direction: row;
@@ -332,38 +451,41 @@ main {
 
 .main-upload-btns a:hover span {
 }
+/* uploadボタン (index.html,tagpage.html,userpage.html) おわり*/
 
-/* uploadボタン終わり*/
-
+/* main 新着レビュー欄(index.html)*/
+/* 新着情報 (index.html)*/
 .main-newReview-title {
   text-align: center;
+}
+
+/* 新着投稿 上段(index.html) */
+.main-newReview-upperColumn {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 20;
+  background-color: #fff;
+}
+
+/* 新着投稿 上段左(index.html)*/
+.main-newReview-upperColumn-left {
+  display: flex;
+  flex-direction: row;
+  width: 160px;
+  height: 40px;
 }
 
 .main-newReview {
   display: flex;
   flex-direction: column;
-  border: 1px solid transparent;
+  border: 1px solid #f6f6f4;
 }
 
 .main-userMaleImg {
   border: 1px solid rgb(51, 51, 51);
   border-radius: 20px;
   margin: 5px;
-}
-
-.main-newReview-upperColumn {
-  display: flex;
-  justify-content: space-between;
-  background-color: #ffffff;
-  position: relative;
-  z-index: 20;
-}
-
-.main-newReview-upperColumn-left {
-  display: flex;
-  flex-direction: row;
-  width: 160px;
-  height: 40px;
 }
 
 .main-newReviewerFig {
@@ -381,6 +503,7 @@ main {
   height: 40px;
 }
 
+/* 新着投稿 上段右(index.html)*/
 .main-newReview-upperColumn-right {
   display: flex;
   flex-direction: row;
@@ -425,6 +548,14 @@ main {
   align-items: flex-start;
   font-size: 12px;
 }
+/* 新着投稿 上段(index.html) おわり*/
+/* 新着投稿 中段(index.html)*/
+.main-newReview-middleColumn {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+}
 
 .main-newReviewDate {
   height: 30px;
@@ -442,19 +573,8 @@ main {
   min-width: 100px;
   padding: 5px;
 }
-
-input[type="checkbox"] {
-  position: absolute;
-  left: -100vw;
-}
-
-.main-newReview-middleColumn {
-  background-color: #fff;
-  display: flex;
-  flex-direction: row;
-  font-size: 12px;
-}
-
+/* 新着投稿 中段(index.html) おわり*/
+/* 新着投稿 下段(index.html)*/
 .main-newReview-lowerColumn {
   display: flex;
   flex-direction: row;
@@ -472,18 +592,202 @@ input[type="checkbox"] {
   transition: height 0.2s 0.1s;
 }
 
-#openImg {
-  width: 15px;
-  background-color: #fff;
-}
-
-#closeImg {
-  width: 15px;
-  display: none;
-  background-color: #fff;
-}
-
 .main-newReviewOpenClose {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #fff;
+}
+
+#openCloseCheckBox {
+}
+/* 新着投稿 下段(index.html) おわり*/
+/* main 新着レビュー欄(index.html) おわり*/
+
+/* main ユーザー情報欄（userpage.html) */
+/* ユーザーレビュー情報（userpage.html)*/
+.main-userinfo {
+  display: flex;
+  flex-direction: row;
+  align-self: space-between;
+  background-color: white;
+  border: 1px solid #f6f6f4;
+}
+
+.main-userinfo-upperColumn-left {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  flex: 1;
+}
+
+.main-userinfo-userName {
+  height: 50px;
+  padding: 10px 0px 0px 20px;
+  font-weight: 800;
+}
+
+.main-userinfo-post {
+  color: rgb(51, 51, 51);
+  display: flex;
+  flex-direction: row;
+}
+
+.main-userinfo-postNumberText {
+  margin: 10px 0px 0px 30px;
+}
+
+.main-userinfo-postNumberCounter {
+  margin: 10px 10px 0px 5px;
+}
+
+.main-userinfo-tagFollowListText {
+  padding: 10px 0px 0px 30px;
+}
+
+.main-userinfo-tagFollowList-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-userinfo-upperColumn-right {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.main-userinfo-MaleImg {
+  width: 100px;
+  height: 100px;
+  margin: 30px;
+  border: 1px solid #333;
+  border-radius: 50px;
+}
+
+/* ユーザー欄 上段（userpage.html) */
+.main-reviewText{
+  border: 2px solid #f6f6f4;
+}
+
+.main-reviewText-upperColumn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.main-reviewText-upperColumn-left {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+
+.main-reviewText-upperColumn-right {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  padding-right: 20px;
+}
+
+.main-liveDate {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* 投稿の編集・削除・報告のアコーディオンメニュー （userpage.html) */
+.main-reviewText-acd-label {
+  flex: 1;
+  display: flex;
+  justify-content: row;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.main-reviewText-acd-label:hover {
+  opacity: 0.8;
+}
+
+.main-reviewText-acd-content {
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+  display: block;
+  transition: 0.1s;
+  visibility: hidden;
+  position: relative;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.main-reviewText-acd-content a {
+  text-decoration: none;
+}
+
+.main-reviewText-acd-content-edit,
+.main-reviewText-acd-content-delete,
+.main-reviewText-acd-content-report {
+  border: 0.5px solid #dddddd;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 5px;
+  align-items: center;
+  color: rgb(51, 51, 51);
+}
+
+.main-reviewText-acd-content-edit:hover,
+.main-reviewText-acd-content-delete:hover,
+.main-reviewText-acd-content-report:hover {
+  background-color: #dddddd;
+}
+
+.main-reviewText-acd-check:checked + .main-reviewText-acd-label:after {
+}
+
+.main-reviewText-acd-check:checked
+  + .main-reviewText-acd-label
+  + .main-reviewText-acd-content {
+  opacity: 1;
+  visibility: visible;
+}
+/* 投稿の編集・削除・報告のアコーディオンメニュー （userpage.html)おわり */
+/* ユーザー欄 上段（userpage.html) おわり */
+/* ユーザーレビュー欄 中段（userpage.html) */
+.main-reviewText-middleColumn {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-reviewText-upperColumn-right {
+  padding: 5px;
+}
+
+.main-reviewText-upperColumn-right img {
+  width: 15px;
+}
+
+#main-reviewText {
+  height: 20px;
+  flex: 1;
+  font-size: 15px;
+  background-color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  padding: 0px 20px;
+  transition: height 0.2s 0.1s;
+}
+
+.main-reviewOpenClose {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -494,8 +798,341 @@ input[type="checkbox"] {
 .openCloseCheckBox {
 }
 
-/* index.php end*/
+/* ユーザーレビュー欄 中段（userpage.html) おわり */
+/* ユーザーレビュー欄 下段（userpage.html) */
+.main-reviewText-lowerColumn {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  justify-content: flex-end;
+}
 
+.reviewDate {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  padding: 0px 5px 0px 5px;
+}
+
+.main-reviewText-reviewDate {
+  height: 30px;
+  min-width: 100px;
+  padding: 5px;
+}
+
+.main-reviewText-lowerColumn img {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  margin: 5px 0px 5px 5px;
+}
+
+.main-reviewText-lowerColumn:hover img {
+  background-color: rgb(255, 200, 200);
+  border-radius: 10px;
+  transition: background-color 0.8s;
+}
+
+.main-reviewText-lowerColumn span {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 30px;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 6px;
+  margin-right: 30px;
+}
+
+.main-reviewText-lowerColumn:hover span {
+  color: rgb(255, 200, 200);
+  transition: color 0.8s;
+}
+/* ユーザーレビュー欄 下段（userpage.html) おわり*/
+/* main ユーザー情報欄（userpage.html) おわり */
+
+/* ライブハウス情報 （tagpage.html)*/
+.main-livehouse {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border: 1px solid #f6f6f4;
+}
+
+.main-livehouse-upperColumn-left {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.livehouseName {
+  height: 50px;
+  width: 100%;
+  padding: 20px 0px 0px 20px;
+  font-weight: 800;
+}
+
+.main-livehouse-upperColumn-left a {
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+}
+
+.livehouse-homepage-link {
+  margin: 30px 0px 0px 30px;
+}
+
+.livehouse-address {
+  margin: 20px 0px 0px 30px;
+}
+
+.main-livehouse-upperColumn-right {
+  margin: 0;
+  padding: 0;
+}
+
+iframe {
+  width: 300px;
+  height: 300px;
+  margin:10px;
+}
+
+/* ライブハウスレビュー欄 上段（tagpage.html) */
+.main-reviewText-upperColumn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.main-reviewText-upperColumn-left {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+
+.main-reviewText-upperColumn-right {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  padding-right: 20px;
+}
+
+.main-reviewText-upperColumn-right img {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+}
+
+.main-reviewText-upperColumn-right:hover img {
+  background-color: rgb(255, 200, 200);
+  border-radius: 10px;
+  transition: background-color 0.8s;
+}
+
+.main-reviewText-upperColumn-right span {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 30px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.main-reviewText-upperColumn-right:hover span {
+  color: rgb(255, 200, 200);
+  transition: color 0.8s;
+}
+
+.main-liveDate {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* ライブハウスレビュー欄 上段（tagpage.html)おわり */
+/* ライブハウスレビュー欄 中段（tagpage.html) */
+.main-reviewText-middleColumn {
+  display: flex;
+  flex-direction: row;
+}
+
+#main-reviewText {
+  height: 20px;
+  flex: 1;
+  font-size: 15px;
+  background-color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  padding: 0px 20px;
+  transition: height 0.2s 0.1s;
+}
+
+.main-reviewOpenClose {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #fff;
+}
+
+.openCloseCheckBox {
+}
+/* ライブハウスレビュー欄 中段（tagpage.html)おわり */
+/* ライブハウスレビュー欄 下段（tagpage.html) */
+.main-reviewText-lowerColumn {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  justify-content: flex-end;
+}
+
+.reviewDate {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  padding: 0px 5px 0px 5px;
+}
+
+.main-reviewText-reviewDate {
+  height: 30px;
+  min-width: 100px;
+  padding: 5px;
+}
+
+.main-reviewerName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  width: 100px;
+  font-size: 12px;
+}
+/* ライブハウスレビュー欄 下段（tagpage.html)おわり */
+/* main ライブハウス情報 （tagpage.html)おわり */
+
+/* メイン部分(tag.html) */
+.tag-home {
+  padding: 32px 16px 0px 16px;
+  background-color: #f6f6f4;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-tag-title {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.main-tag-title span {
+  margin-right: 20px;
+}
+
+.comment-text {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0px 20px 20px 20px;
+}
+
+.main-list {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  min-height: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
+  flex:1;
+}
+
+.main-list-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 30px;
+}
+
+.main-list-row-left,
+.main-list-row-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex:1;
+}
+
+.TagList-item {
+  min-height: 20px;
+}
+
+.TagList-item a {
+  text-decoration: none;
+}
+
+.TagList-label::before {
+  content: "BLUE NOTE";
+  background-color: #cccccc;
+  color: rgb(51, 51, 51);
+  min-height: 20px;
+  width: 10px;
+  border-radius: 50px;
+  padding-left: 10px;
+}
+
+.TagList-label {
+  background-color: #cccccc;
+  min-height: 20px;
+  width: 15px;
+  font-size: 10px;
+}
+
+.TagList-label::after {
+  content: "1445";
+  background-color: #333333;
+  color: #fff;
+  min-height: 20px;
+  min-width: 20px;
+  font-size: 10px;
+  padding: 0px 5px 0px 5px;
+  border: none;
+  text-decoration: none;
+}
+
+/* uploadボタン(tag.html)*/
+.tag-main-upload-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.tag-main-upload-btns a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  border-style: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: inherit;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #cccccc;
+}
+
+.tag-main-upload-btns a:hover {
+  background-color: #d6e8f0;
+  transition: background-color 0.8s;
+}
+/* uploadボタン(tag.html) おわり*/
+/*  メイン部分(tag.html) おわり*/
+
+/* 広告エリア */
 aside {
   width: 300px;
   position: relative;
@@ -523,8 +1160,8 @@ aside {
   background-color: #fff;
 } */
 
+/* フッター関連 */
 footer {
-  /* margin-top: 15px; */
   height: 200px;
   outline: 1px solid #0f1813;
   background-color: #0f1813;
@@ -568,35 +1205,38 @@ footer {
   color: white;
 }
 
-.information1:hover, .information2:hover {
+.information1:hover,
+.information2:hover {
   text-decoration-line: underline;
-  text-decoration-color: #FFF;
+  text-decoration-color: #fff;
   text-decoration-style: solid;
   text-decoration-thickness: 4px;
 }
+/* フッター関連おわり */
 
+/* 以下レシポンシブ対応 */
 @media screen and (max-width: 1000px) {
+  /* ホーム関連 */
   .right-container {
     display: flex;
     flex-direction: column;
   }
 
+  /* 広告関連 */
   aside {
     width: 100%;
   }
 }
 
 @media screen and (max-width: 700px) {
+  /* 全体 */
   body,
   nav,
   aside {
     width: 100%;
   }
 
-  .siteLogo {
-    /* margin: 10px; */
-  }
-
+  /* ヘッダー関連 */
   #header-search-text {
     position: absolute;
     top: 80px;
@@ -607,18 +1247,18 @@ footer {
     display: none;
   }
 
+  /* ホーム関連*/
   .home {
     padding: 0px 16px 0px 16px;
     flex: 1;
-  }
-
-  .home-container {
     display: flex;
     flex-direction: column;
   }
 
+  /* ナビゲーション関連 */
   nav {
     position: relative;
+    margin-bottom:30px;
   }
 
   nav ul {
@@ -638,37 +1278,59 @@ footer {
     font-size: 5px;
   }
 
-  .li-newInformation,
-  .li-player,
-  .li-livehouse,
-  .li-reviewer {
-    width: 120px;
-    text-decoration: none;
-    padding: 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
-    color: rgb(51, 51, 51);
-    font-size: 10px;
+  /* メイン関連（tag.html) */
+  .main-tag-title {
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 
+  .main-list-row {
+    display: flex;
+    flex-direction: column;
+    min-height: 42px;
+  }
+
+  .main-list-row-left,
+  .main-list-row-right {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  /* 広告部分 */
   aside {
     display: flex;
   }
 }
 
 @media screen and (max-width: 470px) {
+  /* ヘッダー関連 */
   .header-start {
     padding-left: 0px;
   }
 
   .siteLogo {
     width: 100px;
-    /* margin: 10px; */
   }
 
   .header-middle {
+    display: none;
+  }
+
+  /* メイン関連 */
+  .main-list {
+    margin-bottom: 50px;
+  }
+
+  .main-list-row-left,
+  .main-list-row-right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* nav関連 */
+  .pc-nav {
     display: none;
   }
 
@@ -682,8 +1344,12 @@ footer {
     flex-direction: row;
     font-size: 10px;
   }
+  .mobile-nav p {
+    margin: 5px;
+  }
 
   .pulldown {
+    display: block;
     height: 20px;
     width: 200px;
     background-color: #ffffff;
@@ -697,6 +1363,7 @@ footer {
   }
 
   .pulldown-select {
+    display: block;
     display: flex;
     justify-content: column;
     align-items: center;
@@ -708,14 +1375,7 @@ footer {
     vertical-align: center;
   }
 
-  .mobile-nav p {
-    margin: 5px;
-  }
-
-  .pulldown {
-    display: block;
-  }
-
+  /* フッター関連 */
   footer {
     height: 300px;
   }
@@ -723,13 +1383,5 @@ footer {
   .footer-container {
     display: flex;
     flex-direction: column;
-  }
-
-  .pulldown-select {
-    display: block;
-  }
-
-  .pc-nav {
-    display: none;
   }
 }

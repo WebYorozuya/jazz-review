@@ -24,17 +24,18 @@
                         <img src="images/icons8-search-24.png" class="searchImg">
                         <input id="header-search-text" type="search" name="search" placeholder="キーワードで検索">
                         <input id="header-search-text-checkBox" type="checkbox" />
-                    </div>
+                    </div><!-- /#search-units" -->
                 </from>
-            </div>
+            </div><!-- /.header-start -->
             <div class="header-end">
                 <div class="header-post">
                     <a href="#"><img src="images/icons8-edit-24-white.png" class="editImg"><span>投稿する</span></a>
-                </div>
+                </div><!-- /.header-post -->
                 <div class="header-loginUser">
                     <input id="header-loginUser-acd-check" class="header-loginUser-acd-check" type="checkbox">
-                    <label class="header-loginUser-acd-label" for="header-loginUser-acd-check"> <img
-                            src="images/icons8-user-male-30-white.png" class="userMaleImg"><span>ログイン</span></label>
+                    <label class="header-loginUser-acd-label" for="header-loginUser-acd-check">
+                        <img src="images/icons8-user-male-30-white.png" class="userMaleImg">
+                        <img src="images/icons8-sort-down-24-white.png" class="loginSortDownImg"></label>
                     <div class="header-loginUser-acd-content">
                         <a href="#">
                             <div class="header-loginUser-acd-content-login">ログイン</div>
@@ -45,211 +46,100 @@
                         <a href="#">
                             <div class="header-loginUser-acd-content-account">アカウント登録</div>
                         </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </div><!-- /.header-loginUser-acd-content -->
+                </div><!-- /.header-loginUser -->
+            </div><!-- /.header-end -->
+        </div><!-- /.header-container -->
     </header>
     <div class="home">
+        <nav>
+            <ul class="pc-nav">
+                <li>
+                    <a href="#" class="top-li-newInformation"><img
+                            src="images/icons8-music-24-white.png"><span>新着レビュー</span></a>
+                </li>
+                <li>
+                    <a href="#" class="top-li-player"><img
+                            src="images/icons8-myspace-24-black.png"><span>レビュワータグ</span></a>
+                </li>
+                <li>
+                    <a href="#" class="top-li-livehouse"><img
+                            src="images/icons8-home-24-black.png"><span>ライブハウスタグ</span></a>
+                </li>
+            </ul><!-- /.pc-nav -->
+            <div class="mobile-nav">
+                <form method="get" action="" class="mobile-nav-form">
+                    <div class="pulldown">
+                        <select name="pulldown" class="pulldown-option" required>
+                            <option value="">選択してください</option>
+                            <option value="選択肢1">新着順</option>
+                            <option value="選択肢2">プレイヤー</option>
+                            <option value="選択肢3">ライブハウス</option>
+                        </select>
+                    </div>
+                    <div class="pulldown-select">
+                        <input type="submit" value="選択">
+                    </div>
+                </form>
+            </div><!-- /.mobile-nav -->
 
-        <div class="home-container">
-            <nav>
-                <ul class="pc-nav">
-                    <li>
-                        <a href="#" class="li-newInformation"><img
-                                src="images/icons8-music-24-black.png"><span>新着レビュー</span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="li-player"><img
-                                src="images/icons8-myspace-24-black.png"><span>レビュワータグ</span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="li-livehouse"><img
-                                src="images/icons8-home-24-black.png"><span>ライブハウスタグ</span></a>
-                    </li>
-                </ul>
-                <div class="mobile-nav">
-                    <form method="get" action="" class="mobile-nav-form">
-                        <div class="pulldown">
-                            <select name="pulldown" class="pulldown-option" required>
-                                <option value="">選択してください</option>
-                                <option value="選択肢1">新着順</option>
-                                <option value="選択肢2">プレイヤー</option>
-                                <option value="選択肢3">ライブハウス</option>
-                            </select>
-                        </div>
-                        <div class="pulldown-select">
-                            <input type="submit" value="選択">
-                        </div>
-                    </form>
+        </nav>
+        <div class="right-container">
+            <main>
+                <div class="main-upload-btns">
+                    <a href="#"><img src="images/icons8-back-24-black.png"><span>前の10件</span></a>
+                    <a href="#"><span>次の10件</span><img src="images/icons8-forward-24-black.png"></a>
                 </div>
+                <div class="main-newReview-title">新着順</div>
+                <div class="main-newReview">
+                    <div class="main-newReview-upperColumn">
+                        <div class="main-newReview-upperColumn-left">
+                            <div class="main-newReviewerFig">
+                                <img src="images/icons8-user-male-30-black.png" class="main-userMaleImg">
+                            </div>
+                            <div class="main-newReviewerName">mike</div>
+                        </div><!-- /.main-newReview-upperColumn-left -->
 
-            </nav>
-            <div class="right-container">
-                <main>
-                    <div class="main-upload-btns">
-                        <a href="#"><img src="images/icons8-back-24-black.png"><span>前の10件</span></a>
-                        <a href="#"><span>次の10件</span><img src="images/icons8-forward-24-black.png"></a>
-                    </div>
-                    <div class="main-newReview-title">新着順</div>
-                    <div class="main-newReview">
-                        <div class="main-newReview-upperColumn">
-                            <div class="main-newReview-upperColumn-left">
-                                <div class="main-newReviewerFig">
-                                    <img src="images/icons8-user-male-30-black.png" class="main-userMaleImg">
-                                </div>
-                                <div class="main-newReviewerName">mike</div>
+                        <div class="main-newReview-upperColumn-right">
+                            <div class="main-newReviewEvaluation">
+                                <img src="images/icons8-like-24-black.png">
+                                <span>16</span>
                             </div>
-
-                            <div class="main-newReview-upperColumn-right">
-                                <div class="main-newReviewEvaluation">
-                                    <img src="images/icons8-like-24-black.png">
-                                    <span>16</span>
-                                </div>
-                                <div class="main-newReviewUploadDate">2days ago</div>
-                            </div>
+                            <div class="main-newReviewUploadDate">2days ago</div>
+                        </div><!-- /.main-newReview-upperColumn-right -->
+                    </div><!-- /.main-newReview-upperColumn -->
+                    <div class="main-newReview-middleColumn">
+                        <div class="main-newReviewDate">2020/8/26</div>
+                        <div class="main-newReviewPerformerName">演奏者名</div>
+                        <div class="main-newReviewPlace">@ 東京</div>
+                    </div><!-- /.main-newReview-middleColumn -->
+                    <div class="main-newReview-lowerColumn">
+                        <input id="openCloseCheckBox" type="checkbox" />
+                        <p id="main-newReviewText">
+                            最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                            最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                            最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                            最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
+                        </p>
+                        <div class="main-newReviewOpenClose">
+                            <img src="images/icons8-double-down-24-black.png" class="openImg">
+                            <img src="images/icons8-double-up-24-black.png" class="closeImg">
                         </div>
-                        <div class="main-newReview-middleColumn">
-                            <div class="main-newReviewDate">2020/8/26</div>
-                            <div class="main-newReviewPerformerName">演奏者名</div>
-                            <div class="main-newReviewPlace">@ 東京</div>
-                        </div>
-                        <div class="main-newReview-lowerColumn">
-                            <input id="openCloseCheckBox" type="checkbox" />
-                            <div id="main-newReviewText">
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                            </div>
-                            <div class="main-newReviewOpenClose">
-                                <img src="images/icons8-double-down-24-black.png" id="openImg">
-                                <img src="images/icons8-double-up-24-black.png" id="closeImg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-newReview">
-                        <div class="main-newReview-upperColumn">
-                            <div class="main-newReview-upperColumn-left">
-                                <div class="main-newReviewerFig">
-                                    <img src="images/icons8-user-male-30-black.png" class="main-userMaleImg">
-                                </div>
-                                <div class="main-newReviewerName">mike</div>
-                            </div>
-
-                            <div class="main-newReview-upperColumn-right">
-                                <div class="main-newReviewEvaluation">
-                                    <img src="images/icons8-like-24-black.png">
-                                    <span>16</span>
-                                </div>
-                                <div class="main-newReviewUploadDate">2days ago</div>
-                            </div>
-                        </div>
-                        <div class="main-newReview-middleColumn">
-                            <div class="main-newReviewDate">2020/8/26</div>
-                            <div class="main-newReviewPerformerName">演奏者名</div>
-                            <div class="main-newReviewPlace">@ 東京</div>
-                        </div>
-                        <div class="main-newReview-lowerColumn">
-                            <input id="openCloseCheckBox" type="checkbox" />
-                            <div id="main-newReviewText">
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                            </div>
-                            <div class="main-newReviewOpenClose">
-                                <img src="images/icons8-double-down-24-black.png" id="openImg">
-                                <img src="images/icons8-double-up-24-black.png" id="closeImg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-newReview">
-                        <div class="main-newReview-upperColumn">
-                            <div class="main-newReview-upperColumn-left">
-                                <div class="main-newReviewerFig">
-                                    <img src="images/icons8-user-male-30-black.png" class="main-userMaleImg">
-                                </div>
-                                <div class="main-newReviewerName">mike</div>
-                            </div>
-
-                            <div class="main-newReview-upperColumn-right">
-                                <div class="main-newReviewEvaluation">
-                                    <img src="images/icons8-like-24-black.png">
-                                    <span>16</span>
-                                </div>
-                                <div class="main-newReviewUploadDate">2days ago</div>
-                            </div>
-                        </div>
-                        <div class="main-newReview-middleColumn">
-                            <div class="main-newReviewDate">2020/8/26</div>
-                            <div class="main-newReviewPerformerName">演奏者名</div>
-                            <div class="main-newReviewPlace">@ 東京</div>
-                        </div>
-                        <div class="main-newReview-lowerColumn">
-                            <input id="openCloseCheckBox" type="checkbox" />
-                            <div id="main-newReviewText">
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                            </div>
-                            <div class="main-newReviewOpenClose">
-                                <img src="images/icons8-double-down-24-black.png" id="openImg">
-                                <img src="images/icons8-double-up-24-black.png" id="closeImg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-newReview">
-                        <div class="main-newReview-upperColumn">
-                            <div class="main-newReview-upperColumn-left">
-                                <div class="main-newReviewerFig">
-                                    <img src="images/icons8-user-male-30-black.png" class="main-userMaleImg">
-                                </div>
-                                <div class="main-newReviewerName">mike</div>
-                            </div>
-
-                            <div class="main-newReview-upperColumn-right">
-                                <div class="main-newReviewEvaluation">
-                                    <img src="images/icons8-like-24-black.png">
-                                    <span>16</span>
-                                </div>
-                                <div class="main-newReviewUploadDate">2days ago</div>
-                            </div>
-                        </div>
-                        <div class="main-newReview-middleColumn">
-                            <div class="main-newReviewDate">2020/8/26</div>
-                            <div class="main-newReviewPerformerName">演奏者名</div>
-                            <div class="main-newReviewPlace">@ 東京</div>
-                        </div>
-                        <div class="main-newReview-lowerColumn">
-                            <input id="openCloseCheckBox" type="checkbox" />
-                            <div id="main-newReviewText">
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                            </div>
-                            <div class="main-newReviewOpenClose">
-                                <img src="images/icons8-double-down-24-black.png" id="openImg">
-                                <img src="images/icons8-double-up-24-black.png" id="closeImg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-upload-btns">
-                        <a href=""><img src="images/icons8-back-24-black.png"><span>前の10件</span></a>
-                        <a href=""><span>次の10件</span><img src="images/icons8-forward-24-black.png"></a>
-                    </div>
-                </main>
-                <aside>
-                    <!-- <a href="#">
+                    </div><!-- /.main-newReview-lowerColumn -->
+                </div><!-- /.main-newReview -->
+                <div class="main-upload-btns">
+                    <a href=""><img src="images/icons8-back-24-black.png"><span>前の10件</span></a>
+                    <a href=""><span>次の10件</span><img src="images/icons8-forward-24-black.png"></a>
+                </div><!-- /.main-upload-btns -->
+            </main>
+            <aside>
+                <!-- <a href="#">
                         <div class="ad1">advertisement1</div>
                     </a>
                     <a href="#">
                         <div class="ad2">advertisement2</div>
                     </a> -->
-                </aside>
-            </div>
+            </aside>
         </div>
     </div>
     <footer>
@@ -259,21 +149,22 @@
                     <a href="#"><img src="images/JazzLog-logo-white.png" class="footer-siteLogo"></a>
                     <div class="footer-subTitle">♪♪ Jazz for all people ♪♪</div>
                 </div>
-            </div>
+            </div><!-- /.footer-left -->
             <div class="footer-right">
                 <a href="#" class="information1">お問い合わせ</a>
                 <a href="#" class="information2">利用規約</a>
-            </div>
-        </div>
+            </div><!-- /.footer-right -->
+        </div><!-- /.footer-container -->
     </footer>
     <script>
+        'use strict';
 
         //ボタンを押すことで開閉する機能
         let openCloseBtn = document.getElementsByClassName("main-newReviewOpenClose");
 
         function openClose(event) {
-            const oI = document.getElementById("openImg");
-            const cI = document.getElementById("closeImg");
+            const oI = document.getElementsByClassName("openImg");
+            const cI = document.getElementsByClassName("closeImg");
             const checkbox = document.getElementById("openCloseCheckBox");
             const newReviewTextHeight = document.querySelector("#main-newReviewText");
             const textHeight = newReviewTextHeight.getBoundingClientRect().height;
@@ -283,37 +174,36 @@
                 oI.style.display = "block";
                 cI.style.display = "none";
                 newReviewTextHeight.style.height = (textHeight - 50) + "px";
-
             } else {
                 checkbox.checked = true;
-                oI.style.display = "none";
-                cI.style.display = "block";
+                // oI.style.display = "none";
+                // cI.style.display = "block";
                 newReviewTextHeight.style.height = (textHeight + 50) + "px";
             }
         }
 
-        for (i = 0; i < openCloseBtn.length; i++) {
+        for (let i = 0; i < openCloseBtn.length; i++) {
             openCloseBtn[i].addEventListener("click", openClose, false);
         }
 
-        //ボタンを押すことでテキストのshow,hideを切り替える。
-        let headerSearch = document.getElementsByClassName("header-search");
+        // //ボタンを押すことでテキストのshow,hideを切り替える。
+        // let headerSearch = document.getElementsByClassName("header-search");
 
-        function headerSearchTextShow() {
-            const headerSearchTextCheckbox = document.getElementById("header-search-text-checkBox");
-            const headerSearchText = document.getElementById("header-search-text");
+        // function headerSearchTextShow() {
+        //     const headerSearchTextCheckbox = document.getElementById("header-search-text-checkBox");
+        //     const headerSearchText = document.getElementById("header-search-text");
 
-            if (headerSearchTextCheckbox.checked == true) {
-                headerSearchTextCheckbox.checked = false;
-                headerSearchText.style.display = "none";
-            } else {
-                headerSearchTextCheckbox.checked = true;
-                headerSearchText.style.display = "block";
-            }
-        }
+        //     if (headerSearchTextCheckbox.checked == true) {
+        //         headerSearchTextCheckbox.checked = false;
+        //         headerSearchText.style.display = "none";
+        //     } else {
+        //         headerSearchTextCheckbox.checked = true;
+        //         headerSearchText.style.display = "block";
+        //     }
+        // }
 
-        headerSearch.addEventListener("click", headerSearchTextShow, false);
-        
+        // headerSearch.addEventListener("click", headerSearchTextShow, false);
+
     </script>
 </body>
 

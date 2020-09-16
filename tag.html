@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="tag.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Jazz Log</title>
 </head>
 
@@ -16,24 +16,25 @@
             <div class="header-start">
                 <div class="header-siteName">
                     <a href="#"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
-                </div>
+                </div><!-- /.header-siteName -->
                 <from class="header-search" action="cgi-bin/example.cgi" method="post">
                     <div id="search-units">
                         <input class="header-search-btn" type="submit" name="submit" value="">
                         <img src="images/icons8-search-24.png" class="searchImg">
                         <input id="header-search-text" type="search" name="search" placeholder="キーワードで検索">
                         <input id="header-search-text-checkBox" type="checkbox" />
-                    </div>
+                    </div><!-- /.search-units -->
                 </from>
-            </div>
+            </div><!-- /.header-start -->
             <div class="header-end">
                 <div class="header-post">
                     <a href="#"><img src="images/icons8-edit-24-white.png" class="editImg"><span>投稿する</span></a>
-                </div>
+                </div><!-- /.header-post -->
                 <div class="header-loginUser">
                     <input id="header-loginUser-acd-check" class="header-loginUser-acd-check" type="checkbox">
-                    <label class="header-loginUser-acd-label" for="header-loginUser-acd-check"> <img
-                            src="images/icons8-user-male-30-white.png" class="userMaleImg"><span>ログイン</span></label>
+                    <label class="header-loginUser-acd-label" for="header-loginUser-acd-check">
+                        <img src="images/icons8-user-male-30-white.png" class="userMaleImg">
+                        <img src="images/icons8-sort-down-24-white.png" class="loginSortDownImg"></label>
                     <div class="header-loginUser-acd-content">
                         <a href="#">
                             <div class="header-loginUser-acd-content-login">ログイン</div>
@@ -44,569 +45,1524 @@
                         <a href="#">
                             <div class="header-loginUser-acd-content-account">アカウント登録</div>
                         </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </div><!-- /.header-loginUser-acd-content -->
+                </div><!-- /.header-loginUser -->
+            </div><!-- /.header-end -->
+        </div><!-- /.header-container -->
     </header>
-    <div class="home">
-        <main>
-            <div class="main-tag-title">
-                <span>タグ一覧</span>
-                <div class="page-number">1ページ目
-                </div>
-            </div>
-            <div class="main-tag-comment">
-                <div class="comment-text">Jazz Logに登録されているタグの一覧です。 Jazz Logでは毎日様々なライブハウスの投稿がされています。 気になるタグを探してフォローしてみましょう。</div>
-            </div>
-            <div class="main-upload-btns">
-                <a href="#"><img src="images/icons8-back-24-black.png"></a>
-                <a href="#"><img src="images/icons8-forward-24-black.png"></a>
-            </div>
-            <div class="main-list">
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+    <div class="tag-home">
+        <div class="main-tag-title">
+            <span>タグ一覧</span>
+            <div class="page-number">1ページ目</div>
+        </div><!-- /.main-tag-title -->
+        <div class="main-tag-comment">
+            <div class="comment-text">Jazz Logに登録されているタグの一覧です。 Jazz Logでは毎日様々なライブハウスの投稿がされています。
+                気になるタグを探してフォローしてみましょう。</div>
+        </div><!-- /.main-tag-comment -->
+        <div class="tag-main-upload-btns">
+            <a href="#"><img src="images/icons8-back-24-black.png"></a>
+            <a href="#"><img src="images/icons8-forward-24-black.png"></a>
+        </div><!-- /.tag-main-upload-btns -->
+        <div class="main-list">
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-                <div class="main-list-row">
-                    <div class="main-list-row-left">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>     
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                    <div class="main-list-row-right">
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img> 
-                            </a>
-                        </div>
-                        <div class="TagList-item" data-count="#">
-                            <a class="TagList-label" href="#">
-                                <img>
-                            </a>
-                        </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
                     </div>
-                </div>
-            
-                
-
-            </div>
-            <div class="main-upload-btns">
-                <a href="#"><img src="images/icons8-back-24-black.png"></a>
-                <a href="#"><img src="images/icons8-forward-24-black.png"></a>
-            </div>
-        </main>
-    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+            <div class="main-list-row">
+                <div class="main-list-row-left">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-left -->
+                <div class="main-list-row-right">
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                    <div class="TagList-item" data-count="#">
+                        <a class="TagList-label" href="#">
+                            <img>
+                        </a>
+                    </div>
+                </div><!-- /.main-list-row-right -->
+            </div><!-- /.main-list-row -->
+        </div><!-- main-list -->
+        <div class="tag-main-upload-btns">
+            <a href="#"><img src="images/icons8-back-24-black.png"></a>
+            <a href="#"><img src="images/icons8-forward-24-black.png"></a>
+        </div><!-- tag-main-upload-btns -->
+    </div><!-- tag-home -->]
     <footer>
         <div class="footer-container">
             <div class="footer-left">
-                <div class="footer-left">
-                    <a href="#"><img src="images/JazzLog-logo-white.png" class="footer-siteLogo"></a>
-                    <div class="footer-subTitle">♪♪ Jazz for all people ♪♪</div>
-                </div>
-            </div>
+                <a href="#"><img src="images/JazzLog-logo-white.png" class="footer-siteLogo"></a>
+                <div class="footer-subTitle">♪♪ Jazz for all people ♪♪</div>
+            </div><!-- footer-left -->
             <div class="footer-right">
                 <a href="#" class="information1">お問い合わせ</a>
                 <a href="#" class="information2">利用規約</a>
-            </div>
-        </div>
+            </div><!-- footer-right -->
+        </div><!-- footer-container -->
     </footer>
     <script>
         //ボタンを押すことでテキストのshow,hideを切り替える。
@@ -616,7 +1572,7 @@
             const headerSearchTextCheckbox = document.getElementById("header-search-text-checkBox");
             const headerSearchText = document.getElementById("header-search-text");
 
-            if(headerSearchTextCheckbox.checked == true) {
+            if (headerSearchTextCheckbox.checked == true) {
                 headerSearchTextCheckbox.checked = false;
                 headerSearchText.style.display = "none";
             } else {
@@ -625,7 +1581,7 @@
             }
         }
 
-        headerSearch.addEventListener("click", headerSearchTextShow, false); 
+        headerSearch.addEventListener("click", headerSearchTextShow, false);
 
     </script>
 </body>

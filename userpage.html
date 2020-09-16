@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="userpage.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Jazz Log</title>
 </head>
 
@@ -26,7 +26,7 @@
                         <input id="header-search-text-checkBox" type="checkbox" />
                     </div>
                 </from>
-            </div>
+            </div><!-- /.header-start -->
             <div class="header-end">
                 <div class="header-post">
                     <a href="#"><img src="images/icons8-edit-24-white.png" class="editImg"><span>投稿する</span></a>
@@ -46,24 +46,25 @@
                         <a href="#">
                             <div class="header-loginUser-acd-content-account">アカウント登録</div>
                         </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </div><!-- /.header-loginUser-acd-content -->
+                </div><!-- /.header-loginUser -->
+            </div><!-- /.header-end -->
+        </div><!-- /.header-container -->
     </header>
     <div class="home">
         <nav>
             <ul class="pc-nav">
                 <li>
-                    <a href="#" class="li-newInformation"><img
+                    <a href="#" class="userPage-li-newInformation"><img
                             src="images/icons8-music-24-black.png"><span>新着レビュー</span></a>
                 </li>
                 <li>
-                    <a href="#" class="li-player"><img src="images/icons8-myspace-24-black.png"><span>レビュワータグ</span></a>
+                    <a href="#" class="userPage-li-player"><img
+                            src="images/icons8-myspace-24-black.png"><span>レビュワータグ</span></a>
                 </li>
                 <li>
-                    <a href="#" class="li-livehouse"><img
-                            src="images/icons8-home-24-black.png"><span>ライブハウスタグ</span></a>
+                    <a href="#" class="userPage-li-livehouse"><img
+                            src="images/icons8-home-24-white.png"><span>ライブハウスタグ</span></a>
                 </li>
             </ul>
             <div class="mobile-nav">
@@ -80,8 +81,7 @@
                         <input type="submit" value="選択">
                     </div>
                 </form>
-            </div>
-
+            </div><!-- /.mobile-nav -->
         </nav>
         <div class="right-container">
             <main>
@@ -92,11 +92,37 @@
                             <div class="main-userinfo-postNumberText">投稿記事数:</div>
                             <div class="main-userinfo-postNumberCounter">132</div>
                         </div>
-                    </div>
+                        <div class="main-userinfo-tagFollowList">
+                            <p class="main-userinfo-tagFollowListText">フォロー中のタグ</p>
+                            <div class="main-userinfo-tagFollowList-row">
+                                <div class="tagFollowList-item" data-count="#">
+                                    <a class="tagFollowList-label" href="#">
+                                        <img>
+                                    </a>
+                                </div>
+                                <div class="tagFollowList-item" data-count="#">
+                                    <a class="tagFollowList-label" href="#">
+                                        <img>
+                                    </a>
+                                </div>
+                                <div class="tagFollowList-item" data-count="#">
+                                    <a class="tagFollowList-label" href="#">
+                                        <img>
+                                    </a>
+                                </div>
+                                <div class="tagFollowList-item" data-count="#">
+                                    <a class="tagFollowList-label" href="#">
+                                        <img>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.main-userinfo-upperColumn-left -->
                     <div class="main-userinfo-upperColumn-right">
                         <img src="images/icons8-user-male-120-black.png" class="main-userinfo-MaleImg">
                     </div>
-                </div>
+                </div><!-- /.main-userinfo -->
+
                 <div class="main-reviewText">
                     <div class="main-reviewText-upperColumn">
                         <div class="main-reviewText-upperColumn-left">
@@ -104,7 +130,7 @@
                             <div class="main-livePerformerName">演奏者名</div>
                         </div>
                         <div class="main-reviewText-upperColumn-right">
-                           
+
 
                             <input id="main-reviewText-acd-check" class="main-reviewText-acd-check" type="checkbox">
                             <label class="main-reviewText-acd-label" for="main-reviewText-acd-check">
@@ -120,9 +146,9 @@
                                     <div class="main-reviewText-acd-content-report">報告する</div>
                                 </a>
                             </div>
-                        </div>
+                        </div><!-- /.main-reviewText-upperColumn-right -->
 
-                    </div>
+                    </div><!-- /.main-reviewText-upperColumn -->
 
                     <div class="main-reviewText-middleColumn">
                         <input id="openCloseCheckBox" type="checkbox" />
@@ -133,8 +159,8 @@
                             最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
                         </div>
                         <div class="main-reviewOpenClose">
-                            <img src="images/icons8-double-down-24-black.png" id="openImg">
-                            <img src="images/icons8-double-up-24-black.png" id="closeImg">
+                            <img src="images/icons8-double-down-24-black.png" class="openImg">
+                            <img src="images/icons8-double-up-24-black.png" class="closeImg">
                         </div>
                     </div>
                     <div class="main-reviewText-lowerColumn">
@@ -142,57 +168,11 @@
                         <span>16</span>
                         <div class="reviewDate">2020/9/13 18:35</div>
                     </div>
-                    <div class="main-reviewText">
-                        <div class="main-reviewText-upperColumn">
-                            <div class="main-reviewText-upperColumn-left">
-                                <div class="main-liveDate">2020/8/26 17:30-18:00</div>
-                                <div class="main-livePerformerName">演奏者名</div>
-                            </div>
-                            <div class="main-reviewText-upperColumn-right">
-                               
-    
-                                <input id="main-reviewText-acd-check" class="main-reviewText-acd-check" type="checkbox">
-                                <label class="main-reviewText-acd-label" for="main-reviewText-acd-check">
-                                    <img src='images/icons8-menu-24.png' class="menuTab"></label>
-                                <div class="main-reviewText-acd-content">
-                                    <a href="#">
-                                        <div class="main-reviewText-acd-content-edit">編集する</div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="main-reviewText-acd-content-delete">削除する</div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="main-reviewText-acd-content-report">報告する</div>
-                                    </a>
-                                </div>
-                            </div>
-    
-                        </div>
-    
-                        <div class="main-reviewText-middleColumn">
-                            <input id="openCloseCheckBox" type="checkbox" />
-                            <div id="main-reviewText">
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                                最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
-                            </div>
-                            <div class="main-reviewOpenClose">
-                                <img src="images/icons8-double-down-24-black.png" id="openImg">
-                                <img src="images/icons8-double-up-24-black.png" id="closeImg">
-                            </div>
-                        </div>
-                        <div class="main-reviewText-lowerColumn">
-                            <img src="images/icons8-like-24-black.png">
-                            <span>16</span>
-                            <div class="reviewDate">2020/9/13 18:35</div>
-                        </div>
-                </div>
-
-                <div class="main-upload-btns">
-                    <a href=""><img src="images/icons8-back-24-black.png"><span>前の10件</span></a>
-                    <a href=""><span>次の10件</span><img src="images/icons8-forward-24-black.png"></a>
-                </div>
+                    <div class="main-upload-btns">
+                        <a href="#"><img src="images/icons8-back-24-black.png"><span>前の10件</span></a>
+                        <a href="#"><span>次の10件</span><img src="images/icons8-forward-24-black.png"></a>
+                    </div>
+                </div> <!-- /main-reviewText -->
             </main>
             <aside>
                 <!-- <a href="#">
@@ -216,7 +196,7 @@
                 <a href="#" class="information1">お問い合わせ</a>
                 <a href="#" class="information2">利用規約</a>
             </div>
-        </div>
+        </div> <!-- /.footer-container -->
     </footer>
     <script>
 
