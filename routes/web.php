@@ -23,7 +23,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //投稿画面の表示
-Route::get('post', 'PostController@post');
+//Route::get('post', 'PostController@post');
+Route::get('post', 'ReviewController@post');
 
 //投稿内容をDBへ登録 
 //Route::post('insert', 'PostController@create');モデル使用により修正
