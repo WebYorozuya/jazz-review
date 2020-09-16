@@ -626,6 +626,7 @@ main {
   height: 50px;
   padding: 10px 0px 0px 20px;
   font-weight: 800;
+  font-size: 23px;
 }
 
 .main-userinfo-post {
@@ -666,7 +667,7 @@ main {
 }
 
 /* ユーザー欄 上段（userpage.html) */
-.main-reviewText{
+.main-reviewText {
   border: 2px solid #f6f6f4;
 }
 
@@ -691,9 +692,8 @@ main {
   padding-right: 20px;
 }
 
-.main-liveDate {
+.main-liveTitle {
   padding-left: 10px;
-  padding-right: 10px;
 }
 
 /* 投稿の編集・削除・報告のアコーディオンメニュー （userpage.html) */
@@ -720,7 +720,8 @@ main {
   display: block;
   transition: 0.1s;
   visibility: hidden;
-  position: relative;
+  position: absolute;
+  top: 295px;
   z-index: 50;
   display: flex;
   flex-direction: column;
@@ -870,6 +871,7 @@ main {
   width: 100%;
   padding: 20px 0px 0px 20px;
   font-weight: 800;
+  font-size: 23px;
 }
 
 .main-livehouse-upperColumn-left a {
@@ -893,7 +895,7 @@ main {
 iframe {
   width: 300px;
   height: 300px;
-  margin:10px;
+  margin: 10px;
 }
 
 /* ライブハウスレビュー欄 上段（tagpage.html) */
@@ -1027,6 +1029,7 @@ iframe {
   flex-direction: row;
   font-size: 20px;
   padding-bottom: 10px;
+  font-weight: 800;
 }
 
 .main-tag-title span {
@@ -1037,25 +1040,27 @@ iframe {
   width: 80%;
   margin-right: auto;
   margin-left: auto;
+  min-height: 100px;
   padding: 0px 20px 20px 20px;
 }
 
 .main-list {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 75%;
   min-height: 500px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 30px;
-  flex:1;
+  flex: 1;
 }
 
 .main-list-row {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 30px;
+  height: 20px;
+  margin-bottom: 20px;
 }
 
 .main-list-row-left,
@@ -1063,48 +1068,35 @@ iframe {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  flex:1;
+  flex: 1;
 }
 
 .TagList-item {
   min-height: 20px;
+  width: 120px;
+  background-color: #cccccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 12px;
 }
 
 .TagList-item a {
   text-decoration: none;
 }
 
-.TagList-label::before {
-  content: "BLUE NOTE";
-  background-color: #cccccc;
+.TagList-label {
   color: rgb(51, 51, 51);
   min-height: 20px;
-  width: 10px;
-  border-radius: 50px;
-  padding-left: 10px;
-}
-
-.TagList-label {
-  background-color: #cccccc;
-  min-height: 20px;
-  width: 15px;
-  font-size: 10px;
-}
-
-.TagList-label::after {
-  content: "1445";
-  background-color: #333333;
-  color: #fff;
-  min-height: 20px;
-  min-width: 20px;
-  font-size: 10px;
-  padding: 0px 5px 0px 5px;
-  border: none;
-  text-decoration: none;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* uploadボタン(tag.html)*/
-.tag-main-upload-btns {
+/* .tag-main-upload-btns {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1128,8 +1120,8 @@ iframe {
 .tag-main-upload-btns a:hover {
   background-color: #d6e8f0;
   transition: background-color 0.8s;
-}
-/* uploadボタン(tag.html) おわり*/
+} */
+/* uploadボタン(tag.html) おわり */
 /*  メイン部分(tag.html) おわり*/
 
 /* 広告エリア */
@@ -1258,7 +1250,7 @@ footer {
   /* ナビゲーション関連 */
   nav {
     position: relative;
-    margin-bottom:30px;
+    margin-bottom: 30px;
   }
 
   nav ul {
@@ -1287,7 +1279,15 @@ footer {
   .main-list-row {
     display: flex;
     flex-direction: column;
-    min-height: 42px;
+    min-height: 80px;
+  }
+
+  .comment-text {
+    min-height: 130px;
+  }
+
+  .TagList-item {
+    margin:10px;
   }
 
   .main-list-row-left,
