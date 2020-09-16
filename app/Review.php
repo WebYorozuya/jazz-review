@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Review extends Model
 {
     //基本的なバリデーションの設定
-    protected $guarded = array('id');
+    //protected $guarded = array('id');
 
     public static $rules = array(
-        'user_id' => 'required',
+        //'user_id' => 'required',
         'title' => 'required',
         'message' => 'required'
     );
