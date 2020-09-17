@@ -54,12 +54,14 @@
     <form action="insert" id="create-account" method="POST">
     @csrf
       @if  (Route::has('login'))
+        @auth
+        <h1>{{$user->name}}さん、ライブの感想を記録しましょう</h1>
+        <input type="hidden" name="user_id" value="{{$user->id}}">
+        @else
         <h1>{{$user}}さん、ライブの感想を記録しましょう</h1>
         <input type="hidden" name="user_id" value="2">
-      @else
-      <h1>{{$user->name}}さん、ライブの感想を記録しましょう</h1>
-        <input type="hidden" name="user_id" value="{{$user->id}}">
       @endif
+      @endauth
         <label for="live_date">ライブに行った日</label>
         <input type="date" id="live_date" name="live_date">
         <label for="title">レビューのタイトル</label>
