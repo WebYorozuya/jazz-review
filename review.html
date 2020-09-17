@@ -138,7 +138,7 @@
       </nav>
       <div class="right-container">
         <!-- レビュー投稿ページ -->
-        <>
+        <main>
           <div class="form_container">
             <form action="insert" id="create-account" method="POST">
               <h1>{{$user}}さん<br />ライブの感想を記録しましょう</h1>
@@ -148,22 +148,34 @@
 
               <div class="input-field">
                 <label for="live_date">ライブに行った日</label>
-                <input type="date" id="live_date" name="live_date" class="input-date" />
-                <label for="live_house">ライブハウス</label>
-                <input type="text" id="live_house" name="live_date" />
+                <input
+                  type="date"
+                  id="live_date"
+                  name="live_date"
+                  class="input-date"
+                />
+              </div>
+              <div class="input-field">
                 <label for="title" class="title">レビューのタイトル</label>
                 <input type="text" id="title" name="title" required />
+              </div>
+              <div class="input-field">
+                <label for="tag" class="tag">タグ</label>
+                <input type="text" id="tag" name="tag" required />
+              </div>
+              <div class="input-field">
                 <label for="text" class="text">ライブの感想</label>
                 <textarea name="text" id="text" cols="30" rows="10"></textarea>
                 <p style="text-align: right; font-size: 0.8rem">
                   （1000文字以内）
                 </p>
-              </div> <!-- /.input-field -->
+              </div>
               <div class="upload">
-                <input type="submit" value="投稿する" />
+                <input type="submit" value="投稿する" class="upload_btn" />
               </div>
             </form>
-          </div> <!-- /.form_container -->
+          </div>
+          <!-- /.form_container -->
         </main>
         <aside>
           <!-- <a href="#">

@@ -436,14 +436,14 @@ main {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .input-field label {
   width: 100%;
   min-width: 150px;
   margin-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   min-width: 150px;
   font-size: 20px;
   font-weight: 600;
@@ -488,16 +488,26 @@ textarea {
 }
 
 .upload {
-  display: flex;
-  justify-content: center;
-  width: 80px;
-  margin: 20px 0 0 auto;
-  padding: 10px 20px;
-  background-color: #9b9b9b;
-  color: #ffffff;
-  border-radius: 7px;
-  font-size: 15px;
+  text-align: center;
+  padding-bottom: 80px;
 }
+
+.upload_btn {
+  width: 30%;
+  height: 50px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow : 5px 5px 6px #666666 ;
+  background-color:  #9b9b9b;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+}
+
 
 aside {
   width: 300px;
