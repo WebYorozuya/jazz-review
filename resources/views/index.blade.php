@@ -110,10 +110,10 @@
             </nav>
             <div class="right-container">
                 <main>
-                    <div class="main-upload-btns">
+                    <!-- <div class="main-upload-btns">
                         <a href="#"><img src="images/icons8-back-24-black.png"><span>前の10件</span></a>
                         <a href="#"><span>次の10件</span><img src="images/icons8-forward-24-black.png"></a>
-                    </div>
+                    </div> -->
                     <div class="main-newReview-title">新着順</div>
                     @foreach ($items as $item)
                     <div class="main-newReview">
