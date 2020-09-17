@@ -7,6 +7,9 @@
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/aaab412f99.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> -->
     <!-- Heroku用 -->
     <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
     <!-- ローカル用 -->
@@ -130,7 +133,9 @@
                                     <img src="images/icons8-like-24-black.png">
                                     <span>16</span>
                                 </div>
-                                <div class="main-newReviewUploadDate">2days ago</div>
+                                <div class="main-newReviewUploadDate">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                </div>
                             </div>
                         </div><!-- /.main-newReview-upperColumn -->
                         <div class="main-newReview-middleColumn">
