@@ -10,7 +10,7 @@ class ReviewController extends Controller
     //トップページを表示
     public function index(Request $request)
     {
-        $items = Review::paginate(5); //reviewsテーブルから取得
+        $items = Review::paginate(10); //reviewsテーブルから取得
         if (Auth::user()) { //ログインユーザ情報取得
             $user = Auth::user()->name;
         } else {
