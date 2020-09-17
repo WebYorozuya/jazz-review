@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- Heroku用 -->
     <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
     <!-- ローカル用 -->
     <!-- <link rel="stylesheet" href="{{asset('css/styles.css')}}"> -->
     <style>
         .pagination {
-            font-size: 12px;
+            font-size: 15px;
         }
         .pagination li {
             display: inline-block;
@@ -110,10 +111,10 @@
             </nav>
             <div class="right-container">
                 <main>
-                    <div class="main-upload-btns">
+                    <!-- <div class="main-upload-btns">
                         <a href="#"><img src="images/icons8-back-24-black.png"><span>前の10件</span></a>
                         <a href="#"><span>次の10件</span><img src="images/icons8-forward-24-black.png"></a>
-                    </div>
+                    </div> -->
                     <div class="main-newReview-title">新着順</div>
                     @foreach ($items as $item)
                     <div class="main-newReview">
