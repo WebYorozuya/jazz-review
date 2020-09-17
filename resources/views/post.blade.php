@@ -63,7 +63,9 @@
       @endif
       @endauth
         <label for="live_date">ライブに行った日</label>
-        <input type="date" id="live_date" name="live_date">
+        <input type="date" id="live_date" name="live_date" value="2020-01-01">
+        <label for="tag">タグ</label>
+        <input type="text" id="tag" name="">
         <label for="title">レビューのタイトル</label>
         <input type="text" id="title" name="title">
         <label for="text">ライブの感想</label>
