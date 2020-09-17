@@ -7,9 +7,9 @@
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <!-- Heroku用 -->
-    <!-- <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}"> -->
+    <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
     <!-- ローカル用 -->
-    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('css/styles.css')}}"> -->
     <title>Jazz Log</title>
 </head>
 
