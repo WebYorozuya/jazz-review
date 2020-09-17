@@ -12,7 +12,7 @@
     <!-- <link rel="stylesheet" href="{{asset('css/styles.css')}}"> -->
     <style>
         .pagination {
-            font-size: 12px;
+            font-size: 15px;
         }
         .pagination li {
             display: inline-block;
