@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>レビュー投稿</title>
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
     <link rel="stylesheet" href="review.css" />
-    <title>レビュー投稿</title>
   </head>
 
   <body class="UI_Build_Assistant">
@@ -39,8 +39,10 @@
               />
               <input id="header-search-text-checkBox" type="checkbox" />
             </div>
+            <!-- /#search-units" -->
           </from>
         </div>
+        <!-- /.header-start -->
         <div class="header-end">
           <div class="header-post">
             <a href="#"
@@ -50,6 +52,7 @@
               /><span>投稿する</span></a
             >
           </div>
+          <!-- /.header-post -->
           <div class="header-loginUser">
             <input
               id="header-loginUser-acd-check"
@@ -62,9 +65,11 @@
             >
               <img
                 src="images/icons8-user-male-30-white.png"
-                class="userMaleImg"
-              /><span>ログイン</span></label
-            >
+                class="userMaleImg" />
+              <img
+                src="images/icons8-sort-down-24-white.png"
+                class="loginSortDownImg"
+            /></label>
             <div class="header-loginUser-acd-content">
               <a href="#">
                 <div class="header-loginUser-acd-content-login">ログイン</div>
@@ -80,106 +85,114 @@
                 </div>
               </a>
             </div>
+            <!-- /.header-loginUser-acd-content -->
           </div>
+          <!-- /.header-loginUser -->
         </div>
+        <!-- /.header-end -->
       </div>
+      <!-- /.header-container -->
     </header>
     <div class="home">
-      <div class="home-container">
-        <nav>
-          <ul class="pc-nav">
-            <li>
-              <a href="#" class="li-newInformation"
-                ><img src="images/icons8-music-24-black.png" />
-                <span>新着レビュー</span></a
-              >
-            </li>
-            <li>
-              <a href="#" class="li-player"
-                ><img src="images/icons8-myspace-24-black.png" />
-                <span>レビュワータグ</span></a
-              >
-            </li>
-            <li>
-              <a href="#" class="li-livehouse"
-                ><img src="images/icons8-home-24-black.png" />
-                <span>ライブハウスタグ</span></a
-              >
-            </li>
-          </ul>
-          <div class="mobile-nav">
-            <form method="get" action="" class="mobile-nav-form">
-              <div class="pulldown">
-                <select name="pulldown" class="pulldown-option" required>
-                  <option value="">選択してください</option>
-                  <option value="選択肢1">新着順</option>
-                  <option value="選択肢2">プレイヤー</option>
-                  <option value="選択肢3">ライブハウス</option>
-                </select>
-              </div>
-              <div class="pulldown-select">
-                <input type="submit" value="選択" />
+      <nav>
+        <ul class="pc-nav">
+          <li>
+            <a href="#" class="top-li-newInformation"
+              ><img src="images/icons8-music-24-white.png" /><span
+                >新着レビュー</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href="#" class="top-li-player"
+              ><img src="images/icons8-myspace-24-black.png" /><span
+                >レビュワータグ</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href="#" class="top-li-livehouse"
+              ><img src="images/icons8-home-24-black.png" /><span
+                >ライブハウスタグ</span
+              ></a
+            >
+          </li>
+        </ul>
+        <!-- /.pc-nav -->
+        <div class="mobile-nav">
+          <form method="get" action="" class="mobile-nav-form">
+            <div class="pulldown">
+              <select name="pulldown" class="pulldown-option" required>
+                <option value="">選択してください</option>
+                <option value="選択肢1">新着順</option>
+                <option value="選択肢2">プレイヤー</option>
+                <option value="選択肢3">ライブハウス</option>
+              </select>
+            </div>
+            <div class="pulldown-select">
+              <input type="submit" value="選択" />
+            </div>
+          </form>
+        </div>
+        <!-- /.mobile-nav -->
+      </nav>
+      <div class="right-container">
+        <!-- レビュー投稿ページ -->
+        <>
+          <div class="form_container">
+            <form action="insert" id="create-account" method="POST">
+              <h1>{{$user}}さん<br />ライブの感想を記録しましょう</h1>
+              <input type="hidden" name="user_id" value="id" />
+              <h1>{{$user->name}}さん<br />ライブの感想を記録しましょう</h1>
+              <input type="hidden" name="user_id" value="{{$user->id}}" A />
+
+              <div class="input-field">
+                <label for="live_date">ライブに行った日</label>
+                <input type="date" id="live_date" name="live_date" class="input-date" />
+                <label for="live_house">ライブハウス</label>
+                <input type="text" id="live_house" name="live_date" />
+                <label for="title" class="title">レビューのタイトル</label>
+                <input type="text" id="title" name="title" required />
+                <label for="text" class="text">ライブの感想</label>
+                <textarea name="text" id="text" cols="30" rows="10"></textarea>
+                <p style="text-align: right; font-size: 0.8rem">
+                  （1000文字以内）
+                </p>
+              </div> <!-- /.input-field -->
+              <div class="upload">
+                <input type="submit" value="投稿する" />
               </div>
             </form>
-          </div>
-        </nav>
-        <div class="right-container">
-          <main>
-            <div class="main-container">
-              <div class="review-title">レビュー投稿</div>
-              <form action="#" method="post">
-                <div class="input-field">
-                  <label>ライブの日にち</label>
-                  <input type="date" name="date" class="input-date" />
-                </div>
-                <div class="input-field">
-                  <label>ライブハウス</label>
-                  <input type="text" name="" />
-                </div>
-                <div class="input-field">
-                  <label class="title">タイトル</label>
-                  <p>( 例 ： 小沼ようすけ ブルーノート東京 )</p>
-                  <input type="text" name="" required />
-                </div>
-                <div class="input-field">
-                  <label class="star">オススメ度</label>
-                  <select name="">
-                    <option value="5" selected>★★★★★</option>
-                    <option value="4">★★★★☆</option>
-                    <option value="3">★★★☆☆</option>
-                    <option value="2">★★☆☆☆</option>
-                    <option value="1">★☆☆☆☆</option>
-                    <option value="0">なし</option>
-                  </select>
-                </div>
-                <div class="input-field">
-                  <label class="review">ライブの感想</label>
-                  <textarea
-                    name="review"
-                    required
-                    cols="40"
-                    rows="8"
-                  ></textarea>
-                </div>
-                <div class="upload">
-                  <input type="submit" value="投稿する" />
-                </div>
-              </form>
-            </div>
-          </main>
-          <aside>
-            <!-- <a href="#">
-                    <div class="ad1">advertisement1</div>
-                </a>
-                <a href="#">
-                    <div class="ad2">advertisement2</div>
-                </a> -->
-          </aside>
-        </div>
+          </div> <!-- /.form_container -->
+        </main>
+        <aside>
+          <!-- <a href="#">
+                          <div class="ad1">advertisement1</div>
+                      </a>
+                      <a href="#">
+                          <div class="ad2">advertisement2</div>
+                      </a> -->
+        </aside>
       </div>
     </div>
     <footer>
-      <p><small> &copy; Jazz Log </small></p>
+      <div class="footer-container">
+        <div class="footer-left">
+          <div class="footer-left">
+            <a href="#"
+              ><img src="images/JazzLog-logo-white.png" class="footer-siteLogo"
+            /></a>
+            <div class="footer-subTitle">♪♪ Jazz for all people ♪♪</div>
+          </div>
+        </div>
+        <!-- /.footer-left -->
+        <div class="footer-right">
+          <a href="#" class="information1">お問い合わせ</a>
+          <a href="#" class="information2">利用規約</a>
+        </div>
+        <!-- /.footer-right -->
+      </div>
+      <!-- /.footer-container -->
     </footer>
   </body>
 </html>
