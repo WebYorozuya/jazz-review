@@ -7,9 +7,17 @@
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <!-- Heroku用 -->
-    <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
+    <!-- <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}"> -->
     <!-- ローカル用 -->
-    <!-- <link rel="stylesheet" href="{{asset('css/styles.css')}}"> -->
+    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+    <style>
+        .pagination {
+            font-size: 12px;
+        }
+        .pagination li {
+            display: inline-block;
+        }
+    </style>
     <title>Jazz Log</title>
 </head>
 
@@ -141,10 +149,11 @@
                         </div>
                     </div><!-- /.main-newReview 1投稿のお尻 -->
                     @endforeach
-                    <div class="main-upload-btns">
+                    {{ $items->links()}}
+                    <!-- <div class="main-upload-btns">
                         <a href=""><img src="images/icons8-back-24-black.png"><span>前の10件</span></a>
                         <a href=""><span>次の10件</span><img src="images/icons8-forward-24-black.png"></a>
-                    </div>
+                    </div>/.main-upload-btns -->
                 </main>
                 <aside>
                     <!-- <a href="#">
