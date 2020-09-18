@@ -55,4 +55,10 @@ class ReviewController extends Controller
         $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
         return redirect('/'); //トップページへ
     }
+    //投稿削除
+    public function delete(Request $request)
+    {
+        Review::find($request->id)->delete();
+        return redirect('/');
+    }
 }
