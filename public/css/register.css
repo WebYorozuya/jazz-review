@@ -1,0 +1,131 @@
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 200vh;
+    margin: 0;
+    padding: 0;
+    background-color:#f6f6f4;
+    font-family: fantasy, -apple-system, "Segoe UI", "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
+    overflow: hidden;
+  }
+  
+  header {
+      /* height: 80px; */
+      background-color: #0378a6;
+    }
+    
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      /* height: 80px; */
+      max-width: 1100px;
+      padding: 0px 16px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .header-siteName {
+      flex: 1;
+      /* padding: 0px 16px 0px 5px; */
+      min-width: 100px;
+    }
+  
+    .siteLogo {
+      height: 60px;
+      margin-top: 8px;
+      /* margin: 10px; */
+    }
+  
+  /* ここから新規登録エリア */
+  
+    .welcome h1{
+      text-align: center;
+      margin-bottom: 0;
+      white-space: nowrap;
+      letter-spacing: 0.1px;
+      font-size: 60px;
+      font-weight: 400;
+      color: #0f1813;
+    }
+  
+    .welcome p {
+      color: #3c4a57;
+      font-size: 20px;
+    }
+  
+    .signup_please {
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 30px;
+      color: #122219;
+      font-size: 20px;
+    }
+  
+    .signup {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 40vh;
+    }
+    
+    .signup_form label {
+      color: #3c4a57;
+      font-size: 15px;
+    }
+    
+    .signup_form input {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      color:#0f1813; 
+      font-size: 20px;
+    } 
+  
+    .btn_signup {
+      text-align: center;
+    }
+  
+    input[type="submit"] {
+      width: 100%;
+      height: 50px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background: #0378a6;
+      color: white;
+      font-size: 20px;
+      font-weight: 400;
+  }
+    hr {
+      width: 30%;
+    }
+  
+    .access {
+      text-align: center;
+      position: relative;
+      margin-top: 30px;
+      font-size: 1em;
+    }
+  
+    .login .not_signup {
+      margin: 0;
+    }
+  
+    a {
+      text-decoration-line: none;
+    }
+  
+  
+    footer {
+      position: absolute;
+      bottom: 0;
+    }

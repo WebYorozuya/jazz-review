@@ -1,4 +1,5 @@
-@extends('layouts.app')
+<!-- 新規登録画面 -->
+@extends('layouts.registerscene')
 
 @section('content')
 <div class="container">

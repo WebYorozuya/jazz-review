@@ -1,3 +1,4 @@
+<!-- ログイン画面 -->
 @extends('layouts.loginscene')
 
 @section('title','ログイン画面')
@@ -5,13 +6,7 @@
 @section('content') 
 
 <body class="UI_Build_Assistant">
-  <header>
-      <div class="header-container">  
-          <div class="header-siteName">
-            <a href="#"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
-          </div>
-      </div>
-  </header>  
+  
 <div class="main">
     <h1>Jazz Log にログイン</h1>
 
