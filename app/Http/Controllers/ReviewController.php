@@ -52,7 +52,6 @@ class ReviewController extends Controller
         $review = Review::find($request->id); //Reviewインスタンス作成
         $form = $request->all(); //送信されたフォームの値を保管
         unset($form['_token']); //CSRF非表示フィールド_token削除
-        //var_dump($review); exit();
         $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
         return redirect('/'); //トップページへ
     }
