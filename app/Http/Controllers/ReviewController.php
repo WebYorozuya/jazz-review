@@ -27,7 +27,7 @@ class ReviewController extends Controller
         } else {
             $user = 'ゲスト';
         }
-        return view('post', ['user' => $user]);
+        return view('review.post', ['user' => $user]);
     }
     //フォームの値を取得しDBにレコード挿入
     public function create(Request $request)
@@ -39,5 +39,21 @@ class ReviewController extends Controller
         $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
         return redirect('/'); //トップページへ
     }
-
+    //投稿修正機能
+    public function modify(Request $request)
+    {
+        $review = Review::find($request->id);
+        return view('review.modify', ['form' => $review]);
+    }
+    //投稿修正送信
+    public function update(Request $request)
+    {
+        $this->validate($request, Review::$rules); //バリデーションの実行
+        $review = Review::find($request->id); //Reviewインスタンス作成
+        $form = $request->all(); //送信されたフォームの値を保管
+        unset($form['_token']); //CSRF非表示フィールド_token削除
+        //var_dump($review); exit();
+        $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
+        return redirect('/'); //トップページへ
+    }
 }
