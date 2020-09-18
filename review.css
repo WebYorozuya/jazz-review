@@ -120,37 +120,6 @@ header {
   justify-content: center;
 }
 
-/* 投稿機能 */
-.header-post {
-  display: flex;
-  align-items: center;
-  background: #2a6897;
-  border-radius: 10px;
-  width: 100px;
-  height: 50px;
-  font-size: 12px;
-  margin-right: 10px;
-}
-
-.header-post a {
-  display: flex;
-  flex-direction: row;
-  justify-content: column;
-  width: 100%;
-  color: #fff;
-  align-items: center;
-  text-decoration: none;
-}
-
-.header-post a span {
-  display: flex;
-  align-items: center;
-}
-
-.header-post:hover {
-  opacity: 0.8;
-}
-
 /* ログイン機能 */
 .header-loginUser {
   flex: 1;
@@ -405,6 +374,7 @@ main {
 .form_container {
   justify-content: center;
   width: 100%;
+  margin-bottom: 50px;
   padding: 30px;
   background-color: white;
 }
