@@ -134,7 +134,7 @@
                                     <span>16</span>
                                 </div>
                                 <div class="main-newReviewUploadDate">
-                                    <a href="modify?id={{$item->id}}">
+                                    <a href="modify">
                                     <i class="fas fa-ellipsis-h"></i>
                                     </a>
                                 </div>
