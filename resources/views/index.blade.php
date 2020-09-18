@@ -44,7 +44,7 @@
             </div>
             <div class="header-end">
                 <div class="header-post">
-                    <a href="/post"><img src="images/icons8-edit-24-white.png" class="editImg"><span>投稿する</span></a>
+                    <a href="post"><img src="images/icons8-edit-24-white.png" class="editImg"><span>投稿する</span></a>
                 </div>
                 @if (Route::has('login'))
                 <div class="header-loginUser">
@@ -134,7 +134,9 @@
                                     <span>16</span>
                                 </div>
                                 <div class="main-newReviewUploadDate">
+                                    <a href="modify">
                                     <i class="fas fa-ellipsis-h"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div><!-- /.main-newReview-upperColumn -->
