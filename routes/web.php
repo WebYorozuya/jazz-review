@@ -30,9 +30,11 @@ Route::get('post', 'ReviewController@post');
 //Route::post('insert', 'PostController@create');モデル使用により修正
 Route::post('insert', 'ReviewController@create');
 
-//投稿の修正
+//投稿の修正、削除
 Route::get('modify', 'ReviewController@modify');
 
 //修正した投稿をDBでUPDATEする
 Route::post('update', 'ReviewController@update');
 
+//削除命令
+Route::post('del', 'ReviewController@delete');

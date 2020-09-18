@@ -44,8 +44,11 @@
       border-radius: 5px;
       background-color: rgb(252, 180, 48);
       color: rgb(39, 37, 37);
-      margin: 30px auto;
+      margin: 15px auto;
       padding: 8px;
+    }
+    #del {
+      background-color: #DCDCDC;
     }
   </style>
 </head>
@@ -65,8 +68,17 @@
         <label for="text">ライブの感想</label>
         <textarea name="text" id="text" cols="30" rows="10">{{$form->text}}</textarea>
         <p style="text-align: right; font-size: 0.8rem;">（1000文字以内）</p>
-        <input type="submit" class="submit">
-      </form>
+        <input type="submit" class="submit" value="修正">
+    </form>
+    <form action="del" method="post">
+    @csrf
+        <input type="hidden" name="user_id" value="{{$form->user_id}}">
+        <input type="hidden" name="id" value="{{$form->id}}">
+        <input type="hidden" name="live_date" value="{{$form->live_date}}">
+        <input type="hidden" name="title" value="{{$form->title}}">
+        <input type="hidden" name="text" value="{{$form->text}}">
+        <input type="submit" class="submit" id="del" value="削除">
+    </form>
   </div><!-- /.form_container -->
 </body>
 </html>
