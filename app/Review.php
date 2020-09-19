@@ -24,5 +24,10 @@ class Review extends Model
     {
         return $this->user->name;
     }
+    //タグとのリレーション
+    public function tags()
+    {
+        return $this->belongsToMany('App\Tag');
+    }
 }
 
