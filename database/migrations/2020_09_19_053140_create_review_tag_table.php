@@ -14,10 +14,10 @@ class CreateReviewTagTable extends Migration
     public function up()
     {
         Schema::create('review_tag', function (Blueprint $table) {
-            $table->increments('id'); //BIGINTではない方
+            $table->id();
             $table->timestamps();
-            $table->foreignId('review_id')->constrained('reviews')->onDelete('cascade'); //foreignIdメソッドはunsignedBigIntegerのエイリアス
-            $table->foreignId('tag_id')->constrained('tags')->onDelete('cascade'); //foreignIdメソッドはunsignedBigIntegerのエイリアス
+            $table->foreignId('review_id')->constrained('reviews'); //foreignIdメソッドはunsignedBigIntegerのエイリアス
+            $table->foreignId('tag_id')->constrained('tags'); //foreignIdメソッドはunsignedBigIntegerのエイリアス
         });
     }
 

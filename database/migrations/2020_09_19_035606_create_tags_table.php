@@ -14,7 +14,7 @@ class CreateTagsTable extends Migration
     public function up()
     {
         Schema::create('tags', function (Blueprint $table) {
-            $table->increments('id');//符号なしINTを使用した自動増分ID（主キー）
+            $table->id();
             $table->string('tag_name', 30);
             $table->string('info');
             $table->string('url');
