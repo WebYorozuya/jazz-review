@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Review; //追加
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; //ログインユーザ情報取得用に追加
+use App\Tag; //タグ用に追加
 
 class ReviewController extends Controller
 {
@@ -37,6 +38,13 @@ class ReviewController extends Controller
         $form = $request->all(); //送信されたフォームの値を保管
         unset($form['_token']); //CSRF非表示フィールド_token削除
         $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
+
+        $this->validate($request, Tag::$rules); //バリデーションの実行
+        $tag = new Tag; //Reviewインスタンス作成
+        $form = $request->all(); //送信されたフォームの値を保管
+        unset($form['_token']); //CSRF非表示フィールド_token削除
+        $tag->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
+
         return redirect('/'); //トップページへ
     }
     //投稿修正機能
