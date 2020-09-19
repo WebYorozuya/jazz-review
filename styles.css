@@ -18,36 +18,21 @@ input[type="checkbox"] {
 }
 
 .closeImg {
-  width: 15px;
-  margin: 3px;
-  display: none;
-  background-color: #fff;
+}
+
+.space {
+  width: 5px;
+}
+
+.header-user {
+  margin: 10px;
 }
 
 .openImg {
-  width: 15px;
-  margin: 3px;
-  background-color: #fff;
 }
 
-.editImg {
-  margin: 5px;
-}
-
-.userMaleImg {
-  border: 1px solid #ffffff;
-  border-radius: 20px;
-  margin: 5px;
-}
-
-.main-userMaleImg {
-  border: 1px solid #111111;
-  border-radius: 20px;
-  margin: 0px 5px 0px 5px;
-}
-
-.loginSortDownImg {
-  height: 15px;
+.my-black {
+  color: rgb(51, 51, 51);
 }
 
 /* 共通情報 おわり*/
@@ -93,6 +78,7 @@ header {
   border-radius: 10px;
   display: flex;
   align-items: center;
+  padding-left: 5px;
 }
 
 .header-search-btn {
@@ -130,6 +116,7 @@ header {
   height: 50px;
   font-size: 12px;
   margin-right: 10px;
+  padding: 10px;
 }
 
 .header-post a {
@@ -145,6 +132,7 @@ header {
 .header-post a span {
   display: flex;
   align-items: center;
+  padding-left: 5px;
 }
 
 .header-post:hover {
@@ -283,11 +271,6 @@ nav ul li {
   font-size: 12px;
 }
 
-nav ul li img {
-  margin-right: 10px;
-  height: 20px;
-}
-
 .pulldown {
   display: none;
 }
@@ -305,6 +288,13 @@ nav ul li img {
   padding: 20px 10px;
   display: flex;
   flex-direction: row;
+  align-self: center;
+}
+
+.top-li-newInformation span,
+.top-li-player span,
+.top-li-livehouse span {
+  padding-left: 10px;
 }
 
 .top-li-newInformation:hover {
@@ -320,6 +310,7 @@ nav ul li img {
   flex-direction: row;
   color: rgb(51, 51, 51);
   font-size: 12px;
+  align-self: center;
 }
 
 .top-li-player:hover,
@@ -338,11 +329,18 @@ nav ul li img {
   padding: 20px 10px;
   display: flex;
   flex-direction: row;
+  align-self: center;
 }
 
 .tagPage-li-player:hover {
   background-color: #01648b;
   border-radius: 8px;
+}
+
+.tagPage-li-newInformation span,
+.tagPage-li-player span,
+.tagPage-li-livehouse span {
+  padding-left: 10px;
 }
 
 .tagPage-li-newInformation,
@@ -353,6 +351,7 @@ nav ul li img {
   flex-direction: row;
   color: rgb(51, 51, 51);
   font-size: 12px;
+  align-self: center;
 }
 
 .tagPage-li-newInformation:hover,
@@ -372,6 +371,7 @@ nav ul li img {
   padding: 20px 10px;
   display: flex;
   flex-direction: row;
+  align-self: center;
 }
 
 .userPage-li-livehouse:hover {
@@ -387,6 +387,13 @@ nav ul li img {
   flex-direction: row;
   color: rgb(51, 51, 51);
   font-size: 12px;
+  align-self: center;
+}
+
+.userPage-li-newInformation span,
+.userPage-li-player span,
+.userPage-li-livehouse span {
+  padding-left: 10px;
 }
 
 .userPage-li-newInformation:hover,
@@ -436,10 +443,6 @@ main {
   transition: background-color 0.8s;
 }
 
-.main-upload-btns img {
-  vertical-align: text-bottom;
-}
-
 .main-upload-btns a span {
   color: rgb(51, 51, 51);
   font-size: 12px;
@@ -447,6 +450,7 @@ main {
   display: flex;
   align-items: center;
   border-style: none;
+  margin: 5px;
 }
 
 .main-upload-btns a:hover span {
@@ -482,18 +486,6 @@ main {
   border: 1px solid #f6f6f4;
 }
 
-.main-userMaleImg {
-  border: 1px solid rgb(51, 51, 51);
-  border-radius: 20px;
-  margin: 5px;
-}
-
-.main-newReviewerFig {
-  height: 30px;
-  width: 30px;
-  margin-right: 10px;
-}
-
 .main-newReviewerName {
   display: flex;
   flex-direction: row;
@@ -512,42 +504,32 @@ main {
 .main-newReviewEvaluation {
   display: flex;
   flex-direction: row;
+  align-self: center;
+  padding-left: 5px;
 }
 
-.main-newReviewEvaluation img {
-  display: flex;
-  align-items: center;
-  height: 20px;
-  margin-top: 5px;
-}
-
-.main-newReviewEvaluation:hover img {
+.main-newReviewEvaluation:hover {
   background-color: rgb(255, 200, 200);
-  border-radius: 10px;
+  border-radius: 5px;
   transition: background-color 0.8s;
 }
 
 .main-newReviewEvaluation span {
   display: flex;
-  align-items: flex-start;
   justify-content: center;
   width: 30px;
-  text-align: center;
   font-size: 12px;
-  padding-top: 7px;
-}
-
-.main-newReviewEvaluation:hover span {
-  color: rgb(255, 200, 200);
-  transition: color 0.8s;
 }
 
 .main-newReviewUploadDate {
-  padding: 7px 10px 0px 10px;
   display: flex;
+  align-self: center;
   align-items: flex-start;
   font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
 /* 新着投稿 上段(index.html) おわり*/
 /* 新着投稿 中段(index.html)*/
 .main-newReview-middleColumn {
@@ -656,14 +638,7 @@ main {
   background-color: white;
   display: flex;
   flex-direction: row;
-}
-
-.main-userinfo-MaleImg {
-  width: 100px;
-  height: 100px;
-  margin: 30px;
-  border: 1px solid #333;
-  border-radius: 50px;
+  padding: 10px;
 }
 
 /* ユーザー欄 上段（userpage.html) */
@@ -772,10 +747,6 @@ main {
   padding: 5px;
 }
 
-.main-reviewText-upperColumn-right img {
-  width: 15px;
-}
-
 #main-reviewText {
   height: 20px;
   flex: 1;
@@ -810,7 +781,7 @@ main {
 
 .reviewDate {
   display: flex;
-  align-items: center;
+  align-self: center;
   font-size: 12px;
   padding: 0px 5px 0px 5px;
 }
@@ -820,17 +791,17 @@ main {
   min-width: 100px;
   padding: 5px;
 }
-
-.main-reviewText-lowerColumn img {
+.main-reviewText-lowerColumn-likeCount {
   display: flex;
-  align-items: center;
-  height: 20px;
-  margin: 5px 0px 5px 5px;
+  flex-direction: row;
+  align-self: center;
+  margin-right: 30px;
+  padding-left:5px;
 }
 
-.main-reviewText-lowerColumn:hover img {
+.main-reviewText-lowerColumn-likeCount:hover {
   background-color: rgb(255, 200, 200);
-  border-radius: 10px;
+  border-radius: 3px;
   transition: background-color 0.8s;
 }
 
@@ -841,14 +812,8 @@ main {
   width: 30px;
   text-align: center;
   font-size: 12px;
-  padding-top: 6px;
-  margin-right: 30px;
 }
 
-.main-reviewText-lowerColumn:hover span {
-  color: rgb(255, 200, 200);
-  transition: color 0.8s;
-}
 /* ユーザーレビュー欄 下段（userpage.html) おわり*/
 /* main ユーザー情報欄（userpage.html) おわり */
 
@@ -917,20 +882,7 @@ iframe {
   display: flex;
   flex-direction: row;
   background-color: #fff;
-  padding-right: 20px;
-}
-
-.main-reviewText-upperColumn-right img {
-  display: flex;
-  align-items: center;
-  height: 20px;
-  width: 20px;
-}
-
-.main-reviewText-upperColumn-right:hover img {
-  background-color: rgb(255, 200, 200);
-  border-radius: 10px;
-  transition: background-color 0.8s;
+  margin-right: 20px;
 }
 
 .main-reviewText-upperColumn-right span {
@@ -942,9 +894,10 @@ iframe {
   font-size: 12px;
 }
 
-.main-reviewText-upperColumn-right:hover span {
-  color: rgb(255, 200, 200);
-  transition: color 0.8s;
+.main-reviewText-upperColumn-right:hover {
+  background-color: rgb(255, 200, 200);
+  border-radius: 5px;
+  transition: background-color 0.8s;
 }
 
 .main-liveDate {
@@ -994,6 +947,7 @@ iframe {
   align-items: center;
   font-size: 12px;
   padding: 0px 5px 0px 5px;
+  margin-right:10px;
 }
 
 .main-reviewText-reviewDate {
@@ -1287,7 +1241,7 @@ footer {
   }
 
   .TagList-item {
-    margin:10px;
+    margin: 10px;
   }
 
   .main-list-row-left,

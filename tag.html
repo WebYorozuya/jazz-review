@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    </link>
     <link rel="stylesheet" href="styles.css">
     <title>Jazz Log</title>
 </head>
@@ -16,25 +19,27 @@
             <div class="header-start">
                 <div class="header-siteName">
                     <a href="#"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
-                </div><!-- /.header-siteName -->
+                </div>
                 <from class="header-search" action="cgi-bin/example.cgi" method="post">
                     <div id="search-units">
                         <input class="header-search-btn" type="submit" name="submit" value="">
-                        <img src="images/icons8-search-24.png" class="searchImg">
+                        <i class="fas fa-search"></i>
                         <input id="header-search-text" type="search" name="search" placeholder="キーワードで検索">
                         <input id="header-search-text-checkBox" type="checkbox" />
-                    </div><!-- /.search-units -->
+                    </div><!-- /#search-units" -->
                 </from>
             </div><!-- /.header-start -->
             <div class="header-end">
                 <div class="header-post">
-                    <a href="#"><img src="images/icons8-edit-24-white.png" class="editImg"><span>投稿する</span></a>
+                    <a href="#"><i class="fas fa-edit fa-2x"></i><span>投稿する</span></a>
                 </div><!-- /.header-post -->
                 <div class="header-loginUser">
                     <input id="header-loginUser-acd-check" class="header-loginUser-acd-check" type="checkbox">
                     <label class="header-loginUser-acd-label" for="header-loginUser-acd-check">
-                        <img src="images/icons8-user-male-30-white.png" class="userMaleImg">
-                        <img src="images/icons8-sort-down-24-white.png" class="loginSortDownImg"></label>
+                        <i class="far fa-user-circle fa-2x"></i>
+                        <div class="space"></div>
+                        <i class="fas fa-caret-down  fa-lg"></i>
+                    </label>
                     <div class="header-loginUser-acd-content">
                         <a href="#">
                             <div class="header-loginUser-acd-content-login">ログイン</div>
@@ -813,7 +818,7 @@
                     </div>
                 </div><!-- /.main-list-row-right -->
             </div><!-- /.main-list-row -->
-           
+
         </div><!-- main-list -->
     </div><!-- tag-home -->
     <footer>

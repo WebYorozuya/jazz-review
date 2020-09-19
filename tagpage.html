@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    </link>
     <link rel="stylesheet" href="styles.css">
     <title>Jazz Log</title>
 </head>
@@ -21,21 +24,22 @@
                 <from class="header-search" action="cgi-bin/example.cgi" method="post">
                     <div id="search-units">
                         <input class="header-search-btn" type="submit" name="submit" value="">
-                        <img src="images/icons8-search-24.png" class="searchImg">
+                        <i class="fas fa-search"></i>
                         <input id="header-search-text" type="search" name="search" placeholder="キーワードで検索">
                         <input id="header-search-text-checkBox" type="checkbox" />
-                    </div>
+                    </div><!-- /#search-units" -->
                 </from>
             </div><!-- /.header-start -->
             <div class="header-end">
                 <div class="header-post">
-                    <a href="#"><img src="images/icons8-edit-24-white.png" class="editImg"><span>投稿する</span></a>
-                </div>
+                    <a href="#"><i class="fas fa-edit fa-2x"></i><span>投稿する</span></a>
+                </div><!-- /.header-post -->
                 <div class="header-loginUser">
                     <input id="header-loginUser-acd-check" class="header-loginUser-acd-check" type="checkbox">
                     <label class="header-loginUser-acd-label" for="header-loginUser-acd-check">
-                        <img src="images/icons8-user-male-30-white.png" class="userMaleImg">
-                        <img src="images/icons8-sort-down-24-white.png" class="loginSortDownImg">
+                        <i class="far fa-user-circle fa-2x"></i>
+                        <div class="space"></div>
+                        <i class="fas fa-caret-down  fa-lg"></i>
                     </label>
                     <div class="header-loginUser-acd-content">
                         <a href="#">
@@ -56,16 +60,13 @@
         <nav>
             <ul class="pc-nav">
                 <li>
-                    <a href="#" class="tagPage-li-newInformation"><img
-                            src="images/icons8-music-24-black.png"><span>新着レビュー</span></a>
+                    <a href="#" class="tagPage-li-newInformation"><i class="fas fa-music fa-lg"></i><span>新着レビュー</span></a>
                 </li>
                 <li>
-                    <a href="#" class="tagPage-li-player"><img
-                            src="images/icons8-myspace-24-white.png"><span>レビュワータグ</span></a>
+                    <a href="#" class="tagPage-li-player"><i class="fas fa-users fa-lg"></i><span>レビュワータグ</span></a>
                 </li>
                 <li>
-                    <a href="#" class="tagPage-li-livehouse"><img
-                            src="images/icons8-home-24-black.png"><span>ライブハウスタグ</span></a>
+                    <a href="#" class="tagPage-li-livehouse"><i class="fas fa-home fa-lg"></i><span>ライブハウスタグ</span></a>
                 </li>
             </ul><!-- /.pc-nav -->
             <div class="mobile-nav">
@@ -83,7 +84,6 @@
                     </div>
                 </form>
             </div><!-- /.mobile-nav -->
-
         </nav>
         <div class="right-container">
             <main>
@@ -110,7 +110,7 @@
                             <div class="main-livePerformerName">演奏者名</div>
                         </div><!-- /.main-reviewText-upperColumn-left -->
                         <div class="main-reviewText-upperColumn-right">
-                            <img src="images/icons8-like-24-black.png">
+                            <i class="far fa-heart faa-pulse"></i>
                             <span>16</span>
                         </div><!-- /.main-reviewText-upperColumn-right -->
                     </div><!-- /.main-reviewText-upperColumn -->
@@ -123,19 +123,19 @@
                             最高！最高！最高！最高！最高！最高！最高！最高！最高！最高！
                         </p>
                         <div class="main-reviewOpenClose">
-                            <img src="images/icons8-double-down-24-black.png" class="openImg">
-                            <img src="images/icons8-double-up-24-black.png" class="closeImg">
+                            <i class="fas fa-angle-double-down"></i>
+                            <!-- <i class="fas fa-angle-double-up"></i> -->
                         </div><!-- /.main-reviewOpenClose -->
                     </div><!-- /.main-reviewText-middleColumn -->
                     <div class="main-reviewText-lowerColumn">
                         <div class="reviewDate">2020/9/13 18:35</div>
-                        <img src="images/icons8-user-male-30-black.png" class="main-userMaleImg">
+                        <i class="far fa-user-circle"></i>
                         <div class="main-reviewerName">mike</div>
                     </div><!-- /.main-reviewText-lowerColumn -->
                 </div><!-- /.main-reviewText -->
                 <div class="main-upload-btns">
-                    <a href=""><img src="images/icons8-back-24-black.png"><span>前の10件</span></a>
-                    <a href=""><span>次の10件</span><img src="images/icons8-forward-24-black.png"></a>
+                    <a href="#"><i class="fas fa-angle-left my-black"></i><span>前の10件</span></a>
+                    <a href="#"><span>次の10件</span><i class="fas fa-angle-right my-black"></i></a>
                 </div><!-- /.main-upload-btns -->
             </main>
             <aside>
