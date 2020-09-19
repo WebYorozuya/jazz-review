@@ -6,6 +6,7 @@
     <title>レビュー投稿</title>
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous"></link>
     <link rel="stylesheet" href="review.css" />
   </head>
 
@@ -30,7 +31,7 @@
                 name="submit"
                 value=""
               />
-              <img src="images/icons8-search-24.png" class="searchImg" />
+              <i class="fas fa-search"></i>
               <input
                 id="header-search-text"
                 type="search"
@@ -54,14 +55,12 @@
             <label
               class="header-loginUser-acd-label"
               for="header-loginUser-acd-check"
-            >
-              <img
-                src="images/icons8-user-male-30-white.png"
-                class="userMaleImg" />
-              <img
-                src="images/icons8-sort-down-24-white.png"
-                class="loginSortDownImg"
-            /></label>
+            >                       
+             <i class="far fa-user-circle fa-2x"></i>
+             <div class="space"></div>
+             <i class="fas fa-caret-down  fa-lg"></i></label>
+
+              </label>
             <div class="header-loginUser-acd-content">
               <a href="#">
                 <div class="header-loginUser-acd-content-login">ログイン</div>
@@ -90,24 +89,16 @@
         <ul class="pc-nav">
           <li>
             <a href="#" class="top-li-newInformation"
-              ><img src="images/icons8-music-24-white.png" /><span
-                >新着レビュー</span
-              ></a
-            >
+              ><i class="fas fa-music fa-lg"></i><span>新着レビュー</span></a>
           </li>
           <li>
-            <a href="#" class="top-li-player"
-              ><img src="images/icons8-myspace-24-black.png" /><span
-                >レビュワータグ</span
-              ></a
-            >
+            <a href="#" class="top-li-player"><i class="fas fa-users fa-lg"></i><span>レビュワータグ</span></a>
+              
           </li>
           <li>
             <a href="#" class="top-li-livehouse"
-              ><img src="images/icons8-home-24-black.png" /><span
-                >ライブハウスタグ</span
-              ></a
-            >
+              ><i class="fas fa-home fa-lg"></i><span>ライブハウスタグ</span></a>
+            </li>
           </li>
         </ul>
         <!-- /.pc-nav -->
@@ -132,12 +123,13 @@
         <!-- レビュー投稿ページ -->
         <main>
           <div class="form_container">
+            <div class="left"></div>
             <form action="insert" id="create-account" method="POST">
               <h1>{{$user}}さん<br />ライブの感想を記録しましょう</h1>
               <input type="hidden" name="user_id" value="id" />
-              <h1>{{$user->name}}さん<br />ライブの感想を記録しましょう</h1>
-              <input type="hidden" name="user_id" value="{{$user->id}}" A />
-
+              <!-- <h1>{{$user->name}}さん<br />ライブの感想を記録しましょう</h1>
+              <input type="hidden" name="user_id" value="{{$user->id}}" A /> -->
+<div class="review-field">
               <div class="input-field">
                 <label for="live_date">ライブに行った日</label>
                 <input
@@ -162,13 +154,14 @@
                   （1000文字以内）
                 </p>
               </div>
+              <div class="review-right"></div>
+            </div>
               <div class="upload">
                 <input type="submit" value="投稿する" class="upload_btn" />
               </div>
             </form>
-          </div>
-          <!-- /.form_container -->
-        </main>
+          </div><!-- /.form_container -->
+          </main>
         <aside>
           <!-- <a href="#">
                           <div class="ad1">advertisement1</div>
@@ -177,6 +170,7 @@
                           <div class="ad2">advertisement2</div>
                       </a> -->
         </aside>
+
       </div>
     </div>
     <footer>
