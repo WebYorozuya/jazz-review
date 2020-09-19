@@ -14,7 +14,7 @@ class CreateReviewTagTable extends Migration
     public function up()
     {
         Schema::create('review_tag', function (Blueprint $table) {
-            $table->id();
+            $table->id();//
             $table->timestamps();
             $table->foreignId('review_id')->constrained('reviews'); //foreignIdメソッドはunsignedBigIntegerのエイリアス
             $table->foreignId('tag_id')->constrained('tags'); //foreignIdメソッドはunsignedBigIntegerのエイリアス
