@@ -63,7 +63,7 @@
       @endif
       @endauth
         <label for="live_date">ライブに行った日</label>
-        <input type="date" id="live_date" name="live_date" value="2020-01-01">
+        <input type="date" id="live_date" name="live_date">
         <label for="tag">タグ</label>
         <input type="text" id="tag" name="tag_name">
         <label for="title">レビューのタイトル</label>
@@ -75,4 +75,29 @@
       </form>
   </div><!-- /.form_container -->
 </body>
+<script type="text/javascript">
+    //今日の日時を表示
+        window.onload = function () {
+            //今日の日時を表示
+            var date = new Date()
+            var year = date.getFullYear()
+            var month = date.getMonth() + 1
+            var day = date.getDate()
+          
+            var toTwoDigits = function (num, digit) {
+              num += ''
+              if (num.length < digit) {
+                num = '0' + num
+              }
+              return num
+            }
+            
+            var yyyy = toTwoDigits(year, 4)
+            var mm = toTwoDigits(month, 2)
+            var dd = toTwoDigits(day, 2)
+            var ymd = yyyy + "-" + mm + "-" + dd;
+            
+            document.getElementById("live_date").value = ymd;
+        }
+</script>
 </html>
