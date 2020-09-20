@@ -535,11 +535,16 @@ aside {
 footer {
   /* margin-top: 15px; */
   height: 200px;
-  outline: 1px solid #0f1813;
-  background-color: #0f1813;
+  /* outline: 1px solid #0f1813; */
+  background-color: #4d4c4c;
   color: #ffffff;
   position: relative;
   z-index: 40;
+  background-image: url(../images/trumpet.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
 }
 
 .footer-container {
