@@ -23,38 +23,35 @@
     </style>
     <title>Jazz Log</title>
 </head>
-
 <body class="UI_Build_Assistant">
-
     <header>
         <div class="header-container">
             <div class="header-start">
                 <div class="header-siteName">
                     <a href="#"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
                 </div>
-                <from class="header-search" action="cgi-bin/example.cgi" method="post">
-                    <div id="search-units">
-                        <input class="header-search-btn" type="submit" name="submit" value="">
-                        <img src="images/icons8-search-24.png" class="searchImg">
+                <form class="header-search" action="cgi-bin/example.cgi" method="post">
+                    <!-- <div id="search-units"> -->
+                        <!-- <input class="header-search-btn" type="submit" name="submit" value=""> -->
+                        <i class="fas fa-search"></i>
                         <input id="header-search-text" type="search" name="search" placeholder="キーワードで検索">
-                        <input id="header-search-text-checkBox" type="checkbox" />
-                    </div>
-                </from>
+                        <!-- <input id="header-search-text-checkBox" type="checkbox" /> -->
+                    <!-- </div> -->
+                </form>
             </div>
             <div class="header-end">
                 <div class="header-post">
-                    <a href="post"><img src="images/icons8-edit-24-white.png" class="editImg"><span>投稿する</span></a>
+                    <a href="post"><i class="fas fa-edit fa-2x"></i><span>投稿する</span></a>
                 </div>
                 @if (Route::has('login'))
                 <div class="header-loginUser">
                     <input id="header-loginUser-acd-check" class="header-loginUser-acd-check" type="checkbox">
                     <label class="header-loginUser-acd-label" for="header-loginUser-acd-check">
-                        <img src="images/icons8-user-male-30-white.png" class="userMaleImg">
+                    <i class="far fa-user-circle fa-2x"></i>
                         @auth
                         <a href="{{ url('/home') }}" class="hello-user">こんにちは<br>{{$user}}さん</a>
                         @else
                         <a href="{{ route('login') }}" class="hello-user">ログイン</a>
-                        <!-- <img src="images/icons8-user-male-30-white.png" class="userMaleImg">これ無い方がいい -->
                         @if (Route::has('register'))
                         <a href="{{ route('register') }}" class="hello-user">アカウント登録</a>
                         @endif
@@ -77,7 +74,6 @@
         </div><!-- /.header-container -->
     </header>
     <div class="home">
-
         <div class="home-container">
             <nav>
                 <ul class="pc-nav">
@@ -87,11 +83,11 @@
                     </li>
                     <li>
                         <a href="#" class="li-player"><img
-                                src="images/icons8-myspace-24-black.png"><span>レビュワータグ</span></a>
+                                src="images/icons8-myspace-24-black.png"><span>タグ</span></a>
                     </li>
                     <li>
                         <a href="#" class="li-livehouse"><img
-                                src="images/icons8-home-24-black.png"><span>ライブハウスタグ</span></a>
+                                src="images/icons8-home-24-black.png"><span>投稿する</span></a>
                     </li>
                 </ul>
                 <div class="mobile-nav">
@@ -109,7 +105,6 @@
                         </div>
                     </form>
                 </div>
-
             </nav>
             <div class="right-container">
                 <main>
@@ -156,11 +151,7 @@
                         </div>
                     </div><!-- /.main-newReview 1投稿のお尻 -->
                     @endforeach
-                    {{ $items->links()}}
-                    <!-- <div class="main-upload-btns">
-                        <a href=""><img src="images/icons8-back-24-black.png"><span>前の10件</span></a>
-                        <a href=""><span>次の10件</span><img src="images/icons8-forward-24-black.png"></a>
-                    </div>/.main-upload-btns -->
+                    {{ $items->links('vendor.pagination.bootstrap-4')}}
                 </main>
                 <aside>
                     <!-- <a href="#">
@@ -188,7 +179,6 @@
         </div>
     </footer>
     <script>
-
         //ボタンを押すことで開閉する機能
         let openCloseBtn = document.getElementsByClassName("main-newReviewOpenClose");
 
