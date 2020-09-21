@@ -38,3 +38,6 @@ Route::post('update', 'ReviewController@update');
 
 //削除命令
 Route::post('del', 'ReviewController@delete');
+
+//Contact
+Route::get('contact', 'ContactController@index');
