@@ -6,7 +6,10 @@
     <title>Contact</title>
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-    <link rel="stylesheet" href="{{asset('css/contact.css')}}">
+    Heroku用CSS
+    <link rel="stylesheet" href="{{secure_asset('css/contact.css')}}">
+    <!-- ローカル用CSS -->
+    <!-- <link rel="stylesheet" href="{{asset('css/contact.css')}}"> -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
