@@ -416,7 +416,7 @@ h1 {
   text-align: center;
   width: 100%;
   padding: 50px 30px;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 800;
 }
 
@@ -447,6 +447,7 @@ h1 {
 
 .member-name {
   text-align: center;
+  word-wrap: break-word;
   padding: 20px 10px;
   font-size: 15px;
   font-weight: 700;
@@ -503,7 +504,7 @@ h1 {
 .supporter {
   text-align: center;
   padding-top: 20px;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 }
 
 .supporter img {
