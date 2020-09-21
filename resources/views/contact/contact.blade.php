@@ -6,7 +6,7 @@
     <title>Contact</title>
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-    Heroku用CSS
+    <!-- Heroku用CSS -->
     <link rel="stylesheet" href="{{secure_asset('css/contact.css')}}">
     <!-- ローカル用CSS -->
     <!-- <link rel="stylesheet" href="{{asset('css/contact.css')}}"> -->
@@ -142,7 +142,7 @@
               
               <div class="team-member">
                 <div class="member-info">
-                  <img src="ayaka.png" alt="kakudaisukeの写真" class="profile-img"/>
+                  <img src="images/kaku.jpeg" alt="kakudaisukeの写真" class="profile-img"/>
                   <div class="member-name">kakudaisuke</div>
                   <ul class="member-sns-btn">
                     <li class="twitter-btn">
@@ -157,7 +157,7 @@
                 </div>
 
                 <div class="member-info">
-                  <img src="ayaka.png" alt="mikeの写真" class="profile-img" />
+                  <img src="images/mike.jpg" alt="mikeの写真" class="profile-img" />
                   <div class="member-name">mike</div>
                   <ul class="member-sns-btn">
                     <li class="twitter-btn">
@@ -172,7 +172,7 @@
                 </div>
 
                 <div class="member-info">
-                  <img src="ayaka.png" alt="tsukaの写真" class="profile-img" />
+                  <img src="images/tsuka.jpg" alt="tsukaの写真" class="profile-img" />
                   <div class="member-name">tsuka</div>
                   <ul class="member-sns-btn">
                     <li class="twitter-btn">
@@ -187,7 +187,7 @@
                 </div>
 
                 <div class="member-info">
-                  <img src="ayaka.png" alt="ayakaの写真" class="profile-img" />
+                  <img src="images/ayaka.jpg" alt="ayakaの写真" class="profile-img" />
                   <div class="member-name">ayaka</div>
                   <ul class="member-sns-btn">
                     <li class="twitter-btn">
@@ -216,7 +216,7 @@
                 <a href="https://www.youtube.com/channel/UCHxqQ8bUg5F2GW79D_DvSjQ/featured">
                 <i class="fab fa-youtube fa-5x"></i></a>
                 <a href="https://twitter.com/YorozuyaOsanai">
-                  <img src="web万屋.png" alt="web万屋ロゴ"/>
+                  <img src="images/webyorozuya.png" alt="web万屋チャンネルロゴ"/>
                 </a>
               </div>
             </div> <!-- .main-container-team -->
@@ -225,7 +225,8 @@
             <div class="main-container-contact">
               <h1>お問い合わせ</h1>
               
-              <form action="" accept-charset="UTF-8" method="post">
+              <form action="send" accept-charset="UTF-8" method="post">
+                @csrf
                 <div class="contact-form">
                   <label class="email" for="address">メールアドレス</label>
                   <input type="email" name="email" id="address" required />
@@ -233,20 +234,20 @@
                 </div>
 
                 <div class="contact-form">
-                  <label class="account-name" for="account">Jazz Log アカウント名</label>
-                  <input type="text" name="" id="account"/>
+                  <label class="account-name" for="account">お名前</label>
+                  <input type="text" name="name" id="account"/>
                   <input type="hidden" name="" value="hidden" />
                 </div>
                 
-                <div class="contact-form">
+                <!-- <div class="contact-form">
                   <label class="message-title" for="title">件名</label>
                   <input type="text" name="" id="title"/>
                   <input type="hidden" name="" value="hidden" />
-                </div>
+                </div> -->
                 
                 <div class="contact-form">
                   <label class="message" for="message-form">お問い合わせの内容</label>
-                  <textarea name="" cols="40" rows="8" id="message-form" required></textarea>
+                  <textarea name="text" cols="40" rows="8" id="message-form" required></textarea>
                   <input type="hidden" name="" value="hidden" />
                 </div>
                 
