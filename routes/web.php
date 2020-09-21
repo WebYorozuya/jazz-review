@@ -41,3 +41,13 @@ Route::post('del', 'ReviewController@delete');
 
 //Contact
 Route::get('contact', 'ContactController@index');
+
+// 確認ページ
+Route::post('confirm', 'ContactController@confirm')->name('confirm');
+
+// DB挿入、メール送信
+Route::post('process', 'ContactController@process');
+// ->name('process');
+
+// 完了ページ
+Route::get('complete', 'ContactController@complete')->name('complete');
