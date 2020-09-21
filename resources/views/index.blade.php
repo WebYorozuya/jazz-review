@@ -40,9 +40,12 @@
                 </form>
             </div>
             <div class="header-end">
-                <div class="header-post">
-                    <a href="post"><i class="fas fa-edit fa-2x"></i><span>投稿する</span></a>
-                </div>
+                <!-- <div class="header-post"> -->
+                    <a href="post" class="header-post">
+                    <i class="fas fa-pen-nib"></i>
+                        投稿する
+                    </a>
+                <!-- </div> -->
                 @if (Route::has('login'))
                 <div class="header-loginUser">
                     <input id="header-loginUser-acd-check" class="header-loginUser-acd-check" type="checkbox">
@@ -173,7 +176,7 @@
                 </div>
             </div>
             <div class="footer-right">
-                <a href="#" class="information1">お問い合わせ</a>
+                <a href="contact" class="information1">お問い合わせ</a>
                 <a href="#" class="information2">利用規約</a>
             </div>
         </div>
