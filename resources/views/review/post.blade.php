@@ -5,7 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <title>Jazz Log</title>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="{{ asset('css/materialize.css') }}"  media="screen,projection"/>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <style>
     html, body {
       background-color: #f5F5F5;
@@ -65,14 +69,19 @@
         <label for="live_date">ライブに行った日</label>
         <input type="date" id="live_date" name="live_date">
         <label for="tag">タグ</label>
-        <input type="text" id="tag" name="tag_name">
+
+        <div class="chips chips-placeholder">
+        <input type="text" id="tag" name="tag_name" placeholder="Enter a tag" class="tag">
+        </div>
+        
         <label for="title">レビューのタイトル</label>
         <input type="text" id="title" name="title">
         <label for="text">ライブの感想</label>
         <textarea name="text" id="text" cols="30" rows="10"></textarea>
         <p style="text-align: right; font-size: 0.8rem;">（1000文字以内）</p>
-        <input type="submit" class="submit">
-      </form>
+        <!-- <input type="button" class="submit" value="投稿する"> -->
+        <input type="button" class="submit" onclick="submit();" value="投稿する">
+      </form>  
   </div><!-- /.form_container -->
 </body>
 <script type="text/javascript">
@@ -99,5 +108,51 @@
             
             document.getElementById("live_date").value = ymd;
         }
+</script>
+<script>
+$(function (){
+  $('.chips').chips();
+  $('.chips-initial').chips({
+    data: [{
+      tag: 'Apple',
+    }, {
+      tag: 'Microsoft',
+    }, {
+      tag: 'Google',
+    }],
+  });
+  $('.chips-placeholder').chips({
+    placeholder: 'Enter a tag',
+    secondaryPlaceholder: '+Tag',
+  });
+  $('.chips-autocomplete').chips({
+    autocompleteOptions: {
+      data: {
+        'Apple': null,
+        'Microsoft': null,
+        'Google': null
+      },
+      limit: Infinity,
+      minLength: 1
+    }
+  });
+});
+</script>
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="{{ asset('js/materialize.js') }}">
+  // document.addEventListener('DOMContentLoaded', function() {
+  //   var elems = document.querySelectorAll('.chips');
+  //   var instances = M.Chips.init(elems, options);
+  // });
+  var instance = M.Chips.getInstance(elem);
+
+  instance.addChip({
+    tag: 'chip content',
+    image: '', // optional
+  });
+  
+  instance.deleteChip(3); // Delete 3rd chip.
+
+  instance.selectChip(2); // Select 2nd chip
 </script>
 </html>
