@@ -33,18 +33,32 @@ class ReviewController extends Controller
     //フォームの値を取得しDBにレコード挿入
     public function create(Request $request)
     {
+        //まず全部受け取ってバリデーション
         $this->validate($request, Review::$rules); //バリデーションの実行
         $review = new Review; //Reviewインスタンス作成
         $form = $request->all(); //送信されたフォームの値を保管
         unset($form['_token']); //CSRF非表示フィールド_token削除
         $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
 
-        $this->validate($request, Tag::$rules); //バリデーションの実行
-        $tag = new Tag; //Reviewインスタンス作成
-        $form = $request->all(); //送信されたフォームの値を保管
-        unset($form['_token']); //CSRF非表示フィールド_token削除
-        $tag->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
-
+        //タグのINSERT
+        //送信されたタグをスペース区切りで整える
+        $spaces = array("　", "  ", "   ");
+        $tags = trim(str_replace($spaces, " ", $request->tag_name));
+        $tags = explode(" ", $tags);
+        //新規タグだけtagsテーブルに挿入
+        $array = [];
+        foreach ($tags as $tag) {
+            $record = Tag::firstOrCreate(['tag_name' => $tag]);
+            array_push($array, $record);
+        };
+        //投稿に紐付けされるタグのidを配列化、中間テーブルへ
+        $tags_id = [];
+        foreach ($array as $tag) {
+            array_push($tags_id, $tag['id']);
+        };
+        //中間テーブルにレコード挿入//tagsメソッドinReview.php
+        $review->tags()->attach($tags_id);
+        
         return redirect('/'); //トップページへ
     }
     //投稿修正機能
