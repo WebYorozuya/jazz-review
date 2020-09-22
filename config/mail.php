@@ -36,7 +36,7 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.mailtrap.io'),//'MAIL_HOST', 'smtp.mailgun.org'
+            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),//'MAIL_HOST', 'smtp.mailgun.org'
             'port' => env('MAIL_PORT', 587), //'MAIL_PORT', 587
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => '81d2df13529a9e',//env('MAIL_USERNAME')
