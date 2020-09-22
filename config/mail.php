@@ -37,7 +37,7 @@ return [
         'smtp' => [
             'transport' => 'smtp',
             'host' => env('MAIL_HOST', 'smtp.mailtrap.io'),//'MAIL_HOST', 'smtp.mailgun.org'
-            'port' => env('MAIL_PORT', 2525), //'MAIL_PORT', 587
+            'port' => env('MAIL_PORT', 587), //'MAIL_PORT', 587
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => '81d2df13529a9e',//env('MAIL_USERNAME')
             'password' => '23b6a4a2130afb',//env('MAIL_PASSWORD')
