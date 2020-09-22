@@ -7,9 +7,9 @@
   <link rel="icon" href="images/favicon.ico" />
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
   <!-- Heroku用CSS -->
-  <!-- <link rel="stylesheet" href="{{secure_asset('css/contact.css')}}"> -->
+  <link rel="stylesheet" href="{{secure_asset('css/contact.css')}}">
   <!-- ローカル用CSS -->
-  <link rel="stylesheet" href="{{asset('css/contact.css')}}">
+  <!-- <link rel="stylesheet" href="{{asset('css/contact.css')}}"> -->
   <link
     rel="stylesheet"
     href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
@@ -236,12 +236,6 @@
                 <input type="text" name="name" id="account"/>
                 <!-- <input type="hidden" name="" value="hidden" /> -->
               </div>
-              
-              <!-- <div class="contact-form">
-                <label class="message-title" for="title">件名</label>
-                <input type="text" name="" id="title"/>
-                <input type="hidden" name="" value="hidden" />
-              </div> -->
               
               <div class="contact-form">
                 <label class="message" for="message-form">お問い合わせの内容</label>
