@@ -70,8 +70,8 @@
         <input type="date" id="live_date" name="live_date">
         <label for="tag">タグ</label>
 
-        <div class="chips chips-placeholder">
-        <input type="text" id="tag" name="tag_name" placeholder="Enter a tag" class="tag">
+        <div class="chips chips-initial">
+        <input type="text" id="tag" name="tag_name" placeholder="Enter a tag" style="border:none;">
         </div>
         
         <label for="title">レビューのタイトル</label>
@@ -109,33 +109,31 @@
             document.getElementById("live_date").value = ymd;
         }
 </script>
-<script>
+<script>//チップスのjQuery
 $(function (){
   $('.chips').chips();
   $('.chips-initial').chips({
     data: [{
-      tag: 'Apple',
+      tag: 'Jazz',
     }, {
-      tag: 'Microsoft',
-    }, {
-      tag: 'Google',
+      tag: '東京',
     }],
   });
   $('.chips-placeholder').chips({
     placeholder: 'Enter a tag',
     secondaryPlaceholder: '+Tag',
   });
-  $('.chips-autocomplete').chips({
-    autocompleteOptions: {
-      data: {
-        'Apple': null,
-        'Microsoft': null,
-        'Google': null
-      },
-      limit: Infinity,
-      minLength: 1
-    }
-  });
+  // $('.chips-autocomplete').chips({
+  //   autocompleteOptions: {
+  //     data: {
+  //       'ブルーノート東京': null,
+  //       'コットンクラブ東京': null,
+  //       "Kelly's大阪": null
+  //     },
+  //    limit: Infinity,
+  //    minLength: 1
+  //  }
+  //});
 });
 </script>
 <!--JavaScript at end of body for optimized loading-->
@@ -148,11 +146,14 @@ $(function (){
 
   instance.addChip({
     tag: 'chip content',
-    image: '', // optional
+    //image: '', // optional
   });
   
   instance.deleteChip(3); // Delete 3rd chip.
 
   instance.selectChip(2); // Select 2nd chip
+
+  document.getElementBy
+
 </script>
 </html>
