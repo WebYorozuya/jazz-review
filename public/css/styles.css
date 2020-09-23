@@ -367,156 +367,63 @@ main {
   border-bottom: 1px solid var(--main-background-color);
 }
 /* レビュー記事 */
-.main-newReview {
+.reviews {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  padding: 5px 10px;
   border-bottom: 1px solid var(--main-background-color);
 }
 
-.main-userMaleImg {
-  border: 1px solid rgb(51, 51, 51);
-  border-radius: 20px;
-  margin: 5px;
+.review-left .user-image {
+  display: inline-block;
+  width: 50px;
 }
 
-.main-newReview-upperColumn {
-  display: flex;
-  justify-content: space-between;
-  background-color: #ffffff;
-  position: relative;
-  z-index: 20;
+.review-link {
+  float: right;
+  text-decoration: none;
 }
 
-.main-newReview-upperColumn-left {
-  display: flex;
-  flex-direction: row;
-  width: 160px;
-  height: 40px;
+.review-left img {
+  height: 50px;
 }
 
-.main-newReviewerFig {
-  height: 30px;
-  width: 30px;
-  margin-right: 10px;
+.reviews h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+  padding: 1px 0 0px 0;
 }
 
-.main-newReviewerName {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  min-width: 100px;
-  height: 40px;
+.review-right {
+  flex-grow: 1;
+  padding-left: 8px;
 }
 
-.main-newReview-upperColumn-right {
-  display: flex;
-  flex-direction: row;
+.review-right .live_date {
+  font-size: 0.9rem;
 }
 
-.main-newReviewEvaluation {
-  display: flex;
-  flex-direction: row;
+.review-right .tags {
+  padding: 0 0 8px 5px;
 }
 
-.main-newReviewEvaluation img {
+.review-right .tag {
+  text-decoration: underline;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.review-bottom {
+  font-size: 0.85rem;
+  color: #aaa;
   display: flex;
   align-items: center;
-  height: 20px;
-  margin-top: 5px;
 }
 
-.main-newReviewEvaluation:hover img {
-  background-color: rgb(255, 200, 200);
-  border-radius: 10px;
-  transition: background-color 0.8s;
-}
-
-.main-newReviewEvaluation span {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: 30px;
-  text-align: center;
-  font-size: 12px;
-  padding-top: 7px;
-}
-
-.main-newReviewEvaluation:hover span {
-  color: rgb(255, 200, 200);
-  transition: color 0.8s;
-}
-
-.main-newReviewUploadDate {
-  padding: 7px 10px 0px 10px;
-  display: flex;
-  align-items: flex-start;
-  font-size: 12px;
-}
-
-.main-newReviewDate {
-  height: 30px;
-  min-width: 100px;
-  padding: 5px;
-}
-
-.main-newReviewPerformerName {
-  height: 30px;
-  min-width: 100px;
-  padding: 5px;
-}
-.main-newReviewPlace {
-  height: 30px;
-  min-width: 100px;
-  padding: 5px;
-}
-
-input[type="checkbox"] {
-  position: absolute;
-  left: -100vw;
-}
-
-.main-newReview-middleColumn {
-  background-color: #fff;
-  display: flex;
-  flex-direction: row;
-  font-size: 12px;
-}
-
-.main-newReview-lowerColumn {
-  display: flex;
-  flex-direction: row;
-}
-
-#main-newReviewText {
-  height: 20px;
-  flex: 1;
-  font-size: 15px;
-  background-color: #fff;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 15px;
-  padding: 0px 20px;
-  transition: height 0.2s 0.1s;
-}
-
-#openImg {
-  width: 15px;
-  background-color: #fff;
-}
-
-#closeImg {
-  width: 15px;
-  display: none;
-  background-color: #fff;
-}
-
-.main-newReviewOpenClose {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: #fff;
+.review-bottom span {
+  margin-right: 15px;
 }
 
 /* index.php end*/
