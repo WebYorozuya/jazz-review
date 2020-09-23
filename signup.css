@@ -1,99 +1,127 @@
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 200vh;
+  margin: 0;
+  padding: 0;
+  background-color:#f6f6f4;
+  font-family: fantasy, -apple-system, "Segoe UI", "Helvetica Neue",
+  "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
+  overflow: hidden;
+}
+
 header {
-    height: 50px;
-    outline: 1px solid #000000;
+    /* height: 80px; */
     background-color: #0378a6;
-  
   }
   
   .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 50px;
+    /* height: 80px; */
     max-width: 1100px;
     padding: 0px 16px;
     margin-left: auto;
     margin-right: auto;
   }
   
-  .header-start {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  
   .header-siteName {
     flex: 1;
-    margin-top: 10px;
-    padding: 0px 16px 0px 5px;
+    /* padding: 0px 16px 0px 5px; */
     min-width: 100px;
   }
-  
+
   .siteLogo {
-    width: 150px;
+    height: 60px;
+    margin-top: 8px;
     /* margin: 10px; */
   }
-  
-body {
-    margin: 0;
-    width: 100vw;
-    min-height: 100vh;
-  }
 
-  .welcom {
+/* ここから新規登録エリア */
+
+  .welcome h1{
     text-align: center;
+    margin-bottom: 0;
     white-space: nowrap;
     letter-spacing: 0.1px;
-    font-size: 30px;
+    font-size: 60px;
     font-weight: 400;
     color: #0f1813;
-    font-family: 'Courier New', Courier, monospace;
   }
-  
-  p {
-    margin: 0;
+
+  .welcome p {
+    color: #3c4a57;
     font-size: 20px;
   }
 
-  form {
-    position: ;
-    width: 400px;
-    padding: 50px;
-    /* border-radius: 10px; */
-    /* 見やすくするために色つけてるだけ */
-    background: #6ea7bd;
+  .signup_please {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    color: #122219;
+    font-size: 20px;
   }
-
-  label {
-    display:;
-    width: 120px;
-  }
-  
 
   .signup {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100vw;
-    margin-top: 30px;
-    min-height: auto;
+    justify-content: space-around;
+    align-items: center;
+    height: 40vh;
   }
   
-   .signup_form {  
-    justify-content: center;
-    align-content: center; 
-    text-align: center;
-    width: 280px;
-   	letter-spacing: 0.1px;
-    border-radius: 8px;
-    border-width: 0.5px;
-    padding: 0.5em;
-    font-size: 1em;
+  .signup_form label {
+    color: #3c4a57;
+    font-size: 15px;
+  }
+  
+  .signup_form input {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    color:#0f1813; 
+    font-size: 20px;
   } 
 
-  .btn_signup{
+  .btn_signup {
     text-align: center;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #0378a6;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+}
+  hr {
+    width: 30%;
+  }
+
+  .access {
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+    font-size: 1em;
+  }
+
+  .login .not_signup {
+    margin: 0;
+  }
+
+  a {
+    text-decoration-line: none;
   }
 
 

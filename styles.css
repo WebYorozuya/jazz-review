@@ -846,7 +846,7 @@ main {
 
 .livehouse-homepage-link {
   margin: 30px 0px 0px 30px;
-}
+
 
 .livehouse-address {
   margin: 20px 0px 0px 30px;
@@ -870,6 +870,7 @@ iframe {
   align-items: center;
   justify-content: space-between;
   background-color: #fff;
+
 }
 
 .main-reviewText-upperColumn-left {
@@ -909,6 +910,7 @@ iframe {
 .main-reviewText-middleColumn {
   display: flex;
   flex-direction: row;
+  width: 160px;
 }
 
 #main-reviewText {
@@ -1108,6 +1110,7 @@ aside {
 
 /* フッター関連 */
 footer {
+  /* margin-top: 15px; */
   height: 200px;
   outline: 1px solid #0f1813;
   background-color: #0f1813;
@@ -1191,6 +1194,11 @@ footer {
     height: 30px;
     z-index: 1;
     display: none;
+  }
+  
+  .home {
+    padding: 0px 16px 0px 16px;
+    flex: 1;
   }
 
   /* ホーム関連*/
