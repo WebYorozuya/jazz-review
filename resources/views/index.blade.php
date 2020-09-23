@@ -46,7 +46,7 @@
             </a>
         @if (Route::has('login'))
         <div class="header-loginUser">
-            <input id="header-loginUser-acd-check" class="header-loginUser-acd-check" type="checkbox">
+            <!-- <input id="header-loginUser-acd-check" class="header-loginUser-acd-check" type="checkbox"> -->
             <label class="header-loginUser-acd-label" for="header-loginUser-acd-check">
             <i class="far fa-user-circle fa-2x"></i>
                 @auth
@@ -99,7 +99,7 @@
         <li>
           <a href="contact" class="li-livehouse">
             <i class="far fa-smile"></i>
-            <span>Contact</span>
+            <span>Contact us</span>
           </a>
         </li>
       </ul>
@@ -123,41 +123,34 @@
         <main>
             <h1 class="main-newReview-title">新着レビュー</h1>
             @foreach ($items as $item)
-            <div class="main-newReview">
-                <div class="main-newReview-upperColumn">
-                    <div class="main-newReview-upperColumn-left">
-                        <div class="main-newReviewerFig">
-                            <img src="images/icons8-user-male-30-black.png" class="main-userMaleImg">
-                        </div>
-                        <div class="main-newReviewerName">{{$item->getData()}}</div>
-                    </div>
-                    <div class="main-newReview-upperColumn-right">
-                        <div class="main-newReviewEvaluation">
-                            <img src="images/icons8-like-24-black.png">
-                            <span>16</span>
-                        </div>
-                        <div class="main-newReviewUploadDate">
-                            <a href="modify?id={{$item->id}}">
-                            <i class="fas fa-ellipsis-h"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div><!-- /.main-newReview-upperColumn -->
-                <div class="main-newReview-middleColumn">
-                    <div class="main-newReviewDate">{{$item->live_date}}</div>
-                    <div class="main-newReviewPerformerName">{{$item->title}}</div>
-                    <!-- <div class="main-newReviewPlace">@ 東京</div> -->
+            <div class="reviews">
+              <div class="review-left">
+                <a href="#" class="user-image">
+                  <img src="images/icons8-user-male-30-black.png" alt="">
+                </a>
+              </div><!-- /.review-left -->
+              <div class="review-right">
+                <span class="live_date">{{$item->live_date}}</span>
+                <a href="modify" class="review-link">
+                  <i class="fas fa-ellipsis-h"></i>
+                </a>
+                <h2>{{$item->title}}</h2>
+                <div class="tags">
+                  <a href="#" class="tag">jazz</a>
+                  <a href="#" class="tag">東京</a>
+                  <a href="#" class="tag">おしゃれ</a>
                 </div>
-                <div class="main-newReview-lowerColumn">
-                    <input id="openCloseCheckBox" type="checkbox" />
-                    <div id="main-newReviewText">
-                    {{$item->text}}
-                    </div>
-                    <div class="main-newReviewOpenClose">
-                        <img src="images/icons8-double-down-24-black.png" id="openImg">
-                        <img src="images/icons8-double-up-24-black.png" id="closeImg">
-                    </div>
-                </div>
+                <p>{{$item->text}}</p>
+                <div class="review-bottom">
+                  <span class="user-name">by {{$item->getData()}}さん</span>
+                  <span class="created-at">{{$item->created_at}}</span>
+                  <span class="likes">
+                    <i class="far fa-heart"></i>
+                    <span class="like-counter">00</span>
+                  </span>
+                </div><!-- /.review-bottom -->
+              </div><!-- /.review-right -->
+
             </div><!-- /.main-newReview 1投稿のお尻 -->
             @endforeach
             {{ $items->links('vendor.pagination.bootstrap-4')}}
