@@ -43,7 +43,7 @@ header {
 }
 
 .siteLogo {
-  height: 60px;
+  height: 75px;
   margin-top: 8px;
   /* margin: 10px; */
 }
@@ -254,7 +254,8 @@ header {
   width: 250px;
   position: sticky;
   top: 1em;
-  margin-top: 40px;
+  --title-height: 50px;
+  margin-top: var(--title-height); /*h1と連動*/
 }
 
 nav ul {
@@ -358,20 +359,21 @@ main {
 .main-newReview-title {
   text-align: center;
   width: 100%;
-  --title-height: 40px;
-  height: var(--title-height);
+  /* height: var(--title-height);なぜ効かない */
+  height: 50px;
   font-size: 1.2rem;
   font-weight: bold;
-  letter-spacing: 5px;
-  padding: 10px 0;
+  letter-spacing: 8px;
+  padding: 12px 0;
+  margin: 0;
   border-bottom: 1px solid var(--main-background-color);
 }
 /* レビュー記事 */
-.reviews {
+.review {
   width: 100%;
   display: flex;
   flex-direction: row;
-  padding: 5px 10px;
+  padding: 8px 10px;
   border-bottom: 1px solid var(--main-background-color);
 }
 
@@ -380,20 +382,43 @@ main {
   width: 50px;
 }
 
-.review-link {
-  float: right;
-  text-decoration: none;
-}
-
 .review-left img {
   height: 50px;
 }
 
-.reviews h2 {
+
+.review-top {
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+}
+.review-top h2 {
   font-size: 1.2em;
   font-weight: bold;
   margin: 0;
   padding: 1px 0 0px 0;
+  display: inline-block;
+}
+
+.review-action {
+  text-decoration: none;
+  margin: 0 3px;
+  --review-action-height: 30px;
+  height: var(--review-action-height);
+  min-width: 30px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: rgb(221, 221, 221);
+}
+
+.review-action .fas {
+  display: inline-block;
+  line-height: var(--review-action-height); /*縦位置中央揃え*/
+} 
+
+.review-action:hover{
+  background-color: rgb(221, 221, 221);
+  transition: 0.2s;
 }
 
 .review-right {

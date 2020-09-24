@@ -123,18 +123,19 @@
         <main>
             <h1 class="main-newReview-title">新着レビュー</h1>
             @foreach ($items as $item)
-            <div class="reviews">
+            <div class="review">
               <div class="review-left">
                 <a href="#" class="user-image">
                   <img src="images/icons8-user-male-30-black.png" alt="">
                 </a>
               </div><!-- /.review-left -->
               <div class="review-right">
-                <span class="live_date">{{$item->live_date}}</span>
-                <a href="modify" class="review-link">
-                  <i class="fas fa-ellipsis-h"></i>
-                </a>
-                <h2>{{$item->title}}</h2>
+                <div class="review-top">
+                  <h2>{{$item->live_date}} {{$item->title}}</h2>
+                  <a href="modify" class="review-action">
+                    <i class="fas fa-ellipsis-h"></i>
+                  </a>
+                </div><!-- /.review-right-top -->
                 <div class="tags">
                   <a href="#" class="tag">jazz</a>
                   <a href="#" class="tag">東京</a>
