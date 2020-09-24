@@ -408,11 +408,11 @@ main {
   min-width: 30px;
   border-radius: 50%;
   text-align: center;
-  background-color: rgb(221, 221, 221);
 }
 
 .review-action .fas {
   display: inline-block;
+  color: rgb(82, 80, 80);
   line-height: var(--review-action-height); /*縦位置中央揃え*/
 } 
 
