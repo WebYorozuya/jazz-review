@@ -40,7 +40,7 @@ Route::post('update', 'ReviewController@update');
 Route::post('del', 'ReviewController@delete');
 
 //Contact
-Route::get('contact', 'ReviewController@contact');
+Route::get('contact', 'ContactController@index');
 
 // 確認ページ
 Route::post('confirm', 'ContactController@confirm')->name('confirm');

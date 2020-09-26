@@ -21,17 +21,17 @@ class ReviewController extends Controller
         return view('index', ['items' => $items, 'user' => $user]);
     }
     //レイアウトtest
-    public function contact(Request $request)
-    {
-        $items = Review::orderBy('id', 'desc')
-        ->paginate(10); //reviewsテーブルから取得
-        if (Auth::user()) { //ログインユーザ情報取得
-            $user = Auth::user()->name;
-        } else {
-            $user = 'ゲスト';
-        }
-        return view('contact.contact', ['items' => $items, 'user' => $user]);
-    }
+    // public function contact(Request $request)
+    // {
+    //     $items = Review::orderBy('id', 'desc')
+    //     ->paginate(10); //reviewsテーブルから取得
+    //     if (Auth::user()) { //ログインユーザ情報取得
+    //         $user = Auth::user()->name;
+    //     } else {
+    //         $user = 'ゲスト';
+    //     }
+    //     return view('contact.contact', ['items' => $items, 'user' => $user]);
+    // }
     //投稿ページを表示
     public function post(Request $request)
     {
