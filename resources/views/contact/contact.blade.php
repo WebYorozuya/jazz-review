@@ -4,7 +4,7 @@
 
 @section('css')
 <!-- Heroku -->
-<link rel="stylesheet" href="{{asset('secure_css/contact.css')}}">
+<link rel="stylesheet" href="{{secure_asset('css/contact.css')}}">
 <!-- Local -->
 <!-- <link rel="stylesheet" href="{{asset('css/contact.css')}}"> -->
 @endsection
