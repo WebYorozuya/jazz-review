@@ -144,7 +144,6 @@
         </div>
     </div>
 </footer>
-@section('js')
-@endsection
+@yield('js')
 </body>
 </html>
