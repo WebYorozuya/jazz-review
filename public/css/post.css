@@ -1,0 +1,69 @@
+.form_container {
+  width: 100%;
+  margin: 10px auto;
+  background-color: #fff;
+}
+
+.form_container h1 {
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form_container form {
+  width: 85%;
+  margin: 2px auto;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+#live_date {
+  width: 30%;
+}
+
+.form_container label {
+  margin-bottom: 3px;
+}
+
+.form_container input {
+  margin-bottom: 15px;
+}
+.form_container input,
+.form_container textarea {
+  border: .5px solid rgb(219, 217, 217);
+  padding: 5px 8px;
+}
+
+.form_container .submit,
+.form_container button {
+  width: 180px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 550;
+  border: none;
+  border-radius: 5px;
+  color: rgb(39, 37, 37);
+  margin: 5px auto;
+  padding: 8px;
+  cursor: pointer;
+  user-select: none; /*ユーザーが連打しても選択できないように*/
+}
+
+.form_container .submit {
+  background-color: #0490c7;
+  border-bottom: solid 4px  #026186;
+  color: white;
+  letter-spacing: 1px;
+}
+.form_container .submit:active {
+  transform: translateY(4px);
+  border-bottom: none;
+}
+
+.form_container button {
+  background-color: rgb(209, 209, 209);
+  letter-spacing: 1px;
+}
+
