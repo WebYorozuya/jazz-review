@@ -67,3 +67,13 @@
   letter-spacing: 1px;
 }
 
+#del {
+  background-color: rgb(240, 133, 133);
+  border-bottom: solid 4px  rgb(170, 50, 50);
+}
+
+#del:active {
+  transform: translateY(4px);
+  border-bottom: none;
+}
+
