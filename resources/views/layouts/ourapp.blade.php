@@ -12,7 +12,7 @@
     <!-- Heroku用 -->
     <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
     <!-- ローカル用 -->
-    <!-- <link rel="stylesheet" href="{{asset('css/styles.css')}}"> -->
+    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
     @yield('css')
     <style>
         .pagination {
@@ -29,7 +29,7 @@
   <div class="header-container">
     <div class="header-start">
       <div class="header-siteName">
-        <a href="#"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
+        <a href="/"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
       </div>
       <form class="header-search" action="cgi-bin/example.cgi" method="post">
         <!-- <div id="search-units"> -->
@@ -80,13 +80,13 @@
     <nav>
       <ul class="pc-nav">
         <li>
-          <a href="#" class="li-newInformation">
+          <a href="/" class="li-newInformation">
             <i class="fas fa-music fa-lg"></i>
             <span>新着レビュー</span>
           </a>
         </li>
         <li>
-          <a href="#" class="li-player">
+          <a href="tags" class="li-player">
             <i class="fas fa-tags"></i>
             <span>タグ</span>
           </a>
