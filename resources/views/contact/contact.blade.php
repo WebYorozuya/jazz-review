@@ -9,9 +9,10 @@
 <link rel="stylesheet" href="{{asset('css/contact.css')}}">
 @endsection
 
-@section('h1', 'Our team')
+<!-- @section('h1', 'Our team') -->
 
 @section('main')
+<h1 class="main-title">Our team</h1>
 <!-- チーム紹介 -->
 <div class="main-container-team">
     <div class="team-member">
