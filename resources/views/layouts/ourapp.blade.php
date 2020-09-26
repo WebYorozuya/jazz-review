@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/aaab412f99.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> -->
     <!-- Heroku用 -->
     <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
@@ -130,7 +131,7 @@
     </div>
   </div>
 </div>
-<footer>
+<footer class="footer">
     <div class="footer-container">
         <div class="footer-left">
             <div class="footer-left">
@@ -145,5 +146,21 @@
     </div>
 </footer>
 @yield('js')
+<script>
+  if($('.footer').length){
+	var imgpass = "../images/";
+	// 表示させたい画像のファイル名＋拡張子を配列に格納
+	var imgfile = [];
+	imgfile[0] = 'trumpet.jpg';
+	imgfile[1] = 'jazzclub.jpg';
+	// imgfile[2] = 'bg03.jpg';
+	// imgfile[3] = 'bg04.jpg';
+	// 画像の数を元に、ランダムな数値を算出
+	var n = Math.floor(Math.random() * imgfile.length);
+	var bgbox = $('.footer');
+	// 算出したランダムな数値の順番にいるファイル情報をbackground-imageに設定する
+	bgbox.css('background-image', 'url(' + imgpass + imgfile[n] + ');');
+}
+</script>
 </body>
 </html>
