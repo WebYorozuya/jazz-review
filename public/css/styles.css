@@ -5,7 +5,7 @@ body {
     "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
   width: 1140px;
   width: 100%;
-  min-height: 200vh;
+  /* min-height: 200vh; */
   display: flex;
   flex-direction: column;
   outline: 1px solid;
@@ -15,7 +15,8 @@ body {
 
 header {
   /* height: 80px; */
-  background-color: #0378a6;
+  --theme-color: #0378a6;
+  background-color: var(--theme-color);
 }
 
 .header-container {
@@ -131,7 +132,6 @@ header {
   margin: 5px;
 }
 
-
 .header-loginUser {
   flex: 1;
   display: flex;
@@ -150,7 +150,7 @@ header {
   background: #2a6897;
   border-radius: 10px;
   height: 50px;
-  width: 180px; /*kaku変更 */
+  width: 180px;
 }
 
 .header-loginUser-acd-label:hover {
@@ -309,6 +309,7 @@ main {
   flex-grow: 1;
   min-width: 0;
   background-color: #fff;
+  margin-bottom: 70px;
 }
 
 /* uploadボタン*/
@@ -480,6 +481,13 @@ aside {
   border: 1px solid transparent;
   background-color: #fff;
 } */
+
+.pagination {
+  font-size: 15px;
+}
+.pagination li {
+  display: inline-block;
+}
 
 footer {
   /* margin-top: 15px; */
