@@ -20,6 +20,18 @@ class ReviewController extends Controller
         }
         return view('index', ['items' => $items, 'user' => $user]);
     }
+    //レイアウトtest
+    public function contact(Request $request)
+    {
+        $items = Review::orderBy('id', 'desc')
+        ->paginate(10); //reviewsテーブルから取得
+        if (Auth::user()) { //ログインユーザ情報取得
+            $user = Auth::user()->name;
+        } else {
+            $user = 'ゲスト';
+        }
+        return view('contact.contact', ['items' => $items, 'user' => $user]);
+    }
     //投稿ページを表示
     public function post(Request $request)
     {
@@ -38,8 +50,8 @@ class ReviewController extends Controller
         $review = new Review; //Reviewインスタンス作成
         $form = $request->all(); //送信されたフォームの値を保管
         unset($form['_token']); //CSRF非表示フィールド_token削除
+        // var_dump($form); exit();
         $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
-
         //タグのINSERT
         //送信されたタグをスペース区切りで整える
         $spaces = array("　", "  ", "   ");
@@ -58,7 +70,7 @@ class ReviewController extends Controller
         };
         //中間テーブルにレコード挿入//tagsメソッドinReview.php
         $review->tags()->attach($tags_id);
-        
+
         return redirect('/'); //トップページへ
     }
     //投稿修正機能

@@ -1,301 +1,3 @@
-/* 共通部分 */
-body {
-  display: flex;
-  flex-direction: column;
-  width: 1140px;
-  width: 100%;
-  min-height: 200vh;
-  margin: 0;
-  color: rgb(51, 51, 51);
-  font-family: -apple-system, "Segoe UI", "Helvetica Neue",
-    "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
-}
-
-header {
-  /* height: 80px; */
-  background-color: #0378a6;
-}
-
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* height: 80px; */
-  max-width: 1100px;
-  padding: 0px 16px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.header-start {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.header-siteName {
-  flex: 1;
-  /* padding: 0px 16px 0px 0px; */
-  min-width: 100px;
-}
-
-.siteLogo {
-  height: 60px;
-  margin-top: 8px;
-  /* margin: 10px; */
-}
-
-#search-units {
-  font-weight: bold;
-  color: rgb(51, 51, 51);
-  background-color: #fff;
-  border: 1px solid #333333;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.header-search-btn {
-  display: none;
-}
-
-#header-search-text {
-  border: none;
-  background-color: rgba(255, 255, 255, 0);
-  height: 20px;
-  width: 150px;
-  font-size: 12px;
-}
-
-.search-box {
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
-.header-end {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header-post {
-  display: flex;
-  align-items: center;
-  background: #2a6897;
-  border-radius: 10px;
-  width: 100px;
-  height: 50px;
-  font-size: 12px;
-  margin-right: 10px;
-}
-
-.header-post a {
-  display: flex;
-  flex-direction: row;
-  justify-content: column;
-  width: 100%;
-  color: #fff;
-  align-items: center;
-  text-decoration: none;
-}
-
-.header-post a span {
-  display: flex;
-  align-items: center;
-}
-
-.editImg {
-  margin: 5px;
-}
-
-.header-post:hover {
-  opacity: 0.8;
-}
-
-.header-loginUser {
-  flex: 1;
-  display: flex;
-  justify-content: row;
-}
-
-.header-loginUser-acd-label {
-  flex: 1;
-  display: flex;
-  justify-content: row;
-  align-items: center;
-  color: #ffffff;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  background: #2a6897;
-  border-radius: 10px;
-  height: 50px;
-  width: 100px;
-}
-
-.header-loginUser-acd-label:hover {
-  opacity: 0.8;
-}
-
-.header-loginUser-acd-content {
-  border: 1px solid #eeeeee;
-  background-color: #ffffff;
-  display: block;
-  transition: 0.1s;
-  visibility: hidden;
-  position: absolute;
-  top: 60px;
-  width: 100px;
-  z-index: 50;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 12px;
-}
-
-.header-loginUser-acd-content a {
-  text-decoration: none;
-}
-
-.header-loginUser-acd-content-login,
-.header-loginUser-acd-content-logout,
-.header-loginUser-acd-content-account {
-  border: 0.5px solid #dddddd;
-  height: 30px;
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 5px;
-  align-items: center;
-  color: rgb(51, 51, 51);
-}
-
-.header-loginUser-acd-content-login:hover,
-.header-loginUser-acd-content-logout:hover,
-.header-loginUser-acd-content-account:hover {
-  background-color: #dddddd;
-}
-
-.header-loginUser-acd-check:checked + .header-loginUser-acd-label:after {
-}
-
-.header-loginUser-acd-check:checked
-  + .header-loginUser-acd-label
-  + .header-loginUser-acd-content {
-  opacity: 1;
-  visibility: visible;
-}
-
-input[type="checkbox"] {
-  position: absolute;
-  left: -100vw;
-}
-
-.userMaleImg {
-  border: 1px solid #ffffff;
-  border-radius: 20px;
-  margin: 5px;
-}
-
-.header-loginUser-btn {
-  display: block;
-  margin: 5px 30px 5px 0px;
-  color: #ffffff;
-  font-size: 12px;
-}
-/* header終了 */
-
-/* メインエリア全体 */
-.home {
-  display: flex;
-  padding: 50px 0;
-  background-color: #f6f6f4;
-}
-
-.home-container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 1100px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.right-container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  background-color: #f6f6f4;
-}
-
-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 40%;
-  max-width: 1100px;
-  min-height: 100vh;
-  margin-right: auto;
-  margin-left: auto;
-  position: sticky;
-  top: 1em;
-}
-
-.pc-nav {
-}
-
-nav ul {
-  padding: 0 50px;
-  width: 100%;
-  list-style: none;
-  text-align: center;
-}
-
-nav ul li {
-  margin-bottom: 10px;
-}
-
-nav ul li a:hover {
-  background-color: rgb(192, 192, 192, 0.6);
-  border-radius: 8px;
-}
-
-nav ul li img {
-  margin-right: 10px;
-  height: 20px;
-}
-
-.li-newInformation {
-  background-color: #0378a6;
-  border-radius: 8px;
-}
-
-.li-newInformation,
-.li-player,
-.li-livehouse,
-.li-reviewer {
-  text-decoration: none;
-  padding: 20px 10px;
-  display: flex;
-  flex-direction: row;
-  color: rgb(51, 51, 51);
-  font-size: 12px;
-}
-
-.mobile-nav {
-  display: none;
-}
-
-.pulldown {
-  display: none;
-}
-
-.pulldown-select {
-  display: none;
-}
-
 /* チーム紹介とお問い合わせフォーム共通 */
 main {
   flex-grow: 1;
@@ -304,7 +6,7 @@ main {
 }
 
 .main-container-team,
-.main-container-contact {
+.main-form {
   justify-content: center;
   width: 100%;
   padding: 30px;
@@ -410,12 +112,26 @@ h1 {
 }
 
 /* お問い合わせフォーム */
+
 .main-container-contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+
+.main-title {
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 8px;
+  padding: 12px 0;
+  margin-bottom: 12px;
+  border-top: 1px solid var(--main-background-color);
+  border-bottom: 1px solid var(--main-background-color);
 }
 
 .contact-form label {
@@ -468,32 +184,4 @@ aside {
   position: relative;
   z-index: 20;
   background-color: #f6f6f4;
-}
-
-/* .ad1 {
-    height: 200px;
-    width: 200px;
-    margin: 10px;
-    text-decoration: none;
-    color: black;
-    border: 1px solid transparent;
-    background-color: #fff;
-  } */
-
-/* .ad2 {
-    height: 300px;
-    width: 260px;
-    margin: 10px;
-    text-decoration: none;
-    color: black;
-    border: 1px solid transparent;
-    background-color: #fff;
-  } */
-
-footer {
-  position: relative;
-  height: 20px;
-  z-index: 40;
-  background-color: #f6f6f4;
-  color: #0f1813;
 }
