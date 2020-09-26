@@ -356,7 +356,7 @@ main {
 
 /* uploadボタン終わり*/
 
-.main-newReview-title {
+.main-title {
   text-align: center;
   width: 100%;
   /* height: var(--title-height);なぜ効かない */
@@ -368,6 +368,7 @@ main {
   margin: 0;
   border-bottom: 1px solid var(--main-background-color);
 }
+
 /* レビュー記事 */
 .review {
   width: 100%;

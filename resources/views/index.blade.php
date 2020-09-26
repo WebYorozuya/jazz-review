@@ -99,7 +99,7 @@
         <li>
           <a href="contact" class="li-livehouse">
             <i class="far fa-smile"></i>
-            <span>Contact us</span>
+            <span>お問い合わせ</span>
           </a>
         </li>
       </ul>
@@ -122,7 +122,7 @@
     <div class="right-container">
       <!-- 投稿表示スペース -->    
       <main>
-        <h1 class="main-newReview-title">新着レビュー</h1>
+        <h1 class="main-title">新着レビュー</h1>
         @foreach ($items as $item)
         <div class="review">
           <div class="review-left">
