@@ -15,6 +15,6 @@ class Tag extends Model
     //
     public function reviews()
     {
-        return $this->belongsToMany('App\Review');
+        return $this->belongsToMany('App\Review')->withTimestamps();
     }
 }
