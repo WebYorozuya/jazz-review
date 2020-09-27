@@ -44,7 +44,7 @@
             <label class="header-loginUser-acd-label" for="header-loginUser-acd-check">
             <i class="far fa-user-circle fa-2x"></i>
                 @auth
-                <a href="{{ url('/home') }}" class="hello-user">こんにちは<br>{{$user}}さん</a>
+                <a href="{{ url('/home') }}" class="hello-user">こんにちは<br>{{$user->name}}さん</a>
                 @else
                 <a href="{{ route('login') }}" class="hello-user">ログイン</a>
                 @if (Route::has('register'))

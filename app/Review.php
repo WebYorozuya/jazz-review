@@ -28,7 +28,7 @@ class Review extends Model
     //タグとのリレーション
     public function tags()
     {
-        return $this->belongsToMany('App\Tag');
+        return $this->belongsToMany('App\Tag')->withTimestamps();
     }
 }
 
