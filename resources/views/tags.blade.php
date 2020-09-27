@@ -15,8 +15,8 @@
     <p>Jazz Logに登録されているタグの一覧です。<br>毎日様々なライブハウスの投稿がされています。</p>
     <div class="tags-container">
       @foreach($items as $item)
-      <div class="tag-box" data-count="#">
-        <a class="TagList-label" href="#">
+      <div class="tag-box">
+        <a class="TagList-label" href="#" data-count="{{$tag_counts}}">
           <span>{{$item->tag_name}}</span>
         </a>
       </div>
