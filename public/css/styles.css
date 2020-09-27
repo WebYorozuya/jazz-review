@@ -5,7 +5,7 @@ body {
     "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
   width: 1140px;
   width: 100%;
-  /* min-height: 200vh; */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   outline: 1px solid;
