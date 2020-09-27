@@ -4,60 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="signup.css">
     <title>新規アカウント登録</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous"></link>
+    <link rel="stylesheet" href="signup.css">
 </head>
 
-<body>
-    <header>
-     <div class="header-container">
-        <div class="header-start">
-            <div class="header-siteName">
-              <a href="#"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
-            </div>
+<body class="UI_Build_Assistant">
+  <header>
+    <div class="header-container">
+      <div class="header-start">
+        <div class="header-siteName">
+          <a href="#"><img src="images/JazzLog-logo-white.png" class="siteLogo"/></a>
         </div>
-     </div>
-    </header>
+        <from class="header-search" action="cgi-bin/example.cgi" method="post">
+          <div id="search-units">
+            <input class="header-search-btn" type="submit" name="submit" value=""/>
+            <i class="fas fa-search"></i>
+            <input id="header-search-text" type="search" name="search" placeholder="キーワードで検索"/>
+            <input id="header-search-text-checkBox" type="checkbox"/>
+          </div> <!-- /#search-units" -->
+        </from>
+      </div> <!-- /.header-start -->
+      <div class="header-end">
+        <div class="header-loginUser">
+          <input id="header-loginUser-acd-check" class="header-loginUser-acd-check" type="checkbox"/>
+          <label class="header-loginUser-acd-label" for="header-loginUser-acd-check">                       
+             <i class="far fa-user-circle fa-2x"></i>
+             <div class="space"></div>
+             <i class="fas fa-caret-down  fa-lg"></i></label>
+          <div class="header-loginUser-acd-content">
+            <a href="#">
+              <div class="header-loginUser-acd-content-login">ログイン</div>
+            </a>
+            <a href="#">
+              <div class="header-loginUser-acd-content-logout">
+                ログアウト
+              </div>
+            </a>
+            <a href="#">
+              <div class="header-loginUser-acd-content-account">
+                アカウント登録
+              </div>
+            </a>
+          </div> <!-- /.header-loginUser-acd-content -->
+        </div> <!-- /.header-loginUser -->
+      </div> <!-- /.header-end -->
+    </div> <!-- /.header-container -->
+  </header>
 
-  <div class="main">
-    
-    <div class="welcome">
-       <h1>Welcome to Jazz Log</h1>
-    </div>
-    <div class="signup_please">  
-         <p>♪ 新規登録してね ♪</p>
-    </div>
- 
-    <div class="signup">
-      <form action="" accept-charset="UTF-8" method="post">
+  <main>
+    <div class="left-container">
+      <div class="welcome">
+        <h1>Welcome to Jazz Log</h1>
+        <h2>〜 jazz for all people 〜</h2>
+      </div>
+    </div> <!-- /.left-container -->
+    <div class="right-container">
+      <div class="signup">
+      <div action="" accept-charset="UTF-8" method="post">
+          <h3>♪ 新規登録してね ♪</h3>
         <div class="signup_form">
-            <label>アカウント名<input type="text" name="account" required></label>
+            <label for="account">アカウント名</label>
+            <p>( 半角英数字、記号-._が使用できます )</p>
+            <input type="text" name="account" id="account" required>
             <input type="hidden" name="hidden" value="hidden">
         </div>
         <div class="signup_form"> 
-            <label>メールアドレス<input type="email" name="email" required></label>
+            <label for="email">メールアドレス</label>
+            <input type="email" name="email" id="email" required>
             <input type="hidden" name="hidden" value="hidden">
         </div>
         <div class="signup_form">
-            <label>パスワード<input type="password" name="password" requiredt></label>
+            <label for="password">パスワード</label>
+            <p>( 8文字以上32文字以内 )</p>
+            <input type="password" name="password" id="password" requiredt>
             <input type="hidden" name="hidden" value="hidden">
         </div>
-        <div class="btn_signup">
-           <input type="submit" name="commit" value="登録する">
-           <input type="hidden" name="redirect_to" value="hidden">
+        <div class="signup_form">
+            <label for="password-check">パスワード確認</label>
+            <p>( 上と同じパスワードを入力してください )</p>
+            <input type="password" name="password" id="password-check" requiredt>
+            <input type="hidden" name="hidden" value="hidden">
         </div>
-      </form> 
-    </div>
-    <hr>
-    <div class="access">
-       <div class="login">すでにアカウントをお持ちの場合 ：<a href="#">ログイン</a></div>
-       <div class="not_signup">登録せずに利用する場合 ：<a href="#">こちら</a></div>
-       
-    </div>
-  </div>
+  
+        <div class="access">
+           <div class="login">すでにアカウントをお持ちの場合 ：<a href="#">ログイン</a></div>
+           <div class="not_signup">登録せずに利用する場合 ：<a href="#">こちら</a></div>
+        </div>
 
+        <div class="btn_signup"> <!-- 登録ボタン -->
+          <input type="submit" name="commit" value="新規登録" class="commit">
+          <input type="hidden" name="redirect_to" value="hidden">
+        </div>
+
+      </div> 
+      </div>  <!-- /.signup -->
+    </div> <!-- /.right-container -->
+  </main>
   <footer>
-    <p><small>&copy; Jazz Log</small></p>
+    <!-- <p><small>&copy; Jazz Log</small></p> -->
   </footer>
 
 </body>
