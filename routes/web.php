@@ -51,3 +51,6 @@ Route::post('process', 'ContactController@process');
 
 // 完了ページ
 Route::get('complete', 'ContactController@complete')->name('complete');
+
+// 完了ページ
+Route::get('tags', 'TagController@index');
