@@ -147,6 +147,7 @@
 </footer>
 @yield('js')
 <script>
+  // http://keylopment.com/faq/529/ こちらを参照
   if($('.footer').length){
 	var imgpass = "../images/";
 	// 表示させたい画像のファイル名＋拡張子を配列に格納
