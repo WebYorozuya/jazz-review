@@ -11,16 +11,16 @@
 
 @section('main')
 <h1 class="main-title">タグ一覧</h1>
-  <div class="tag-home">
-    <div class="main-tag-comment">
-      <p class="comment-text">Jazz Logに登録されているタグの一覧です。 Jazz Logでは毎日様々なライブハウスの投稿がされています。</p>
-    </div><!-- /.main-tag-comment -->
-    <div class="main-list">
-      <div class="TagList-item" data-count="#">
+  <div class="tags-global-container">
+    <p>Jazz Logに登録されているタグの一覧です。<br>毎日様々なライブハウスの投稿がされています。</p>
+    <div class="tags-container">
+      @foreach($items as $item)
+      <div class="tag-box" data-count="#">
         <a class="TagList-label" href="#">
-          <span>BLUE NOTE 東京</span>
+          <span>{{$item->tag_name}}</span>
         </a>
       </div>
+      @endforeach
     </div><!-- main-list -->
   </div><!-- tag-home -->
 @endsection

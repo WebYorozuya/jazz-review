@@ -1,5 +1,3 @@
-/* メイン部分始まり */
-
 .main-title {
   text-align: center;
   width: 100%;
@@ -13,50 +11,26 @@
   border-bottom: 1px solid var(--main-background-color);
 }
 
-.main-tag-title {
-  width: 80%;
+.tags-global-container > p {
+  /* width: 80%; */
+  text-align: center;
   margin: 0 auto;
+  padding: 20px 20px;
+  line-height: 2rem;
+}
+
+.tags-container {
   display: flex;
-  flex-direction: row;
-  font-size: 20px;
-}
-
-.main-tag-title span {
-  margin-right: 20px;
-}
-
-.comment-text{
-  width: 80%;
-  margin: 0 auto;
-  padding: 0px 20px 0px 20px;
-}
-
-.main-list {
-  display: flex;
-  flex-direction: column;
-  min-height: 500px;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin: 0 auto;
   /* margin-bottom: 30px; */
   padding: 10px 20px;
 }
 
-.main-list-row {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 20px;
-}
-
-.main-list-row-left,
-.main-list-row-right {
-  width: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.TagList-item {
+.tag-box {
   min-height: 20px;
+  margin: 10px 5px;
 }
 
 /* .TagList-label::before {
@@ -78,7 +52,7 @@
 }
 
 .TagList-label::after {
-  content: "1445";
+  content: "0";
   background-color: #333333;
   color: #fff;
   min-height: 20px;
@@ -87,49 +61,6 @@
   padding: 0px 5px 0px 5px;
   border: none;
   text-decoration: none;
-}
-
-/* uploadボタン*/
-.main-upload-btns {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  height: 40px;
-  margin-bottom: 10px;
-}
-
-.main-upload-btns a {
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
-  border-style: none;
-  align-items: center;
-  justify-content: center;
-  box-sizing: inherit;
-  height: 40px;
-  width: 40px;
-  border: 1px solid #cccccc;
-}
-
-.main-upload-btns a:hover {
-  background-color: #d6e8f0;
-  transition: background-color 0.8s;
-}
-/* uploadボタン終わり*/
-
-.information1,
-.information2 {
-  flex: 1;
-  text-decoration: none;
-  color: white;
-}
-
-.information1:hover,
-.information2:hover {
-  text-decoration-line: underline;
-  text-decoration-color: #fff;
-  text-decoration-style: solid;
-  text-decoration-thickness: 4px;
 }
 
 @media screen and (max-width: 800px) {
