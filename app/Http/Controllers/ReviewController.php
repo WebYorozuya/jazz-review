@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Review; //追加
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; //ログインユーザ情報取得用に追加
 use App\Tag; //タグ用に追加
+use App\User; //タグ用に追加
 
 class ReviewController extends Controller
 {
@@ -18,7 +20,22 @@ class ReviewController extends Controller
         } else {
             $user = 'ゲスト';
         }
-        return view('index', ['items' => $items, 'user' => $user]);
+        // return view('index', ['items' => $items, 'user' => $user]);下に書き換え
+        $param = ['items' => $items, 'user' => $user];
+        return view('index', $param);
+    }
+    //ユーザー別投稿ページを表示
+    public function userposts(Request $request)
+    {
+        //$items = Review::where('user_id', $request->user_id)->get();//これだとpegination追加できないのはなぜ？
+        $items = Review::where('user_id', $request->user_id)->orderBy('id', 'desc')->paginate(10);//pegination要追加
+        if (Auth::user()) { //ログインユーザ情報取得
+            $user = Auth::user();
+        } else {
+            $user = 'ゲスト';
+        }
+        $username = User::where('id', $request->user_id)->get('name');
+        return view('userposts', ['items' => $items, 'user' => $user, 'username' => $username]);
     }
     //投稿ページを表示
     public function post(Request $request)
@@ -38,7 +55,6 @@ class ReviewController extends Controller
         $review = new Review; //Reviewインスタンス作成
         $form = $request->all(); //送信されたフォームの値を保管
         unset($form['_token']); //CSRF非表示フィールド_token削除
-        // var_dump($form); exit();
         $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
 
       //次にタグのINSERT

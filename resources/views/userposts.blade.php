@@ -1,11 +1,9 @@
 @extends('layouts.ourapp')
 
-@section('title', 'Jazz Log')
-
-<!-- @section('h1', '新着レビュー') -->
+@section('title', 'ユーザー別投稿')
 
 @section('main')
-<h1 class="main-title">新着レビュー</h1>
+<h1 class="main-title">{{$username}}さんの投稿</h1>
 @foreach ($items as $item)
   <div class="review">
     <div class="review-left">
@@ -37,9 +35,8 @@
     </div><!-- /.review-right -->
   </div><!-- /.main-newReview 1投稿のお尻 -->
   @endforeach
-  {{ $items->links('vendor.pagination.bootstrap-4')}}
+{{ $items->links('vendor.pagination.bootstrap-4')}}
 @endsection
-
 @section('js')
 <script>
     //ボタンを押すことで開閉する機能
