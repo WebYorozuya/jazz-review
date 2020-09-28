@@ -14,7 +14,7 @@ class UpdateUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('account_name', 255)->unique()->after('name');
+            $table->string('account_name', 128)->unique()->after('name');
             $table->string('user_image',255)->nullable()->after('remember_token');
         });
     }
