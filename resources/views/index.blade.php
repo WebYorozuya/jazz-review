@@ -2,6 +2,8 @@
 
 @section('title', 'Jazz Log')
 
+<!-- @section('h1', '新着レビュー') -->
+
 @section('main')
 <h1 class="main-title">新着レビュー</h1>
 @foreach ($items as $item)
@@ -25,7 +27,7 @@
       </div>
       <p>{{$item->text}}</p>
       <div class="review-bottom">
-        <span class="user-name">by <a href="user?user_id={{$item->user_id}}">{{$item->getData()}}さん</span></a>
+        <span class="user-name">by {{$item->getData()}}さん</span>
         <span class="created-at">{{$item->created_at}}</span>
         <span class="likes">
           <i class="far fa-heart"></i>
@@ -85,5 +87,6 @@
     }
 
     // headerSearch.addEventListener("click", headerSearchTextShow, false);
+        
 </script>
 @endsection
