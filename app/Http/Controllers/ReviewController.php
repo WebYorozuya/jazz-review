@@ -27,7 +27,7 @@ class ReviewController extends Controller
     //ユーザー別投稿ページを表示
     public function userposts(Request $request)
     {
-        //$items = Review::where('user_id', $request->user_id)->get();//これだとpeginate追加できないのはなぜ？
+        //$items = Review::where('user_id', $request->user_id)->get();//これだとpegination追加できないのはなぜ？
         $items = Review::where('user_id', $request->user_id)->orderBy('id', 'desc')->paginate(10);//pegination要追加
         if (Auth::user()) { //ログインユーザ情報取得
             $user = Auth::user();
@@ -77,7 +77,7 @@ class ReviewController extends Controller
         $review->tags()->attach($tags_id);
       
       //トップページへ
-        return redirect('/')->with('flash_message', '素敵な投稿ありがとうございます！'); 
+        return redirect('/'); 
     }
     //投稿修正機能
     public function modify(Request $request)

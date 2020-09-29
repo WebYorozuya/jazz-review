@@ -230,17 +230,6 @@ header {
   flex: 1;
   --main-background-color: #f6f6f4; /*背景色変数*/
   background-color: var(--main-background-color);
-  position: relative;
-}
-
-.flash_message {
-  margin: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  z-index: 100;
 }
 
 .home-container {
@@ -365,6 +354,7 @@ main {
 
 .main-upload-btns a:hover span {
 }
+
 /* uploadボタン終わり*/
 
 .main-title {
@@ -458,9 +448,7 @@ main {
   display: flex;
   align-items: center;
 }
-.review-bottom a {
-  color: #aaa;
-}
+
 .review-bottom span {
   margin-right: 15px;
 }
@@ -470,6 +458,7 @@ main {
 aside {
   width: 300px;
   position: relative;
+  z-index: 20;
   background-color: #f6f6f4;
 }
 

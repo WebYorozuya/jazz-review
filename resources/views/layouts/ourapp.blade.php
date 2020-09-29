@@ -4,21 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico" />
-    <!-- CSS RESET -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/aaab412f99.js" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> -->
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css Heroku-->
-    <link type="text/css" rel="stylesheet" href="{{ secure_asset('css/ourmaterialize.css') }}"  media="screen,projection"/>
-    <!--Import materialize.css Local-->
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/ourmaterialize.css') }}"  media="screen,projection"/>
-    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> -->
     <!-- Heroku用 -->
     <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
     <!-- ローカル用 -->
@@ -78,11 +69,6 @@
   </div><!-- /.header-container -->
 </header>
 <div class="home">
-  @if (session('flash_message'))
-    <div class="flash_message alert alert-success" style="margin:0">
-      {{ session('flash_message') }}
-    </div>
-  @endif
   <div class="home-container">
     <nav>
       <ul class="pc-nav">
@@ -176,14 +162,6 @@
 	// 算出したランダムな数値の順番にいるファイル情報をbackground-imageに設定する
 	bgbox.css('background-image', 'url(' + imgpass + imgfile[n] + ');');
 }
-</script>
-<script>
-  (function() {
-    'use strict';
-    $(function(){
-      $('.flash_message').fadeOut(5000);
-    });
-  })();
 </script>
 </body>
 </html>
