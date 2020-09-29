@@ -16,7 +16,7 @@
     @csrf
       @if  (Route::has('login'))
         @auth
-        <h1>{{$user->name}}さん、<br>あなたの体験をシェアしましょう</h1>
+        <h1>{{$user->account_name}}さん、<br>あなたの体験をシェアしましょう</h1>
         <input type="hidden" name="user_id" value="{{$user->id}}">
         @else
         <h1>{{$user}}さん、<br>あなたの体験をシェアしましょう</h1>

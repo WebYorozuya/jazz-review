@@ -34,7 +34,7 @@ class ReviewController extends Controller
         } else {
             $user = 'ゲスト';
         }
-        $username = User::where('id', $request->user_id)->get('name');
+        $username = User::where('id', $request->user_id)->get('account_name');
         return view('userposts', ['items' => $items, 'user' => $user, 'username' => $username]);
     }
     //投稿ページを表示
