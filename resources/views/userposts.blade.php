@@ -24,8 +24,8 @@
         <a href="#" class="tag">おしゃれ</a>
       </div>
       <p>{{$item->text}}</p>
-      <div class="review-bottom">
-        <span class="user-name">by {{$item->getData()}}さん</span>
+      <div class="review-bottom">      
+        <span class="user-name">by <a href="user?user_id={{$item->user_id}}">{{$item->getData()}}さん</span></a>
         <span class="created-at">{{$item->created_at}}</span>
         <span class="likes">
           <i class="far fa-heart"></i>
