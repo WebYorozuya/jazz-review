@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -33,6 +34,27 @@ class LoginController extends Controller
      *
      * @return void
      */
+    
+    // account_nameでもログインできる
+    public function username()
+{
+    return 'account_name';
+}
+ 
+protected function attemptLogin(Request $request)
+{
+    $username = $request->input($this->username());
+    $password = $request->input('password');
+ 
+    if (filter_var($username, \FILTER_VALIDATE_EMAIL)) {
+        $credentials = ['email' => $username, 'password' => $password];
+    } else {
+        $credentials = [$this->username() => $username, 'password' => $password];
+    }
+ 
+    return $this->guard()->attempt($credentials, $request->filled('remember'));
+}
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');

@@ -20,16 +20,16 @@
                         @csrf
 
                         <div class="login_form">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="account_name" class="col-md-4 col-form-label text-md-right">{{ __('account_name/E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="account_name" type="text" class="form-control @error('account_name') is-invalid @enderror" name="account_name" value="{{ old('account_name') }}" required autocomplete="account_name" autofocus>
 
-                                @error('email')
+                                @if($errors->has('account_name'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>{{ $errors->first('account_name') }}</strong>
                                     </span>
-                                @enderror
+                                @endif
                             </div>
                         </div>
 
