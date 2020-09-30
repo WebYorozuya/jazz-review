@@ -19,9 +19,9 @@
         </a>
       </div><!-- /.review-right-top -->
       <div class="tags">
-        <a href="#" class="tag">jazz</a>
-        <a href="#" class="tag">東京</a>
-        <a href="#" class="tag">おしゃれ</a>
+        @foreach ($item->tags as $tag)
+        <a href="#" class="tag">{{$tag->tag_name}}</a>
+        @endforeach
       </div>
       <p>{{$item->text}}</p>
       <div class="review-bottom">
