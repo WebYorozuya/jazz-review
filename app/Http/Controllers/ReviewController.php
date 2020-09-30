@@ -13,13 +13,13 @@ class ReviewController extends Controller
     //トップページを表示
     public function index(Request $request)
     {
-        $items = Review::orderBy('id', 'desc')
-        ->paginate(10); //reviewsテーブルから取得
         if (Auth::user()) { //ログインユーザ情報取得
             $user = Auth::user();
         } else {
             $user = 'ゲスト';
         }
+        $items = Review::orderBy('id', 'desc')
+        ->paginate(10); //reviewsテーブルから取得
         // return view('index', ['items' => $items, 'user' => $user]);下に書き換え
         $param = ['items' => $items, 'user' => $user];
         return view('index', $param);
