@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Review; //追加
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; //ログインユーザ情報取得用に追加
 use App\Tag; //タグ用に追加
-use App\User; //タグ用に追加
 
 class ReviewController extends Controller
 {
@@ -16,26 +14,11 @@ class ReviewController extends Controller
         $items = Review::orderBy('id', 'desc')
         ->paginate(10); //reviewsテーブルから取得
         if (Auth::user()) { //ログインユーザ情報取得
-            $user = Auth::user();
+            $user = Auth::user()->name;
         } else {
             $user = 'ゲスト';
         }
-        // return view('index', ['items' => $items, 'user' => $user]);下に書き換え
-        $param = ['items' => $items, 'user' => $user];
-        return view('index', $param);
-    }
-    //ユーザー別投稿ページを表示
-    public function userposts(Request $request)
-    {
-        //$items = Review::where('user_id', $request->user_id)->get();//これだとpeginate追加できないのはなぜ？
-        $items = Review::where('user_id', $request->user_id)->orderBy('id', 'desc')->paginate(10);//pegination要追加
-        if (Auth::user()) { //ログインユーザ情報取得
-            $user = Auth::user();
-        } else {
-            $user = 'ゲスト';
-        }
-        $username = User::where('id', $request->user_id)->get('account_name');
-        return view('userposts', ['items' => $items, 'user' => $user, 'username' => $username]);
+        return view('index', ['items' => $items, 'user' => $user]);
     }
     //投稿ページを表示
     public function post(Request $request)
@@ -50,14 +33,14 @@ class ReviewController extends Controller
     //フォームの値を取得しDBにレコード挿入
     public function create(Request $request)
     {
-      //まずレビューのINSERT
+        //まず全部受け取ってバリデーション
         $this->validate($request, Review::$rules); //バリデーションの実行
         $review = new Review; //Reviewインスタンス作成
         $form = $request->all(); //送信されたフォームの値を保管
         unset($form['_token']); //CSRF非表示フィールド_token削除
         $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
 
-      //次にタグのINSERT
+        //タグのINSERT
         //送信されたタグをスペース区切りで整える
         $spaces = array("　", "  ", "   ");
         $tags = trim(str_replace($spaces, " ", $request->tag_name));
@@ -75,9 +58,8 @@ class ReviewController extends Controller
         };
         //中間テーブルにレコード挿入//tagsメソッドinReview.php
         $review->tags()->attach($tags_id);
-      
-      //トップページへ
-        return redirect('/')->with('flash_message', '素敵な投稿ありがとうございます！'); 
+        
+        return redirect('/'); //トップページへ
     }
     //投稿修正機能
     public function modify(Request $request)

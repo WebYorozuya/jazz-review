@@ -5,7 +5,7 @@ body {
     "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
   width: 1140px;
   width: 100%;
-  min-height: 100vh;
+  min-height: 200vh;
   display: flex;
   flex-direction: column;
   outline: 1px solid;
@@ -15,8 +15,7 @@ body {
 
 header {
   /* height: 80px; */
-  --theme-color: #0378a6;
-  background-color: var(--theme-color);
+  background-color: #0378a6;
 }
 
 .header-container {
@@ -44,7 +43,7 @@ header {
 }
 
 .siteLogo {
-  height: 75px;
+  height: 60px;
   margin-top: 8px;
   /* margin: 10px; */
 }
@@ -132,6 +131,7 @@ header {
   margin: 5px;
 }
 
+
 .header-loginUser {
   flex: 1;
   display: flex;
@@ -150,7 +150,7 @@ header {
   background: #2a6897;
   border-radius: 10px;
   height: 50px;
-  width: 180px;
+  width: 180px; /*kaku変更 */
 }
 
 .header-loginUser-acd-label:hover {
@@ -230,17 +230,6 @@ header {
   flex: 1;
   --main-background-color: #f6f6f4; /*背景色変数*/
   background-color: var(--main-background-color);
-  position: relative;
-}
-
-.flash_message {
-  margin: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  z-index: 100;
 }
 
 .home-container {
@@ -265,8 +254,7 @@ header {
   width: 250px;
   position: sticky;
   top: 1em;
-  --title-height: 50px;
-  margin-top: var(--title-height); /*h1と連動*/
+  margin-top: 40px;
 }
 
 nav ul {
@@ -320,7 +308,6 @@ main {
   flex-grow: 1;
   min-width: 0;
   background-color: #fff;
-  margin-bottom: 70px;
 }
 
 /* uploadボタン*/
@@ -365,27 +352,26 @@ main {
 
 .main-upload-btns a:hover span {
 }
+
 /* uploadボタン終わり*/
 
-.main-title {
+.main-newReview-title {
   text-align: center;
   width: 100%;
-  /* height: var(--title-height);なぜ効かない */
-  height: 50px;
+  --title-height: 40px;
+  height: var(--title-height);
   font-size: 1.2rem;
   font-weight: bold;
-  letter-spacing: 8px;
-  padding: 12px 0;
-  margin: 0;
+  letter-spacing: 5px;
+  padding: 10px 0;
   border-bottom: 1px solid var(--main-background-color);
 }
-
 /* レビュー記事 */
-.review {
+.reviews {
   width: 100%;
   display: flex;
   flex-direction: row;
-  padding: 8px 10px;
+  padding: 5px 10px;
   border-bottom: 1px solid var(--main-background-color);
 }
 
@@ -394,43 +380,20 @@ main {
   width: 50px;
 }
 
+.review-link {
+  float: right;
+  text-decoration: none;
+}
+
 .review-left img {
   height: 50px;
 }
 
-
-.review-top {
-  display: flex;
-  flex: row;
-  justify-content: space-between;
-}
-.review-top h2 {
+.reviews h2 {
   font-size: 1.2em;
   font-weight: bold;
   margin: 0;
   padding: 1px 0 0px 0;
-  display: inline-block;
-}
-
-.review-action {
-  text-decoration: none;
-  margin: 0 3px;
-  --review-action-height: 30px;
-  height: var(--review-action-height);
-  min-width: 30px;
-  border-radius: 50%;
-  text-align: center;
-}
-
-.review-action .fas {
-  display: inline-block;
-  color: rgb(82, 80, 80);
-  line-height: var(--review-action-height); /*縦位置中央揃え*/
-} 
-
-.review-action:hover{
-  background-color: rgb(221, 221, 221);
-  transition: 0.2s;
 }
 
 .review-right {
@@ -458,9 +421,7 @@ main {
   display: flex;
   align-items: center;
 }
-.review-bottom a {
-  color: #aaa;
-}
+
 .review-bottom span {
   margin-right: 15px;
 }
@@ -470,6 +431,7 @@ main {
 aside {
   width: 300px;
   position: relative;
+  z-index: 20;
   background-color: #f6f6f4;
 }
 
@@ -492,13 +454,6 @@ aside {
   border: 1px solid transparent;
   background-color: #fff;
 } */
-
-.pagination {
-  font-size: 15px;
-}
-.pagination li {
-  display: inline-block;
-}
 
 footer {
   /* margin-top: 15px; */
