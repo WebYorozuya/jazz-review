@@ -19,13 +19,13 @@
         </a>
       </div><!-- /.review-right-top -->
       <div class="tags">
-        <a href="#" class="tag">jazz</a>
-        <a href="#" class="tag">東京</a>
-        <a href="#" class="tag">おしゃれ</a>
+        @foreach ($item->tags as $tag)
+        <a href="#" class="tag">{{$tag->tag_name}}</a>
+        @endforeach
       </div>
       <p>{{$item->text}}</p>
       <div class="review-bottom">      
-        <span class="user-name">by <a href="user?user_id={{$item->user_id}}">{{$item->getData()}}さん</span></a>
+        <span class="user-name">by <a href="user?user_id={{$item->user_id}}">{{$item->user->account_name}}さん</span></a>
         <span class="created-at">{{$item->created_at}}</span>
         <span class="likes">
           <i class="far fa-heart"></i>
