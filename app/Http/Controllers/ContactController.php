@@ -5,13 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;//追記
 use App\Mail\ContactMail; //追記
+use Illuminate\Support\Facades\Auth; //ログインユーザ情報取得用に追加
 
 class ContactController extends Controller
 {
     //contact表示
     public function index()
     {
-        return view('contact.contact');
+        if (Auth::user()) { //ログインユーザ情報取得
+            $user = Auth::user();
+        } else {
+            $user = 'ゲスト';
+        }
+        return view('contact.contact', ['user' => $user]);
     }
     //DB挿入とメール送信
     public function process(Request $request)
