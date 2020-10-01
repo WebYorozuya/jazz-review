@@ -28,7 +28,7 @@ Route::get('post', 'ReviewController@post');
 
 //投稿内容をDBへ登録 
 //Route::post('insert', 'PostController@create');モデル使用により修正
-Route::post('insert', 'ReviewController@create');
+Route::post('insert', 'Reviewontroller@create');
 
 //投稿の修正、削除
 Route::get('modify', 'ReviewController@modify');
@@ -58,3 +58,7 @@ Route::get('tags', 'TagController@index');
 // ユーザー別投稿ページ表示
 Route::get('user', 'ReviewController@userposts');
 // Route::get('user?name={{$user}}', 'ReviewController@user');
+
+//パスワード変更
+Route::get('changepassword','HomeController@showChangePasswordForm');
+Route::post('changepassword','HomeController@changepassword')->name('changepassword');
