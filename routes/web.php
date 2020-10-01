@@ -28,7 +28,7 @@ Route::get('post', 'ReviewController@post');
 
 //投稿内容をDBへ登録 
 //Route::post('insert', 'PostController@create');モデル使用により修正
-Route::post('insert', 'Reviewontroller@create');
+Route::post('insert', 'ReviewController@create');
 
 //投稿の修正、削除
 Route::get('modify', 'ReviewController@modify');
