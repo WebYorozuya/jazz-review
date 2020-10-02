@@ -34,15 +34,14 @@ class ReviewController extends Controller
         } else {
             $user = 'ゲスト';
         }
-        $username = User::where('id', $request->user_id)->get('account_name');
-        return view('userposts', ['items' => $items, 'user' => $user, 'username' => $username]);
+        $account_name = User::find($request->user_id)->account_name;
+        return view('userposts', ['items' => $items, 'user' => $user, 'account_name' => $account_name]);
     }
     //タグ別投稿ページを表示
     public function tagposts(Request $request)
     {
         $tag = Tag::find($request->id);
-        $items = $tag->reviews;
-        // var_dump($tag->reviews); exit();
+        $items = $tag->reviews; //Tag.phpのreviews()
         if (Auth::user()) { //ログインユーザ情報取得
             $user = Auth::user();
         } else {
