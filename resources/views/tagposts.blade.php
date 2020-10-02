@@ -3,7 +3,7 @@
 @section('title', 'ユーザー別投稿')
 
 @section('main')
-<h1 class="main-title">{{$account_name}}さんの投稿</h1>
+<h1 class="main-title">タグ：</h1>
 @foreach ($items as $item)
   <div class="review">
     <div class="review-left">
@@ -20,7 +20,7 @@
       </div><!-- /.review-right-top -->
       <div class="tags">
         @foreach ($item->tags as $tag)
-        <a href="tag?id={{$tag->id}}" class="tag">{{$tag->tag_name}}</a>
+        <a href="#" class="tag">{{$tag->tag_name}}</a>
         @endforeach
       </div>
       <p>{{$item->text}}</p>
@@ -35,7 +35,7 @@
     </div><!-- /.review-right -->
   </div><!-- /.main-newReview 1投稿のお尻 -->
   @endforeach
-{{ $items->links('vendor.pagination.bootstrap-4')}}
+<!-- ここにpegination要追加 -->
 @endsection
 @section('js')
 <script>
