@@ -20,7 +20,7 @@
       </div><!-- /.review-right-top -->
       <div class="tags">
         @foreach ($item->tags as $tag)
-        <a href="#" class="tag">{{$tag->tag_name}}</a>
+        <a href="tag?id={{$tag->id}}" class="tag">{{$tag->tag_name}}</a>
         @endforeach
       </div>
       <p>{{$item->text}}</p>
