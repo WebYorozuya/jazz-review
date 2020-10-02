@@ -59,6 +59,11 @@ Route::get('tags', 'TagController@index');
 Route::get('user', 'ReviewController@userposts');
 // Route::get('user?name={{$user}}', 'ReviewController@user');
 
+
 //パスワード変更
 Route::get('changepassword','HomeController@showChangePasswordForm');
 Route::post('changepassword','HomeController@changepassword')->name('changepassword');
+
+// タグ別投稿ページ表示
+Route::get('tag', 'ReviewController@tagposts');
+
