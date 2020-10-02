@@ -3,7 +3,7 @@
 @section('title', 'ユーザー別投稿')
 
 @section('main')
-<h1 class="main-title">{{$username}}さんの投稿</h1>
+<h1 class="main-title">{{$account_name}}さんの投稿</h1>
 @foreach ($items as $item)
   <div class="review">
     <div class="review-left">
