@@ -16,6 +16,13 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+                <!-- home画面にpassword変更ボタン -->
+                <div class="card-body">
+                    <form method="GET" action="{{url('changepassword')}}">
+                        @csrf
+                        <input type="submit" name="submit" value="パスワード変更">
+                    </form>
+                </div>
             </div>
         </div>
     </div>

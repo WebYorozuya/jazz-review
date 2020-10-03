@@ -34,8 +34,20 @@ class ReviewController extends Controller
         } else {
             $user = 'ゲスト';
         }
-        $username = User::where('id', $request->user_id)->get('account_name');
-        return view('userposts', ['items' => $items, 'user' => $user, 'username' => $username]);
+        $account_name = User::find($request->user_id)->account_name;
+        return view('userposts', ['items' => $items, 'user' => $user, 'account_name' => $account_name]);
+    }
+    //タグ別投稿ページを表示
+    public function tagposts(Request $request)
+    {
+        $tag = Tag::find($request->id);
+        $items = $tag->reviews; //Tag.phpのreviews()
+        if (Auth::user()) { //ログインユーザ情報取得
+            $user = Auth::user();
+        } else {
+            $user = 'ゲスト';
+        }
+        return view('tagposts', ['items' => $items, 'user' => $user]);
     }
     //投稿ページを表示
     public function post(Request $request)
@@ -74,7 +86,7 @@ class ReviewController extends Controller
             array_push($tags_id, $tag['id']);
         };
         //中間テーブルにレコード挿入//tagsメソッドinReview.php
-        $review->tags()->attach($tags_id);
+        $review->tags()->attach($tags_id);//attachメソッドで紐付け対象のidを紐付け対象のidを引数にしてリレーションを紐付ける
       
       //トップページへ
         return redirect('/')->with('flash_message', '素敵な投稿ありがとうございます！'); 
