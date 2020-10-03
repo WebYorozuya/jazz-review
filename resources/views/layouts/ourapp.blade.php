@@ -48,7 +48,7 @@
       <div class="header-end">
         <a href="post" class="header-post">
           <i class="fas fa-pen-nib"></i>
-          投稿する
+          <span>投稿する</span>
         </a>
         <!-- <input id="header-loginUser-acd-check" class="header-loginUser-acd-check" type="checkbox"> -->
         <div class="header-loginUser">
