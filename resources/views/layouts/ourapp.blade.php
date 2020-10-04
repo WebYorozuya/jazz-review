@@ -155,7 +155,7 @@
         </div>
         <div class="footer-right">
             <a href="contact" class="information1">お問い合わせ</a>
-            <a href="#" class="information2">利用規約</a>
+            <a href="terms" class="information2">利用規約</a>
         </div>
     </div>
 </footer>
