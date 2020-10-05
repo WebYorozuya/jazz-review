@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="{{asset('css/tags.css')}}">
 @endsection
 
+@component('components.header')
+@endcomponent
+
 @section('main')
 <h1 class="main-title">タグ一覧</h1>
   <div class="tags-global-container">

@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="{{asset('css/post.css')}}">
 @endsection
 
+@component('components.header')
+@endcomponent
+
 @section('main')
 <h1 class="main-title">レビューを投稿する</h1>
 <div class="form_container">
