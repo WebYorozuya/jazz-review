@@ -10,6 +10,9 @@
 @endsection
 
 @component('components.header')
+  @slot('user')
+    {{$user}}
+  @endslot
 @endcomponent
 
 @section('main')

@@ -3,6 +3,9 @@
 @section('title', '利用規約')
 
 @component('components.header')
+  @slot('user')
+    {{$user}}
+  @endslot
 @endcomponent
 
 @section('main')
