@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     background-color:#f6f6f4;
-    font-family: fantasy,-apple-system, "Segoe UI", "Helvetica Neue",
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue",
     "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
     overflow: hidden; 
 }
