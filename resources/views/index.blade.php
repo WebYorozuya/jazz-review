@@ -2,6 +2,9 @@
 
 @section('title', 'Jazz Log')
 
+@component('components.header')
+@endcomponent
+
 @section('main')
 <h1 class="main-title">新着レビュー</h1>
 @foreach ($items as $item)
