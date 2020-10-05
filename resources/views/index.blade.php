@@ -3,6 +3,9 @@
 @section('title', 'Jazz Log')
 
 @component('components.header')
+  @slot('user')
+    {{$user}}
+  @endslot
 @endcomponent
 
 @section('main')

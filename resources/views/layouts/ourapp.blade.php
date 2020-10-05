@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--9.16 GitHub mikeブランチから-->
 <html lang="ja">
 
 <head>
@@ -109,7 +108,7 @@
       </div>
       <div class="footer-right">
         <a href="contact" class="information1">お問い合わせ</a>
-        <a href="#" class="information2">利用規約</a>
+        <a href="terms" class="information2">利用規約</a>
       </div>
     </div>
   </footer>
@@ -131,7 +130,7 @@
       bgbox.css('background-image', 'url(' + imgpass + imgfile[n] + ');');
     }
   </script>
-  <script>
+  <script>//投稿後のありがとうメッセージ
     (function() {
       'use strict';
       $(function() {
