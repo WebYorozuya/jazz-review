@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Review; //追加
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; //ログインユーザ情報取得用に追加
+use Illuminate\Support\Facades\Log;//頻繁に使った方がいい
 use App\Tag; //タグ用に追加
 use App\User; //タグ用に追加
 
@@ -13,8 +14,10 @@ class ReviewController extends Controller
     //トップページを表示
     public function index(Request $request)
     {
+        // Log::info('hello');
+        // return; 
         if (Auth::user()) { //ログインユーザ情報取得
-            $user = Auth::user();
+            $user = Auth::user()->account_name;
         } else {
             $user = 'ゲスト';
         }
@@ -30,7 +33,7 @@ class ReviewController extends Controller
         //$items = Review::where('user_id', $request->user_id)->get();//これだとpeginate追加できないのはなぜ？
         $items = Review::where('user_id', $request->user_id)->orderBy('id', 'desc')->paginate(10);//pegination要追加
         if (Auth::user()) { //ログインユーザ情報取得
-            $user = Auth::user();
+            $user = Auth::user()->name;
         } else {
             $user = 'ゲスト';
         }
@@ -42,8 +45,15 @@ class ReviewController extends Controller
     {
         $tag = Tag::find($request->id);
         $items = $tag->reviews; //Tag.phpのreviews()
+        // foreach ($items as $item) {
+            // Log::info('hogehoge');
+            // Log::info($item);
+            // var_dump($item);
+        // }
+        // exit();
+        // var_dump($items);
         if (Auth::user()) { //ログインユーザ情報取得
-            $user = Auth::user();
+            $user = Auth::user()->account_name;
         } else {
             $user = 'ゲスト';
         }

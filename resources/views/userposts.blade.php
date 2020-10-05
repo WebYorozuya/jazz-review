@@ -3,6 +3,9 @@
 @section('title', 'ユーザー別投稿')
 
 @component('components.header')
+  @slot('user')
+    {{$user}}
+  @endslot
 @endcomponent
 
 @section('main')
