@@ -130,7 +130,7 @@ header {
   height: 40px;
 }
 
-.header-loginUser-acd-label {
+.header-loginUser-dd-label {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,17 +145,17 @@ header {
   margin-right: 20px;
 }
 
-.header-loginUser-acd-label i {
+.header-loginUser-dd-label i {
   display: flex;
   font-size: 16px;
   margin-right: 4px;
 }
 
-.header-loginUser-acd-label:hover {
+.header-loginUser-dd-label:hover {
   opacity: 0.8;
 }
 
-.header-loginUser-acd-content {
+.header-loginUser-dd-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -170,22 +170,20 @@ header {
   z-index: 30;
 }
 
-
-
-.header-loginUser-acd-content a {
+.header-loginUser-dd-content a {
   text-decoration: none;
   margin: 7px;
   padding-right: 10px;
 }
 
-.header-loginUser-acd-content-login, .header-loginUser-acd-content-logout, .header-loginUser-acd-content-account {
+.header-loginUser-dd-content-login, .header-loginUser-dd-content-logout, .header-loginUser-dd-content-account {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 30px;
 }
 
-.header-loginUser-acd-content-login:hover, .header-loginUser-acd-content-logout:hover, .header-loginUser-acd-content-account:hover {
+.header-loginUser-dd-content-login:hover, .header-loginUser-dd-content-logout:hover, .header-loginUser-dd-content-account:hover {
   color: #333333;
 }
 
@@ -674,16 +672,16 @@ footer {
     display: none;
   }
   /* ヘッダー ログイン機能 */
-  .header-loginUser-acd-label {
+  .header-loginUser-dd-label {
     width: 40px;
   }
-  .header-loginUser-acd-label i {
+  .header-loginUser-dd-label i {
     margin: 0;
   }
-  .header-loginUser-acd-label span {
+  .header-loginUser-dd-label span {
     display: none;
   }
-  .header-loginUser-acd-content {
+  .header-loginUser-dd-content {
     right: 40px;
   }
   .home {
