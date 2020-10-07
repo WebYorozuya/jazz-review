@@ -16,6 +16,12 @@
   <link rel="stylesheet" href="{{asset('css/post.css')}}">
 @endsection
 
+@component('components.header')
+  @slot('user')
+    {{$user}}
+  @endslot
+@endcomponent
+
 @section('main')
 <h1 class="main-title">レビューを修正する</h1>
 <div class="form_container">

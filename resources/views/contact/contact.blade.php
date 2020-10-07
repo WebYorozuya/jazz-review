@@ -9,24 +9,29 @@
 <link rel="stylesheet" href="{{asset('css/contact.css')}}">
 @endsection
 
-<!-- @section('h1', 'Our team') -->
+@component('components.header')
+  @slot('user')
+    {{$user}}
+  @endslot
+@endcomponent
 
 @section('main')
 <h1 class="main-title">Our team</h1>
 <!-- チーム紹介 -->
 <div class="main-container-team">
+  <h2>members</h2>
     <div class="team-member">
       <div class="member-info">
         <img src="images/kaku.jpeg" alt="kakudaisukeの写真" class="profile-img"/>
         <div class="member-name">kakudaisuke</div>
         <ul class="member-sns-btn">
           <li class="twitter-btn">
-            <a href="#">
+            <a href="https://twitter.com/kakudaisuke">
             <i class="fab fa-twitter-square fa-lg"></i></a>
           </li>
-          <li class="facebook-btn">
-            <a href="#">
-            <i class="fab facebook-square fa-facebook-square fa-lg"></i></a>
+          <li class="github">
+            <a href="https://github.com/kakudaisuke">
+            <i class="fab fa-github"></i></a>
           </li>
         </ul>
       </div>
@@ -86,10 +91,11 @@
         現在、おさないさんという超絶強力なメンターと先にプロジェクトを立ち上げている先人にアドバイスを仰ぎながら、初心者しかいない４人のチームでよちよち歩んでいます。
       </p>
     </div>
-
+    <h2>mentor</h2>
     <div class="supporter">
       <a href="https://www.youtube.com/channel/UCHxqQ8bUg5F2GW79D_DvSjQ/featured">
-      <i class="fab fa-youtube fa-5x"></i></a>
+        <i class="fab fa-youtube fa-5x"></i>
+      </a>
       <a href="https://twitter.com/YorozuyaOsanai">
         <img src="images/webyorozuya.png" alt="web万屋チャンネルロゴ"/>
       </a>

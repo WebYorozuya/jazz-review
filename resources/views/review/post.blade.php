@@ -9,6 +9,12 @@
   <link rel="stylesheet" href="{{asset('css/post.css')}}">
 @endsection
 
+@component('components.header')
+  @slot('user')
+    {{$user}}
+  @endslot
+@endcomponent
+
 @section('main')
 <h1 class="main-title">レビューを投稿する</h1>
 <div class="form_container">
@@ -116,7 +122,6 @@ $(function (){
 <script>
   let tag = document.querySelector('.chip'); //.chipクラスの要素を取得
   let tagName = tag.innerHTML;//タグ内の要素を取得→エラー
-  //let tagName = "france";//タグ内の要素を取得
   let inputTag = document.getElementById("tag");//<input id="tag">を取得
   let submit = document.querySelector('.submit');//送信ボタンを取得
 

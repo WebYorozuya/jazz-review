@@ -1,8 +1,9 @@
 /* 9.16 GitHub mikeブランチから */
+
 /* 共通部分 */
+
 body {
-  font-family: -apple-system, "Segoe UI", "Helvetica Neue",
-    "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
+  font-family: -apple-system, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
   width: 1140px;
   width: 100%;
   min-height: 100vh;
@@ -96,24 +97,21 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5px 0px 5px 0px;
 }
 
 .header-post {
-  display: block;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 20px;
-  background: rgba(42, 104, 151, 1.0);
+  background: rgba(42, 104, 151, 1);
   color: rgb(255, 255, 255);
   border-radius: 7px;
   width: 120px;
   height: 40px;
   font-size: 14px;
-  text-align: center;
-  margin-right: 20px;
-  width: 100%;
-  align-items: center;
+  margin-right: 10px;
   text-decoration: none;
 }
 
@@ -128,29 +126,29 @@ header {
   text-decoration: none;
 }
 
-.editImg {
-  margin: 5px;
-}
-
 .header-loginUser {
-  flex: 1;
-  display: flex;
-  justify-content: row;
+  height: 40px;
 }
 
 .header-loginUser-acd-label {
-  flex: 1;
-  display: flex;
-  justify-content: row;
-  align-items: center;
-  color: #ffffff;
-  font-size: 12px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 7px;
+  font-size: 14px;
+  color: #fff;
   background: #2a6897;
-  border-radius: 10px;
-  height: 50px;
-  width: 180px;
+  position: relative;
+  margin-right: 20px;
+}
+
+.header-loginUser-acd-label i {
+  display: flex;
+  font-size: 16px;
+  margin-right: 4px;
 }
 
 .header-loginUser-acd-label:hover {
@@ -158,51 +156,37 @@ header {
 }
 
 .header-loginUser-acd-content {
-  border: 1px solid #eeeeee;
-  background-color: #ffffff;
-  display: block;
-  transition: 0.1s;
-  visibility: hidden;
-  position: absolute;
-  top: 60px;
-  width: 100px;
-  z-index: 50;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: 1px solid #eeeeee;
+  background-color: #cac7c7;
+  width: 120px;
   font-size: 12px;
+  transition: 0.4s;
+  display: none;
+  position: absolute;
+  top: 60px;
+  z-index: 30;
 }
+
+
 
 .header-loginUser-acd-content a {
   text-decoration: none;
+  margin: 7px;
+  padding-right: 10px;
 }
 
-.header-loginUser-acd-content-login,
-.header-loginUser-acd-content-logout,
-.header-loginUser-acd-content-account {
-  border: 0.5px solid #dddddd;
-  height: 30px;
+.header-loginUser-acd-content-login, .header-loginUser-acd-content-logout, .header-loginUser-acd-content-account {
   display: flex;
-  justify-content: flex-start;
-  padding-left: 5px;
+  justify-content: center;
   align-items: center;
-  color: rgb(51, 51, 51);
+  height: 30px;
 }
 
-.header-loginUser-acd-content-login:hover,
-.header-loginUser-acd-content-logout:hover,
-.header-loginUser-acd-content-account:hover {
-  background-color: #dddddd;
-}
-
-.header-loginUser-acd-check:checked + .header-loginUser-acd-label:after {
-}
-
-.header-loginUser-acd-check:checked
-  + .header-loginUser-acd-label
-  + .header-loginUser-acd-content {
-  opacity: 1;
-  visibility: visible;
+.header-loginUser-acd-content-login:hover, .header-loginUser-acd-content-logout:hover, .header-loginUser-acd-content-account:hover {
+  color: #333333;
 }
 
 .userMaleImg {
@@ -212,15 +196,15 @@ header {
 }
 
 .hello-user {
- text-decoration: none; 
- color: white;
- text-align: center;
- width: 100%;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  width: 100%;
 }
 
 .header-loginUser-btn {
   display: block;
-  margin: 5px 30px 5px 0px;
+  margin: 0px 30px 0x 0px;
   color: #ffffff;
   font-size: 12px;
 }
@@ -228,7 +212,8 @@ header {
 .home {
   padding: 32px 16px 0px 16px;
   flex: 1;
-  --main-background-color: #f6f6f4; /*背景色変数*/
+  --main-background-color: #f6f6f4;
+  /*背景色変数*/
   background-color: var(--main-background-color);
   position: relative;
 }
@@ -257,7 +242,9 @@ header {
   flex-direction: row;
   width: 100%;
 }
+
 /* 左メニューnav */
+
 .home nav {
   display: flex;
   flex-direction: column;
@@ -266,7 +253,8 @@ header {
   position: sticky;
   top: 1em;
   --title-height: 50px;
-  margin-top: var(--title-height); /*h1と連動*/
+  margin-top: var(--title-height);
+  /*h1と連動*/
 }
 
 nav ul {
@@ -296,12 +284,13 @@ nav li a:hover {
   text-decoration: none;
 }
 
-.home nav li i  {
+.home nav li i {
   margin-right: 10px;
 }
 
 .li-newInformation {
   background-color: #d6e8f0;
+  white-space: nowrap;
 }
 
 .mobile-nav {
@@ -324,6 +313,7 @@ main {
 }
 
 /* uploadボタン*/
+
 .main-upload-btns {
   display: flex;
   flex-direction: row;
@@ -363,8 +353,8 @@ main {
   border-style: none;
 }
 
-.main-upload-btns a:hover span {
-}
+.main-upload-btns a:hover span {}
+
 /* uploadボタン終わり*/
 
 .main-title {
@@ -380,7 +370,87 @@ main {
   border-bottom: 1px solid var(--main-background-color);
 }
 
+/* 投稿の編集・報告のアコーディオンメニュー  */
+
+.main-reviewText-dd-label {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  justify-content: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #ffffff;
+  font-size: 12px;
+  border-radius: 10px;
+}
+
+.showIcon {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.my-black {
+  color: rgb(51, 51, 51);
+}
+
+.main-reviewText-dd-label:hover {
+  opacity: 0.8;
+}
+
+.main-reviewText-dd-content {
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+  transition: 0.1s;
+  position: absolute;
+  top: 40px;
+  right: 0px;
+  width: 80px;
+  z-index: 4;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rdga(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+
+.show {
+  display: flex;
+}
+
+.main-reviewText-dd-content a {
+  text-decoration: none;
+}
+
+.main-reviewText-dd-content-edit, .main-reviewText-dd-content-delete, .main-reviewText-dd-content-report {
+  border: 0.5px solid #dddddd;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 5px;
+  align-items: center;
+  color: rgb(51, 51, 51);
+}
+
+.main-reviewText-dd-content-edit:hover, .main-reviewText-dd-content-delete:hover, .main-reviewText-dd-content-report:hover {
+  background-color: #dddddd;
+}
+
+/* 投稿の編集・削除・報告のドロップダウンメニュー 
+
 /* レビュー記事 */
+
 .review {
   width: 100%;
   display: flex;
@@ -398,12 +468,12 @@ main {
   height: 50px;
 }
 
-
 .review-top {
   display: flex;
   flex: row;
   justify-content: space-between;
 }
+
 .review-top h2 {
   font-size: 1.2em;
   font-weight: bold;
@@ -425,10 +495,11 @@ main {
 .review-action .fas {
   display: inline-block;
   color: rgb(82, 80, 80);
-  line-height: var(--review-action-height); /*縦位置中央揃え*/
-} 
+  line-height: var(--review-action-height);
+  /*縦位置中央揃え*/
+}
 
-.review-action:hover{
+.review-action:hover {
   background-color: rgb(221, 221, 221);
   transition: 0.2s;
 }
@@ -458,9 +529,11 @@ main {
   display: flex;
   align-items: center;
 }
+
 .review-bottom a {
   color: #aaa;
 }
+
 .review-bottom span {
   margin-right: 15px;
 }
@@ -496,6 +569,7 @@ aside {
 .pagination {
   font-size: 15px;
 }
+
 .pagination li {
   display: inline-block;
 }
@@ -544,8 +618,7 @@ footer {
   padding: 30px 0px 60px 0px;
 }
 
-.information1,
-.information2 {
+.information1, .information2 {
   flex: 1;
   text-decoration: none;
   color: white;
@@ -553,7 +626,7 @@ footer {
 
 .information1:hover, .information2:hover {
   text-decoration-line: underline;
-  text-decoration-color: #FFF;
+  text-decoration-color: #fff;
   text-decoration-style: solid;
   text-decoration-thickness: 4px;
 }
@@ -563,52 +636,71 @@ footer {
     display: flex;
     flex-direction: column;
   }
-
   aside {
     width: 100%;
   }
 }
 
-@media screen and (max-width: 700px) {
-  body,
-  nav,
-  aside {
-    width: 100%;
+@media screen and (max-width: 800px) {
+  .header-search {
+    width: 10px;
   }
-
-  .siteLogo {
-    /* margin: 10px; */
-  }
-
   #header-search-text {
     position: absolute;
     top: 80px;
     left: 30px;
-    width: 300px;
+    width: 50px;
     height: 30px;
     z-index: 1;
     display: none;
   }
+}
 
+@media screen and (max-width: 700px) {
+  body, nav, aside {
+    width: 100%;
+  }
+  .siteLogo {
+    /* margin: 10px; */
+  }
+  /* ヘッダー 投稿機能 */
+  .header-post {
+    width: 40px;
+  }
+  .header-post i {
+    margin: 0;
+  }
+  .header-post span {
+    display: none;
+  }
+  /* ヘッダー ログイン機能 */
+  .header-loginUser-acd-label {
+    width: 40px;
+  }
+  .header-loginUser-acd-label i {
+    margin: 0;
+  }
+  .header-loginUser-acd-label span {
+    display: none;
+  }
+  .header-loginUser-acd-content {
+    right: 40px;
+  }
   .home {
     padding: 0px 16px 0px 16px;
     flex: 1;
   }
-
   .home-container {
     display: flex;
     flex-direction: column;
   }
-
   nav {
     position: relative;
   }
-
   nav ul {
     display: flex;
     align-items: center;
   }
-
   nav ul li {
     width: 33.3%;
     padding-top: 0px;
@@ -616,15 +708,10 @@ footer {
     align-items: center;
     justify-content: space-around;
   }
-
   nav ul li a span {
     font-size: 5px;
   }
-
-  .li-newInformation,
-  .li-player,
-  .li-livehouse,
-  .li-reviewer {
+  .li-newInformation, .li-player, .li-livehouse, .li-reviewer {
     width: 120px;
     text-decoration: none;
     padding: 0px;
@@ -635,7 +722,6 @@ footer {
     color: rgb(51, 51, 51);
     font-size: 10px;
   }
-
   aside {
     display: flex;
   }
@@ -643,29 +729,25 @@ footer {
 
 @media screen and (max-width: 470px) {
   .header-start {
-    padding-left: 0px;
+    width: 110px;
+    padding-left: 40px;
   }
-
   .siteLogo {
     width: 100px;
-    /* margin: 10px; */
+    height: 40px;
   }
-
   .header-middle {
     display: none;
   }
-
   .mobile-nav {
     display: block;
     margin-bottom: 10px;
   }
-
   .mobile-nav-form {
     display: flex;
     flex-direction: row;
     font-size: 10px;
   }
-
   .pulldown {
     height: 20px;
     width: 200px;
@@ -673,12 +755,10 @@ footer {
     border-radius: 5px;
     margin-right: 10px;
   }
-
   .pulldown-option {
     height: 20px;
     width: 200px;
   }
-
   .pulldown-select {
     display: flex;
     justify-content: column;
@@ -690,28 +770,22 @@ footer {
     text-align: center;
     vertical-align: center;
   }
-
   .mobile-nav p {
     margin: 5px;
   }
-
   .pulldown {
     display: block;
   }
-
   footer {
     height: 300px;
   }
-
   .footer-container {
     display: flex;
     flex-direction: column;
   }
-
   .pulldown-select {
     display: block;
   }
-
   .pc-nav {
     display: none;
   }

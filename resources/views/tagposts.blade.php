@@ -1,6 +1,12 @@
 @extends('layouts.ourapp')
 
-@section('title', 'ユーザー別投稿')
+@section('title', 'タグ別投稿')
+
+@component('components.header')
+  @slot('user')
+    {{$user}}
+  @endslot
+@endcomponent
 
 @section('main')
 <h1 class="main-title">タグ：</h1>
