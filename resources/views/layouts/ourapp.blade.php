@@ -30,6 +30,7 @@
 
 <body class="UI_Build_Assistant">
 <!-- headerはここにcomponentで -->
+  <div class="back"></div>
   <div class="home">
     @if (session('flash_message'))
     <div class="flash_message alert alert-success" style="margin:0">
@@ -138,18 +139,7 @@
       });
     })();
   </script>
-  <script>
-    // ログインのアコーディオンメニューの開閉
-    const loginUserAcdLabel = document.querySelector(".header-loginUser-acd-label");
-
-    // ShowのクラスをloginUserAcdContentを着脱させる関数
-    function showHide(event) {
-      const loginUserAcdContent = document.querySelector(".header-loginUser-acd-content");
-      loginUserAcdContent.classList.toggle("show");
-    }
-
-    loginUserAcdLabel.addEventListener('click', showHide);
-  </script>
+    <script type="text/javascript" src="/js/script.js"></script>
 </body>
 
 </html>
