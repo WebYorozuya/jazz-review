@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Review; //追加
 use Illuminate\Http\Request;
+use App\Review; //追加
 use Illuminate\Support\Facades\Auth; //ログインユーザ情報取得用に追加
 use Illuminate\Support\Facades\Log;//頻繁に使った方がいい
 use App\Tag; //タグ用に追加
