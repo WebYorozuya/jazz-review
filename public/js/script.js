@@ -1,16 +1,29 @@
+
+
 {
   'use strict';
 
-  // (1) ログインユーザーのアコーディオンメニューの開閉(ourapp)
-  const loginUserAcdLabel = document.querySelector(".header-loginUser-acd-label");
+  // @section('js')
 
-  // ShowのクラスをloginUserAcdContentを着脱させる関数
+  // (1) ログインユーザーのドロップダウンメニューの開閉(header)
+  const loginUserDdLabel = document.querySelector(".header-loginUser-dd-label");
+
+  // ShowのクラスをloginUserDdContentを着脱させる関数
   function showHide(event) {
-    const loginUserAcdContent = document.querySelector(".header-loginUser-acd-content");
-    loginUserAcdContent.classList.toggle("show");
+    const loginUserDdContent = document.querySelector(".header-loginUser-dd-content");
+    loginUserDdContent.classList.toggle("show");
+    const back = document.querySelector(".back");
+    back.classList.toggle("show");
+    if (loginUserDdContent.classList.contains("show")) {
+      back.addEventListener('click', function () {
+        loginUserDdContent.classList.remove('show');
+        back.classList.remove("show");
+      });
+    }
   }
 
-  loginUserAcdLabel.addEventListener('click', showHide);
+  loginUserDdLabel.addEventListener('click', showHide);
+  // @endsection
 
   // (2) mainのドロップダウンメニューの開閉
   let showIcon = document.getElementsByClassName("showIcon");
@@ -19,18 +32,18 @@
   const section_ddContent = Array.from(ddContent);
 
   for (let i = 0; i < section_showIcon.length; i++) {
-      section_showIcon[i].addEventListener('click', function () {
-          const back = document.querySelector(".back");
+    section_showIcon[i].addEventListener('click', function () {
+      const back = document.querySelector(".back");
 
-          section_ddContent[i].classList.toggle("show");
-          back.classList.toggle("show");
-          if (section_ddContent[i].classList.contains("show")) {
-              back.addEventListener('click', function () {
-                  section_ddContent[i].classList.remove('show');
-                  back.classList.remove("show");
-              });
-          }
-      });
+      section_ddContent[i].classList.toggle("show");
+      back.classList.toggle("show");
+      if (section_ddContent[i].classList.contains("show")) {
+        back.addEventListener('click', function () {
+          section_ddContent[i].classList.remove('show');
+          back.classList.remove("show");
+        });
+      }
+    });
   }
 
   // let showIcon = document.querySelectorAll(".showIcon");
@@ -82,19 +95,19 @@
 
   // (5)chips機能（post.blade.php,modify.blade.php)
   //チップスのjQuery
-  $(function () {
-    $('.chips').chips();
-    $('.chips-initial').chips({
-      data: [{
-        tag: 'Jazz',
-      }, {
-        tag: '東京',
-      }],
-    });
-    $('.chips-placeholder').chips({
-      placeholder: 'Enter a tag',
-      secondaryPlaceholder: '+Tag',
-    });
+  // $(function () {
+  //   $('.chips').chips();
+  //   $('.chips-initial').chips({
+  //     data: [{
+  //       tag: 'Jazz',
+  //     }, {
+  //       tag: '東京',
+  //     }],
+  //   });
+  //   $('.chips-placeholder').chips({
+  //     placeholder: 'Enter a tag',
+  //     secondaryPlaceholder: '+Tag',
+  //   });
     // $('.chips-autocomplete').chips({
     //   autocompleteOptions: {
     //     data: {
@@ -106,13 +119,15 @@
     //    minLength: 1
     //  }
     //});
-  });
+  // });
 
   // document.addEventListener('DOMContentLoaded', function() {
   //   var elems = document.querySelectorAll('.chips');
   //   var instances = M.Chips.init(elems, options);
   // });
   // var instance = M.Chips.getInstance(elem);
+
+  // console.log(instance);
 
   // instance.addChip({
   //   tag: 'chip content',
@@ -123,15 +138,11 @@
 
   // instance.selectChip(2); // Select 2nd chip
 
-  // //  タグ内の抽出
-  // let tag = document.querySelectorAll('.chips'); //.chipクラスの要素を取得
-  // console.log(tag);
-  // for (let i = 0; i < tag.length; i++) {
-  //   let tagName = tag[i].innerText; //タグ内の要素を取得→エラー
-  // }
-  //   //let tagName = "france";//タグ内の要素を取得
-  //   let inputTag = document.getElementById("tag"); //<input id="tag">を取得
-  //   let submit = document.querySelector('.submit'); //送信ボタンを取得
+  //  タグ内の抽出
+  // const elems = document.querySelectorAll('.chips'); //.chipクラスの要素を取得
+  // const instance = M.Chips.init(elems);
+
+
 
 
   // function tagSubmit() {
@@ -146,24 +157,24 @@
   // innerHTMLプロパティ
 
   // (6)文字数カウント（post.blade.php,modify.blade.php)
-  const textarea = document.getElementById('textarea');
+  // const textarea = document.getElementById('textarea');
 
-  textarea.addEventListener('keydown', (event) => {
-    const len = textarea.value.length;
-    document.getElementById("realtimeFontLength").innerHTML = len;
-  });
+  // textarea.addEventListener("keydown", function(event){
+  //   const len = textarea.value.length;
+  //   document.getElementById("realtimeFontLength").innerHTML = len;
+  // });
 
   //（7)モーダルを使用した見せ方(contact.blade.php)
-  let modalFig = document.querySelector(".main-newReviewerFig");
-  let modalbtn = document.querySelector(".closeBtn");
+  // let modalFig = document.querySelector(".main-newReviewerFig");
+  // let modalbtn = document.querySelector(".closeBtn");
 
-  function modelShow() {
-    const modelSh = document.querySelector(".login-modal-wrapper");
-    modelSh.classList.toggle("none");
-  }
+  // function modelShow() {
+  //   const modelSh = document.querySelector(".login-modal-wrapper");
+  //   modelSh.classList.toggle("none");
+  // }
 
-  modalFig.addEventListener('click', modelShow);
-  modalbtn.addEventListener('click', modelShow);
+  // modalFig.addEventListener('click', modelShow);
+  // modalbtn.addEventListener('click', modelShow);
 
   //(8)フッターの写真のサイズを画面サイズに合わせてリサイズ？(ourapp.blade.php)
   // http://keylopment.com/faq/529/ こちらを参照
@@ -180,9 +191,9 @@
     bgbox.css('background-image', 'url(' + imgpass + imgfile[n] + ');');
   }
 
-  (function() {
+  (function () {
     'use strict';
-    $(function() {
+    $(function () {
       $('.flash_message').fadeOut(5000);
     });
   })();

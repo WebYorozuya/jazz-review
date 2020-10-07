@@ -14,25 +14,26 @@
           <i class="fas fa-pen-nib"></i>
           <span>投稿する</span>
         </a>
-        <!-- <input id="header-loginUser-acd-check" class="header-loginUser-acd-check" type="checkbox"> -->
+        <!-- <input id="header-loginUser-dd-check" class="header-loginUser-dd-check" type="checkbox"> -->
         <div class="header-loginUser">
-          <label class="header-loginUser-acd-label">
+          <div class="header-loginUser-dd-label">
             <i class="far fa-user-circle fa-2x"></i>
             <span>ログイン</span>
-          </label>
-          <div class="header-loginUser-acd-content">
+          </div>
+          <ul class="header-loginUser-dd-content">
             @if (Route::has('login'))
             @auth
-            <a href="{{ url('/home') }}" class="hello-user ">こんにちは<br>{{$user}}さん</a>
+            <li><a href="{{ url('/home') }}" class="hello-user ">こんにちは<br>{{$user}}さん</a></li>
             @else
-            <a href="{{ route('login') }}" class="hello-user header-loginUser-acd-content-login">ログイン</a>
+            <li><a href="{{ route('login') }}" class="hello-user header-loginUser-dd-content-login">ログイン</a></li>
             @if (Route::has('register'))
-            <a href="{{ route('register') }}" class="hello-user header-loginUser-acd-content-account">アカウント登録</a>
+            <li><a href="{{ route('register') }}" class="hello-user header-loginUser-dd-content-account">アカウント登録</a></li>
             @endif
             @endauth
             @endif
-          </div><!-- /.header-loginUser-acd-content -->
+          </ul><!-- /.header-loginUser-dd-content -->
         </div><!-- /.header-loginUser -->
       </div><!-- /.header-end -->
     </div><!-- /.header-container -->
   </header>
+  <div class="back"></div>
