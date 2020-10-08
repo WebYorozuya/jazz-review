@@ -23,6 +23,9 @@ class TagController extends Controller
         //tagデータを取得
         $items = Tag::orderBy('id', 'desc')
         ->paginate(90);
+        // foreach ($items as $item) {
+        //     ddd($item->reviews()->where('tag_id', $item->id));
+        // }
         //review_tagから各tag_idの数を数える
         $tag_counts = DB::table('review_tag')->select('id','tag_id')->groupBy('tag_id')->count(['id']);
         // $tag_counts = DB::select('select count(id), tag_id from review_tag group by tag_id');
@@ -31,7 +34,11 @@ class TagController extends Controller
         //     ->groupBy('tag_id')
         //     ->get();
         // print_r($items); exit();
-        return view('tags', ['user' => $user, 'items' => $items, 'tag_counts' => $tag_counts]);
+        return view('tags', [
+            'user' => $user,
+            'items' => $items,
+            'tag_counts' => $tag_counts
+        ]);
         // return view('tags', ['items' => $items]);
     }
 
@@ -51,8 +58,8 @@ class TagController extends Controller
         // }
         // $items = Review::with('tags')->where('id', $tag)->paginate(10);
         // $items = $reviews->$tag_id;
-        // print_r($review); exit();
         $items = Tag::find($request->id)->reviews()->orderBy('id', 'desc')->paginate(10);
+        // ddd($items);
 
         //タグ名を取得したい
         $tag_name = Tag::find($request->id)->tag_name;
@@ -60,7 +67,6 @@ class TagController extends Controller
         //     $tag_name = $tag->tag_name;
         // }
         // $tag_name = $items->tag_name;
-        // Log::info($items); return; 
         return view('tagposts', [
             'user' => $user,
             'items' => $items,

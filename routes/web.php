@@ -66,7 +66,7 @@ Route::post('changepassword','HomeController@changepassword')->name('changepassw
 
 // タグ別投稿ページ表示
 // Route::get('tag', 'ReviewController@tagposts');
-Route::get('tag', 'TagController@getTag');
+Route::get('tag', 'TagController@getTag')->name('tag');
 
 // 利用規約ページ表示
 Route::get('terms', 'TermsController@index'); //URL, Controller@method

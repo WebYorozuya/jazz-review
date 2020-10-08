@@ -22,6 +22,7 @@
         <h2>{{$item->live_date}} {{$item->title}}</h2>
         <div class="main-reviewText-dd-label">
           <i class="fas fa-ellipsis-h my-black showIcon"></i>
+          <!-- ドロップダウンメニュー -->
           <ul class="main-reviewText-dd-content">
             <a href="modify?id={{$item->id}}">
                 <li class="main-reviewText-dd-content-edit">編集する</li>
@@ -30,11 +31,12 @@
                 <li class="main-reviewText-dd-content-report">報告する</li>
             </a>
           </ul>
+          <!-- ドロップダウンメニューここまで -->
         </div>
       </div><!-- /.review-right-top -->
       <div class="tags">
         @foreach ($item->tags as $tag)
-        <a href="tag?id={{$tag->id}}" class="tag">{{$tag->tag_name}}</a>
+        <a href="{{ route('tag', ['id' => $tag->id]) }}" class="tag">{{$tag->tag_name}}</a>
         @endforeach
       </div>
       <p>{{$item->text}}</p>
