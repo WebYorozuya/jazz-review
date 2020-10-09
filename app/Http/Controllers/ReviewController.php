@@ -101,11 +101,21 @@ class ReviewController extends Controller
       //トップページへ
         return redirect('/')->with('flash_message', '素敵な投稿ありがとうございます！'); 
     }
-    //投稿修正機能
+    //投稿修正ページを表示
     public function modify(Request $request)
     {
+        if (Auth::user()) {
+            $user = Auth::user();
+        } else {
+            $user = 'ゲスト';
+        }
         $review = Review::find($request->id);
-        return view('review.modify', ['form' => $review]);
+        $tags = Review::find($request->id)->tags();
+        // var_dump($tags);exit();
+        return view('review.modify', [
+            'review' => $review,
+            'user' => $user
+        ]);
     }
     //投稿修正送信
     public function update(Request $request)
