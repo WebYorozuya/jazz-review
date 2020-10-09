@@ -27,7 +27,7 @@
 
   // (2) mainのドロップダウンメニューの開閉
   let showIcon = document.getElementsByClassName("showIcon");
-  let ddContent = document.getElementsByClassName("main-reviewText-dd-content");
+  let ddContent = document.getElementsByClassName("review-dropdown");
   const section_showIcon = Array.from(showIcon);
   const section_ddContent = Array.from(ddContent);
 
@@ -47,7 +47,7 @@
   }
 
   // let showIcon = document.querySelectorAll(".showIcon");
-  // let ddContent = document.querySelectorAll(".main-reviewText-dd-content");
+  // let ddContent = document.querySelectorAll(".review-dropdown");
   // const section_showIcon = Array.from(showIcon);
   // const section_ddContent = Array.from(ddContent);
 
