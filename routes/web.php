@@ -43,7 +43,7 @@ Route::post('del', 'ReviewController@delete');
 Route::get('contact', 'ContactController@index');
 
 // 確認ページ
-Route::post('confirm', 'ContactController@confirm')->name('confirm');
+//Route::post('confirm', 'ContactController@confirm')->name('confirm');
 
 // DB挿入、メール送信
 Route::post('process', 'ContactController@process');
@@ -65,7 +65,8 @@ Route::get('changepassword','HomeController@showChangePasswordForm');
 Route::post('changepassword','HomeController@changepassword')->name('changepassword');
 
 // タグ別投稿ページ表示
-Route::get('tag', 'ReviewController@tagposts');
+// Route::get('tag', 'ReviewController@tagposts');
+Route::get('tag', 'TagController@getTag')->name('tag');
 
 // 利用規約ページ表示
 Route::get('terms', 'TermsController@index'); //URL, Controller@method
