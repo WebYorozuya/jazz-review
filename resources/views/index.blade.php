@@ -20,25 +20,25 @@
     <div class="review-right">
       <div class="review-top">
         <h2>{{$item->live_date}} {{$item->title}}</h2>
-        <div class="main-reviewText-dd-label">
+        <!-- ドロップダウンメニュー -->
+        <div class="review-dropdown-wrapper">
           <i class="fas fa-ellipsis-h my-black showIcon"></i>
-          <!-- ドロップダウンメニュー -->
-          <ul class="main-reviewText-dd-content">
-            <a href="modify?id={{$item->id}}">
-                <li class="main-reviewText-dd-content-edit">編集する</li>
+          <ul class="review-dropdown">
+            <a href="modify?id={{ $item->id }}">
+              <li>編集する</li>
             </a>
-            <a href="#">
-                <li class="main-reviewText-dd-content-report">報告する</li>
+            <a href="contact#contact">
+              <li>報告する</li>
             </a>
           </ul>
+        </div><!-- /.review-menu-wrapper -->
           <!-- ドロップダウンメニューここまで -->
-        </div>
-      </div><!-- /.review-right-top -->
+      </div><!-- /.review-top -->
       <div class="tags">
         @foreach ($item->tags as $tag)
         <a href="{{ route('tag', ['id' => $tag->id]) }}" class="tag">{{$tag->tag_name}}</a>
         @endforeach
-      </div>
+      </div><!-- /.tags -->
       <p>{{$item->text}}</p>
       <div class="review-bottom">
         <span class="user-name">by <a href="user?user_id={{$item->user_id}}">{{$item->getData()}}さん</span></a>
@@ -49,7 +49,7 @@
         </span>
       </div><!-- /.review-bottom -->
     </div><!-- /.review-right -->
-  </div><!-- /.main-newReview 1投稿のお尻 -->
+  </div><!-- /.review 1投稿のお尻 -->
   @endforeach
   {{ $items->links('vendor.pagination.bootstrap-4')}}
 @endsection

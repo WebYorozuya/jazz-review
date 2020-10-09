@@ -103,7 +103,7 @@
   </div> <!-- .main-container-team -->
 
   <!-- お問い合わせフォーム -->
-  <div class="main-container-contact">
+  <div class="main-container-contact" id="contact">
     <h1 class="main-title">お問い合わせ</h1>
     
     <form action="process" accept-charset="UTF-8" method="post" class="main-form">
