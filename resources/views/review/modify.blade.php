@@ -28,26 +28,26 @@
     <form action="update" id="create-account" method="POST">
     @csrf
         <h1>投稿を修正する</h1>
-        <input type="hidden" name="user_id" value="{{$form->user_id}}">
-        <input type="hidden" name="id" value="{{$form->id}}">
+        <input type="hidden" name="user_id" value="{{$review->user_id}}">
+        <input type="hidden" name="id" value="{{$review->id}}">
         <label for="live_date">ライブに行った日</label>
-        <input type="date" id="live_date" name="live_date" value="{{$form->live_date}}">
+        <input type="date" id="live_date" name="live_date" value="{{$review->live_date}}">
         <label for="tag">タグ</label>
-        <input type="text" id="tag" name="">
+        <input type="text" id="tag" name="tag_name" value="">
         <label for="title">レビューのタイトル</label>
-        <input type="text" id="title" name="title" value="{{$form->title}}">
+        <input type="text" id="title" name="title" value="{{$review->title}}">
         <label for="text">ライブの感想</label>
-        <textarea name="text" id="text" cols="30" rows="10">{{$form->text}}</textarea>
+        <textarea name="text" id="text" cols="30" rows="10">{{$review->text}}</textarea>
         <p style="text-align: right; font-size: 0.8rem;">（XXXX文字以内）</p>
         <input type="submit" class="submit" value="修正">
     </form>
     <form action="del" method="post">
     @csrf
-        <input type="hidden" name="user_id" value="{{$form->user_id}}">
-        <input type="hidden" name="id" value="{{$form->id}}">
-        <input type="hidden" name="live_date" value="{{$form->live_date}}">
-        <input type="hidden" name="title" value="{{$form->title}}">
-        <input type="hidden" name="text" value="{{$form->text}}">
+        <input type="hidden" name="user_id" value="{{$review->user_id}}">
+        <input type="hidden" name="id" value="{{$review->id}}">
+        <input type="hidden" name="live_date" value="{{$review->live_date}}">
+        <input type="hidden" name="title" value="{{$review->title}}">
+        <input type="hidden" name="text" value="{{$review->text}}">
         <input type="submit" class="submit" id="del" value="削除">
     </form>
   </div><!-- /.form_container -->
