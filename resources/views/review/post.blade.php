@@ -14,10 +14,10 @@
     @if (Route::has('login'))
     @auth
       {{$user->account_name}}
+    @endauth
     @else
       {{$user = 'ゲスト'}}
     @endif
-    @endauth
   @endslot
 @endcomponent
 
@@ -30,11 +30,11 @@
         @auth
         <h1>{{$user->account_name}}さん、<br>あなたの体験をシェアしましょう</h1>
         <input type="hidden" name="user_id" value="{{$user->id}}">
-        @else
+        @endauth
+      @else
         <h1>{{$user}}さん、<br>あなたの体験をシェアしましょう</h1>
         <input type="hidden" name="user_id" value="2">
       @endif
-      @endauth
         <label for="live_date">ライブに行った日</label>
         <input type="date" id="live_date" name="live_date">
 
