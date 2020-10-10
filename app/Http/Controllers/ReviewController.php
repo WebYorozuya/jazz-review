@@ -67,6 +67,7 @@ class ReviewController extends Controller
         } else {
             $user = 'ゲスト';
         }
+        // var_dump($user); exit();
         return view('review.post', ['user' => $user]);
     }
     //フォームの値を取得しDBにレコード挿入
