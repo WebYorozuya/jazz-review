@@ -504,6 +504,33 @@ main {
   margin-right: 15px;
 }
 
+.heart {
+  font-size: 15px;
+  color: #d4d4d4;
+  user-select: none;
+  cursor: pointer;
+  margin-right:3px;
+}
+
+.colorChange {
+  animation-name: heart;
+  animation-duration: .4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes heart {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    color: #ffaaff;
+  }
+}
+
 /* index.php end*/
 
 aside {

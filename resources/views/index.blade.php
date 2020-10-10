@@ -45,7 +45,7 @@
         <span class="created-at">{{$item->created_at}}</span>
         <span class="likes">
           <i class="fas fa-heart"></i>
-          <span class="like-counter">00</span>
+          <span class="like-counter">0</span>
         </span>
       </div><!-- /.review-bottom -->
     </div><!-- /.review-right -->
