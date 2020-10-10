@@ -18,7 +18,13 @@
 
 @component('components.header')
   @slot('user')
-    {{$user->account_name}}
+    @if (Route::has('login'))
+    @auth
+      {{$user->account_name}}
+    @else
+      {{$user = 'ゲスト'}}
+    @endif
+    @endauth
   @endslot
 @endcomponent
 
