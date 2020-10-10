@@ -16,7 +16,7 @@ class TagController extends Controller
     public function index()
     {
         if (Auth::user()) { //ログインユーザ情報取得
-            $user = Auth::user();
+            $user = Auth::user()->account_name;
         } else {
             $user = 'ゲスト';
         }
@@ -46,7 +46,7 @@ class TagController extends Controller
     {
         //ログインユーザー情報を取得
         if (Auth::user()) {
-            $user = Auth::user();
+            $user = Auth::user()->account_name;
         } else {
             $user = 'ゲスト';
         }

@@ -33,7 +33,7 @@ class ReviewController extends Controller
         //$items = Review::where('user_id', $request->user_id)->get();//これだとpeginate追加できないのはなぜ？
         $items = Review::where('user_id', $request->user_id)->orderBy('id', 'desc')->paginate(10);//pegination要追加
         if (Auth::user()) { //ログインユーザ情報取得
-            $user = Auth::user()->name;
+            $user = Auth::user()->account_name;
         } else {
             $user = 'ゲスト';
         }
@@ -113,9 +113,9 @@ class ReviewController extends Controller
         $tags = Review::find($request->id)->tags();
         // var_dump($tags);exit();
         return view('review.modify', [
-            'review' => $review,
-            'user' => $user
-        ]);
+            'user' => $user,
+            'review' => $review
+            ]);
     }
     //投稿修正送信
     public function update(Request $request)

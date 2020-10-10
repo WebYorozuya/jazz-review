@@ -74,23 +74,22 @@
 
   // （4) いいねの実装
 
-  let likeCounter = document.querySelectorAll(".likeCounter");
+  let likeCounter = document.querySelectorAll(".like-Counter");
   let likeBtn = document.querySelectorAll(".heart");
-  let likeCheckbox = document.querySelectorAll(".likeCheckbox");
-
   const section_likeCounter = Array.from(likeCounter);
   const section_likeBtn = Array.from(likeBtn);
-  const section_likeCheckbox = Array.from(likeCheckbox);
-  // const color = window.getComputedStyle(section_likeBtn, '').color;
 
   for (let i = 0; i < section_likeBtn.length; i++) {
-    section_likeBtn[i].addEventListener("click", () => {
-      if (section_likeCheckbox[i].checked == true) {
-        section_likeCounter[i] = persrInt(section_likeCounter[i]) + 1;
-      } else {
-        section_likeCounter[i] = persrInt(section_likeCounter[i]) - 1;
-      }
-    })
+      section_likeBtn[i].addEventListener("click", (event) => {
+          const num = parseInt(section_likeCounter[i].textContent);
+          console.log(num);
+          section_likeBtn[i].classList.toggle("colorChange");
+          if (section_likeBtn[i].classList.contains("colorChange")) {
+              section_likeCounter[i].textContent = num + 1;
+          } else {
+              section_likeCounter[i].textContent = num - 1;
+          }
+      })
   };
 
   // (5)chips機能（post.blade.php,modify.blade.php)
@@ -157,12 +156,12 @@
   // innerHTMLプロパティ
 
   // (6)文字数カウント（post.blade.php,modify.blade.php)
-  // const textarea = document.getElementById('textarea');
+  const textarea = document.getElementById('text');
 
-  // textarea.addEventListener("keydown", function(event){
-  //   const len = textarea.value.length;
-  //   document.getElementById("realtimeFontLength").innerHTML = len;
-  // });
+  textarea.addEventListener("keydown", function(event){
+    const len = textarea.value.length;
+    document.getElementById("realtimeFontLength").innerHTML = len;
+  });
 
   //（7)モーダルを使用した見せ方(contact.blade.php)
   // let modalFig = document.querySelector(".main-newReviewerFig");
