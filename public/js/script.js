@@ -156,12 +156,12 @@
   // innerHTMLプロパティ
 
   // (6)文字数カウント（post.blade.php,modify.blade.php)
-  // const textarea = document.getElementById('textarea');
+  const textarea = document.getElementById('text');
 
-  // textarea.addEventListener("keydown", function(event){
-  //   const len = textarea.value.length;
-  //   document.getElementById("realtimeFontLength").innerHTML = len;
-  // });
+  textarea.addEventListener("keydown", function(event){
+    const len = textarea.value.length;
+    document.getElementById("realtimeFontLength").innerHTML = len;
+  });
 
   //（7)モーダルを使用した見せ方(contact.blade.php)
   // let modalFig = document.querySelector(".main-newReviewerFig");
