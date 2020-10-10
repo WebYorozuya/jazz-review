@@ -47,7 +47,7 @@
         <input type="text" id="title" name="title">
         <label for="text">ライブの感想</label>
         <textarea name="text" id="text" cols="30" rows="10"></textarea>
-        <p style="text-align: right; font-size: 0.8rem;">（XXXX文字以内）</p>
+        <p style="text-align: right; font-size: 0.8rem;">現在：<span id="realtimeFontLength">0</span>文字（XXXX文字以内）</p>
         <!-- <input type="button" class="submit" value="投稿する"> -->
         <input type="button" class="submit" onclick="submit();" value="投稿する">
         <button>リセットする</button>
