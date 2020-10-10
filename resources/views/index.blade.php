@@ -22,7 +22,7 @@
         <h2>{{$item->live_date}} {{$item->title}}</h2>
         <!-- ドロップダウンメニュー -->
         <div class="review-dropdown-wrapper">
-          <i class="fas fa-ellipsis-h my-black showIcon"></i>
+          <i class="fas fa-ellipsis-h showIcon"></i>
           <ul class="review-dropdown">
             <a href="modify?id={{ $item->id }}">
               <li>編集する</li>
@@ -32,7 +32,7 @@
             </a>
           </ul>
         </div><!-- /.review-menu-wrapper -->
-          <!-- ドロップダウンメニューここまで -->
+        <!-- ドロップダウンメニューここまで -->
       </div><!-- /.review-top -->
       <div class="tags">
         @foreach ($item->tags as $tag)
@@ -44,7 +44,7 @@
         <span class="user-name">by <a href="user?user_id={{$item->user_id}}">{{$item->getData()}}さん</span></a>
         <span class="created-at">{{$item->created_at}}</span>
         <span class="likes">
-          <i class="far fa-heart heart"></i>
+          <i class="fas fa-heart"></i>
           <span class="like-counter">0</span>
         </span>
       </div><!-- /.review-bottom -->

@@ -13,7 +13,7 @@ class ContactController extends Controller
     public function index()
     {
         if (Auth::user()) { //ログインユーザ情報取得
-            $user = Auth::user()->name;
+            $user = Auth::user()->account_name;
         } else {
             $user = 'ゲスト';
         }

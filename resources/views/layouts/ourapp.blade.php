@@ -84,7 +84,6 @@
       <div class="right-container">
         <!-- 投稿表示スペース -->
         <main>
-          <!-- <h1 class="main-title">@yield('h1')</h1> -->
           @section('main')
           @show
         </main>
@@ -139,7 +138,8 @@
       });
     })();
   </script>
-    <script type="text/javascript" src="/js/script.js"></script>
+  <script type="text/javascript" src="/js/script.js"></script>
+
 </body>
 
 </html>
