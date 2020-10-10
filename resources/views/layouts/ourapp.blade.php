@@ -28,7 +28,7 @@
   <title>@yield('title')</title>
 </head>
 
-<body class="UI_Build_Assistant">
+<body>
 <!-- headerはここにcomponentで -->
   <div class="back"></div>
   <div class="home">
