@@ -88,12 +88,12 @@
           @show
         </main>
         <aside>
-          <!-- <a href="#">
-                <div class="ad1">advertisement1</div>
-            </a>
-            <a href="#">
-                <div class="ad2">advertisement2</div>
-            </a> -->
+          <a href="https://sonicacademy.jp/mm/online/yosukeonuma_vol-2/" target="blank">
+            <div class="aside1"></div>
+          </a>
+          <a href="http://sonicacademy.jp/mm/" target="blank">
+            <div class="aside2"></div>
+          </a>
         </aside>
       </div>
     </div>
