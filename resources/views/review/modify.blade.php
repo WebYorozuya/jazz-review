@@ -17,15 +17,15 @@
 @endsection
 
 @component('components.header')
-  @slot('user')
+@slot('user')
     @if (Route::has('login'))
     @auth
       {{$user->account_name}}
+    @endauth
     @else
       {{$user = 'ゲスト'}}
     @endif
-    @endauth
-  @endslot
+@endslot
 @endcomponent
 
 @section('main')
