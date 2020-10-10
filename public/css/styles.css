@@ -222,7 +222,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  max-width: 1100px;
+  max-width: 1400px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -534,30 +534,27 @@ main {
 /* index.php end*/
 
 aside {
-  width: 300px;
-  position: relative;
+  width: 800px;
+  /* position: relative; */
   background-color: #f6f6f4;
+  padding: 20px;
 }
 
-/* .ad1 {
-  height: 200px;
-  width: 200px;
-  margin: 10px;
-  text-decoration: none;
-  color: black;
-  border: 1px solid transparent;
-  background-color: #fff;
-} */
+.aside1 {
+  margin-top: 300px;
+  background-image: url(../images/onuma_top-slide.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 120px;
+}
 
-/* .ad2 {
-  height: 300px;
-  width: 260px;
-  margin: 10px;
-  text-decoration: none;
-  color: black;
-  border: 1px solid transparent;
-  background-color: #fff;
-} */
+.aside2 {
+  margin-top: 100px;
+  background-image: url(../images/musicmaster_logo.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 90px;
+}
 
 .pagination {
   font-size: 15px;
