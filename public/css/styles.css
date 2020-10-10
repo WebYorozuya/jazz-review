@@ -101,14 +101,15 @@ header {
   text-align: center;
 }
 
-.header-end {
+.header-right {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5px 0px 5px 0px;
 }
 
-.header-post {
+.header-post,
+.header-loginUser-dd-label {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,51 +117,29 @@ header {
   background: rgba(42, 104, 151, 1);
   color: rgb(255, 255, 255);
   border-radius: 7px;
-  width: 120px;
+  max-width: 250px;
   height: 40px;
   font-size: 14px;
-  margin-right: 10px;
+  margin-right: 20px;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.header-post i {
-  font-size: 16px;
-  margin-right: 4px;
-}
-
-.header-post:hover {
+.header-post:hover,
+.header-loginUser-dd-label:hover {
   background: rgba(42, 104, 151, 0.7);
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
-.header-loginUser {
-  height: 40px;
-}
-
-.header-loginUser-dd-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-  height: 40px;
-  padding: 0 20px;
-  border-radius: 7px;
-  font-size: 14px;
-  color: #fff;
-  background: #2a6897;
-  position: relative;
-  margin-right: 20px;
-}
-
-.header-loginUser-dd-label i {
-  display: flex;
-  font-size: 16px;
+.header-post i {
+  font-size: 18px;
   margin-right: 4px;
 }
 
-.header-loginUser-dd-label:hover {
-  opacity: 0.8;
+.header-loginUser-dd-label i {
+  font-size: 20px;
+  margin-right: 4px;
 }
 
 .header-loginUser-dd-content {
@@ -176,6 +155,11 @@ header {
   position: absolute;
   top: 60px;
   z-index: 30;
+  list-style: none;
+}
+
+.header-loginUser-dd-content li {
+  text-decoration: none;
 }
 
 .header-loginUser-dd-content a {
@@ -184,14 +168,14 @@ header {
   padding-right: 10px;
 }
 
-.header-loginUser-dd-content-login, .header-loginUser-dd-content-logout, .header-loginUser-dd-content-account {
+.hello-user {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 30px;
 }
 
-.header-loginUser-dd-content-login:hover, .header-loginUser-dd-content-logout:hover, .header-loginUser-dd-content-account:hover {
+.hello-user:hover {
   color: #333333;
 }
 
@@ -208,12 +192,12 @@ header {
   width: 100%;
 }
 
-.header-loginUser-btn {
+/* .header-loginUser-btn {
   display: block;
   margin: 0px 30px 0x 0px;
   color: #ffffff;
   font-size: 12px;
-}
+} */
 
 .home {
   padding: 32px 16px 0px 16px;
@@ -434,21 +418,22 @@ main {
   position: relative;
   /* color: #ffffff; */
   /* border-radius: 10px; */
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.review-dropdown-wrapper:hover {
+  background-color: rgb(221, 221, 221);
+  transition: 0.2s;
 }
 
 .review-top i {
   display: inline-block;
   width: var(--review-action-height);
-  /* height: 15px; */
-  border-radius: 50%;
+  cursor: pointer;
   color: rgb(82, 80, 80);
   line-height: var(--review-action-height);
   /*縦位置中央揃え*/
-}
-
-.review-top i:hover {  
-  background-color: rgb(221, 221, 221);
-  transition: 0.2s;
 }
 
 .showIcon {
@@ -456,10 +441,6 @@ main {
   align-self: center;
   justify-content: center; */
 }
-
-/* .my-black {
-  color: rgb(51, 51, 51);
-} */
 
 .review-dropdown {
   border: 1px solid #eeeeee;
@@ -560,11 +541,8 @@ aside {
 }
 
 footer {
-  /* margin-top: 15px; */
   height: 300px;
-  /* outline: 1px solid #0f1813; */
   background-color: #242424;
-  /* opacity: 0.9; */
   color: #ffffff;
   position: relative;
   z-index: 40;
@@ -613,7 +591,7 @@ footer {
   text-decoration-line: underline;
   text-decoration-color: #fff;
   text-decoration-style: solid;
-  text-decoration-thickness: 4px;
+  /* text-decoration-thickness: 4px; */
 }
 
 @media screen and (max-width: 1000px) {

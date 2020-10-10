@@ -18,7 +18,7 @@
 
 @component('components.header')
   @slot('user')
-    {{$user}}
+    {{$user->account_name}}
   @endslot
 @endcomponent
 
