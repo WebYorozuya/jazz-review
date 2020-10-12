@@ -279,9 +279,12 @@ nav li a:hover {
 }
 
 .li-newInformation {
-  background-color: #d6e8f0;
-  white-space: nowrap;
-}
+    white-space: nowrap;
+  }
+
+.current-page {
+      background-color: #d6e8f0;
+  }
 
 .mobile-nav {
   display: none;
