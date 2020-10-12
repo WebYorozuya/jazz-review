@@ -11,8 +11,11 @@
   border-bottom: 1px solid var(--main-background-color);
 }
 
+.tags-global-container {
+  width: 100%;
+}
+
 .tags-global-container > p {
-  /* width: 80%; */
   text-align: center;
   margin: 0 auto;
   padding: 20px 20px;
@@ -24,7 +27,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 auto;
-  /* margin-bottom: 30px; */
   padding: 10px 20px;
 }
 
