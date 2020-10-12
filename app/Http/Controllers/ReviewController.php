@@ -14,8 +14,6 @@ class ReviewController extends Controller
     //トップページを表示
     public function index(Request $request)
     {
-        // Log::info('hello');
-        // return; 
         if (Auth::user()) { //ログインユーザ情報取得
             $user = Auth::user()->account_name;
         } else {
@@ -23,14 +21,12 @@ class ReviewController extends Controller
         }
         $items = Review::orderBy('id', 'desc')
         ->paginate(10); //reviewsテーブルから取得
-        // return view('index', ['items' => $items, 'user' => $user]);下に書き換え
         $param = ['items' => $items, 'user' => $user];
         return view('index', $param);
     }
     //ユーザー別投稿ページを表示
     public function userposts(Request $request)
     {
-        //$items = Review::where('user_id', $request->user_id)->get();//これだとpeginate追加できないのはなぜ？
         $items = Review::where('user_id', $request->user_id)->orderBy('id', 'desc')->paginate(10);//pegination要追加
         if (Auth::user()) { //ログインユーザ情報取得
             $user = Auth::user()->account_name;
@@ -44,15 +40,8 @@ class ReviewController extends Controller
     public function tagposts(Request $request)
     {
         $tag = Tag::find($request->id);
-        $items = $tag->reviews; //Tag.phpのreviews()
-        // foreach ($items as $item) {
-            // Log::info('hogehoge');
-            // Log::info($item);
-            // var_dump($item);
-        // }
-        // exit();
-        // var_dump($items);
-        if (Auth::user()) { //ログインユーザ情報取得
+        $items = $tag->reviews;
+        if (Auth::user()) {
             $user = Auth::user()->account_name;
         } else {
             $user = 'ゲスト';
@@ -62,12 +51,11 @@ class ReviewController extends Controller
     //投稿ページを表示
     public function post(Request $request)
     {
-        if (Auth::user()) { //ログインユーザ情報取得
+        if (Auth::user()) {
             $user = Auth::user();
         } else {
             $user = 'ゲスト';
         }
-        // var_dump($user); exit();
         return view('review.post', ['user' => $user]);
     }
     //フォームの値を取得しDBにレコード挿入
@@ -96,7 +84,7 @@ class ReviewController extends Controller
         foreach ($array as $tag) {
             array_push($tags_id, $tag['id']);
         };
-        //中間テーブルにレコード挿入//tagsメソッドinReview.php
+        //中間テーブルにレコード挿入
         $review->tags()->attach($tags_id);//attachメソッドで紐付け対象のidを紐付け対象のidを引数にしてリレーションを紐付ける
       
       //トップページへ
