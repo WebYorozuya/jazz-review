@@ -1,7 +1,4 @@
-/* 9.16 GitHub mikeブランチから */
-
 /* 共通部分 */
-
 body {
   font-family: -apple-system, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
   width: 1140px;
@@ -11,11 +8,19 @@ body {
   flex-direction: column;
   outline: 1px solid;
   color: rgb(51, 51, 51);
-  /* margin:0; */
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 3;
 }
 
 header {
-  /* height: 80px; */
   --theme-color: #0378a6;
   background-color: var(--theme-color);
 }
@@ -24,7 +29,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* height: 80px; */
   max-width: 1100px;
   padding: 0px 16px;
   margin-left: auto;
@@ -49,16 +53,6 @@ header {
   margin-top: 8px;
   /* margin: 10px; */
 }
-
-/* #search-units {
-  font-weight: bold;
-  color: rgb(51, 51, 51);
-  background-color: #fff;
-  border: 1px solid #333333;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-} */
 
 .header-search {
   width: 200px;
@@ -93,14 +87,15 @@ header {
   text-align: center;
 }
 
-.header-end {
+.header-right {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5px 0px 5px 0px;
 }
 
-.header-post {
+.header-post,
+.header-loginUser-dd-label {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,54 +103,32 @@ header {
   background: rgba(42, 104, 151, 1);
   color: rgb(255, 255, 255);
   border-radius: 7px;
-  width: 120px;
+  max-width: 250px;
   height: 40px;
   font-size: 14px;
-  margin-right: 10px;
+  margin-right: 20px;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.header-post i {
-  font-size: 16px;
-  margin-right: 4px;
-}
-
-.header-post:hover {
+.header-post:hover,
+.header-loginUser-dd-label:hover {
   background: rgba(42, 104, 151, 0.7);
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
-.header-loginUser {
-  height: 40px;
-}
-
-.header-loginUser-acd-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-  height: 40px;
-  padding: 0 20px;
-  border-radius: 7px;
-  font-size: 14px;
-  color: #fff;
-  background: #2a6897;
-  position: relative;
-  margin-right: 20px;
-}
-
-.header-loginUser-acd-label i {
-  display: flex;
-  font-size: 16px;
+.header-post i {
+  font-size: 18px;
   margin-right: 4px;
 }
 
-.header-loginUser-acd-label:hover {
-  opacity: 0.8;
+.header-loginUser-dd-label i {
+  font-size: 20px;
+  margin-right: 4px;
 }
 
-.header-loginUser-acd-content {
+.header-loginUser-dd-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -164,30 +137,31 @@ header {
   width: 120px;
   font-size: 12px;
   transition: 0.4s;
-  opacity: 0;
+  display: none;
   position: absolute;
   top: 60px;
   z-index: 30;
+  list-style: none;
 }
 
-.show {
-  opacity: 1;
+.header-loginUser-dd-content li {
+  text-decoration: none;
 }
 
-.header-loginUser-acd-content a {
+.header-loginUser-dd-content a {
   text-decoration: none;
   margin: 7px;
   padding-right: 10px;
 }
 
-.header-loginUser-acd-content-login, .header-loginUser-acd-content-logout, .header-loginUser-acd-content-account {
+.hello-user {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 30px;
 }
 
-.header-loginUser-acd-content-login:hover, .header-loginUser-acd-content-logout:hover, .header-loginUser-acd-content-account:hover {
+.hello-user:hover {
   color: #333333;
 }
 
@@ -202,13 +176,6 @@ header {
   color: white;
   text-align: center;
   width: 100%;
-}
-
-.header-loginUser-btn {
-  display: block;
-  margin: 0px 30px 0x 0px;
-  color: #ffffff;
-  font-size: 12px;
 }
 
 .home {
@@ -234,7 +201,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  max-width: 1100px;
+  max-width: 1400px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -291,9 +258,12 @@ nav li a:hover {
 }
 
 .li-newInformation {
-  background-color: #d6e8f0;
-  white-space: nowrap;
-}
+    white-space: nowrap;
+  }
+
+.current-page {
+      background-color: #d6e8f0;
+  }
 
 .mobile-nav {
   display: none;
@@ -314,9 +284,9 @@ main {
   margin-bottom: 70px;
 }
 
-/* uploadボタン*/
+/* uploadボタン→これは何？？？*/
 
-.main-upload-btns {
+/* .main-upload-btns {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -355,7 +325,7 @@ main {
   border-style: none;
 }
 
-.main-upload-btns a:hover span {}
+.main-upload-btns a:hover span {} */
 
 /* uploadボタン終わり*/
 
@@ -373,7 +343,6 @@ main {
 }
 
 /* レビュー記事 */
-
 .review {
   width: 100%;
   display: flex;
@@ -391,7 +360,19 @@ main {
   height: 50px;
 }
 
+.review-right {
+  flex-grow: 1;
+  padding-left: 8px;
+}
+
 .review-top {
+  text-decoration: none;
+  margin: 0 3px;
+  --review-action-height: 30px;
+  height: var(--review-action-height);
+  min-width: 30px;
+  border-radius: 50%;
+  text-align: center;
   display: flex;
   flex: row;
   justify-content: space-between;
@@ -405,35 +386,61 @@ main {
   display: inline-block;
 }
 
-.review-action {
-  text-decoration: none;
-  margin: 0 3px;
-  --review-action-height: 30px;
-  height: var(--review-action-height);
-  min-width: 30px;
+.review-dropdown-wrapper {
+  position: relative;
   border-radius: 50%;
-  text-align: center;
+  z-index: 5;
 }
 
-.review-action .fas {
+.review-dropdown-wrapper:hover {
+  background-color: rgb(221, 221, 221);
+  transition: 0.2s;
+}
+
+.review-top i {
   display: inline-block;
+  width: var(--review-action-height);
+  cursor: pointer;
   color: rgb(82, 80, 80);
   line-height: var(--review-action-height);
   /*縦位置中央揃え*/
 }
 
-.review-action:hover {
-  background-color: rgb(221, 221, 221);
-  transition: 0.2s;
+.review-dropdown {
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+  /* transition: 0.1s; */
+  position: absolute;
+  top: 26px;
+  left: 0px;
+  width: 80px;
+  z-index: 4;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 12px;
 }
 
-.review-right {
-  flex-grow: 1;
-  padding-left: 8px;
+.show {
+  display: flex;
 }
 
-.review-right .live_date {
-  font-size: 0.9rem;
+.review-dropdown a {
+  text-decoration: none;
+}
+
+.review-dropdown li {
+  border: 0.5px solid #dddddd;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 5px;
+  align-items: center;
+  color: rgb(51, 51, 51);
+}
+
+.review-dropdown li:hover {
+  background-color: #dddddd;
 }
 
 .review-right .tags {
@@ -461,33 +468,57 @@ main {
   margin-right: 15px;
 }
 
+.heart {
+  font-size: 15px;
+  color: #d4d4d4;
+  user-select: none;
+  cursor: pointer;
+  margin-right:3px;
+}
+
+.colorChange {
+  animation-name: heart;
+  animation-duration: .4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes heart {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    color: #ffaaff;
+  }
+}
+
 /* index.php end*/
 
 aside {
-  width: 300px;
-  position: relative;
+  width: 400px;
+  /* position: relative; */
   background-color: #f6f6f4;
+  padding: 20px;
 }
 
-/* .ad1 {
-  height: 200px;
-  width: 200px;
-  margin: 10px;
-  text-decoration: none;
-  color: black;
-  border: 1px solid transparent;
-  background-color: #fff;
-} */
+.aside1 {
+  margin-top: 300px;
+  background-image: url(../images/onuma_top-slide.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 120px;
+}
 
-/* .ad2 {
-  height: 300px;
-  width: 260px;
-  margin: 10px;
-  text-decoration: none;
-  color: black;
-  border: 1px solid transparent;
-  background-color: #fff;
-} */
+.aside2 {
+  margin-top: 100px;
+  background-image: url(../images/musicmaster_logo.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 90px;
+}
 
 .pagination {
   font-size: 15px;
@@ -498,11 +529,8 @@ aside {
 }
 
 footer {
-  /* margin-top: 15px; */
   height: 300px;
-  /* outline: 1px solid #0f1813; */
   background-color: #242424;
-  /* opacity: 0.9; */
   color: #ffffff;
   position: relative;
   z-index: 40;
@@ -551,7 +579,7 @@ footer {
   text-decoration-line: underline;
   text-decoration-color: #fff;
   text-decoration-style: solid;
-  text-decoration-thickness: 4px;
+  /* text-decoration-thickness: 4px; */
 }
 
 @media screen and (max-width: 1000px) {
@@ -597,16 +625,16 @@ footer {
     display: none;
   }
   /* ヘッダー ログイン機能 */
-  .header-loginUser-acd-label {
+  .header-loginUser-dd-label {
     width: 40px;
   }
-  .header-loginUser-acd-label i {
+  .header-loginUser-dd-label i {
     margin: 0;
   }
-  .header-loginUser-acd-label span {
+  .header-loginUser-dd-label span {
     display: none;
   }
-  .header-loginUser-acd-content {
+  .header-loginUser-dd-content {
     right: 40px;
   }
   .home {

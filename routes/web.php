@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-//トップページの呼び出し
-//Route::get('/', 'PostController@index');
-//model追加
 Route::get('/', 'ReviewController@index');
 
 Auth::routes();
@@ -24,15 +21,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //投稿画面の表示
-//Route::get('post', 'PostController@post');
 Route::get('post', 'ReviewController@post');
 
 //投稿内容をDBへ登録 
-//Route::post('insert', 'PostController@create');モデル使用により修正
 Route::post('insert', 'ReviewController@create');
 
 //投稿の修正、削除
-Route::get('modify', 'ReviewController@modify');
+Route::get('edit', 'ReviewController@edit');
 
 //修正した投稿をDBでUPDATEする
 Route::post('update', 'ReviewController@update');
@@ -44,7 +39,7 @@ Route::post('del', 'ReviewController@delete');
 Route::get('contact', 'ContactController@index');
 
 // 確認ページ
-Route::post('confirm', 'ContactController@confirm')->name('confirm');
+//Route::post('confirm', 'ContactController@confirm')->name('confirm');
 
 // DB挿入、メール送信
 Route::post('process', 'ContactController@process');
@@ -58,15 +53,13 @@ Route::get('tags', 'TagController@index');
 
 // ユーザー別投稿ページ表示
 Route::get('user', 'ReviewController@userposts');
-// Route::get('user?name={{$user}}', 'ReviewController@user');
-
 
 //パスワード変更
 Route::get('changepassword','HomeController@showChangePasswordForm');
 Route::post('changepassword','HomeController@changepassword')->name('changepassword');
 
 // タグ別投稿ページ表示
-Route::get('tag', 'ReviewController@tagposts');
+Route::get('tag', 'TagController@getTag')->name('tag');
 
 // 利用規約ページ表示
 Route::get('terms', 'TermsController@index'); //URL, Controller@method

@@ -9,7 +9,7 @@
 @endcomponent
 
 @section('main')
-<h1 class="main-title">タグ：</h1>
+<h1 class="main-title">タグ：{{$tag_name}}</h1>
 @foreach ($items as $item)
   <div class="review">
     <div class="review-left">
@@ -41,7 +41,7 @@
     </div><!-- /.review-right -->
   </div><!-- /.main-newReview 1投稿のお尻 -->
   @endforeach
-<!-- ここにpegination要追加 -->
+  {{ $items->links('vendor.pagination.bootstrap-4')}}
 @endsection
 @section('js')
 <script>

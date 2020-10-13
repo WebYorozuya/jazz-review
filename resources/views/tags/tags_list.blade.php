@@ -18,11 +18,11 @@
 @section('main')
 <h1 class="main-title">タグ一覧</h1>
   <div class="tags-global-container">
-    <p>Jazz Logに登録されているタグの一覧です。<br>毎日様々なライブハウスの投稿がされています。</p>
+    <p>Jazz Logに登録されているタグの一覧です。<br>気になるタグをクリックしてみましょう。</p>
     <div class="tags-container">
       @foreach($items as $item)
       <div class="tag-box">
-        <a class="TagList-label" href="#" data-count="{{$tag_counts}}">
+        <a class="TagList-label" href="#" data-count="{{ count($item->reviews) }}">
           <span>{{$item->tag_name}}</span>
         </a>
       </div>

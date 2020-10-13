@@ -26,11 +26,11 @@
         <div class="member-name">kakudaisuke</div>
         <ul class="member-sns-btn">
           <li class="twitter-btn">
-            <a href="https://twitter.com/kakudaisuke">
+            <a href="https://twitter.com/kakudaisuke" target="blank">
             <i class="fab fa-twitter-square fa-lg"></i></a>
           </li>
           <li class="github">
-            <a href="https://github.com/kakudaisuke">
+            <a href="https://github.com/kakudaisuke" target="blank">
             <i class="fab fa-github"></i></a>
           </li>
         </ul>
@@ -41,11 +41,11 @@
         <div class="member-name">mike</div>
         <ul class="member-sns-btn">
           <li class="twitter-btn">
-            <a href="#">
+            <a href="#" target="blank">
             <i class="fab fa-twitter-square fa-lg"></i></a>
           </li>
           <li class="facebook-btn">
-            <a href="#">
+            <a href="#" target="blank">
             <i class="fab facebook-square fa-facebook-square fa-lg"></i></a>
           </li>
         </ul>
@@ -56,11 +56,11 @@
         <div class="member-name">tsuka</div>
         <ul class="member-sns-btn">
           <li class="twitter-btn">
-            <a href="#">
+            <a href="#" target="blank">
             <i class="fab fa-twitter-square fa-lg"></i></a>
           </li>
           <li class="facebook-btn">
-            <a href="#">
+            <a href="#" target="blank">
             <i class="fab facebook-square fa-facebook-square fa-lg"></i></a>
           </li>
         </ul>
@@ -71,11 +71,11 @@
         <div class="member-name">ayaka</div>
         <ul class="member-sns-btn">
           <li class="twitter-btn">
-            <a href="#">
+            <a href="#" target="blank">
             <i class="fab fa-twitter-square fa-lg"></i></a>
           </li>
           <li class="instagram-btn">
-            <a href="#">
+            <a href="#" target="blank">
             <i class="fab fa-instagram-square fa-lg"></i></a>
           </li>
         </ul>
@@ -86,24 +86,24 @@
       <p>
         プログラミング初学者の私たちですが、<a
           href="https://www.youtube.com/channel/UCHxqQ8bUg5F2GW79D_DvSjQ/featured"
-          >YouTube万屋エンジニアチャンネル</a
+          target="blank">YouTube万屋エンジニアチャンネル</a
         >のコミュニティ内で、学習がてらWebサービスを作ってみようというプロジェクトを立ち上げました。ジャズライブに行った人が感想を書き込んでシェアできる口コミサイトを作っています（このコロナ禍に）。
         現在、おさないさんという超絶強力なメンターと先にプロジェクトを立ち上げている先人にアドバイスを仰ぎながら、初心者しかいない４人のチームでよちよち歩んでいます。
       </p>
     </div>
     <h2>mentor</h2>
     <div class="supporter">
-      <a href="https://www.youtube.com/channel/UCHxqQ8bUg5F2GW79D_DvSjQ/featured">
+      <a href="https://www.youtube.com/channel/UCHxqQ8bUg5F2GW79D_DvSjQ/featured" target="blank">
         <i class="fab fa-youtube fa-5x"></i>
       </a>
-      <a href="https://twitter.com/YorozuyaOsanai">
+      <a href="https://twitter.com/YorozuyaOsanai" target="blank">
         <img src="images/webyorozuya.png" alt="web万屋チャンネルロゴ"/>
       </a>
     </div>
   </div> <!-- .main-container-team -->
 
   <!-- お問い合わせフォーム -->
-  <div class="main-container-contact">
+  <div class="main-container-contact" id="contact">
     <h1 class="main-title">お問い合わせ</h1>
     
     <form action="process" accept-charset="UTF-8" method="post" class="main-form">

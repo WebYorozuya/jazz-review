@@ -28,8 +28,9 @@
   <title>@yield('title')</title>
 </head>
 
-<body class="UI_Build_Assistant">
+<body>
 <!-- headerはここにcomponentで -->
+  <div class="back"></div>
   <div class="home">
     @if (session('flash_message'))
     <div class="flash_message alert alert-success" style="margin:0">
@@ -40,25 +41,25 @@
       <nav>
         <ul class="pc-nav">
           <li>
-            <a href="/" class="li-newInformation">
+            <a href="/" class="li-newInformation" id="newInformation">
               <i class="fas fa-music fa-lg"></i>
               <span>新着レビュー</span>
             </a>
           </li>
           <li>
-            <a href="tags" class="li-player">
+            <a href="tags" class="li-player" id="tags">
               <i class="fas fa-tags"></i>
               <span>タグ</span>
             </a>
           </li>
           <li>
-            <a href="post" class="li-livehouse">
+            <a href="post" class="li-livehouse" id="post">
               <i class="fas fa-pen-nib"></i>
               <span>投稿する</span>
             </a>
           </li>
           <li>
-            <a href="contact" class="li-livehouse">
+            <a href="contact" class="li-livehouse" id="contact">
               <i class="far fa-smile"></i>
               <span>お問い合わせ</span>
             </a>
@@ -83,17 +84,16 @@
       <div class="right-container">
         <!-- 投稿表示スペース -->
         <main>
-          <!-- <h1 class="main-title">@yield('h1')</h1> -->
           @section('main')
           @show
         </main>
         <aside>
-          <!-- <a href="#">
-                <div class="ad1">advertisement1</div>
-            </a>
-            <a href="#">
-                <div class="ad2">advertisement2</div>
-            </a> -->
+          <a href="https://sonicacademy.jp/mm/online/yosukeonuma_vol-2/" target="blank">
+            <div class="aside1"></div>
+          </a>
+          <a href="http://sonicacademy.jp/mm/" target="blank">
+            <div class="aside2"></div>
+          </a>
         </aside>
       </div>
     </div>
@@ -138,18 +138,37 @@
       });
     })();
   </script>
+  <script type="text/javascript" src="/js/script.js"></script>
   <script>
-    // ログインのアコーディオンメニューの開閉
-    const loginUserAcdLabel = document.querySelector(".header-loginUser-acd-label");
-
-    // ShowのクラスをloginUserAcdContentを着脱させる関数
-    function showHide(event) {
-      const loginUserAcdContent = document.querySelector(".header-loginUser-acd-content");
-      loginUserAcdContent.classList.toggle("show");
+    // 現在表示しているページのナビゲーションリンクをハイライト
+    function highlightCurrentNavLink() {
+        const currentPath = location.pathname;
+        let target;
+        switch (currentPath) {
+            case '/':
+                target = document.getElementById('newInformation');
+                target.classList.add('current-page');
+                break;
+            case '/tags':
+                target = document.getElementById('tags');
+                target.classList.add('current-page');
+                break;
+            case '/post':
+                target = document.getElementById('post');
+                target.classList.add('current-page');
+                break;
+            case '/contact':
+                target = document.getElementById('contact');
+                target.classList.add('current-page');
+                break;
+            default:
+                console.log('パスが一致しません。');
+        }
     }
-
-    loginUserAcdLabel.addEventListener('click', showHide);
+    highlightCurrentNavLink();
   </script>
+
+
 </body>
 
 </html>

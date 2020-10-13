@@ -11,7 +11,13 @@
 
 @component('components.header')
   @slot('user')
-    {{$user}}
+    @if (Route::has('login'))
+    @auth
+      {{$user->account_name}}
+    @else
+      {{$user = 'ゲスト'}}
+    @endauth
+    @endif
   @endslot
 @endcomponent
 
@@ -20,15 +26,15 @@
 <div class="form_container">
     <form action="insert" id="create-account" method="POST">
     @csrf
-      @if  (Route::has('login'))
+    @if (Route::has('login'))
         @auth
         <h1>{{$user->account_name}}さん、<br>あなたの体験をシェアしましょう</h1>
         <input type="hidden" name="user_id" value="{{$user->id}}">
-        @else
+    @else
         <h1>{{$user}}さん、<br>あなたの体験をシェアしましょう</h1>
         <input type="hidden" name="user_id" value="2">
-      @endif
-      @endauth
+        @endauth
+    @endif
         <label for="live_date">ライブに行った日</label>
         <input type="date" id="live_date" name="live_date">
 
@@ -41,8 +47,7 @@
         <input type="text" id="title" name="title">
         <label for="text">ライブの感想</label>
         <textarea name="text" id="text" cols="30" rows="10"></textarea>
-        <p style="text-align: right; font-size: 0.8rem;">（XXXX文字以内）</p>
-        <!-- <input type="button" class="submit" value="投稿する"> -->
+        <p style="text-align: right; font-size: 0.8rem;">現在：<span id="realtimeFontLength">0</span>文字（XXXX文字以内）</p>
         <input type="button" class="submit" onclick="submit();" value="投稿する">
         <button>リセットする</button>
       </form>  
