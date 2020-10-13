@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,4 +70,3 @@ Route::get('tag', 'ReviewController@tagposts');
 
 // 利用規約ページ表示
 Route::get('terms', 'TermsController@index'); //URL, Controller@method
-
