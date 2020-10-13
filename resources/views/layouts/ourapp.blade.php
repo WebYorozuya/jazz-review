@@ -41,7 +41,7 @@
       <nav>
         <ul class="pc-nav">
           <li>
-            <a href="/" class="li-newInformation" id="newInformation">]
+            <a href="/" class="li-newInformation" id="newInformation">
               <i class="fas fa-music fa-lg"></i>
               <span>新着レビュー</span>
             </a>

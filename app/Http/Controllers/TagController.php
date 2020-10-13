@@ -22,7 +22,7 @@ class TagController extends Controller
         }
         //tagデータを取得
         $items = Tag::orderBy('id', 'desc')->paginate(90);
-        return view('tags', [
+        return view('tags.tags_list', [
             'user' => $user,
             'items' => $items
         ]);
@@ -36,12 +36,11 @@ class TagController extends Controller
         } else {
             $user = 'ゲスト';
         }
-        
         //タグidを元にそのタグの入った投稿を全て取得する
         $items = Tag::find($request->id)->reviews()->orderBy('id', 'desc')->paginate(10);
         //タグ名を取得したい
         $tag_name = Tag::find($request->id)->tag_name;
-        return view('tagposts', [
+        return view('reviews.reviews_by_tag', [
             'user' => $user,
             'items' => $items,
             'tag_name' => $tag_name

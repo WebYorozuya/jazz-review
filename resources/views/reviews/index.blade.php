@@ -24,7 +24,7 @@
         <div class="review-dropdown-wrapper">
           <i class="fas fa-ellipsis-h showIcon"></i>
           <ul class="review-dropdown">
-            <a href="modify?id={{ $item->id }}">
+            <a href="edit?id={{ $item->id }}">
               <li>編集する</li>
             </a>
             <a href="contact#contact">
