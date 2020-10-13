@@ -1,131 +1,130 @@
-body {
+main {
+    padding: 32px 16px 0px 16px;
+    flex: 1;
+    background-color: #f6f6f4;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* welcome to Jazz Log */
+.left-container {
+    margin-top: 100px;
+    margin-right: 80px;
+}
+
+.welcome h1 {
+    display: inline-block;
+    text-align: center;
+    /* margin-bottom: 0; */
+    white-space: nowrap;
+    letter-spacing: 0.1px;
+    font-size: 50px;
+    font-weight: 400;
+    color: #0f1813;
+    font-family: -apple-system, "arial black", "Segoe UI", "Helvetica Neue",
+        "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
+}
+
+.welcome h2 {
+    text-align: center;
+}
+
+/* 新規登録フォーム */
+.right-container {
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+}
+
+.signup {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    min-height: 100vh;
-    min-height: 200vh;
+    align-items: center;
+    scroll-padding: 0;
+    background-color: #ffffff;
+}
+
+/* ♪新規登録してね♪ */
+.signup h3 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: #122219;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.input_form {
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.signup_form label {
+    min-width: 150px;
+    margin: 10px auto;
+    color: #3c4a57;
+    font-size: 17px;
+}
+
+.signup_form label::after {
+    content: " *";
+    color: red;
+}
+
+.signup_form p {
+    display: inline-block;
     margin: 0;
-    padding: 0;
-    background-color:#f6f6f4;
-    font-family: -apple-system, "Segoe UI", "Helvetica Neue",
-    "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
-    overflow: hidden;
-  }
-  
-  header {
-      /* height: 80px; */
-      background-color: #0378a6;
-    }
-    
-    .header-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      /* height: 80px; */
-      max-width: 1100px;
-      padding: 0px 16px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .header-siteName {
-      flex: 1;
-      /* padding: 0px 16px 0px 5px; */
-      min-width: 100px;
-    }
-  
-    .siteLogo {
-      height: 60px;
-      margin-top: 8px;
-      /* margin: 10px; */
-    }
-  
-  /* ここから新規登録エリア */
-  
-    .welcome h1{
-      text-align: center;
-      margin-bottom: 0;
-      white-space: nowrap;
-      letter-spacing: 0.1px;
-      font-size: 60px;
-      font-weight: 400;
-      color: #0f1813;
-    }
-  
-    .welcome p {
-      color: #3c4a57;
-      font-size: 20px;
-    }
-  
-    .signup_please {
-      text-align: center;
-      margin-top: 5px;
-      margin-bottom: 30px;
-      color: #122219;
-      font-size: 20px;
-    }
-  
-    .signup {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      height: 40vh;
-    }
-    
-    .signup_form label {
-      color: #3c4a57;
-      font-size: 15px;
-    }
-    
-    .signup_form input {
-      width: 100%;
-      height: 100%;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-      color:#0f1813; 
-      font-size: 20px;
-    } 
-  
-    .btn_signup {
-      text-align: center;
-    }
-  
-    input[type="submit"] {
-      width: 100%;
-      height: 50px;
-      margin-top: 20px;
-      margin-bottom: 30px;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      background: #0378a6;
-      color: white;
-      font-size: 20px;
-      font-weight: 400;
-  }
-    hr {
-      width: 30%;
-    }
-  
-    .access {
-      text-align: center;
-      position: relative;
-      margin-top: 30px;
-      font-size: 1em;
-    }
-  
-    .login .not_signup {
-      margin: 0;
-    }
-  
-    a {
-      text-decoration-line: none;
-    }
-  
-  
-    footer {
-      position: absolute;
-      bottom: 0;
-    }
+    font-size: small;
+}
+
+.signup_form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(131, 152, 182);
+    box-sizing: border-box;
+    border-radius: 7px;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.access {
+    text-align: center;
+    position: relative;
+    font-size: 1em;
+    background-color: #ffffff;
+}
+
+.login .not_signup {
+    margin: 0;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+/* 登録ボタン */
+.btn_signup {
+    text-align: center;
+}
+
+.btn_signup button {
+    width: 60%;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 4px #666666;
+    background-color: #9b9b9b;
+    /* background-color: #0378a6; */
+    color: #ffffff;
+    font-size: 20px;
+}
