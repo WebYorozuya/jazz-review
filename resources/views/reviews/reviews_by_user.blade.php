@@ -20,7 +20,7 @@
     <div class="review-right">
       <div class="review-top">
         <h2>{{$item->live_date}} {{$item->title}}</h2>
-        <a href="modify?id={{$item->id}}" class="review-action">
+        <a href="edit?id={{$item->id}}" class="review-action">
           <i class="fas fa-ellipsis-h"></i>
         </a>
       </div><!-- /.review-right-top -->
