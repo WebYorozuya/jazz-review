@@ -98,7 +98,7 @@
       </div>
     </div>
   </div>
-  <footer class="footer">
+  <footer class="footer" id="footer">
     <div class="footer-container">
       <div class="footer-left">
         <div class="footer-left">
@@ -166,8 +166,22 @@
         }
     }
     highlightCurrentNavLink();
-  </script>
 
+    // footer画像をランダムに変更
+    function changeFooterImgRandomly() {
+        const imgs = [
+            'url(../images/trumpet.jpg)',
+            'url(../images/guitar.jpg)',
+            'url(../images/piano.jpg)',
+            'url(../images/saxophone.jpg)'
+        ];
+        const selectImg = imgs[Math.floor(Math.random() * imgs.length)];
+        const footer = document.getElementById('footer');
+        footer.style.backgroundImage = selectImg;
+    }
+    changeFooterImgRandomly();
+
+  </script>
 
 </body>
 
