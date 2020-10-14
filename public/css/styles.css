@@ -8,7 +8,6 @@ body {
   flex-direction: column;
   outline: 1px solid;
   color: rgb(51, 51, 51);
-  /* margin:0; */
 }
 
 .back {
@@ -17,13 +16,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-color: rgb(0, 0, 0, 0.5); */
   display: none;
   z-index: 3;
 }
 
 header {
-  /* height: 80px; */
   --theme-color: #0378a6;
   background-color: var(--theme-color);
 }
@@ -32,7 +29,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* height: 80px; */
   max-width: 1100px;
   padding: 0px 16px;
   margin-left: auto;
@@ -48,25 +44,13 @@ header {
 
 .header-siteName {
   flex: 1;
-  /* padding: 0px 16px 0px 0px; */
   min-width: 100px;
 }
 
 .siteLogo {
   height: 75px;
   margin-top: 8px;
-  /* margin: 10px; */
 }
-
-/* #search-units {
-  font-weight: bold;
-  color: rgb(51, 51, 51);
-  background-color: #fff;
-  border: 1px solid #333333;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-} */
 
 .header-search {
   width: 200px;
@@ -192,18 +176,10 @@ header {
   width: 100%;
 }
 
-/* .header-loginUser-btn {
-  display: block;
-  margin: 0px 30px 0x 0px;
-  color: #ffffff;
-  font-size: 12px;
-} */
-
 .home {
   padding: 32px 16px 0px 16px;
   flex: 1;
-  --main-background-color: #f6f6f4;
-  /*背景色変数*/
+  --main-background-color: #f6f6f4; /*背景色変数*/
   background-color: var(--main-background-color);
   position: relative;
 }
@@ -243,8 +219,7 @@ header {
   position: sticky;
   top: 1em;
   --title-height: 50px;
-  margin-top: var(--title-height);
-  /*h1と連動*/
+  margin-top: var(--title-height); /*h1と連動*/
 }
 
 nav ul {
@@ -305,51 +280,6 @@ main {
   margin-bottom: 70px;
 }
 
-/* uploadボタン→これは何？？？*/
-
-/* .main-upload-btns {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 40px;
-  margin-top: 10px;
-}
-
-.main-upload-btns a {
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
-  border-style: none;
-  align-items: center;
-  justify-content: center;
-  box-sizing: inherit;
-  height: 40px;
-  width: 100px;
-}
-
-.main-upload-btns a:hover {
-  background-color: #d6e8f0;
-  border-radius: 10px;
-  transition: background-color 0.8s;
-}
-
-.main-upload-btns img {
-  vertical-align: text-bottom;
-}
-
-.main-upload-btns a span {
-  color: rgb(51, 51, 51);
-  font-size: 12px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  border-style: none;
-}
-
-.main-upload-btns a:hover span {} */
-
-/* uploadボタン終わり*/
-
 .main-title {
   text-align: center;
   width: 100%;
@@ -386,10 +316,6 @@ main {
   padding-left: 8px;
 }
 
-/* .review-right .live_date {
-  font-size: 0.9rem;
-} */
-
 .review-top {
   text-decoration: none;
   margin: 0 3px;
@@ -412,15 +338,7 @@ main {
 }
 
 .review-dropdown-wrapper {
-  /* display: flex; */
-  /* width: 50px;
-  height: 50px; */
-  /* justify-content: row;
-  justify-content: center;
-  align-items: center; */
   position: relative;
-  /* color: #ffffff; */
-  /* border-radius: 10px; */
   border-radius: 50%;
   z-index: 5;
 }
@@ -435,20 +353,12 @@ main {
   width: var(--review-action-height);
   cursor: pointer;
   color: rgb(82, 80, 80);
-  line-height: var(--review-action-height);
-  /*縦位置中央揃え*/
-}
-
-.showIcon {
-  /* display: flex;
-  align-self: center;
-  justify-content: center; */
+  line-height: var(--review-action-height); /*縦位置中央揃え*/
 }
 
 .review-dropdown {
   border: 1px solid #eeeeee;
   background-color: #ffffff;
-  /* transition: 0.1s; */
   position: absolute;
   top: 26px;
   left: 0px;
@@ -557,7 +467,6 @@ main {
 
 aside {
   width: 400px;
-  /* position: relative; */
   background-color: #f6f6f4;
   padding: 20px;
 }
@@ -637,7 +546,6 @@ footer {
   text-decoration-line: underline;
   text-decoration-color: #fff;
   text-decoration-style: solid;
-  /* text-decoration-thickness: 4px; */
 }
 
 @media screen and (max-width: 1000px) {
@@ -668,9 +576,6 @@ footer {
 @media screen and (max-width: 700px) {
   body, nav, aside {
     width: 100%;
-  }
-  .siteLogo {
-    /* margin: 10px; */
   }
   /* ヘッダー 投稿機能 */
   .header-post {
