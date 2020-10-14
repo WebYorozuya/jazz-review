@@ -10,7 +10,7 @@ body {
   color: rgb(51, 51, 51);
 }
 
-.back {
+.back-for-dropdown {
   position: absolute;
   top: 0;
   left: 0;

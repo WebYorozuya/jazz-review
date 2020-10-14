@@ -12,7 +12,7 @@
   function showHide(event) {
     const loginUserDdContent = document.querySelector(".header-loginUser-dd-content");
     loginUserDdContent.classList.toggle("show");
-    const back = document.querySelector(".back");
+    const back = document.querySelector(".back-for-dropdown");
     back.classList.toggle("show");
     if (loginUserDdContent.classList.contains("show")) {
       back.addEventListener('click', function () {
@@ -33,7 +33,7 @@
 
   for (let i = 0; i < section_showIcon.length; i++) {
     section_showIcon[i].addEventListener('click', function () {
-      const back = document.querySelector(".back");
+      const back = document.querySelector(".back-for-dropdown");
 
       section_ddContent[i].classList.toggle("show");
       back.classList.toggle("show");
