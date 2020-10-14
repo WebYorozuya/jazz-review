@@ -21,10 +21,10 @@
     @if (Route::has('login'))
     @auth
       {{$user->account_name}}
-    @endauth
-    @else
+      @else
       {{$user = 'ゲスト'}}
-    @endif
+      @endif
+    @endauth
 @endslot
 @endcomponent
 
