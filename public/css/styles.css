@@ -44,14 +44,12 @@ header {
 
 .header-siteName {
   flex: 1;
-  /* padding: 0px 16px 0px 0px; */
   min-width: 100px;
 }
 
 .siteLogo {
   height: 75px;
   margin-top: 8px;
-  /* margin: 10px; */
 }
 
 .header-search {
@@ -181,8 +179,7 @@ header {
 .home {
   padding: 32px 16px 0px 16px;
   flex: 1;
-  --main-background-color: #f6f6f4;
-  /*背景色変数*/
+  --main-background-color: #f6f6f4; /*背景色変数*/
   background-color: var(--main-background-color);
   position: relative;
 }
@@ -222,8 +219,7 @@ header {
   position: sticky;
   top: 1em;
   --title-height: 50px;
-  margin-top: var(--title-height);
-  /*h1と連動*/
+  margin-top: var(--title-height); /*h1と連動*/
 }
 
 nav ul {
@@ -283,51 +279,6 @@ main {
   background-color: #fff;
   margin-bottom: 70px;
 }
-
-/* uploadボタン→これは何？？？*/
-
-/* .main-upload-btns {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 40px;
-  margin-top: 10px;
-}
-
-.main-upload-btns a {
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
-  border-style: none;
-  align-items: center;
-  justify-content: center;
-  box-sizing: inherit;
-  height: 40px;
-  width: 100px;
-}
-
-.main-upload-btns a:hover {
-  background-color: #d6e8f0;
-  border-radius: 10px;
-  transition: background-color 0.8s;
-}
-
-.main-upload-btns img {
-  vertical-align: text-bottom;
-}
-
-.main-upload-btns a span {
-  color: rgb(51, 51, 51);
-  font-size: 12px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  border-style: none;
-}
-
-.main-upload-btns a:hover span {} */
-
-/* uploadボタン終わり*/
 
 .main-title {
   text-align: center;
@@ -402,14 +353,12 @@ main {
   width: var(--review-action-height);
   cursor: pointer;
   color: rgb(82, 80, 80);
-  line-height: var(--review-action-height);
-  /*縦位置中央揃え*/
+  line-height: var(--review-action-height); /*縦位置中央揃え*/
 }
 
 .review-dropdown {
   border: 1px solid #eeeeee;
   background-color: #ffffff;
-  /* transition: 0.1s; */
   position: absolute;
   top: 26px;
   left: 0px;
@@ -499,7 +448,6 @@ main {
 
 aside {
   width: 400px;
-  /* position: relative; */
   background-color: #f6f6f4;
   padding: 20px;
 }
@@ -579,7 +527,6 @@ footer {
   text-decoration-line: underline;
   text-decoration-color: #fff;
   text-decoration-style: solid;
-  /* text-decoration-thickness: 4px; */
 }
 
 @media screen and (max-width: 1000px) {
@@ -610,9 +557,6 @@ footer {
 @media screen and (max-width: 700px) {
   body, nav, aside {
     width: 100%;
-  }
-  .siteLogo {
-    /* margin: 10px; */
   }
   /* ヘッダー 投稿機能 */
   .header-post {
