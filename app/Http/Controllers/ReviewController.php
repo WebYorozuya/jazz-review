@@ -88,8 +88,7 @@ class ReviewController extends Controller
         $review = Review::find($request->id);
         return view('reviews.edit', [
             'user' => $user,
-            'review' => $review,
-            'tags' => $tags
+            'review' => $review
             ]);
     }
     //投稿修正送信
