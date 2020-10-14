@@ -39,7 +39,7 @@
         <label for="live_date">ライブに行った日</label>
         <input type="date" id="live_date" name="live_date" value="{{$review->live_date}}">
         <label for="tag">タグ</label>
-        <input type="text" id="tag" name="tag_name" value="">
+        <input type="text" id="tag" name="tag_name" value="@foreach ($review->tags as $tag){{$tag->tag_name}} @endforeach">
         <label for="title">レビューのタイトル</label>
         <input type="text" id="title" name="title" value="{{$review->title}}">
         <label for="text">ライブの感想</label>

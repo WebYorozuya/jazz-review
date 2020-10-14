@@ -24,7 +24,7 @@ class ReviewController extends Controller
         return view('reviews.index', $param);
     }
     //ユーザー別投稿ページを表示
-    public function userposts(Request $request)
+    public function getReviewsByUser(Request $request)
     {
         $items = Review::where('user_id', $request->user_id)->orderBy('id', 'desc')->paginate(10);
         if (Auth::user()) {
@@ -86,10 +86,10 @@ class ReviewController extends Controller
             $user = 'ゲスト';
         }
         $review = Review::find($request->id);
-        $tags = Review::find($request->id)->tags();
         return view('reviews.edit', [
             'user' => $user,
-            'review' => $review
+            'review' => $review,
+            'tags' => $tags
             ]);
     }
     //投稿修正送信
