@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <!-- font awesome -->
   <script src="https://kit.fontawesome.com/aaab412f99.js" crossorigin="anonymous"></script>
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> -->
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css Heroku-->
@@ -30,7 +29,7 @@
 
 <body>
 <!-- headerはここにcomponentで -->
-  <div class="back"></div>
+  <div class="back-for-dropdown"></div>
   <div class="home">
     @if (session('flash_message'))
     <div class="flash_message alert alert-success" style="margin:0">
