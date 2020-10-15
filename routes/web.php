@@ -64,5 +64,5 @@ Route::get('tag', 'TagController@getReviewsByTag')->name('tag');
 Route::get('terms', 'TermsController@index'); //URL, Controller@method
 
 //検索
-Route::get('search', 'SearchController@search')->name('reviews.search');
+Route::get('search', 'SearchController@search')->name('search');
 
