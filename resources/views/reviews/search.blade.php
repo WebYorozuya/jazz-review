@@ -1,6 +1,8 @@
 @extends('layouts.ourapp')
 
-@section('title', '検索結果')
+@section('title')
+「{{$keyword}}」の検索結果
+@endsection
 
 @component('components.header')
   @slot('user')
