@@ -1,3 +1,7 @@
+body {
+    background-color: #f6f6f4;
+}
+
 main {
     position: absolute;
     width: 500px;
@@ -20,7 +24,7 @@ main {
 
 .login form {
     box-sizing: border-box;
-    padding: 0 40px;
+    padding: 0 40px 50px 40px;
     margin: 10px 0;
 }
 
@@ -50,18 +54,33 @@ main {
 .pass-forget:hover {
     text-decoration: underline;
 }
+.col-md-8.offset-md-4 {
+    text-align: center;
+}
 
-input[type="submit"] {
-    width: 100%;
+button.btn.btn-primary {
+    width: 60%;
     height: 50px;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     border-radius: 8px;
     border: none;
     outline: none;
     cursor: pointer;
-    background: #0378a6;
-    color: white;
+    box-shadow: 3px 3px 4px #666666;
+    background-color: #9b9b9b;
+    color: #ffffff;
     font-size: 20px;
-    font-weight: 400;
+}
+
+
+
+a.btn.btn-link {
+    display: block;
+    text-align: center;
+    text-decoration-line: none;
+    font-size: 1em;
+    background-color: #ffffff;
+
+
 }
