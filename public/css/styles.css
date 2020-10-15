@@ -402,6 +402,25 @@ main {
   font-size: 0.9rem;
 }
 
+.review-text{
+  background-color: #fff;
+  padding: 0px 20px;
+  height: 70px;
+  overflow: hidden;
+}
+
+.hideBtn{
+  display: none;
+}
+
+.readmoreI-active {
+  transform: rotate(180deg);
+} 
+
+.reviewText-active {
+  height: auto;
+}
+
 .review-bottom {
   font-size: 0.85rem;
   color: #aaa;
