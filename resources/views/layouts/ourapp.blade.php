@@ -18,8 +18,13 @@
   <link type="text/css" rel="stylesheet" href="{{ secure_asset('css/ourmaterialize.css') }}" media="screen,projection" />
   <!--Import materialize.css Local-->
   <link type="text/css" rel="stylesheet" href="{{ asset('css/ourmaterialize.css') }}" media="screen,projection" />
+  
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- Import materialize.css Local -->
+  <script type="text/javascript" src="{{ asset('js/ourmaterialize.js') }}"></script>
+ 
   <!-- Heroku用 -->
   <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
   <!-- ローカル用 -->
@@ -112,77 +117,8 @@
       </div>
     </div>
   </footer>
+  
   @yield('js')
-  <script>
-    // http://keylopment.com/faq/529/ こちらを参照
-    if ($('.footer').length) {
-      var imgpass = "../images/";
-      // 表示させたい画像のファイル名＋拡張子を配列に格納
-      var imgfile = [];
-      imgfile[0] = 'trumpet.jpg';
-      imgfile[1] = 'jazzclub.jpg';
-      // imgfile[2] = 'bg03.jpg';
-      // imgfile[3] = 'bg04.jpg';
-      // 画像の数を元に、ランダムな数値を算出
-      var n = Math.floor(Math.random() * imgfile.length);
-      var bgbox = $('.footer');
-      // 算出したランダムな数値の順番にいるファイル情報をbackground-imageに設定する
-      bgbox.css('background-image', 'url(' + imgpass + imgfile[n] + ');');
-    }
-  </script>
-  <script>//投稿後のありがとうメッセージ
-    (function() {
-      'use strict';
-      $(function() {
-        $('.flash_message').fadeOut(5000);
-      });
-    })();
-  </script>
-  <script type="text/javascript" src="/js/script.js"></script>
-  <script>
-    // 現在表示しているページのナビゲーションリンクをハイライト
-    function highlightCurrentNavLink() {
-        const currentPath = location.pathname;
-        let target;
-        switch (currentPath) {
-            case '/':
-                target = document.getElementById('newInformation');
-                target.classList.add('current-page');
-                break;
-            case '/tags':
-                target = document.getElementById('tags');
-                target.classList.add('current-page');
-                break;
-            case '/post':
-                target = document.getElementById('post');
-                target.classList.add('current-page');
-                break;
-            case '/contact':
-                target = document.getElementById('contact');
-                target.classList.add('current-page');
-                break;
-            default:
-                console.log('パスが一致しません。');
-        }
-    }
-    highlightCurrentNavLink();
-
-    // footer画像をランダムに変更
-    function changeFooterImgRandomly() {
-        const imgs = [
-            'url(../images/trumpet.jpg)',
-            'url(../images/guitar.jpg)',
-            'url(../images/piano.jpg)',
-            'url(../images/saxophone.jpg)'
-        ];
-        const selectImg = imgs[Math.floor(Math.random() * imgs.length)];
-        const footer = document.getElementById('footer');
-        footer.style.backgroundImage = selectImg;
-    }
-    changeFooterImgRandomly();
-
-  </script>
-
+  <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
 </body>
-
 </html>

@@ -5,7 +5,7 @@
 
 @section('content') 
 
-<body class="UI_Build_Assistant">
+<body>
   
 <div class="main">
     <h1>Jazz Log にログイン</h1>
@@ -82,4 +82,4 @@
 
 <footer>
     <p><small> &copy; Jazz Log </small></p>
-  </footer>
+</footer>

@@ -12,6 +12,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    
+    <!-- Import materialize.css Local -->
+  <script type="text/javascript" src="{{ asset('js/ourmaterialize.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -77,5 +80,6 @@
             @yield('content')
         </main>
     </div>
+    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

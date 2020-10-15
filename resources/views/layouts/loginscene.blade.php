@@ -14,6 +14,9 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <!-- Import materialize.css Local -->
+    <script type="text/javascript" src="{{ asset('js/ourmaterialize.js') }}"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -77,6 +80,7 @@
             </form>
         </div>
     </li>
+    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
 </body>
 @endguest
 
