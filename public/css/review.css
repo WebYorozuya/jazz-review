@@ -1,5 +1,5 @@
 /* 共通部分 */
-body {
+/* body {
   font-family: -apple-system, "Segoe UI", "Helvetica Neue",
     "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
   width: 1140px;
@@ -10,12 +10,12 @@ body {
   outline: 1px solid;
   color: rgb(51, 51, 51);
   background-color: #f6f6f4;
-}
-
+} */
+/* 
 input[type="checkbox"] {
   position: absolute;
   left: -100vw;
-}
+} */
 
 .closeImg {
   width: 15px;
@@ -233,11 +233,10 @@ header {
   color: #ffffff;
   font-size: 12px;
 }
-/* ログイン機能のアコーディオンメニュー おわり*/
+/* ログイン機能のドロップダウンメニュー おわり*/
 /* ログイン機能 おわり */
 /* ヘッダー部分 おわり */
 
-/* ホーム部分(index.html,tagpage.html,userpage.html) */
 .home {
   padding: 32px 16px 0px 16px;
   flex: 1;
@@ -258,7 +257,6 @@ header {
   background-color: #f6f6f4;
 }
 
-/* ナビゲーション (index.html,tagpage.html,userpage.html)*/
 nav {
   display: flex;
   flex-direction: column;
@@ -436,26 +434,6 @@ aside {
   z-index: 20;
   background-color: #f6f6f4;
 }
-
-/* .ad1 {
-  height: 200px;
-  width: 200px;
-  margin: 10px;
-  text-decoration: none;
-  color: black;
-  border: 1px solid transparent;
-  background-color: #fff;
-} */
-
-/* .ad2 {
-  height: 300px;
-  width: 260px;
-  margin: 10px;
-  text-decoration: none;
-  color: black;
-  border: 1px solid transparent;
-  background-color: #fff;
-} */
 
 /* フッター関連 */
 footer {
