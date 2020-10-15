@@ -20,11 +20,14 @@ class SearchController extends Controller
         }
 
         $keyword = $request->input('keyword');
-        Log::info($keyword);
         if (!empty($keyword))
         {
             $reviews = Review::where('title', 'like', '%' . $keyword . '%')
             ->orWhere('text', 'like', '%' . $keyword . '%')
+            ->orWhereHas('tags', function ($query) use ($keyword){
+                Log::info($query);
+                $query->where('tag_name', 'like', '%' . $keyword . '%');
+            })
             ->paginate(10);
         } else {
             return redirect('/');
