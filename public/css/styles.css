@@ -293,6 +293,11 @@ main {
   border-bottom: 1px solid var(--main-background-color);
 }
 
+/* search.blade.php */
+.main-title span {
+  letter-spacing: normal;
+}
+
 /* レビュー記事 */
 .review {
   width: 100%;
