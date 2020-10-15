@@ -25,7 +25,6 @@ class SearchController extends Controller
             $reviews = Review::where('title', 'like', '%' . $keyword . '%')
             ->orWhere('text', 'like', '%' . $keyword . '%')
             ->orWhereHas('tags', function ($query) use ($keyword){
-                Log::info($query);
                 $query->where('tag_name', 'like', '%' . $keyword . '%');
             })
             ->paginate(10);
