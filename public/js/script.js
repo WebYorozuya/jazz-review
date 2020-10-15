@@ -159,7 +159,7 @@
 
    // [説明]入力した文章の文字数をカウントする関数
   textarea.addEventListener("keydown", function (event) {
-    const len = textarea.value.length;
+    const len = textarea.value.length + 1;
     document.getElementById("realtimeFontLength").innerHTML = len;
   });
 

@@ -23,7 +23,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
   <!-- Import materialize.css Local -->
-  <script type="text/javascript" src="{{ asset('js/ourmaterialize.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
  
   <!-- Heroku用 -->
   <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
@@ -117,7 +117,6 @@
       </div>
     </div>
   </footer>
-  
   @yield('js')
   <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
 </body>
