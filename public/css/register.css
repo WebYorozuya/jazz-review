@@ -37,22 +37,24 @@ main {
 }
 
 /* 新規登録フォーム */
-.right-container {
+.col-md-8 {
     width: 100%;
     margin-bottom: 30px;
+	border-radius: 10px;
     background-color: #ffffff;
 }
 
-.signup {
+.card {
     display: flex;
     flex-direction: column;
     align-items: center;
     scroll-padding: 0;
+	border-radius: 10px;
     background-color: #ffffff;
 }
 
 /* ♪新規登録してね♪ */
-.signup h3 {
+.card-header {
     text-align: center;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -69,25 +71,25 @@ main {
     background-color: #ffffff;
 }
 
-.signup_form label {
+.form-group.row label {
     min-width: 150px;
     margin: 10px auto;
     color: #3c4a57;
     font-size: 17px;
 }
 
-.signup_form label::after {
+.form-group.row label::after {
     content: " *";
     color: red;
 }
 
-.signup_form p {
+.form-group.row p {
     display: inline-block;
     margin: 0;
     font-size: small;
 }
 
-.signup_form input {
+.form-group.row input {
     display: block;
     width: 100%;
     padding: 10px;
@@ -106,7 +108,7 @@ main {
     background-color: #ffffff;
 }
 
-.login .not_signup {
+.login .not_register {
     margin: 0;
 }
 
@@ -119,8 +121,8 @@ a {
     text-align: center;
 }
 
-.btn_signup button {
-    width: 60%;
+button.btn.btn-primary {
+    width: 100%;
     height: 50px;
     margin-top: 20px;
     margin-bottom: 30px;
@@ -130,7 +132,6 @@ a {
     cursor: pointer;
     box-shadow: 3px 3px 4px #666666;
     background-color: #9b9b9b;
-    /* background-color: #0378a6; */
     color: #ffffff;
     font-size: 20px;
 }
@@ -142,16 +143,28 @@ a {
         display: flex;
         flex-direction: column;
         width: 100%;
+				border-radius: 8px;
     }
     .left-container {
-        font-size: 1em;
-        margin: 10px auto;
+        margin: 0;
+        width: 100%;
     }
-    .right-container {
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 ;
-    }
+    .welcome h1 {
+        display: block;
+        text-align: center;
+        white-space: pre-wrap;
+        margin-bottom: 20px;
+		font-size: 2em;
+		}
+		.welcome h2 {
+				font-size: 1em;
+		}
+    .col-md-8 {
+				flex-direction: column;
+				justify-content: center;
+				width: 100%;
+				font-size: 1em;
+		}
 }
 
 @media screen and (max-width: 800px) {
@@ -161,14 +174,25 @@ a {
         width: 100%;
     }
     .left-container {
-        font-size: 1em;
-        margin: 0 auto;
+        margin: 0;
+        width: 100%;
     }
-    .right-container {
+    .welcome h1 {
+        display: block;
+        text-align: center;
+        white-space: pre-wrap;
+        margin-bottom: 20px;
+				font-size: 2em;
+		}
+		.welcome h2 {
+				font-size: 1em;
+		}
+		.col-md-8 {
         flex-direction: column;
         justify-content: center;
-        padding: 0 ;
-    }
+				width: 100%;
+				font-size: 1em;
+		}
 }
 
 @media screen and (max-width: 700px) {
@@ -176,31 +200,54 @@ a {
         display: flex;
         flex-direction: column;
         width: 100%;
-    }
+				border-radius: 8px;
+		}
     .left-container {
-        font-size: 1em;
-        margin: 0 auto;
+        margin: 0;
+        width: 100%;
     }
-    .right-container {
+    .welcome h1 {
+        display: block;
+        text-align: center;
+        white-space: pre-wrap;
+        margin-bottom: 20px;
+				font-size: 2em;
+		}
+		.welcome h2 {
+				font-size: 1em;
+		}
+		.col-md-8 {
         flex-direction: column;
         justify-content: center;
-        padding: 0 ;
-    }
+        width: 100%;
+				font-size: 1em;
+				font-size: 1em;
+			}
 }
 
 @media screen and (max-width: 470px) {
     main {
         display: flex;
         flex-direction: column;
-        width: 100%;
+				width: 100%;
+				border-radius: 8px;
     }
     .left-container {
-        margin: 0 auto;
-        font-size: 1em;
+        margin: 0;
+        width: 100%;
     }
-    .right-container {
+    .welcome h1 {
+        display: block;
+        text-align: center;
+        white-space: pre-wrap;
+        margin-bottom: 20px;
+				font-size: 2em;
+		}
+    .col-md-8 {
         flex-direction: column;
         justify-content: center;
-        padding: 0 ;
+				width: 100%;
+				padding-top: 20px;
+				font-size: 1em;
     }
 }
