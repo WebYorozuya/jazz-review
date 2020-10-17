@@ -37,24 +37,24 @@ main {
 }
 
 /* 新規登録フォーム */
-.col-md-8 {
+.right-container {
     width: 100%;
     margin-bottom: 30px;
-	border-radius: 10px;
+    border-radius: 10px;
     background-color: #ffffff;
 }
 
-.card {
+.signup {
     display: flex;
     flex-direction: column;
     align-items: center;
     scroll-padding: 0;
-	border-radius: 10px;
+    border-radius: 10px;
     background-color: #ffffff;
 }
 
 /* ♪新規登録してね♪ */
-.card-header {
+.signup h3 {
     text-align: center;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -71,25 +71,25 @@ main {
     background-color: #ffffff;
 }
 
-.form-group.row label {
+.signup_form label {
     min-width: 150px;
     margin: 10px auto;
     color: #3c4a57;
     font-size: 17px;
 }
 
-.form-group.row label::after {
+.signup_form label::after {
     content: " *";
     color: red;
 }
 
-.form-group.row p {
+.signup_form p {
     display: inline-block;
     margin: 0;
     font-size: small;
 }
 
-.form-group.row input {
+.signup_form input {
     display: block;
     width: 100%;
     padding: 10px;
@@ -143,7 +143,7 @@ button.btn.btn-primary {
         display: flex;
         flex-direction: column;
         width: 100%;
-				border-radius: 8px;
+        border-radius: 8px;
     }
     .left-container {
         margin: 0;
@@ -154,17 +154,17 @@ button.btn.btn-primary {
         text-align: center;
         white-space: pre-wrap;
         margin-bottom: 20px;
-		font-size: 2em;
-		}
-		.welcome h2 {
-				font-size: 1em;
-		}
-    .col-md-8 {
-				flex-direction: column;
-				justify-content: center;
-				width: 100%;
-				font-size: 1em;
-		}
+        font-size: 2em;
+    }
+    .welcome h2 {
+        font-size: 1em;
+    }
+    .right-container {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        font-size: 1em;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -182,17 +182,17 @@ button.btn.btn-primary {
         text-align: center;
         white-space: pre-wrap;
         margin-bottom: 20px;
-				font-size: 2em;
-		}
-		.welcome h2 {
-				font-size: 1em;
-		}
-		.col-md-8 {
+        font-size: 2em;
+    }
+    .welcome h2 {
+        font-size: 1em;
+    }
+    .right-container {
         flex-direction: column;
         justify-content: center;
-				width: 100%;
-				font-size: 1em;
-		}
+        width: 100%;
+        font-size: 1em;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -200,8 +200,8 @@ button.btn.btn-primary {
         display: flex;
         flex-direction: column;
         width: 100%;
-				border-radius: 8px;
-		}
+        border-radius: 8px;
+    }
     .left-container {
         margin: 0;
         width: 100%;
@@ -211,26 +211,26 @@ button.btn.btn-primary {
         text-align: center;
         white-space: pre-wrap;
         margin-bottom: 20px;
-				font-size: 2em;
-		}
-		.welcome h2 {
-				font-size: 1em;
-		}
-		.col-md-8 {
+        font-size: 2em;
+    }
+    .welcome h2 {
+        font-size: 1em;
+    }
+    .right-container {
         flex-direction: column;
         justify-content: center;
         width: 100%;
-				font-size: 1em;
-				font-size: 1em;
-			}
+        font-size: 1em;
+        font-size: 1em;
+    }
 }
 
 @media screen and (max-width: 470px) {
     main {
         display: flex;
         flex-direction: column;
-				width: 100%;
-				border-radius: 8px;
+        width: 100%;
+        border-radius: 8px;
     }
     .left-container {
         margin: 0;
@@ -241,13 +241,13 @@ button.btn.btn-primary {
         text-align: center;
         white-space: pre-wrap;
         margin-bottom: 20px;
-				font-size: 2em;
-		}
-    .col-md-8 {
+        font-size: 2em;
+    }
+    .right-container {
         flex-direction: column;
         justify-content: center;
-				width: 100%;
-				padding-top: 20px;
-				font-size: 1em;
+        width: 100%;
+        padding-top: 20px;
+        font-size: 1em;
     }
 }
