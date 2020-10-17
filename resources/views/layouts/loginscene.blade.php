@@ -10,13 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title')</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Import materialize.css Local -->
-    <script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
-
+     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -80,7 +74,12 @@
             </form>
         </div>
     </li>
-    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+     <!-- jQuery -->
+     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- materialize.js -->
+    <script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
+    <!-- app.js -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 @endguest
 

@@ -57,5 +57,3 @@
   @endforeach
   {{ $items->links('vendor.pagination.bootstrap-4')}}
 @endsection
-
-@yield('js')

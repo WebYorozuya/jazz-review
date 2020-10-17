@@ -47,7 +47,7 @@
   const section_memberInfoImg = Array.from(memberInfoImg);
   const memberInfoName = document.getElementsByClassName("member-name");
   const section_memberInfoName = Array.from(memberInfoName);
-  const modalWrapper = document.getElementsByClassName("login-modal-wrapper");
+  const modalWrapper = document.getElementsByClassName("modal-wrapper");
   const section_modalWrapper = Array.from(modalWrapper);
   const closeBtn = document.getElementsByClassName("closeBtn");
   const section_closeBtn = Array.from(closeBtn);

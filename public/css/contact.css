@@ -1,12 +1,12 @@
 /* チーム紹介とお問い合わせフォーム共通 */
+
 main {
   flex-grow: 1;
   width: 100%;
   min-width: 0;
 }
 
-.main-container-team,
-.main-form {
+.main-container-team, .main-form {
   justify-content: center;
   width: 100%;
   padding: 30px;
@@ -29,6 +29,7 @@ h2 {
 }
 
 /* チーム紹介 */
+
 .team-member {
   display: flex;
   flex-direction: row;
@@ -60,8 +61,9 @@ h2 {
 }
 
 .member-sns-btn {
-  text-align: center;
+  text-align: start;
   margin-top: 10px;
+  margin-left: 5px;
   margin-bottom: 10px;
   padding: 0;
 }
@@ -86,16 +88,20 @@ h2 {
 .fa-twitter-square {
   color: #1da1f2;
 }
+
 .fa-facebook-square {
   color: #3b5998;
 }
+
 .fa-github {
   color: #212529;
   font-size: 1.2em;
 }
+
 .fa-instagram-square {
   color: #e1306c;
 }
+
 .fa-youtube {
   color: #ff0000;
 }
@@ -108,6 +114,7 @@ h2 {
   font-size: 15px;
   line-height: 2rem;
 }
+
 .team-about p a {
   text-decoration: none;
 }
@@ -127,6 +134,119 @@ h2 {
   width: 200px;
   height: 80px;
 }
+
+/* モーダル機能 */
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  display: none;
+  justify-content: center;
+}
+
+.show {
+  display: flex;
+}
+
+.modal {
+  position: relative;
+  margin: 50px auto;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  width: 600px;
+  height: 400px;
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-top {
+  display: flex;
+}
+
+.modal-top-center {
+  display: flex;
+  flex-direction: row;
+  width: 560px;
+}
+
+.modal-top img {
+  transform: scale(0.7);
+  width: 200px;
+  height: 250px;
+}
+
+.modal-top h2 {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px 20px 0px;
+  text-decoration: none;
+}
+
+.in-charge {
+  text-align: start;
+  font-size: 10px;
+  margin: 70px 10px 0px 10px;
+  list-style: none;
+}
+
+.name {
+  text-align: start;
+  font-size: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.modal-text {
+  font-size: 14px;
+  margin-left: 50px;
+  margin-right: 50px;
+  height: 80px;
+}
+
+.modal-close {
+  display: flex;
+  justify-content: flex-end; 
+}
+
+.closeBtn {
+  background-color: #aaa;
+  color: #fff;
+  border-radius: 5px;
+  margin: 10px 50px 0px 0px;
+  width: 60px;
+}
+
+.prevBtn {
+  width: 20px;
+  height: 30px;
+  margin: 180px 5px 0px 5px;
+  background-color: #eeeece;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 6px;
+}
+
+.nextBtn {
+  width: 20px;
+  height: 30px;
+  margin: 180px 5px 0px 5px;
+  background-color: #eeeece;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 6px;
+}
+
+.closeBtn:hover, .nextBtn:hover, .prevBtn:hover {
+  opacity: 0.4;
+}
+
+/* モーダル機能 おわり*/
 
 /* お問い合わせフォーム */
 
@@ -164,8 +284,7 @@ h2 {
   margin: 0;
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-form input, .contact-form textarea {
   width: 100%;
   margin: 5px;
   padding: 10px 5px;
@@ -174,8 +293,7 @@ h2 {
   font-size: 15px;
 }
 
-.email:after,
-.message:after {
+.email:after, .message:after {
   content: " *";
   color: red;
 }
@@ -199,6 +317,6 @@ textarea {
 aside {
   width: 30%;
   position: relative;
-  z-index: 20;
+  z-index: 9;
   background-color: #f6f6f4;
 }

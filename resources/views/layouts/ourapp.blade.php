@@ -11,19 +11,13 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <!-- font awesome -->
   <script src="https://kit.fontawesome.com/aaab412f99.js" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> -->
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css Heroku-->
   <link type="text/css" rel="stylesheet" href="{{ secure_asset('css/ourmaterialize.css') }}" media="screen,projection" />
   <!--Import materialize.css Local-->
   <link type="text/css" rel="stylesheet" href="{{ asset('css/ourmaterialize.css') }}" media="screen,projection" />
-  
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-  <!-- Import materialize.css Local -->
-  <script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
- 
   <!-- Heroku用 -->
   <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
   <!-- ローカル用 -->
@@ -33,8 +27,8 @@
 </head>
 
 <body>
-<!-- headerはここにcomponentで -->
-  <div class="back-for-dropdown"></div>
+  <!-- headerはここにcomponentで -->
+  <div class="back"></div>
   <div class="home">
     @if (session('flash_message'))
     <div class="flash_message alert alert-success" style="margin:0">
@@ -116,7 +110,27 @@
       </div>
     </div>
   </footer>
-  @yield('js')
-  <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- materialize.js -->
+  <script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
+  <!-- header components -->
+  <script type="text/javascript" src="{{ asset('js/logindd.js') }}"></script>
+  <!-- ourapp.blade.php -->
+  <script type="text/javascript" src="{{ asset('js/navlinkhighlight.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/footerfigresize.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/footerimgrandomchange.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/thanksmessage.js') }}"></script>
+  <!-- index.blade.php -->
+  <script type="text/javascript" src="{{ asset('js/reviewdd.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/reviewtextheightchange.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/likebtn.js') }}"></script>
+  <!-- post.blade.php -->
+  <script type="text/javascript" src="{{ asset('js/livedate.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/chips.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/charactercounter.js') }}"></script>
+  <!-- contact.blade.php -->
+  <script type="text/javascript" src="{{ asset('js/modalshow.js') }}"></script>
 </body>
+
 </html>
