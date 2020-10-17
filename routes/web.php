@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +20,7 @@ Route::get('/', 'ReviewController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('mypage', 'MypageController@index')->name('mypage');
 
 //投稿画面の表示
 Route::get('post', 'ReviewController@post');
@@ -63,3 +65,9 @@ Route::get('tag', 'TagController@getTag')->name('tag');
 
 // 利用規約ページ表示
 Route::get('terms', 'TermsController@index'); //URL, Controller@method
+
+// ログアウト
+Route::get('/logout',[
+    'uses' => 'UserController@getLogout',
+    'as' => 'user.logout'
+    ]);
