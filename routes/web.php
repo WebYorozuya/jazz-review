@@ -63,3 +63,6 @@ Route::get('tag', 'TagController@getReviewsByTag')->name('tag');
 // 利用規約ページ表示
 Route::get('terms', 'TermsController@index'); //URL, Controller@method
 
+//検索
+Route::get('search', 'SearchController@search')->name('search');
+

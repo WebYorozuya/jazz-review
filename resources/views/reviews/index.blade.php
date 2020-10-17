@@ -25,7 +25,7 @@
           <i class="fas fa-ellipsis-h showIcon"></i>
           <ul class="review-dropdown">
             <a href="edit?id={{ $item->id }}">
-              <li>編集する</li>
+              <li>編集／削除する</li>
             </a>
             <a href="contact#contact">
               <li>報告する</li>
