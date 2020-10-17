@@ -49,8 +49,8 @@ class ReviewController extends Controller
     public function create(Request $request)
     {
       //まずレビューのINSERT
-        $this->validate($request, Review::$rules); //バリデーションの実行
-        $review = new Review; //Reviewインスタンス作成
+        $this->validate($request, Review::$rules);
+        $review = new Review; //Reviewクラスのインスタンス作成
         $form = $request->all(); //送信されたフォームの値を保管
         unset($form['_token']); //CSRF非表示フィールド_token削除
         $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
@@ -94,12 +94,33 @@ class ReviewController extends Controller
     //投稿修正送信
     public function update(Request $request)
     {
-        $this->validate($request, Review::$rules); //バリデーションの実行
-        $review = Review::find($request->id); //Reviewインスタンス作成
-        $form = $request->all(); //送信されたフォームの値を保管
-        unset($form['_token']); //CSRF非表示フィールド_token削除
-        $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
-        return redirect('/'); //トップページへ
+        $this->validate($request, Review::$rules);
+        $review = Review::find($request->id);
+        $form = $request->all();
+        unset($form['_token']);
+        $review->fill($form)->save();
+
+    //次にタグのINSERT
+        //送信されたタグをスペース区切りで整える
+        $spaces = array("　", "  ", "   ");
+        $tags = trim(str_replace($spaces, " ", $request->tag_name));
+        $tags = explode(" ", $tags);
+        //新規タグだけtagsテーブルに挿入
+        $array = [];
+        foreach ($tags as $tag) {
+            $record = Tag::firstOrCreate(['tag_name' => $tag]);
+            array_push($array, $record);
+        };
+        //投稿に紐付けされるタグのidを配列化、中間テーブルへ
+        $tags_id = [];
+        foreach ($array as $tag) {
+            array_push($tags_id, $tag['id']);
+        };
+        //中間テーブルにレコード挿入
+        $review->tags()->attach($tags_id);
+      
+      //トップページへ
+        return redirect('/')->with('flash_message', '投稿を修正しました！');
     }
     //投稿削除
     public function delete(Request $request)
