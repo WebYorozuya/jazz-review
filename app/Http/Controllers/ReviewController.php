@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 use App\Review;
 use App\Tag;
 use App\User;
@@ -54,7 +55,6 @@ class ReviewController extends Controller
         $form = $request->all(); //送信されたフォームの値を保管
         unset($form['_token']); //CSRF非表示フィールド_token削除
         $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
-
       //次にタグのINSERT
         //送信されたタグをスペース区切りで整える
         $spaces = array("　", "  ", "   ");
@@ -112,6 +112,7 @@ class ReviewController extends Controller
             array_push($array, $record);
         };
         //投稿に紐付けされるタグのidを配列化、中間テーブルへ
+        //TODO:同一タグが複数あったら一つにする
         $tags_id = [];
         foreach ($array as $tag) {
             array_push($tags_id, $tag['id']);
@@ -125,7 +126,26 @@ class ReviewController extends Controller
     //投稿削除
     public function delete(Request $request)
     {
-        Review::find($request->id)->delete();
+        $review_tags = DB::table('review_tag')->where('review_id', $request->id)->get();
+        // $tags_num = $review_tag->count();
+        if (!empty($review_tags)) {
+            foreach ($review_tags as $review_tag)
+            {
+                $count_tag = DB::table('review_tag')->where('tag_id', $review_tag->tag_id)->count();
+                $delete_review_tag = DB::table('review_tag')
+                    ->where('review_id', $request->id)
+                    ->where('tag_id', $review_tag->tag_id)
+                    ->delete();
+                if ($count_tag <= 1) {
+                    // $tags [] = Tag::find($review_tag->tag_id);
+                    // Log::info($delete_review_tag); exit();
+                    $tags = Tag::find($review_tag->tag_id)->delete();
+                }
+            }
+        }
+
+        $review = Review::find($request->id)->delete();
+
         return redirect('/');
     }
 }
