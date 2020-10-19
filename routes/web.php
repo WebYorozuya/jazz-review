@@ -57,8 +57,8 @@ Route::get('tags', 'TagController@getTags');
 Route::get('user', 'ReviewController@getReviewsByUser');
 
 //パスワード変更
-Route::get('changepassword','HomeController@showChangePasswordForm');
-Route::post('changepassword','HomeController@changepassword')->name('changepassword');
+Route::get('changepassword','MypageController@showChangePasswordForm');
+Route::post('changepassword','MypageController@changepassword')->name('changepassword');
 
 // タグ別投稿ページ表示
 Route::get('tag', 'TagController@getReviewsByTag')->name('tag');
