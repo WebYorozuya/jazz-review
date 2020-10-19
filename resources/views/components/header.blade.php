@@ -1,14 +1,13 @@
 <header>
-    <div class="header-container">
-      <div class="header-start">
-        <div class="header-siteName">
-          <a href="/"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
-        </div>
-        <form class="header-search" action="{{ url('/search')}}" method="get">
-          <i class="fas fa-search"></i>
-          <input id="header-search-text" type="search" name="keyword" placeholder="キーワードで検索">
-        </form>
+  <div class="header-container">
+    <div class="header-start">
+      <div class="header-siteName">
+        <a href="/"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
       </div>
+      <form class="header-search" action="{{ url('/search')}}" method="get">
+        <i class="fas fa-search"></i>
+        <input id="header-search-text" type="search" name="keyword" placeholder="キーワードで検索">
+      </form>
     </div>
     <div class="header-right">
       <a href="post" class="header-post">
