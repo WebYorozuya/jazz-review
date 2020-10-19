@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;//パスワード変更
 use Illuminate\Support\Facades\Hash;//パスワード変更
 
-class HomeController extends Controller
+class MypageController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('/auth/mypage');
     }
 
     //パスワード変更追加
