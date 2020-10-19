@@ -1,5 +1,8 @@
+body {
+    background-color: #f6f6f4;
+}
+
 main {
-    padding: 32px 16px 0px 16px;
     flex: 1;
     background-color: #f6f6f4;
     display: flex;
@@ -19,7 +22,7 @@ main {
 .welcome h1 {
     display: inline-block;
     text-align: center;
-    /* margin-bottom: 0; */
+    margin-bottom: 0;
     white-space: nowrap;
     letter-spacing: 0.1px;
     font-size: 50px;
@@ -37,6 +40,7 @@ main {
 .right-container {
     width: 100%;
     margin-bottom: 30px;
+    border-radius: 10px;
     background-color: #ffffff;
 }
 
@@ -45,6 +49,7 @@ main {
     flex-direction: column;
     align-items: center;
     scroll-padding: 0;
+    border-radius: 10px;
     background-color: #ffffff;
 }
 
@@ -58,6 +63,9 @@ main {
     font-weight: 700;
 }
 
+.card-body {
+    padding: 0 30px;
+}
 .input_form {
     text-align: center;
     background-color: #ffffff;
@@ -100,7 +108,7 @@ main {
     background-color: #ffffff;
 }
 
-.login .not_signup {
+.login .not_register {
     margin: 0;
 }
 
@@ -113,8 +121,8 @@ a {
     text-align: center;
 }
 
-.btn_signup button {
-    width: 60%;
+button.btn.btn-primary {
+    width: 100%;
     height: 50px;
     margin-top: 20px;
     margin-bottom: 30px;
@@ -124,7 +132,122 @@ a {
     cursor: pointer;
     box-shadow: 3px 3px 4px #666666;
     background-color: #9b9b9b;
-    /* background-color: #0378a6; */
     color: #ffffff;
     font-size: 20px;
+}
+
+/* レスポンシブ対応 */
+
+@media screen and (max-width: 1000px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-radius: 8px;
+    }
+    .left-container {
+        margin: 0;
+        width: 100%;
+    }
+    .welcome h1 {
+        display: block;
+        text-align: center;
+        white-space: pre-wrap;
+        margin-bottom: 20px;
+        font-size: 2em;
+    }
+    .welcome h2 {
+        font-size: 1em;
+    }
+    .right-container {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .left-container {
+        margin: 0;
+        width: 100%;
+    }
+    .welcome h1 {
+        display: block;
+        text-align: center;
+        white-space: pre-wrap;
+        margin-bottom: 20px;
+        font-size: 2em;
+    }
+    .welcome h2 {
+        font-size: 1em;
+    }
+    .right-container {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-radius: 8px;
+    }
+    .left-container {
+        margin: 0;
+        width: 100%;
+    }
+    .welcome h1 {
+        display: block;
+        text-align: center;
+        white-space: pre-wrap;
+        margin-bottom: 20px;
+        font-size: 2em;
+    }
+    .welcome h2 {
+        font-size: 1em;
+    }
+    .right-container {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        font-size: 1em;
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-radius: 8px;
+    }
+    .left-container {
+        margin: 0;
+        width: 100%;
+    }
+    .welcome h1 {
+        display: block;
+        text-align: center;
+        white-space: pre-wrap;
+        margin-bottom: 20px;
+        font-size: 2em;
+    }
+    .right-container {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding-top: 20px;
+        font-size: 1em;
+    }
 }
