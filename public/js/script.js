@@ -1,10 +1,5 @@
-
-
+'use strict';
 {
-  'use strict';
-
-  // @section('js')
-
   // (1) ログインユーザーのドロップダウンメニューの開閉(header)
   const loginUserDdLabel = document.querySelector(".header-loginUser-dd-label");
 
@@ -12,7 +7,7 @@
   function showHide(event) {
     const loginUserDdContent = document.querySelector(".header-loginUser-dd-content");
     loginUserDdContent.classList.toggle("show");
-    const back = document.querySelector(".back");
+    const back = document.querySelector(".back-for-dropdown");
     back.classList.toggle("show");
     if (loginUserDdContent.classList.contains("show")) {
       back.addEventListener('click', function () {
@@ -23,7 +18,6 @@
   }
 
   loginUserDdLabel.addEventListener('click', showHide);
-  // @endsection
 
   // (2) mainのドロップダウンメニューの開閉
   let showIcon = document.getElementsByClassName("showIcon");
@@ -33,7 +27,7 @@
 
   for (let i = 0; i < section_showIcon.length; i++) {
     section_showIcon[i].addEventListener('click', function () {
-      const back = document.querySelector(".back");
+      const back = document.querySelector(".back-for-dropdown");
 
       section_ddContent[i].classList.toggle("show");
       back.classList.toggle("show");
@@ -46,50 +40,57 @@
     });
   }
 
-  // let showIcon = document.querySelectorAll(".showIcon");
-  // let ddContent = document.querySelectorAll(".review-dropdown");
-  // const section_showIcon = Array.from(showIcon);
-  // const section_ddContent = Array.from(ddContent);
-
-  // for (let i = 0; i < section_showIcon.length; i++) {
-  //   section_showIcon[i].addEventListener("click", function(event){
-  //     section_ddContent[i].classList.toggle("show");
-  //   })
-  // };
-
   // (3)   レビューのtextのheightの変更
-  const Post = document.getElementsByClassName("main-newReview-lowerColumn");
-  const NewReviewText = document.getElementsByClassName("main-newReviewText");
-  const OpenBtn = document.getElementsByClassName("openBtn");
-  const section_post = Array.from(Post);
-  const section_NewReviewText = Array.from(NewReviewText);
-  const section_OpenBtn = Array.from(OpenBtn);
 
-  for (let i = 0; i < section_post.length; i++) {
-    section_OpenBtn[i].addEventListener("click", () => {
-      section_NewReviewText[i].classList.toggle("newReviewText-active");
-      section_OpenBtn[i].classList.toggle("openBtn-active");
+  // 各クラス、配列の定義
+  const reviewText = document.getElementsByClassName("review-text");
+  const readmoreBlock = document.getElementsByClassName("readmore-block");
+  const readmoreI = document.getElementsByClassName("readmore-i");
+  const readmoreBtn = document.getElementsByClassName("readmore-btn");
+  const section_reviewText = Array.from(reviewText);
+  const section_readmoreBlock = Array.from(readmoreBlock);
+  const section_readmoreI = Array.from(readmoreI);
+  const section_readmoreBtn = Array.from(readmoreBtn);
+
+  // Reviewtextの文字数が70文字以上になった場合に｢続きを読む｣のボタンが現れる。
+  for (let i = 0; i < readmoreBlock.length; i++) {
+    if(section_reviewText[i].textContent.length < 70){
+      section_readmoreBlock[i].classList.add("hideBtn");
+    } else {
+      section_readmoreBlock[i].classList.remove("hideBtn");
+    }
+
+  // ｢続きを読む｣のボタンのクリックにより、readmoreIが１８０度回転、reviewTextの高さが変わる。
+  section_readmoreBlock[i].addEventListener("click", (event) => {
+      section_reviewText[i].classList.toggle("reviewText-active");
+      section_readmoreI[i].classList.toggle("readmoreI-active");
+      
+  // readmoreIがreadmoreI-activeのクラスを持っていた場合、readmoreBtnの記載が変わる。
+      if (section_readmoreI[i].classList.contains("readmoreI-active")) {
+        section_readmoreBtn[i].textContent = "もっと少なく読む";
+      } else {
+        section_readmoreBtn[i].textContent = "続きを読む";
+      }
     })
   };
 
   // （4) いいねの実装
-
   let likeCounter = document.querySelectorAll(".like-Counter");
   let likeBtn = document.querySelectorAll(".heart");
   const section_likeCounter = Array.from(likeCounter);
   const section_likeBtn = Array.from(likeBtn);
 
   for (let i = 0; i < section_likeBtn.length; i++) {
-      section_likeBtn[i].addEventListener("click", (event) => {
-          const num = parseInt(section_likeCounter[i].textContent);
-          console.log(num);
-          section_likeBtn[i].classList.toggle("colorChange");
-          if (section_likeBtn[i].classList.contains("colorChange")) {
-              section_likeCounter[i].textContent = num + 1;
-          } else {
-              section_likeCounter[i].textContent = num - 1;
-          }
-      })
+    section_likeBtn[i].addEventListener("click", (event) => {
+      const num = parseInt(section_likeCounter[i].textContent);
+      console.log(num);
+      section_likeBtn[i].classList.toggle("colorChange");
+      if (section_likeBtn[i].classList.contains("colorChange")) {
+        section_likeCounter[i].textContent = num + 1;
+      } else {
+        section_likeCounter[i].textContent = num - 1;
+      }
+    })
   };
 
   // (5)chips機能（post.blade.php,modify.blade.php)
@@ -107,17 +108,17 @@
   //     placeholder: 'Enter a tag',
   //     secondaryPlaceholder: '+Tag',
   //   });
-    // $('.chips-autocomplete').chips({
-    //   autocompleteOptions: {
-    //     data: {
-    //       'ブルーノート東京': null,
-    //       'コットンクラブ東京': null,
-    //       "Kelly's大阪": null
-    //     },
-    //    limit: Infinity,
-    //    minLength: 1
-    //  }
-    //});
+  // $('.chips-autocomplete').chips({
+  //   autocompleteOptions: {
+  //     data: {
+  //       'ブルーノート東京': null,
+  //       'コットンクラブ東京': null,
+  //       "Kelly's大阪": null
+  //     },
+  //    limit: Infinity,
+  //    minLength: 1
+  //  }
+  //});
   // });
 
   // document.addEventListener('DOMContentLoaded', function() {
@@ -153,27 +154,15 @@
   //   tagSubmit();
   // });
 
-  // innerHTMLプロパティ
-
   // (6)文字数カウント（post.blade.php,modify.blade.php)
   const textarea = document.getElementById('text');
 
-  textarea.addEventListener("keydown", function(event){
+  textarea.addEventListener("keydown", function (event) {
     const len = textarea.value.length;
     document.getElementById("realtimeFontLength").innerHTML = len;
   });
 
   //（7)モーダルを使用した見せ方(contact.blade.php)
-  // let modalFig = document.querySelector(".main-newReviewerFig");
-  // let modalbtn = document.querySelector(".closeBtn");
-
-  // function modelShow() {
-  //   const modelSh = document.querySelector(".login-modal-wrapper");
-  //   modelSh.classList.toggle("none");
-  // }
-
-  // modalFig.addEventListener('click', modelShow);
-  // modalbtn.addEventListener('click', modelShow);
 
   //(8)フッターの写真のサイズを画面サイズに合わせてリサイズ？(ourapp.blade.php)
   // http://keylopment.com/faq/529/ こちらを参照

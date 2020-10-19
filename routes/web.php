@@ -50,18 +50,18 @@ Route::post('process', 'ContactController@process');
 // 完了ページ
 Route::get('complete', 'ContactController@complete')->name('complete');
 
-// タグページ表示
-Route::get('tags', 'TagController@index');
+// タグ一覧ページ表示
+Route::get('tags', 'TagController@getTags');
 
 // ユーザー別投稿ページ表示
-Route::get('user', 'ReviewController@userposts');
+Route::get('user', 'ReviewController@getReviewsByUser');
 
 //パスワード変更
 Route::get('changepassword','HomeController@showChangePasswordForm');
 Route::post('changepassword','HomeController@changepassword')->name('changepassword');
 
 // タグ別投稿ページ表示
-Route::get('tag', 'TagController@getTag')->name('tag');
+Route::get('tag', 'TagController@getReviewsByTag')->name('tag');
 
 // 利用規約ページ表示
 Route::get('terms', 'TermsController@index'); //URL, Controller@method
@@ -71,3 +71,6 @@ Route::get('/logout',[
     'uses' => 'UserController@getLogout',
     'as' => 'user.logout'
     ]);
+//検索
+Route::get('search', 'SearchController@search')->name('search');
+

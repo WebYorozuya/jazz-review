@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Review; //追加
-use Illuminate\Support\Facades\Auth; //ログインユーザ情報取得用に追加
-use Illuminate\Support\Facades\Log;//頻繁に使った方がいい
-use App\Tag; //タグ用に追加
-use App\User; //タグ用に追加
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
+use App\Review;
+use App\Tag;
+use App\User;
 
 class ReviewController extends Controller
 {
@@ -24,7 +25,7 @@ class ReviewController extends Controller
         return view('reviews.index', $param);
     }
     //ユーザー別投稿ページを表示
-    public function userposts(Request $request)
+    public function getReviewsByUser(Request $request)
     {
         $items = Review::where('user_id', $request->user_id)->orderBy('id', 'desc')->paginate(10);
         if (Auth::user()) {
@@ -49,12 +50,11 @@ class ReviewController extends Controller
     public function create(Request $request)
     {
       //まずレビューのINSERT
-        $this->validate($request, Review::$rules); //バリデーションの実行
-        $review = new Review; //Reviewインスタンス作成
+        $this->validate($request, Review::$rules);
+        $review = new Review; //Reviewクラスのインスタンス作成
         $form = $request->all(); //送信されたフォームの値を保管
         unset($form['_token']); //CSRF非表示フィールド_token削除
         $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
-
       //次にタグのINSERT
         //送信されたタグをスペース区切りで整える
         $spaces = array("　", "  ", "   ");
@@ -86,7 +86,6 @@ class ReviewController extends Controller
             $user = 'ゲスト';
         }
         $review = Review::find($request->id);
-        $tags = Review::find($request->id)->tags();
         return view('reviews.edit', [
             'user' => $user,
             'review' => $review
@@ -95,17 +94,58 @@ class ReviewController extends Controller
     //投稿修正送信
     public function update(Request $request)
     {
-        $this->validate($request, Review::$rules); //バリデーションの実行
-        $review = Review::find($request->id); //Reviewインスタンス作成
-        $form = $request->all(); //送信されたフォームの値を保管
-        unset($form['_token']); //CSRF非表示フィールド_token削除
-        $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
-        return redirect('/'); //トップページへ
+        $this->validate($request, Review::$rules);
+        $review = Review::find($request->id);
+        $form = $request->all();
+        unset($form['_token']);
+        $review->fill($form)->save();
+
+    //次にタグのINSERT
+        //送信されたタグをスペース区切りで整える
+        $spaces = array("　", "  ", "   ");
+        $tags = trim(str_replace($spaces, " ", $request->tag_name));
+        $tags = explode(" ", $tags);
+        //新規タグだけtagsテーブルに挿入
+        $array = [];
+        foreach ($tags as $tag) {
+            $record = Tag::firstOrCreate(['tag_name' => $tag]);
+            array_push($array, $record);
+        };
+        //投稿に紐付けされるタグのidを配列化、中間テーブルへ
+        //TODO:同一タグが複数あったら一つにする
+        $tags_id = [];
+        foreach ($array as $tag) {
+            array_push($tags_id, $tag['id']);
+        };
+        //中間テーブルにレコード挿入
+        $review->tags()->attach($tags_id);
+      
+      //トップページへ
+        return redirect('/')->with('flash_message', '投稿を修正しました！');
     }
     //投稿削除
     public function delete(Request $request)
     {
-        Review::find($request->id)->delete();
+        $review_tags = DB::table('review_tag')->where('review_id', $request->id)->get();
+        // $tags_num = $review_tag->count();
+        if (!empty($review_tags)) {
+            foreach ($review_tags as $review_tag)
+            {
+                $count_tag = DB::table('review_tag')->where('tag_id', $review_tag->tag_id)->count();
+                $delete_review_tag = DB::table('review_tag')
+                    ->where('review_id', $request->id)
+                    ->where('tag_id', $review_tag->tag_id)
+                    ->delete();
+                if ($count_tag <= 1) {
+                    // $tags [] = Tag::find($review_tag->tag_id);
+                    // Log::info($delete_review_tag); exit();
+                    $tags = Tag::find($review_tag->tag_id)->delete();
+                }
+            }
+        }
+
+        $review = Review::find($request->id)->delete();
+
         return redirect('/');
     }
 }
