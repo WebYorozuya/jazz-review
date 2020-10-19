@@ -1,8 +1,9 @@
 <!-- 新規登録画面 -->
-@extends('layouts.registerscene')
+@extends('layouts.registerscene')  
 
-@section('content')
+@section('title','新規登録')
 
+@section('content') 
 <main>
     <div class="left-container">
         <div class="welcome">
@@ -87,8 +88,13 @@
                     </div> <!-- /.signup_form -->
 
                     <div class="access">
+<<<<<<< HEAD
                         <div class="login">すでにアカウントをお持ちの場合 ：<a href="#">ログイン</a></div>
                         <div class="not_register">登録せずに利用する場合 ：<a href="#">こちら</a></div>
+=======
+                        <div class="login">すでにアカウントをお持ちの場合 ：<a href="{{ route('login') }}">ログイン</a></div>
+                        <div class="not_signup">登録せずに利用する場合 ：<a href="/">こちら</a></div>
+>>>>>>> develop
                     </div>
 
                     <div class="form-group row mb-0">
@@ -106,3 +112,4 @@
     </div> <!-- /.col-md-8 -->
 </main>
 @endsection
+

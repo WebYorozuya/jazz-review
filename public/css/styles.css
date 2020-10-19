@@ -10,7 +10,7 @@ body {
   color: rgb(51, 51, 51);
 }
 
-.back {
+.back-for-dropdown {
   position: absolute;
   top: 0;
   left: 0;
@@ -293,6 +293,11 @@ main {
   border-bottom: 1px solid var(--main-background-color);
 }
 
+/* search.blade.php */
+.main-title span {
+  letter-spacing: normal;
+}
+
 /* レビュー記事 */
 .review {
   width: 100%;
@@ -402,6 +407,24 @@ main {
   font-size: 0.9rem;
 }
 
+.review-text{
+  padding: 0px 20px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.hideBtn{
+  display: none;
+}
+
+.readmoreI-active {
+  transform: rotate(180deg);
+} 
+
+.reviewText-active {
+  height: auto;
+}
+
 .review-bottom {
   font-size: 0.85rem;
   color: #aaa;
@@ -482,7 +505,6 @@ footer {
   color: #ffffff;
   position: relative;
   z-index: 40;
-  background-image: url(../images/trumpet.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

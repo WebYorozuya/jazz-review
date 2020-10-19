@@ -25,7 +25,7 @@
           <i class="fas fa-ellipsis-h showIcon"></i>
           <ul class="review-dropdown">
             <a href="edit?id={{ $item->id }}">
-              <li>編集する</li>
+              <li>編集／削除する</li>
             </a>
             <a href="contact#contact">
               <li>報告する</li>
@@ -39,12 +39,16 @@
         <a href="{{ route('tag', ['id' => $tag->id]) }}" class="tag">{{$tag->tag_name}}</a>
         @endforeach
       </div><!-- /.tags -->
-      <p>{{$item->text}}</p>
+      <p class="review-text">{{$item->text}}</p>
+      <div class="readmore-block">
+        <i class="fas fa-angle-down readmore-i"></i>
+        <span class="readmore-btn">続きを読む</span>
+      </div>
       <div class="review-bottom">
         <span class="user-name">by <a href="user?user_id={{$item->user_id}}">{{$item->getData()}}さん</span></a>
         <span class="created-at">{{$item->created_at}}</span>
         <span class="likes">
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart heart"></i>
           <span class="like-counter">0</span>
         </span>
       </div><!-- /.review-bottom -->
