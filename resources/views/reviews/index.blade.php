@@ -56,4 +56,7 @@
   </div><!-- /.review 1投稿のお尻 -->
   @endforeach
   {{ $items->links('vendor.pagination.bootstrap-4')}}
+  <script type="text/javascript" src="{{ asset('js/review_dd.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/review_text_height_change.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/like_btn.js') }}"></script>
 @endsection

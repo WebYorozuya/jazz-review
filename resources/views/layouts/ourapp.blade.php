@@ -110,27 +110,12 @@
       </div>
     </div>
   </footer>
-  <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <!-- materialize.js -->
   <script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
-  <!-- header components -->
-  <script type="text/javascript" src="{{ asset('js/logindd.js') }}"></script>
-  <!-- ourapp.blade.php -->
-  <script type="text/javascript" src="{{ asset('js/navlinkhighlight.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/footerfigresize.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/footerimgrandomchange.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/thanksmessage.js') }}"></script>
-  <!-- index.blade.php -->
-  <script type="text/javascript" src="{{ asset('js/reviewdd.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/reviewtextheightchange.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/likebtn.js') }}"></script>
-  <!-- post.blade.php -->
-  <script type="text/javascript" src="{{ asset('js/livedate.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/chips.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/charactercounter.js') }}"></script>
-  <!-- contact.blade.php -->
-  <script type="text/javascript" src="{{ asset('js/modalshow.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/highlighted_nav_link.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/footer_fig_resize.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/footer_img_random_change.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/thanks_message.js') }}"></script>
 </body>
 
 </html>
