@@ -107,9 +107,12 @@ class ReviewController extends Controller
         $tags = trim(str_replace($spaces, " ", $request->tag_name));
         $tags = explode(" ", $tags);
         $tags_unique = array_unique($tags);
-        $tags = array_diff($tags, $tags_unique);
-
-        //TODO:この辺で同一タグが複数あったら一つにする。
+        $existing_tags = Review::find($request->id)->tags;
+        foreach ($existing_tags as $existing_tag) {
+            $existing_tags_name [] = $existing_tag->tag_name;
+        }
+        $tags = array_diff($tags_unique, $existing_tags_name);
+        //TODO:タグを消せるようにする。てことは一旦タグを全部削除してからもう一回新たに入れ直すべき？？
 
         //新規タグだけtagsテーブルに挿入
         $array = [];
