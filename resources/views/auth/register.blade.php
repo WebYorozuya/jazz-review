@@ -88,13 +88,8 @@
                     </div> <!-- /.signup_form -->
 
                     <div class="access">
-<<<<<<< HEAD
-                        <div class="login">すでにアカウントをお持ちの場合 ：<a href="#">ログイン</a></div>
-                        <div class="not_register">登録せずに利用する場合 ：<a href="#">こちら</a></div>
-=======
                         <div class="login">すでにアカウントをお持ちの場合 ：<a href="{{ route('login') }}">ログイン</a></div>
                         <div class="not_signup">登録せずに利用する場合 ：<a href="/">こちら</a></div>
->>>>>>> develop
                     </div>
 
                     <div class="form-group row mb-0">
