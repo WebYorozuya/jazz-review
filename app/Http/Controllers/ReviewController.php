@@ -106,7 +106,9 @@ class ReviewController extends Controller
         $spaces = array("　", "  ", "   ");
         $tags = trim(str_replace($spaces, " ", $request->tag_name));
         $tags = explode(" ", $tags);
-        $tags = array_unique($tags);
+        $tags_unique = array_unique($tags);
+        $tags = array_diff($tags, $tags_unique);
+
         //TODO:この辺で同一タグが複数あったら一つにする。
 
         //新規タグだけtagsテーブルに挿入
