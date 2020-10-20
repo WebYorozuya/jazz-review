@@ -80,6 +80,3 @@
 </div>
 @endsection
 
-<footer>
-    <p><small> &copy; Jazz Log </small></p>
-  </footer>
