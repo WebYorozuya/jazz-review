@@ -152,7 +152,7 @@ header {
   padding-right: 10px;
 }
 
-.hello-user {
+/* .hello-user {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,20 +161,20 @@ header {
 
 .hello-user:hover {
   color: #333333;
-}
+} */
 
-.userMaleImg {
+/* .userMaleImg {
   border: 1px solid #ffffff;
   border-radius: 20px;
   margin: 5px;
-}
+} */
 
-.hello-user {
+/* .hello-user {
   text-decoration: none;
   color: white;
   text-align: center;
   width: 100%;
-}
+} */
 
 .home {
   padding: 32px 16px 0px 16px;
@@ -198,9 +198,8 @@ header {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  max-width: 1400px;
-  margin-right: auto;
-  margin-left: auto;
+  max-width: 88%;
+  margin: 0 auto;
 }
 
 .right-container {
@@ -210,7 +209,6 @@ header {
 }
 
 /* 左メニューnav */
-
 .home nav {
   display: flex;
   flex-direction: column;
@@ -275,7 +273,7 @@ nav li a:hover {
 
 main {
   flex-grow: 1;
-  min-width: 0;
+  /* min-width: 0; */
   background-color: #fff;
   margin-bottom: 70px;
 }
@@ -300,7 +298,6 @@ main {
 
 /* レビュー記事 */
 .review {
-  width: 100%;
   display: flex;
   flex-direction: row;
   padding: 8px 10px;
@@ -467,8 +464,6 @@ main {
   }
 }
 
-/* index.php end*/
-
 aside {
   width: 400px;
   background-color: #f6f6f4;
@@ -480,7 +475,8 @@ aside {
   background-image: url(../images/onuma_top-slide.jpg);
   background-size: contain;
   background-repeat: no-repeat;
-  height: 120px;
+  height: 90px;
+  width: 300px;
 }
 
 .aside2 {
