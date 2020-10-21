@@ -162,23 +162,41 @@ h2 {
   height: 400px;
   z-index: 11;
   display: flex;
+  flex-direction: row;
+}
+
+.modal-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+}
+
+.prevBtn {
+  width: 20px;
+  height: 30px;
+  background-color: #eeeece;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 6px;
+}
+
+.modal-center {
+  display: flex;
   flex-direction: column;
+  width: 540px;
 }
 
 .modal-top {
   display: flex;
-}
-
-.modal-top-center {
-  display: flex;
   flex-direction: row;
-  width: 560px;
 }
 
 .modal-top img {
   transform: scale(0.7);
   width: 200px;
   height: 250px;
+  border-radius: 10px;
 }
 
 .modal-top h2 {
@@ -188,7 +206,7 @@ h2 {
   text-decoration: none;
 }
 
-.in-charge {
+.role {
   text-align: start;
   font-size: 10px;
   margin: 70px 10px 0px 10px;
@@ -204,38 +222,29 @@ h2 {
 
 .modal-text {
   font-size: 14px;
-  margin-left: 50px;
-  margin-right: 50px;
-  height: 80px;
-}
-
-.modal-close {
-  display: flex;
-  justify-content: flex-end; 
+  margin-left: 30px;
+  margin-right: 30px;
+  height: 100px;
 }
 
 .closeBtn {
   background-color: #aaa;
   color: #fff;
   border-radius: 5px;
-  margin: 10px 50px 0px 0px;
+  margin: 0px 0px 0px 480px;
   width: 60px;
 }
 
-.prevBtn {
-  width: 20px;
-  height: 30px;
-  margin: 180px 5px 0px 5px;
-  background-color: #eeeece;
-  border-radius: 5px;
-  text-align: center;
-  padding-top: 6px;
+.modal-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
 }
 
 .nextBtn {
   width: 20px;
   height: 30px;
-  margin: 180px 5px 0px 5px;
   background-color: #eeeece;
   border-radius: 5px;
   text-align: center;

@@ -36,10 +36,6 @@
         @endslot
     @endcomponent
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- materialize.js -->
-    <script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
     <!-- app.js -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 </body>

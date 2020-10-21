@@ -28,7 +28,6 @@
 
 <body>
   <!-- headerはここにcomponentで -->
-  <div class="back"></div>
   <div class="home">
     @if (session('flash_message'))
     <div class="flash_message alert alert-success" style="margin:0">

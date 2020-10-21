@@ -43,14 +43,14 @@
       </div> 
       <div class="modal-wrapper">
         <div class="modal">
-          <div class="modal-top">
-            <div class="modal-top-left">
+          <div class="modal-left">
               <i class="fas fa-angle-left prevBtn"></i>
-            </div>
-            <div class="modal-top-center">
+          </div>
+          <div class="modal-center">
+            <div class="modal-top">
               <img src="#" alt="#" class="modal-profile-img" />
               <h2>
-                <p class="in-charge"></p>
+                <p class="role"></p>
                 <p class="name"></p>
                 <ul class="member-sns-btn">
                   <li class="facebook-btn">
@@ -64,26 +64,24 @@
                 </ul>
               </h2>
             </div>
-            <div class="modal-top-right">
-              <i class="fas fa-angle-right nextBtn"></i>
-            </div>
-          </div>
-          <div class="modal-text"></div>
-          <div class="modal-close">
+            <span class="modal-text"></span>
             <button class="closeBtn">close</button>
+          </div>
+          <div class="modal-right">
+              <i class="fas fa-angle-right nextBtn"></i>
           </div>
         </div>
       </div> 
       <div class="modal-wrapper">
         <div class="modal">
-          <div class="modal-top">
-            <div class="modal-top-left">
+          <div class="modal-left">
               <i class="fas fa-angle-left prevBtn"></i>
-            </div>
-            <div class="modal-top-center">
+          </div>
+          <div class="modal-center">
+            <div class="modal-top">
               <img src="#" alt="#" class="modal-profile-img" />
               <h2>
-                <p class="in-charge"></p>
+                <p class="role"></p>
                 <p class="name"></p>
                 <ul class="member-sns-btn">
                   <li class="facebook-btn">
@@ -97,26 +95,24 @@
                 </ul>
               </h2>
             </div>
-            <div class="modal-top-right">
-              <i class="fas fa-angle-right nextBtn"></i>
-            </div>
-          </div>
-          <div class="modal-text"></div>
-          <div class="modal-close">
+            <span class="modal-text"></span>
             <button class="closeBtn">close</button>
+          </div>
+          <div class="modal-right">
+              <i class="fas fa-angle-right nextBtn"></i>
           </div>
         </div>
       </div> 
       <div class="modal-wrapper">
         <div class="modal">
-          <div class="modal-top">
-            <div class="modal-top-left">
+          <div class="modal-left">
               <i class="fas fa-angle-left prevBtn"></i>
-            </div>
-            <div class="modal-top-center">
+          </div>
+          <div class="modal-center">
+            <div class="modal-top">
               <img src="#" alt="#" class="modal-profile-img" />
               <h2>
-                <p class="in-charge"></p>
+                <p class="role"></p>
                 <p class="name"></p>
                 <ul class="member-sns-btn">
                   <li class="facebook-btn">
@@ -130,26 +126,24 @@
                 </ul>
               </h2>
             </div>
-            <div class="modal-top-right">
-              <i class="fas fa-angle-right nextBtn"></i>
-            </div>
-          </div>
-          <div class="modal-text"></div>
-          <div class="modal-close">
+            <span class="modal-text"></span>
             <button class="closeBtn">close</button>
+          </div>
+          <div class="modal-right">
+              <i class="fas fa-angle-right nextBtn"></i>
           </div>
         </div>
       </div> 
       <div class="modal-wrapper">
         <div class="modal">
-          <div class="modal-top">
-            <div class="modal-top-left">
+          <div class="modal-left">
               <i class="fas fa-angle-left prevBtn"></i>
-            </div>
-            <div class="modal-top-center">
+          </div>
+          <div class="modal-center">
+            <div class="modal-top">
               <img src="#" alt="#" class="modal-profile-img" />
               <h2>
-                <p class="in-charge"></p>
+                <p class="role"></p>
                 <p class="name"></p>
                 <ul class="member-sns-btn">
                   <li class="facebook-btn">
@@ -163,26 +157,24 @@
                 </ul>
               </h2>
             </div>
-            <div class="modal-top-right">
-              <i class="fas fa-angle-right nextBtn"></i>
-            </div>
-          </div>
-          <div class="modal-text"></div>
-          <div class="modal-close">
+            <span class="modal-text"></span>
             <button class="closeBtn">close</button>
+          </div>
+          <div class="modal-right">
+              <i class="fas fa-angle-right nextBtn"></i>
           </div>
         </div>
       </div> 
       <div class="modal-wrapper">
         <div class="modal">
-          <div class="modal-top">
-            <div class="modal-top-left">
+          <div class="modal-left">
               <i class="fas fa-angle-left prevBtn"></i>
-            </div>
-            <div class="modal-top-center">
+          </div>
+          <div class="modal-center">
+            <div class="modal-top">
               <img src="#" alt="#" class="modal-profile-img" />
               <h2>
-                <p class="in-charge"></p>
+                <p class="role"></p>
                 <p class="name"></p>
                 <ul class="member-sns-btn">
                   <li class="facebook-btn">
@@ -196,16 +188,15 @@
                 </ul>
               </h2>
             </div>
-            <div class="modal-top-right">
-              <i class="fas fa-angle-right nextBtn"></i>
-            </div>
-          </div>
-          <div class="modal-text"></div>
-          <div class="modal-close">
+            <span class="modal-text"></span>
             <button class="closeBtn">close</button>
+          </div>
+          <div class="modal-right">
+              <i class="fas fa-angle-right nextBtn"></i>
           </div>
         </div>
       </div> 
+    
     </div><!-- .team-member -->
 
     <div class="team-about">

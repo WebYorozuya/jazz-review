@@ -8,7 +8,7 @@
   function showHide(event) {
     const loginUserDdContent = document.querySelector(".header-loginUser-dd-content");
     loginUserDdContent.classList.toggle("show");
-    const back = document.querySelector(".back");
+    const back = document.querySelector(".back-for-dropdown");
     back.classList.toggle("show");
     if (loginUserDdContent.classList.contains("show")) {
       back.addEventListener('click', function () {

@@ -67,7 +67,7 @@
     const section_memberInfoModalProfileImg = Array.from(memberInfoModalProfileImg);
     const memberInfoName = document.getElementsByClassName("name");
     const section_memberInfoName = Array.from(memberInfoName);
-    const memberInfoInCharge = document.getElementsByClassName("in-charge");
+    const memberInfoInCharge = document.getElementsByClassName("role");
     const section_memberInfoInCharge = Array.from(memberInfoInCharge);
     const memberInfoText = document.getElementsByClassName("modal-text");
     const section_memberInfoText = Array.from(memberInfoText);

@@ -36,5 +36,5 @@
     </div><!-- /.header-end -->
   </div><!-- /.header-container -->
 </header>
-<div class="back"></div>
+<div class="back-for-dropdown"></div>
 <script type="text/javascript" src="{{ asset('js/login_dd.js') }}"></script>
