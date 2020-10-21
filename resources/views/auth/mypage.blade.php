@@ -9,19 +9,19 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     {{ __('You are logged in!') }}
                 </div>
                 <!-- home画面にpassword変更ボタン -->
                 <div class="card-body">
-                    <form method="GET" action="{{url('changepassword')}}">
+                    <a href="{{url('changepassword')}}">
                         @csrf
                         <input type="submit" name="submit" value="パスワード変更">
-                    </form>
+                    </a>
                 </div>
             </div>
         </div>

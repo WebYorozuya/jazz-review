@@ -1,7 +1,9 @@
 <!-- 新規登録画面 -->
-@extends('layouts.registerscene')
+@extends('layouts.registerscene')  
 
-@section('content')
+@section('title','新規登録')
+
+@section('content') 
 <main>
     <div class="left-container">
         <div class="welcome">
@@ -9,9 +11,10 @@
             <h2>〜 jazz for all people 〜</h2>
         </div>
     </div> <!-- /.left-container -->
+
     <div class="right-container">
         <div class="signup">
-            <h3>{{ __('♪ 新規登録してね ♪') }}</h3>
+        <h3>{{ __('♪ 新規登録してね ♪') }}</h3>
 
             <div class="card-body">
                 <form method="POST" action="{{ route('register') }}">
@@ -29,7 +32,8 @@
                             </span>
                             @enderror
                         </div>
-                    </div>
+                    </div> <!-- /.signup_form -->
+
                     <!-- 新規登録画面にaccount_nameを表示 -->
                     <div class="signup_form">
                         <label for="account_name" class="col-md-4 col-form-label text-md-right">{{ __('アカウント名') }}</label>
@@ -43,7 +47,7 @@
                             </span>
                             @enderror
                         </div>
-                    </div>
+                    </div> <!-- /.signup_form -->
 
                     <div class="signup_form">
                         <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('メールアドレス') }}</label>
@@ -57,11 +61,12 @@
                             </span>
                             @enderror
                         </div>
-                    </div>
+                    </div> <!-- /.signup_form -->
 
                     <div class="signup_form">
                         <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('パスワード') }}</label>
                         <p>( 8文字以上32文字以内 )</p>
+
                         <div class="col-md-6">
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
@@ -71,29 +76,35 @@
                             </span>
                             @enderror
                         </div>
-                    </div>
+                    </div> <!-- /.signup_form -->
 
                     <div class="signup_form">
                         <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('パスワード確認') }}</label>
                         <p>( 上と同じパスワードを入力してください )</p>
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                    </div>
+
+                        <div class="col-md-6">
+                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        </div>
+                    </div> <!-- /.signup_form -->
 
                     <div class="access">
-                        <div class="login">すでにアカウントをお持ちの場合 ：<a href="#">ログイン</a></div>
-                        <div class="not_signup">登録せずに利用する場合 ：<a href="#">こちら</a></div>
+                        <div class="login">すでにアカウントをお持ちの場合 ：<a href="{{ route('login') }}">ログイン</a></div>
+                        <div class="not_signup">登録せずに利用する場合 ：<a href="/">こちら</a></div>
                     </div>
 
-                    <div class="btn_signup">
-                        <button type="submit" class="btn btn-primary">
-                            {{ __('登録する') }}
-                        </button>
-                    </div> <!-- /.btn_signup -->
+                    <div class="form-group row mb-0">
+                        <div class="col-md-6 offset-md-4">
+                            <button type="submit" class="btn btn-primary">
+                                {{ __('新規登録') }}
+                            </button>
+                        </div>
+                    </div> <!-- /.form-group row mb-0 -->
 
                 </form>
-
             </div> <!-- /.card-body -->
-        </div> <!-- /.signup -->
-    </div> <!-- /.right-container -->
+
+        </div> <!-- /.card -->
+    </div> <!-- /.col-md-8 -->
 </main>
 @endsection
+

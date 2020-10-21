@@ -49,11 +49,7 @@
     </form>
     <form action="del" method="post">
     @csrf
-        <input type="hidden" name="user_id" value="{{$review->user_id}}">
         <input type="hidden" name="id" value="{{$review->id}}">
-        <input type="hidden" name="live_date" value="{{$review->live_date}}">
-        <input type="hidden" name="title" value="{{$review->title}}">
-        <input type="hidden" name="text" value="{{$review->text}}">
         <input type="submit" class="submit" id="del" value="削除">
     </form>
   </div><!-- /.form_container -->

@@ -8,6 +8,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth; //ログインユーザ情報取得用に追加
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -29,7 +31,8 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/';//新規登録完了したときにindexに遷移
+
 
     /**
      * Create a new controller instance.
