@@ -32,7 +32,7 @@
         <a href="#" class="tag">{{$tag->tag_name}}</a>
         @endforeach
       </div>
-      <p class="search-review-text">{!! nl2br(e($review->text)) !!}</p>
+      <p class="search-review-text review-text">{!! nl2br(e($review->text)) !!}</p>
       <div class="review-bottom">
         <span class="user-name">by <a href="user?user_id={{$review->user_id}}">{{$review->user->account_name}}さん</span></a>
         <span class="created-at">{{$review->created_at}}</span>

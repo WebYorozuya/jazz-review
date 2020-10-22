@@ -60,6 +60,7 @@ class ReviewController extends Controller
         $spaces = array("　", "  ", "   ");
         $tags = trim(str_replace($spaces, " ", $request->tag_name));
         $tags = explode(" ", $tags);
+        $tags = array_unique($tags);
         //新規タグだけtagsテーブルに挿入
         $array = [];
         foreach ($tags as $tag) {
@@ -101,10 +102,18 @@ class ReviewController extends Controller
         $review->fill($form)->save();
 
     //次にタグのINSERT
-        //送信されたタグをスペース区切りで整える
+        //送信されたタグをスペース区切りで整えるTODO:validationでやれる？
         $spaces = array("　", "  ", "   ");
         $tags = trim(str_replace($spaces, " ", $request->tag_name));
         $tags = explode(" ", $tags);
+        $tags_unique = array_unique($tags);
+        $existing_tags = Review::find($request->id)->tags;
+        foreach ($existing_tags as $existing_tag) {
+            $existing_tags_name [] = $existing_tag->tag_name;
+        }
+        $tags = array_diff($tags_unique, $existing_tags_name);
+        //TODO:タグを消せるようにする。てことは一旦タグを全部削除してからもう一回新たに入れ直すべき？？
+
         //新規タグだけtagsテーブルに挿入
         $array = [];
         foreach ($tags as $tag) {
@@ -112,7 +121,6 @@ class ReviewController extends Controller
             array_push($array, $record);
         };
         //投稿に紐付けされるタグのidを配列化、中間テーブルへ
-        //TODO:同一タグが複数あったら一つにする
         $tags_id = [];
         foreach ($array as $tag) {
             array_push($tags_id, $tag['id']);
@@ -126,6 +134,7 @@ class ReviewController extends Controller
     //投稿削除
     public function delete(Request $request)
     {
+        //TODO:削除していいですか？確認
         $review_tags = DB::table('review_tag')->where('review_id', $request->id)->get();
         // $tags_num = $review_tag->count();
         if (!empty($review_tags)) {
@@ -137,15 +146,11 @@ class ReviewController extends Controller
                     ->where('tag_id', $review_tag->tag_id)
                     ->delete();
                 if ($count_tag <= 1) {
-                    // $tags [] = Tag::find($review_tag->tag_id);
-                    // Log::info($delete_review_tag); exit();
                     $tags = Tag::find($review_tag->tag_id)->delete();
                 }
             }
         }
-
         $review = Review::find($request->id)->delete();
-
-        return redirect('/');
+        return redirect('/')->with('flash_message', '投稿を削除しました！');
     }
 }
