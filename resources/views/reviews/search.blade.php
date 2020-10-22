@@ -44,6 +44,10 @@
     </div><!-- /.review-right -->
   </div><!-- /.main-newReview 1投稿のお尻 -->
   @endforeach
+  {{ $reviews->links('vendor.pagination.bootstrap-4')}}
+@endsection
+
+@section('js')
   <script>
     // 検索ワードをハイライトする処理
     // TODO:平仮名とカタカナを区別しないでハイライト出来るようにする
@@ -65,8 +69,4 @@
         document.getElementsByClassName('search-review-text')[i].innerHTML = highlightedReviewHTML;
     });
   </script>
-
-  {{ $reviews->links('vendor.pagination.bootstrap-4')}}
-@endsection
-@section('js')
 @endsection
