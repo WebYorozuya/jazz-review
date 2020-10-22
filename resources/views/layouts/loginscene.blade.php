@@ -48,6 +48,8 @@
 		@yield('content')
 	</main>
 
+    <!-- app.js -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 
 </html>
