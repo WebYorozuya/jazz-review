@@ -30,26 +30,3 @@
     </div><!-- main-list -->
   </div><!-- tag-home -->
 @endsection
-
-@section('js')
-<script>
-        //ボタンを押すことでテキストのshow,hideを切り替える。
-        let headerSearch = document.getElementsByClassName("header-search");
-
-        function headerSearchTextShow() {
-            const headerSearchTextCheckbox = document.getElementById("header-search-text-checkBox");
-            const headerSearchText = document.getElementById("header-search-text");
-
-            if (headerSearchTextCheckbox.checked == true) {
-                headerSearchTextCheckbox.checked = false;
-                headerSearchText.style.display = "none";
-            } else {
-                headerSearchTextCheckbox.checked = true;
-                headerSearchText.style.display = "block";
-            }
-        }
-
-        headerSearch.addEventListener("click", headerSearchTextShow, false);
-
-    </script>
-@endsection
