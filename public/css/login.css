@@ -1,17 +1,22 @@
 body {
+    margin: 0;
+    padding: 0;
     background-color: #f6f6f4;
+    ;
 }
 
 main {
-    position: absolute;
-    width: 500px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    background: white;
+    width: 450px;
+    margin:  30px auto;
+    background-color: #f6f6f4;
     color: #3c4a57;
 }
+
+.login {
+    background-color: #ffffff;
+    padding-bottom: 50px;
+    border-radius: 10px;
+} 
 
 .login h1 {
     text-align: center;
@@ -24,7 +29,7 @@ main {
 
 .login form {
     box-sizing: border-box;
-    padding: 0 40px 50px 40px;
+    padding: 10px 40px;
     margin: 10px 0;
 }
 
@@ -43,19 +48,11 @@ main {
 .form-check {
     margin-bottom: 30px;
 }
+
 .pass-forget {
     margin-top: 0;
     padding-bottom: 20px;
-    cursor: pointer;
     color: #3c4a57;
-    font-size: small;
-}
-
-.pass-forget:hover {
-    text-decoration: underline;
-}
-.col-md-8.offset-md-4 {
-    text-align: center;
 }
 
 button.btn.btn-primary {
@@ -73,14 +70,8 @@ button.btn.btn-primary {
     font-size: 20px;
 }
 
-
-
 a.btn.btn-link {
     display: block;
     text-align: center;
     text-decoration-line: none;
-    font-size: 1em;
-    background-color: #ffffff;
-
-
 }
