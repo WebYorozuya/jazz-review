@@ -31,4 +31,8 @@ class Review extends Model
         return $this->belongsToMany('App\Tag')->withTimestamps();
     }
 
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
+    } 
 } 
