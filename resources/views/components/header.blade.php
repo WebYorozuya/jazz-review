@@ -11,12 +11,14 @@
             </form>
         </div>
         <div class="header-right">
-            <a href="post" class="header-post" id="header-post">
-                <i class="fas fa-pen-nib"></i>
-                <span>投稿する</span>
-            </a>
-            <div class="header-usermenu">
-                <div class="header-loginUser-dd-label" id="header-loginUser-dd-label">
+            <div class="header-post" id="header-post">
+                <a href="post" class="header-post-link">
+                    <i class="fas fa-pen-nib"></i>
+                    <span>投稿する</span>
+                </a>
+            </div>
+            <div class="header-usermenu" id="header-usermenu">
+                <div class="header-loginUser-dd-label">
                     <i class="far fa-user-circle fa-2x"></i>
                     <span>{{$user}} さん</span>
                 </div>
