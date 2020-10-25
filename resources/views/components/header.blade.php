@@ -5,19 +5,19 @@
                 <a href="/"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
             </div>
             <form class="header-search" action="{{ url('/search')}}" method="get">
-                <i id="header-search-button" class="fas fa-search"></i>
-                <input id="header-search-text" type="search" name="keyword" placeholder="キーワードで検索">
-                <div id="header-search-text-bg"></div>
+                <i id="header-search-button" class="header-search-button fas fa-search"></i>
+                <input id="header-search-text" class="header-search-text" type="search" name="keyword" placeholder="キーワードで検索">
+                <div id="header-search-text-bg" class="header-search-text-bg"></div>
             </form>
         </div>
-        <div class="header-right">
-            <div class="header-post" id="header-post">
+        <div id="header-right" class="header-right">
+            <div class="header-post">
                 <a href="post" class="header-post-link">
                     <i class="fas fa-pen-nib"></i>
                     <span>投稿する</span>
                 </a>
             </div>
-            <div class="header-usermenu" id="header-usermenu">
+            <div class="header-usermenu">
                 <div class="header-loginUser-dd-label">
                     <i class="far fa-user-circle fa-2x"></i>
                     <span>{{$user}} さん</span>

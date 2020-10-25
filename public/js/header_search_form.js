@@ -1,27 +1,22 @@
 const searchButton = document.getElementById('header-search-button');
 const searchText = document.getElementById('header-search-text');
 const searchTextBg = document.getElementById('header-search-text-bg');
-const postButton = document.getElementById('header-post');
-const userButton = document.getElementById('header-usermenu');
-let openStatus = false;
+const headerRight = document.getElementById('header-right');
 
 searchButton.addEventListener('click', () => {
-    if(window.innerWidth > 700) {
+    if(window.innerWidth > 800) {
         return;
     }
-    searchText.style.display = 'inline';
-    searchTextBg.style.display = 'block';
-    postButton.style.display = 'none';
-    userButton.style.display = 'none';
-    openStatus = true;
+    searchText.classList.add('header-search-text-searching');
+    searchTextBg.classList.add('header-search-text-bg-searching');
+    headerRight.classList.add('header-right-searching');;
 });
 
 searchTextBg.addEventListener('click', () => {
-    if(openStatus === false) {
+    if(!searchText.className.indexOf('header-search-text-searching')) {
         return;
     }
-    searchText.style.display = 'none';
-    searchTextBg.style.display = 'none';
-    postButton.style.display = 'flex';
-    userButton.style.display = 'flex';
+    searchText.classList.remove('header-search-text-searching');
+    searchTextBg.classList.remove('header-search-text-bg-searching');
+    headerRight.classList.remove('header-right-searching');;
 });

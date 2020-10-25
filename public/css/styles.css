@@ -587,25 +587,35 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
-    #header-search-button {
+    .header-search-button {
         z-index: 10;
     }
 
-    #header-search-text {
+    .header-search-text {
         z-index: 5;
         display: none;
     }
 
-    #header-search-text-bg {
+    .header-search-text-searching {
+        display: inline;
+    }
+
+    .header-search-text-bg {
         position: fixed;
         z-index : 1;
         top     : 0;
         left    : 0;
         right   : 0;
         bottom  : 0;
+        display: none;
     }
 
-    #header-search-text-bg {
+    .header-search-text-bg-searching {
+        display: block;
+        background-color: #0000005e;
+    }
+
+    .header-right-searching {
         display: none;
     }
 }
