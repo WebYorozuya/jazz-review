@@ -4,7 +4,7 @@
             <div class="header-siteName">
                 <a href="/"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
             </div>
-            <form class="header-search" action="{{ url('/search')}}" method="get">
+            <form id="header-search" class="header-search header-search-min" action="{{ url('/search')}}" method="get">
                 <i id="header-search-button" class="header-search-button fas fa-search"></i>
                 <input id="header-search-text" class="header-search-text" type="search" name="keyword" placeholder="キーワードで検索">
                 <div id="header-search-text-bg" class="header-search-text-bg"></div>

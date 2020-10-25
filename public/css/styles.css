@@ -86,6 +86,7 @@ header {
 }
 
 .header-right {
+    height: 100%;
     display        : flex;
     align-items    : center;
     justify-content: center;
@@ -587,6 +588,10 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
+    .header-search-min {
+        width: 0;
+    }
+
     .header-search-button {
         z-index: 10;
     }
