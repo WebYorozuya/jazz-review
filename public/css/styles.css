@@ -592,6 +592,21 @@ footer {
         width: 0;
     }
 
+    .header-search-search-start {
+        animation: SlideIn 0.5s;
+    }
+
+    @keyframes SlideIn {
+        0% {
+          opacity: 0;
+          transform: translateX(-64px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
     .header-search-button {
         z-index: 10;
     }
@@ -623,6 +638,7 @@ footer {
     .header-right-searching {
         display: none;
     }
+
 }
 
 @media screen and (max-width: 700px) {

@@ -9,6 +9,7 @@ searchButton.addEventListener('click', () => {
         return;
     }
     search.classList.remove('header-search-min');
+    search.classList.add('header-search-search-start');
     searchText.classList.add('header-search-text-searching');
     searchTextBg.classList.add('header-search-text-bg-searching');
     headerRight.classList.add('header-right-searching');
@@ -21,6 +22,7 @@ searchTextBg.addEventListener('click', () => {
     if(window.innerWidth <= 800) {
         search.classList.add('header-search-min');;
     }
+    search.classList.remove('header-search-search-start');
     searchText.classList.remove('header-search-text-searching');
     searchTextBg.classList.remove('header-search-text-bg-searching');
     headerRight.classList.remove('header-right-searching');
