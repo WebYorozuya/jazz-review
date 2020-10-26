@@ -42,4 +42,9 @@
 <div class="back-for-dropdown"></div>
 <script type="text/javascript" src="{{ secure_asset('js/login_dd.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/login_dd.js') }}"></script>
+@if(app('env')=='local')
 <script type="text/javascript" src="{{ asset('js/header_search_form.js') }}"></script>
+@endif
+@if(app('env')=='production')
+<script type="text/javascript" src="{{ secure_asset('js/header_search_form.js') }}"></script>
+@endif

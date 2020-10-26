@@ -1,3 +1,4 @@
+// モバイル端末時に検索フォームを消したり出したりする処理
 const search = document.getElementById('header-search');
 const searchButton = document.getElementById('header-search-button');
 const searchText = document.getElementById('header-search-text');
