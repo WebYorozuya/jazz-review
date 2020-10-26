@@ -429,7 +429,7 @@ main {
 }
 
 .heart {
-  font-size: 15px;
+  font-size: 16px;
   color: #d4d4d4;
   user-select: none;
   cursor: pointer;
@@ -451,8 +451,12 @@ main {
   }
   100% {
     transform: scale(1);
-    color: #ffaaff;
+    color: #f3aef3;
   }
+}
+
+.liked {
+  color: rgb(230, 146, 160);
 }
 
 aside {
