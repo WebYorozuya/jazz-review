@@ -23,10 +23,13 @@ class ReviewController extends Controller
         }
         $items = Review::withCount('likes')->orderBy('id', 'desc')->paginate(10);
         $likes = new Like;
+        $liked = Like::all();
+        Log::info($liked);
         $param = [
             'items' => $items,
             'user' => $user,
-            'likes' => $likes
+            'likes' => $likes,
+            'liked' => $liked,
         ];
         return view('reviews.index', $param);
     }
@@ -142,7 +145,6 @@ class ReviewController extends Controller
     {
         //TODO:削除していいですか？確認
         $review_tags = DB::table('review_tag')->where('review_id', $request->id)->get();
-        // $tags_num = $review_tag->count();
         if (!empty($review_tags)) {
             foreach ($review_tags as $review_tag)
             {
@@ -163,23 +165,22 @@ class ReviewController extends Controller
     public function like (Request $request)
     {
         $user_id = Auth::user()->id;
-        Log::info($request);
         $review_id = $request->review_id;
-        $like = new Like;
-        $review = Review::findOrFail($review_id);
-        $review_likes_count = $review->withCount('likes')->likes_count;
-
-        if ($like->like_exist($id, $review_id)) {
-            $like = Like::where('review_id', $review_id)->where('user_id', $id)->delete();
-        } else {
+        $like = new Like;        
+        $already_liked = Like::where('user_id', $user_id)->where('review_id', $review_id)->first();
+        
+        if (!$already_liked) {
             $like = new Like;
             $like->review_id = $request->review_id;
-            $like->user_id = Auth::user()->id;
+            $like->user_id = $user_id;
             $like->save();
+        } else {
+            $like = Like::where('review_id', $review_id)->where('user_id', $user_id)->delete();
         }
-        $json = [
+        $review_likes_count = Review::withCount('likes')->findOrFail($review_id)->likes_count;
+        $param = [
             'review_likes_count' => $review_likes_count,
         ];
-        return response ()->json($json);
+        return response()->json($param);
     }
 }
