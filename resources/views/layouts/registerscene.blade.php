@@ -5,7 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!-- CSS RESET -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -15,7 +17,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- font awesome -->
-  <script src="https://kit.fontawesome.com/aaab412f99.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/aaab412f99.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <!-- Heroku用 -->
@@ -29,11 +31,12 @@
     <div id="app">
         @component('components.header')
         @slot('user')
-            @if(Auth::check())<!--ログインしているかの確認 -->
-             {{Auth::user()->account_name}}
-            @else
-             ゲスト
-            @endif
+        @if(Auth::check())
+        <!--ログインしているかの確認 -->
+        {{Auth::user()->account_name}}
+        @else
+        ゲスト
+        @endif
         @endslot
         @endcomponent
         
@@ -42,5 +45,4 @@
         </main>
     </div>
 </body>
-
 </html>

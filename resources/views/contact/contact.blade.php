@@ -249,5 +249,10 @@
       </div>
     </form>
   </div> <!-- main-container-contact -->
+  @endsection
+
+  @section('js')
+  <script type="text/javascript" src="{{ secure_asset('js/modal_show.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/modal_show.js') }}"></script>
   @endsection
+  

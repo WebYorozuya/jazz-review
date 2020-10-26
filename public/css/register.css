@@ -4,18 +4,18 @@ body {
 
 main {
     flex: 1;
-    background-color: #f6f6f4;
     display: flex;
     align-items: flex-start;
     width: 100%;
     max-width: 1100px;
     margin-right: auto;
     margin-left: auto;
+    background-color: #f6f6f4;
 }
 
 /* welcome to Jazz Log */
 .left-container {
-    margin-top: 100px;
+    margin-top: 200px;
     margin-right: 80px;
 }
 
@@ -34,12 +34,13 @@ main {
 
 .welcome h2 {
     text-align: center;
+    padding: 15px;
 }
 
 /* 新規登録フォーム */
 .right-container {
     width: 100%;
-    margin-bottom: 30px;
+    margin: 30px 0;
     border-radius: 10px;
     background-color: #ffffff;
 }
@@ -66,6 +67,7 @@ main {
 .card-body {
     padding: 0 30px;
 }
+
 .input_form {
     text-align: center;
     background-color: #ffffff;
@@ -102,10 +104,10 @@ main {
 }
 
 .access {
-    text-align: center;
     position: relative;
-    font-size: 1em;
+    text-align: center;
     background-color: #ffffff;
+    font-size: 1em;
 }
 
 .login .not_register {
@@ -113,7 +115,15 @@ main {
 }
 
 a {
+    display: inline-block;
     text-decoration-line: none;
+    padding: 3px;
+    transition: 0.3s;
+    transform: scale(1);
+}
+
+a:hover {
+    transform: scale(1.05);
 }
 
 /* 登録ボタン */
@@ -124,8 +134,8 @@ a {
 button.btn.btn-primary {
     width: 100%;
     height: 50px;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 60px;
     border-radius: 8px;
     border: none;
     outline: none;
@@ -139,11 +149,17 @@ button.btn.btn-primary {
 /* レスポンシブ対応 */
 
 @media screen and (max-width: 1000px) {
+    body {
+        background-color: #ffffff;
+    }
     main {
         display: flex;
         flex-direction: column;
+        box-sizing: border-box;
         width: 100%;
-        border-radius: 8px;
+        height: auto;
+        margin-bottom: 0;
+        background-color: #ffffff;
     }
     .left-container {
         margin: 0;
@@ -153,25 +169,47 @@ button.btn.btn-primary {
         display: block;
         text-align: center;
         white-space: pre-wrap;
-        margin-bottom: 20px;
-        font-size: 2em;
+        padding-top: 20px;
+        margin-bottom: 0;
+        font-size: 30px;
     }
     .welcome h2 {
-        font-size: 1em;
+        display: none;
     }
     .right-container {
         flex-direction: column;
         justify-content: center;
         width: 100%;
+        margin-top: 0;
         font-size: 1em;
+    }
+    .signup h3 {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 18px;
+        font-size: 18px;
+    }
+    .access {
+        font-size: 15px;
+    }
+    button.btn.btn-primary {
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 }
 
 @media screen and (max-width: 800px) {
+    body {
+        background-color: #ffffff;
+    }
     main {
         display: flex;
         flex-direction: column;
+        box-sizing: border-box;
         width: 100%;
+        height: auto;
+        padding-bottom: 0;
+        background-color: #ffffff;
     }
     .left-container {
         margin: 0;
@@ -181,26 +219,47 @@ button.btn.btn-primary {
         display: block;
         text-align: center;
         white-space: pre-wrap;
-        margin-bottom: 20px;
-        font-size: 2em;
+        padding-top: 20px;
+        padding-bottom: 0;
+        font-size: 30px;
     }
     .welcome h2 {
-        font-size: 1em;
+        display: none;
     }
     .right-container {
         flex-direction: column;
         justify-content: center;
         width: 100%;
+        margin-top: 0;
         font-size: 1em;
+    }
+    .signup h3 {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 18px;
+        font-size: 18px;
+    }
+    .access {
+        font-size: 15px;
+    }
+    button.btn.btn-primary {
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 }
 
 @media screen and (max-width: 700px) {
+    body {
+        background-color: #ffffff;
+    }
     main {
         display: flex;
         flex-direction: column;
         width: 100%;
-        border-radius: 8px;
+        height: auto;
+        box-sizing: border-box;
+        padding-bottom: 0;
+        background-color: #ffffff;
     }
     .left-container {
         margin: 0;
@@ -210,27 +269,47 @@ button.btn.btn-primary {
         display: block;
         text-align: center;
         white-space: pre-wrap;
-        margin-bottom: 20px;
-        font-size: 2em;
+        padding-top: 20px;
+        padding-bottom: 0;
+        font-size: 30px;
     }
     .welcome h2 {
-        font-size: 1em;
+        display: none;
     }
     .right-container {
         flex-direction: column;
         justify-content: center;
         width: 100%;
+        margin-top: 0;
         font-size: 1em;
-        font-size: 1em;
+    }
+    .signup h3 {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 18px;
+        font-size: 18px;
+    }
+    .access {
+        font-size: 15px;
+    }
+    button.btn.btn-primary {
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 }
 
 @media screen and (max-width: 470px) {
+    body {
+        background-color: #ffffff;
+    }
     main {
         display: flex;
         flex-direction: column;
+        box-sizing: border-box;
         width: 100%;
-        border-radius: 8px;
+        height: auto;
+        padding-bottom: 0;
+        background-color: #ffffff;
     }
     .left-container {
         margin: 0;
@@ -240,14 +319,32 @@ button.btn.btn-primary {
         display: block;
         text-align: center;
         white-space: pre-wrap;
-        margin-bottom: 20px;
-        font-size: 2em;
+        padding-top: 20px;
+        padding-bottom: 0;
+        font-size: 30px;
+    }
+    .welcome h2 {
+        display: none;
     }
     .right-container {
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        padding-top: 20px;
+        margin-top: 0;
         font-size: 1em;
     }
+    .signup h3 {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 18px;
+        font-size: 18px;
+    }
+    .access {
+        font-size: 15px;
+    }
+    button.btn.btn-primary {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
 }
+
