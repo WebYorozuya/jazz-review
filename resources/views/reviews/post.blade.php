@@ -40,8 +40,9 @@
 
         <label for="tag">タグ</label>
         <div class="chips chips-initial">
-        <input type="text" id="tag" name="tag_name" placeholder="Enter a tag">
+        <input type="text" id="tag" placeholder="Enter a tag">
         </div>
+        <input type="text" id="hiddentag" name="tag_name" hidden>
         
         <label for="title">レビューのタイトル</label>
         <input type="text" id="title" name="title">

@@ -1,24 +1,28 @@
 'use strict';
-{
-  var elems = document.querySelectorAll('.chips');
-  var createPost = document.getElementById('create-post');
-  var postButton = document.getElementById('post-button');
-  var instances = M.Chips.init(elems);
 
-  $(function () {
-    $('.chips').chips();
-    $('.chips-placeholder').chips({
-      placeholder: 'Enter a tag',
-      secondaryPlaceholder: '+Tag',
-    });
+$(function () {
+  $('.chips').chips();
+  $('.chips-placeholder').chips({
+    placeholder: 'Enter a tag',
+    secondaryPlaceholder: '+Tag',
   });
+});
 
-  const chips = instances[0];
+const elems = document.querySelectorAll('.chips');
+const instances = M.Chips.init(elems);
+const postButton = document.getElementById('post-button');
 
-  postButton.addEventListener("click", function () {
-    var Tag = document.getElementById('tag');
-    Tag.innerHTML = chips.chipsData.forEach(tag => Object.values(tag));
-    createPost.submit();
-    // chips.chipsData.forEach(tag => console.log(Object.values(tag)));
-  });
-}
+postButton.addEventListener("click", function () {
+
+  const chips = M.Chips.getInstance(elems[0]);
+  let num = "";
+  const hiddenTag = document.getElementById('hiddentag');
+  const createPost = document.getElementById('create-post');
+
+  for (let i = 0; i < chips.chipsData.length; i++) {
+    const data = Object.values(chips.chipsData[i]);
+    num += data + ' ';
+  }
+  hiddenTag.value = num;
+  createPost.submit();
+});
