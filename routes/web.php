@@ -74,3 +74,7 @@ Route::get('/logout',[
 //検索
 Route::get('search', 'SearchController@search')->name('search');
 
+//いいね
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('like', 'ReviewController@like')->name('reviews.like');
+});
