@@ -48,7 +48,7 @@
   margin: 5px auto;
   padding: 8px;
   cursor: pointer;
-  user-select: none; /*ユーザーが連打しても選択できないように*/
+  user-select: none;
 }
 
 .form_container .submit {
