@@ -25,6 +25,7 @@
     <!-- ローカル用 -->
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('css')
 </head>
 
 <body>

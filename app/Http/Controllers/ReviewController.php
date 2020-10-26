@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Review;
 use App\Tag;
 use App\User;
+use App\Like;
 
 class ReviewController extends Controller
 {
@@ -20,8 +21,13 @@ class ReviewController extends Controller
         } else {
             $user = 'ゲスト';
         }
-        $items = Review::orderBy('id', 'desc')->paginate(10);
-        $param = ['items' => $items, 'user' => $user];
+        $items = Review::withCount('likes')->orderBy('id', 'desc')->paginate(10);
+        $likes = new Like;
+        $param = [
+            'items' => $items,
+            'user' => $user,
+            'likes' => $likes
+        ];
         return view('reviews.index', $param);
     }
     //ユーザー別投稿ページを表示
@@ -152,5 +158,28 @@ class ReviewController extends Controller
         }
         $review = Review::find($request->id)->delete();
         return redirect('/')->with('flash_message', '投稿を削除しました！');
+    }
+
+    public function like (Request $request)
+    {
+        $user_id = Auth::user()->id;
+        Log::info($request);
+        $review_id = $request->review_id;
+        $like = new Like;
+        $review = Review::findOrFail($review_id);
+        $review_likes_count = $review->withCount('likes')->likes_count;
+
+        if ($like->like_exist($id, $review_id)) {
+            $like = Like::where('review_id', $review_id)->where('user_id', $id)->delete();
+        } else {
+            $like = new Like;
+            $like->review_id = $request->review_id;
+            $like->user_id = Auth::user()->id;
+            $like->save();
+        }
+        $json = [
+            'review_likes_count' => $review_likes_count,
+        ];
+        return response ()->json($json);
     }
 }

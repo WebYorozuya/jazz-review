@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="icon" href="images/favicon.ico" />
   <!-- CSS RESET -->
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
@@ -11,7 +12,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <!-- font awesome -->
   <script src="https://kit.fontawesome.com/aaab412f99.js" crossorigin="anonymous"></script>
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> -->
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css Heroku-->
