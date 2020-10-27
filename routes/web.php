@@ -78,3 +78,7 @@ Route::get('search', 'SearchController@search')->name('search');
 Route::group(['middleware' => ['auth']], function () {
     Route::post('like', 'ReviewController@like')->name('reviews.like');
 });
+Route::get('/upload','UploadImageController@input')->name('upload_form');
+Route::post('/upload','UploadImageController@upload')->name('upload_image');
+Route::get('/output','UploadImageController@output')->name('output');
+
