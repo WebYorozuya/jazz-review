@@ -23,6 +23,12 @@
                         <input type="submit" name="submit" value="パスワード変更">
                     </a>
                 </div>
+                <!-- プロフィール画像 -->
+                <div>
+                    <a href="{{url('upload')}}">
+                        <input type="submit" name="submit" value="プロフィール画像設定">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
