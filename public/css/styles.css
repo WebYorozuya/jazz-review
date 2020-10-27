@@ -1,176 +1,177 @@
 /* 共通部分 */
 body {
-    font-family   : -apple-system, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
-    width         : 1140px;
-    width         : 100%;
-    min-height    : 100vh;
-    display       : flex;
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue",
+        "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
+    width: 1140px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
     flex-direction: column;
-    outline       : 1px solid;
-    color         : rgb(51, 51, 51);
+    outline: 1px solid;
+    color: rgb(51, 51, 51);
 }
 
 .back-for-dropdown {
     position: absolute;
-    top     : 0;
-    left    : 0;
-    width   : 100%;
-    height  : 100%;
-    display : none;
-    z-index : 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 3;
 }
 
 header {
-    --theme-color   : #0378a6;
+    --theme-color: #0378a6;
     background-color: var(--theme-color);
 }
 
 .header-container {
-    display        : flex;
-    align-items    : center;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    max-width      : 1100px;
-    padding        : 0px 16px;
-    margin-left    : auto;
-    margin-right   : auto;
+    max-width: 1100px;
+    padding: 0px 16px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header-start {
-    display        : flex;
-    align-items    : center;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    position       : relative;
+    position: relative;
 }
 
 .header-siteName {
-    flex     : 1;
+    flex: 1;
     min-width: 100px;
 }
 
 .siteLogo {
-    height    : 75px;
+    height: 75px;
     margin-top: 8px;
 }
 
 .header-search {
-    width           : 200px;
+    width: 200px;
     background-color: #fff;
-    margin-left     : 50px;
-    border-radius   : 4px;
-    display         : flex;
-    align-items     : center;
-    position        : relative;
+    margin-left: 50px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .header-search i {
     position: absolute;
-    left    : 4%;
-    color   : #aaa;
+    left: 4%;
+    color: #aaa;
 }
 
 .header-search input {
-    border          : none;
+    border: none;
     background-color: #fff;
-    height          : 32px;
-    width           : 200px;
-    font-size       : 12px;
-    padding         : 1px 8px 1px 32px;
-    border-radius   : 4px;
-    box-shadow      : inset 0 1px 2px #ccc;
+    height: 32px;
+    width: 200px;
+    font-size: 12px;
+    padding: 1px 8px 1px 32px;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px #ccc;
 }
 
 .search-box {
-    display    : flex;
+    display: flex;
     align-items: center;
-    text-align : center;
+    text-align: center;
 }
 
 .header-right {
-    height         : 100%;
-    display        : flex;
-    align-items    : center;
+    height: 100%;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    padding        : 5px 0px 5px 0px;
+    padding: 5px 0px 5px 0px;
 }
 
 .header-post {
-    display        : flex;
-    align-items    : center;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    background     : rgba(42, 104, 151, 1);
-    color          : rgb(255, 255, 255);
-    border-radius  : 7px;
-    max-width      : 250px;
-    height         : 40px;
-    font-size      : 14px;
-    margin-right   : 20px;
+    background: rgba(42, 104, 151, 1);
+    color: rgb(255, 255, 255);
+    border-radius: 7px;
+    max-width: 250px;
+    height: 40px;
+    font-size: 14px;
+    margin-right: 20px;
     text-decoration: none;
-    cursor         : pointer;
+    cursor: pointer;
 }
 
 .header-loginUser-dd-label {
-    display        : flex;
-    align-items    : center;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    padding        : 0 20px;
-    background     : rgba(42, 104, 151, 1);
-    color          : rgb(255, 255, 255);
-    border-radius  : 7px;
-    max-width      : 250px;
-    height         : 40px;
-    font-size      : 14px;
-    margin-right   : 20px;
+    padding: 0 20px;
+    background: rgba(42, 104, 151, 1);
+    color: rgb(255, 255, 255);
+    border-radius: 7px;
+    max-width: 250px;
+    height: 40px;
+    font-size: 14px;
+    margin-right: 20px;
     text-decoration: none;
-    cursor         : pointer;
+    cursor: pointer;
 }
 
 .header-post:hover,
 .header-loginUser-dd-label:hover {
-    background     : rgba(42, 104, 151, 0.7);
-    color          : rgb(255, 255, 255);
+    background: rgba(42, 104, 151, 0.7);
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
 .header-post-link {
-    padding        : 0 20px;
-    display        : flex;
-    align-items    : center;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    width          : 100%;
-    height         : 100%;
+    width: 100%;
+    height: 100%;
     text-decoration: none;
-    color          : rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
 .header-post-link:hover {
     text-decoration: none;
-    color          : rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
 .header-post i {
-    font-size   : 18px;
+    font-size: 18px;
     margin-right: 4px;
 }
 
 .header-loginUser-dd-label i {
-    font-size   : 20px;
+    font-size: 20px;
     margin-right: 4px;
 }
 
 .header-loginUser-dd-content {
-    display         : flex;
-    flex-direction  : column;
-    justify-content : center;
-    border          : 1px solid #eeeeee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #eeeeee;
     background-color: #cac7c7;
-    width           : 120px;
-    font-size       : 12px;
-    transition      : 0.4s;
-    display         : none;
-    position        : absolute;
-    top             : 60px;
-    z-index         : 30;
-    list-style      : none;
+    width: 120px;
+    font-size: 12px;
+    transition: 0.4s;
+    display: none;
+    position: absolute;
+    top: 60px;
+    z-index: 30;
+    list-style: none;
 }
 
 .header-loginUser-dd-content li {
@@ -179,19 +180,19 @@ header {
 
 .header-loginUser-dd-content a {
     text-decoration: none;
-    margin         : 7px;
-    padding-right  : 10px;
+    margin: 7px;
+    padding-right: 10px;
 }
 
 .hello-user {
-    display        : flex;
+    display: flex;
     justify-content: center;
-    align-items    : center;
-    height         : 30px;
+    align-items: center;
+    height: 30px;
     text-decoration: none;
-    color          : white;
-    text-align     : center;
-    width          : 100%;
+    color: white;
+    text-align: center;
+    width: 100%;
 }
 
 .hello-user:hover {
@@ -199,54 +200,54 @@ header {
 }
 
 .home {
-    padding                : 32px 16px 0px 16px;
-    flex                   : 1;
+    padding: 32px 16px 0px 16px;
+    flex: 1;
     --main-background-color: #f6f6f4;
     /*背景色変数*/
-    background-color       : var(--main-background-color);
-    position               : relative;
+    background-color: var(--main-background-color);
+    position: relative;
 }
 
 .flash_message {
-    margin    : 0;
-    position  : absolute;
-    top       : 0;
-    left      : 0;
-    width     : 100%;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     text-align: center;
-    z-index   : 100;
+    z-index: 100;
 }
 
 .home-container {
-    display       : flex;
+    display: flex;
     flex-direction: row;
-    align-items   : flex-start;
-    max-width     : 88%;
-    margin        : 0 auto;
+    align-items: flex-start;
+    max-width: 88%;
+    margin: 0 auto;
 }
 
 .right-container {
-    display       : flex;
+    display: flex;
     flex-direction: row;
-    width         : 100%;
+    width: 100%;
 }
 
 /* 左メニューnav */
 .home nav {
-    display       : flex;
+    display: flex;
     flex-direction: column;
-    align-items   : flex-start;
-    width         : 250px;
-    position      : sticky;
-    top           : 1em;
+    align-items: flex-start;
+    width: 250px;
+    position: sticky;
+    top: 1em;
     --title-height: 50px;
-    margin-top    : var(--title-height);
+    margin-top: var(--title-height);
     /*h1と連動*/
 }
 
 nav ul {
-    padding   : 0px;
-    width     : 100%;
+    padding: 0px;
+    width: 100%;
     list-style: none;
 }
 
@@ -256,19 +257,19 @@ nav li {
 
 nav li a {
     text-decoration: none;
-    display        : flex;
-    align-items    : center;
-    font-size      : 0.9rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
     text-decoration: none;
-    color          : rgb(51, 51, 51);
-    padding        : 10px 10px 10px 16px;
-    border-radius  : 3px;
+    color: rgb(51, 51, 51);
+    padding: 10px 10px 10px 16px;
+    border-radius: 3px;
 }
 
 nav li a:hover {
     background-color: rgb(192, 192, 192, 0.6);
-    border-radius   : 3px;
-    text-decoration : none;
+    border-radius: 3px;
+    text-decoration: none;
 }
 
 .home nav li i {
@@ -296,23 +297,23 @@ nav li a:hover {
 }
 
 main {
-    flex-grow       : 1;
+    flex-grow: 1;
     /* min-width    : 0; */
     background-color: #fff;
-    margin-bottom   : 70px;
+    margin-bottom: 70px;
 }
 
 .main-title {
-    text-align    : center;
-    width         : 100%;
+    text-align: center;
+    width: 100%;
     /* height     : var(--title-height);なぜ効かない */
-    height        : 50px;
-    font-size     : 1.2rem;
-    font-weight   : bold;
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
     letter-spacing: 8px;
-    padding       : 12px 0;
-    margin        : 0;
-    border-bottom : 1px solid var(--main-background-color);
+    padding: 12px 0;
+    margin: 0;
+    border-bottom: 1px solid var(--main-background-color);
 }
 
 /* search.blade.php */
@@ -322,15 +323,15 @@ main {
 
 /* レビュー記事 */
 .review {
-    display       : flex;
+    display: flex;
     flex-direction: row;
-    padding       : 8px 10px;
-    border-bottom : 1px solid var(--main-background-color);
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--main-background-color);
 }
 
 .review-left .user-image {
     display: inline-block;
-    width  : 50px;
+    width: 50px;
 }
 
 .review-left img {
@@ -338,63 +339,63 @@ main {
 }
 
 .review-right {
-    flex-grow   : 1;
+    flex-grow: 1;
     padding-left: 8px;
 }
 
 .review-top {
-    text-decoration       : none;
-    margin                : 0 3px;
+    text-decoration: none;
+    margin: 0 3px;
     --review-action-height: 30px;
-    height                : var(--review-action-height);
-    min-width             : 30px;
-    border-radius         : 50%;
-    text-align            : center;
-    display               : flex;
-    flex                  : row;
-    justify-content       : space-between;
+    height: var(--review-action-height);
+    min-width: 30px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    flex: row;
+    justify-content: space-between;
 }
 
 .review-top h2 {
-    font-size  : 1.2em;
+    font-size: 1.2em;
     font-weight: bold;
-    margin     : 0;
-    padding    : 1px 0 0px 0;
-    display    : inline-block;
+    margin: 0;
+    padding: 1px 0 0px 0;
+    display: inline-block;
 }
 
 .review-dropdown-wrapper {
-    position     : relative;
+    position: relative;
     border-radius: 50%;
-    z-index      : 5;
+    z-index: 5;
 }
 
 .review-dropdown-wrapper:hover {
     background-color: rgb(221, 221, 221);
-    transition      : 0.2s;
+    transition: 0.2s;
 }
 
 .review-top i {
-    display    : inline-block;
-    width      : var(--review-action-height);
-    cursor     : pointer;
-    color      : rgb(82, 80, 80);
+    display: inline-block;
+    width: var(--review-action-height);
+    cursor: pointer;
+    color: rgb(82, 80, 80);
     line-height: var(--review-action-height);
     /*縦位置中央揃え*/
 }
 
 .review-dropdown {
-    border          : 1px solid #eeeeee;
+    border: 1px solid #eeeeee;
     background-color: #ffffff;
-    position        : absolute;
-    top             : 26px;
-    left            : 0px;
-    width           : 80px;
-    z-index         : 4;
-    display         : none;
-    flex-direction  : column;
-    justify-content : center;
-    font-size       : 12px;
+    position: absolute;
+    top: 26px;
+    left: 0px;
+    width: 80px;
+    z-index: 4;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 12px;
 }
 
 .show {
@@ -406,13 +407,13 @@ main {
 }
 
 .review-dropdown li {
-    border         : 0.5px solid #dddddd;
-    height         : 30px;
-    display        : flex;
+    border: 0.5px solid #dddddd;
+    height: 30px;
+    display: flex;
     justify-content: flex-start;
-    padding-left   : 5px;
-    align-items    : center;
-    color          : rgb(51, 51, 51);
+    padding-left: 5px;
+    align-items: center;
+    color: rgb(51, 51, 51);
 }
 
 .review-dropdown li:hover {
@@ -425,13 +426,13 @@ main {
 
 .review-right .tag {
     text-decoration: underline;
-    color          : #aaa;
-    font-size      : 0.9rem;
+    color: #aaa;
+    font-size: 0.9rem;
 }
 
 .review-text {
-    padding : 0px 20px;
-    height  : 50px;
+    padding: 0px 20px;
+    height: 50px;
     overflow: hidden;
 }
 
@@ -448,9 +449,9 @@ main {
 }
 
 .review-bottom {
-    font-size  : 0.85rem;
-    color      : #aaa;
-    display    : flex;
+    font-size: 0.85rem;
+    color: #aaa;
+    display: flex;
     align-items: center;
 }
 
@@ -463,59 +464,61 @@ main {
 }
 
 .heart {
-    font-size   : 15px;
-    color       : #d4d4d4;
-    user-select : none;
-    cursor      : pointer;
+    font-size: 15px;
+    color: #d4d4d4;
+    user-select: none;
+    cursor: pointer;
     margin-right: 3px;
 }
 
 .colorChange {
-    animation-name     : heart;
-    animation-duration : .4s;
+    animation-name: heart;
+    animation-duration: 0.4s;
     animation-fill-mode: forwards;
 }
 
-@keyframes heart {
+.liked {
+    animation: liked 0.5s;
+}
+
+@keyframes liked {
     0% {
-        transform: scale(0);
+        transform: translate(0px, 0px);
     }
-
-    30% {
-        transform: scale(1.1);
+    50% {
+        transform: translate(0px, 3px);
     }
-
     100% {
-        transform: scale(1);
-        color    : #f3aef3;
+        transform: translate(0px, -3px);
+        color: rgb(224, 36, 94);
     }
 }
 
 .liked {
-    color: rgb(230, 146, 160);
+    color: rgb(226, 44, 102);
 }
 
 aside {
-    width           : 400px;
+    width: 400px;
     background-color: #f6f6f4;
-    padding         : 20px;
+    padding: 20px;
 }
 
 .aside1 {
-    margin-top       : 300px;
-    background-image : url(../images/onuma_top-slide.jpg);
-    background-size  : contain;
+    margin-top: 300px;
+    background-image: url(../images/onuma_top-slide.jpg);
+    background-size: contain;
     background-repeat: no-repeat;
-    height           : 90px;
-    width            : 300px;
+    height: 90px;
+    width: 300px;
 }
 
 .aside2 {
-    margin-top       : 100px;
-    background-image : url(../images/musicmaster_logo.jpg);
-    background-size  : contain;
+    margin-top: 100px;
+    background-image: url(../images/musicmaster_logo.jpg);
+    background-size: contain;
     background-repeat: no-repeat;
-    height           : 90px;
+    height: 90px;
 }
 
 .pagination {
@@ -527,23 +530,23 @@ aside {
 }
 
 footer {
-    height               : 300px;
-    background-color     : #242424;
-    color                : #ffffff;
-    position             : relative;
-    z-index              : 40;
-    background-size      : cover;
-    background-position  : center center;
-    background-repeat    : no-repeat;
+    height: 300px;
+    background-color: #242424;
+    color: #ffffff;
+    position: relative;
+    z-index: 40;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-blend-mode: overlay;
 }
 
 .footer-container {
-    display        : flex;
-    flex-direction : row;
-    max-width      : 1100px;
-    margin-left    : auto;
-    margin-right   : auto;
+    display: flex;
+    flex-direction: row;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
     justify-content: space-between;
 }
 
@@ -560,29 +563,29 @@ footer {
 }
 
 .footer-right {
-    display       : flex;
+    display: flex;
     flex-direction: column;
-    width         : 150px;
-    padding       : 30px 0px 60px 0px;
+    width: 150px;
+    padding: 30px 0px 60px 0px;
 }
 
 .information1,
 .information2 {
-    flex           : 1;
+    flex: 1;
     text-decoration: none;
-    color          : white;
+    color: white;
 }
 
 .information1:hover,
 .information2:hover {
-    text-decoration-line : underline;
+    text-decoration-line: underline;
     text-decoration-color: #fff;
     text-decoration-style: solid;
 }
 
 @media screen and (max-width: 1000px) {
     .right-container {
-        display       : flex;
+        display: flex;
         flex-direction: column;
     }
 
@@ -602,12 +605,12 @@ footer {
 
     @keyframes SlideIn {
         0% {
-            opacity  : 0;
+            opacity: 0;
             transform: translateX(-64px);
         }
 
         100% {
-            opacity  : 1;
+            opacity: 1;
             transform: translateX(0);
         }
     }
@@ -627,27 +630,25 @@ footer {
 
     .header-search-text-bg {
         position: fixed;
-        z-index : 1;
-        top     : 0;
-        left    : 0;
-        right   : 0;
-        bottom  : 0;
-        display : none;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
     }
 
     .header-search-text-bg-searching {
-        display         : block;
+        display: block;
         background-color: #0000005e;
     }
 
     .header-right-searching {
         display: none;
     }
-
 }
 
 @media screen and (max-width: 700px) {
-
     body,
     nav,
     aside {
@@ -686,11 +687,11 @@ footer {
 
     .home {
         padding: 0px 16px 0px 16px;
-        flex   : 1;
+        flex: 1;
     }
 
     .home-container {
-        display       : flex;
+        display: flex;
         flex-direction: column;
     }
 
@@ -699,15 +700,15 @@ footer {
     }
 
     nav ul {
-        display    : flex;
+        display: flex;
         align-items: center;
     }
 
     nav ul li {
-        width          : 33.3%;
-        padding-top    : 0px;
-        display        : flex;
-        align-items    : center;
+        width: 33.3%;
+        padding-top: 0px;
+        display: flex;
+        align-items: center;
         justify-content: space-around;
     }
 
@@ -719,15 +720,15 @@ footer {
     .li-player,
     .li-livehouse,
     .li-reviewer {
-        width          : 120px;
+        width: 120px;
         text-decoration: none;
-        padding        : 0px;
-        display        : flex;
-        flex-direction : row;
+        padding: 0px;
+        display: flex;
+        flex-direction: row;
         justify-content: center;
-        text-align     : center;
-        color          : rgb(51, 51, 51);
-        font-size      : 10px;
+        text-align: center;
+        color: rgb(51, 51, 51);
+        font-size: 10px;
     }
 
     aside {
@@ -737,12 +738,12 @@ footer {
 
 @media screen and (max-width: 470px) {
     .header-start {
-        width       : 110px;
+        width: 110px;
         padding-left: 40px;
     }
 
     .siteLogo {
-        width : 100px;
+        width: 100px;
         height: 40px;
     }
 
@@ -751,39 +752,39 @@ footer {
     }
 
     .mobile-nav {
-        display      : block;
+        display: block;
         margin-bottom: 10px;
     }
 
     .mobile-nav-form {
-        display       : flex;
+        display: flex;
         flex-direction: row;
-        font-size     : 10px;
+        font-size: 10px;
     }
 
     .pulldown {
-        height          : 20px;
-        width           : 200px;
+        height: 20px;
+        width: 200px;
         background-color: #ffffff;
-        border-radius   : 5px;
-        margin-right    : 10px;
+        border-radius: 5px;
+        margin-right: 10px;
     }
 
     .pulldown-option {
         height: 20px;
-        width : 200px;
+        width: 200px;
     }
 
     .pulldown-select {
-        display         : flex;
-        justify-content : column;
-        align-items     : center;
-        margin          : 3px;
-        height          : 14px;
-        width           : 25px;
+        display: flex;
+        justify-content: column;
+        align-items: center;
+        margin: 3px;
+        height: 14px;
+        width: 25px;
         background-color: #cccccc;
-        text-align      : center;
-        vertical-align  : center;
+        text-align: center;
+        vertical-align: center;
     }
 
     .mobile-nav p {
@@ -799,7 +800,7 @@ footer {
     }
 
     .footer-container {
-        display       : flex;
+        display: flex;
         flex-direction: column;
     }
 
