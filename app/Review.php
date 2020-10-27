@@ -11,7 +11,7 @@ class Review extends Model
 
     public static $rules = array(
         'user_id' => 'required',
-        'live_date' => 'before_or_equal:tomorrow', //明日以降はダメ
+        'live_date' => 'before_or_equal:tomorrow',
         'title' => 'required',
         'text' => 'required'
     );
