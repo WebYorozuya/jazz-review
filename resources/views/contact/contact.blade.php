@@ -10,11 +10,11 @@
 @endsection
 
 @section('header')
-@component('components.header')
-  @slot('user')
-    {{$user}}
-  @endslot
-@endcomponent
+  @component('components.header')
+    @slot('user')
+      {{$user}}
+    @endslot
+  @endcomponent
 @endsection
 
 @section('main')
