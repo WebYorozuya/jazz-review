@@ -9,11 +9,13 @@
 <link rel="stylesheet" href="{{asset('css/contact.css')}}">
 @endsection
 
+@section('header')
 @component('components.header')
   @slot('user')
     {{$user}}
   @endslot
 @endcomponent
+@endsection
 
 @section('main')
 <h1 class="main-title">Our team</h1>

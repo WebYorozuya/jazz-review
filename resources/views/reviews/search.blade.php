@@ -4,11 +4,13 @@
 「{{$keyword}}」の検索結果
 @endsection
 
-@component('components.header')
-  @slot('user')
-    {{$user}}
-  @endslot
-@endcomponent
+@section('header')
+  @component('components.header')
+    @slot('user')
+      {{$user}}
+    @endslot
+  @endcomponent
+@endsection
 
 @section('main')
 <h1 class="main-title"><span>「{{$keyword}}」</span>の検索結果</h1>
