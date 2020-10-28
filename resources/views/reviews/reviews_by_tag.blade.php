@@ -6,11 +6,13 @@
 
 @section('title', 'タグ別投稿')
 
-@component('components.header')
-@slot('user')
-{{$user}}
-@endslot
-@endcomponent
+@section('header')
+  @component('components.header')
+    @slot('user')
+    {{$user}}
+    @endslot
+  @endcomponent
+@endsection
 
 @section('main')
 <h1 class="main-title">タグ{{$tag_name}}の投稿一覧</h1>

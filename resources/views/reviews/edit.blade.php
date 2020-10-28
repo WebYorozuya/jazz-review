@@ -16,17 +16,19 @@
   <link rel="stylesheet" href="{{asset('css/post.css')}}">
 @endsection
 
-@component('components.header')
-@slot('user')
+@section('header')
+  @component('components.header')
+    @slot('user')
     @if (Route::has('login'))
-    @auth
-      {{$user->account_name}}
-      @else
-      {{$user = 'ゲスト'}}
-      @endif
-    @endauth
-@endslot
-@endcomponent
+      @auth
+        {{$user->account_name}}
+        @else
+        {{$user = 'ゲスト'}}
+        @endif
+      @endauth
+    @endslot
+  @endcomponent
+@endsection
 
 @section('main')
 <h1 class="main-title">レビューを修正する</h1>
