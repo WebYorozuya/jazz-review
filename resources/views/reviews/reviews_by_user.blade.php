@@ -6,11 +6,13 @@
 
 @section('title', 'ユーザー別投稿')
 
-@component('components.header')
-@slot('user')
-{{$user}}
-@endslot
-@endcomponent
+@section('header')
+  @component('components.header')
+    @slot('user')
+    {{$user}}
+    @endslot
+  @endcomponent
+@endsection
 
 @section('main')
 <h1 class="main-title">{{$account_name}}さんの投稿</h1>
@@ -32,18 +34,8 @@
   </div><!-- /.tag-info-left -->
 
   <div class="user-info-right">
-
-  
   </div><!-- /.user-info-right -->
-
-
-
-
 </div><!-- /.user-info-container -->
-
-
-
-
 
 @foreach ($items as $item)
 <div class="review">

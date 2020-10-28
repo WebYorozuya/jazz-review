@@ -2,11 +2,13 @@
 
 @section('title', 'Jazz Log')
 
-@component('components.header')
-  @slot('user')
-    {{$user}}
-  @endslot
-@endcomponent
+@section('header')
+  @component('components.header')
+    @slot('user')
+      {{$user}}
+    @endslot
+  @endcomponent
+@endsection
 
 @section('main')
 <h1 class="main-title">新着レビュー</h1>

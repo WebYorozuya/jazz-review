@@ -16,7 +16,7 @@
           <i class="fas fa-pen-nib"></i>
           <span>投稿する</span>
         </a>
-      </div>
+      </div><!-- ./header-post -->
       <div class="header-usermenu">
         <div class="header-loginUser-dd-label">
           <i class="far fa-user-circle fa-2x"></i>
@@ -40,6 +40,7 @@
   </div><!-- /.header-container -->
 </header>
 <div class="back-for-dropdown"></div>
+
 <script type="text/javascript" src="{{ secure_asset('js/login_dd.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/login_dd.js') }}"></script>
 @if(app('env')=='local')

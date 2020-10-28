@@ -9,11 +9,13 @@
   <link rel="stylesheet" href="{{asset('css/tags.css')}}">
 @endsection
 
-@component('components.header')
-  @slot('user')
-    {{$user}}
-  @endslot
-@endcomponent
+@section('header')
+  @component('components.header')
+    @slot('user')
+      {{$user}}
+    @endslot
+  @endcomponent
+@endsection
 
 @section('main')
 <h1 class="main-title">タグ一覧</h1>
