@@ -2,11 +2,13 @@
 
 @section('title', 'Jazz Log')
 
-@component('components.header')
-  @slot('user')
-    {{$user}}
-  @endslot
-@endcomponent
+@section('header')
+  @component('components.header')
+    @slot('user')
+      {{$user}}
+    @endslot
+  @endcomponent
+@endsection
 
 @section('main')
 <h1 class="main-title">新着レビュー</h1>
@@ -48,7 +50,6 @@
         <span class="user-name">by <a href="user?user_id={{$item->user_id}}">{{$item->getData()}}さん</span></a>
         <span class="created-at">{{$item->created_at}}</span>
         @auth
-
         @if (!App\Like::where('user_id', Auth::user()->id)->where('review_id', $item->id)->first())
         <span class="likes">
             <i class="fas fa-music heart like-toggle" data-review-id="{{ $item->id }}"></i>
@@ -61,7 +62,7 @@
         </span><!-- /.likes -->
         @endif
         @endauth
-        @guest 
+        @guest
         <span class="likes">
             <i class="fas fa-music heart"></i>
           <span class="like-counter">{{$item->likes_count}}</span>

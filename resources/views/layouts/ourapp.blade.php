@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <link rel="icon" href="images/favicon.ico" />
+  <link rel="icon" href="images/favicon.ico">
   <!-- CSS RESET -->
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
   <!-- Bootstrap -->
@@ -25,9 +24,8 @@
   @yield('css')
   <title>@yield('title')</title>
 </head>
-
 <body>
-  <!-- headerはここにcomponentで -->
+  @yield('header')
   <div class="home">
     @if (session('flash_message'))
     <div class="flash_message alert alert-success" style="margin:0">
@@ -120,6 +118,18 @@
   <script type="text/javascript" src="{{ asset('js/footer_img_random_change.js') }}"></script>
   <script type="text/javascript" src="{{ secure_asset('js/thanks_message.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/thanks_message.js') }}"></script>
+  <!-- header.blade.phpから移設してみている -->
+  <script type="text/javascript" src="{{ secure_asset('js/login_dd.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/login_dd.js') }}"></script>
+  @if(app('env')=='local')
+  <script type="text/javascript" src="{{ asset('js/header_search_form.js') }}"></script>
+  @endif
+  @if(app('env')=='production')
+  <script type="text/javascript" src="{{ secure_asset('js/header_search_form.js') }}"></script>
+  @endif
+  <!-- ここまで -->
+
   @yield('js')
+
 </body>
 </html>

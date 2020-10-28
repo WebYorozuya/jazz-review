@@ -9,11 +9,13 @@
 <link rel="stylesheet" href="{{asset('css/terms.css')}}">
 @endsection
 
-@component('components.header')
-@slot('user')
-{{$user}}
-@endslot
-@endcomponent
+@section('header')
+    @component('components.header')
+        @slot('user')
+        {{$user}}
+        @endslot
+    @endcomponent
+@endsection
 
 @section('main')
 <div class="terms">

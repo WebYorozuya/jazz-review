@@ -143,7 +143,7 @@ header {
     color: rgb(255, 255, 255);
 }
 
-.header-post-link:hover {
+.header-post a:hover {
     text-decoration: none;
     color: rgb(255, 255, 255);
 }

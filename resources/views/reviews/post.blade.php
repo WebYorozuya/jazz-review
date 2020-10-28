@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{{asset('css/post.css')}}">
 @endsection
 
+@section('header')
 @component('components.header')
   @slot('user')
     @if (Route::has('login'))
@@ -20,6 +21,7 @@
     @endif
   @endslot
 @endcomponent
+@endsection
 
 @section('main')
 <h1 class="main-title">レビューを投稿する</h1>
