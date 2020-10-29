@@ -37,7 +37,8 @@
 }
 
 .form_container #post-button,
-.form_container button {
+.form_container button,
+.form_container #del {
   width: 180px;
   font-size: 15px;
   text-align: center;
@@ -67,7 +68,7 @@
   letter-spacing: 1px;
 }
 
-#del {
+.form_container #del {
   background-color: rgb(240, 133, 133);
   border-bottom: solid 4px  rgb(170, 50, 50);
 }
