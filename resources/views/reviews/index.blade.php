@@ -26,9 +26,13 @@
         <div class="review-dropdown-wrapper">
           <i class="fas fa-ellipsis-h showIcon"></i>
           <ul class="review-dropdown">
+            @auth
+            @if (Auth::user()->id === $item->user_id)
             <a href="edit?id={{ $item->id }}">
               <li>編集／削除する</li>
             </a>
+            @endif
+            @endauth
             <a href="contact#contact">
               <li>報告する</li>
             </a>
