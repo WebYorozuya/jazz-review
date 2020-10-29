@@ -31,7 +31,7 @@
 @endsection
 
 @section('main')
-<h1 class="main-title">レビューを修正する</h1>
+<h1 class="main-title">レビューを修正／削除する</h1>
 <div class="form_container">
     <form action="update" id="create-account" method="POST">
     @csrf
@@ -47,7 +47,7 @@
         <label for="text">ライブの感想</label>
         <textarea name="text" id="text" cols="30" rows="10">{{$review->text}}</textarea>
         <p style="text-align: right; font-size: 0.8rem;">（XXXX文字以内）</p>
-        <input type="submit" class="submit" value="修正">
+        <input type="submit" id="post-button" class="submit" value="修正">
     </form>
     <form action="del" method="post">
     @csrf
