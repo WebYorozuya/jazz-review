@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Tag;
 use App\Review;
 use App\User;
+use App\Like;
 use Illuminate\Support\Facades\DB; //両立できるのね
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -29,6 +30,7 @@ class TagController extends Controller
 
     public function getReviewsByTag(Request $request)
     {
+        $tag_name = Tag::find($request->id)->tag_name;
         if (Auth::user()) {
             $user = Auth::user()->account_name;
         } else {
@@ -37,12 +39,16 @@ class TagController extends Controller
         //タグidを元にそのタグの入った投稿を全て取得
         $items = Tag::find($request->id)->reviews()->orderBy('id', 'desc')->paginate(10);
         //タグ名を取得
-        $tag_name = Tag::find($request->id)->tag_name;
-        return view('reviews.reviews_by_tag', [
+        $likes = new Like;
+        $liked = like::all();
+        $param = [
             'user' => $user,
             'items' => $items,
-            'tag_name' => $tag_name
-        ]);
+            'likes' => $likes,
+            'liked' => $liked,
+            'tag_name' => $tag_name,
+        ];
+        return view('reviews.reviews_by_tag', $param);
 
     }
 }

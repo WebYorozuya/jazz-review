@@ -24,10 +24,9 @@ class ReviewController extends Controller
         $items = Review::withCount('likes')->orderBy('id', 'desc')->paginate(10);
         $likes = new Like;
         $liked = Like::all();
-        Log::info($liked);
         $param = [
-            'items' => $items,
             'user' => $user,
+            'items' => $items,
             'likes' => $likes,
             'liked' => $liked,
         ];
@@ -36,14 +35,23 @@ class ReviewController extends Controller
     //ユーザー別投稿ページを表示
     public function getReviewsByUser(Request $request)
     {
-        $items = Review::where('user_id', $request->user_id)->orderBy('id', 'desc')->paginate(10);
         if (Auth::user()) {
             $user = Auth::user()->account_name;
         } else {
             $user = 'ゲスト';
         }
         $account_name = User::find($request->user_id)->account_name;
-        return view('reviews.reviews_by_user', ['items' => $items, 'user' => $user, 'account_name' => $account_name]);
+        $items = Review::withCount('likes')->where('user_id', $request->user_id)->orderBy('id', 'desc')->paginate(10);
+        $likes = new Like;
+        $liked = like::all();
+        $param = [
+            'user' => $user,
+            'account_name' => $account_name,
+            'items' => $items,
+            'likes' => $likes,
+            'liked' => $liked,
+        ];
+        return view('reviews.reviews_by_user', $param);
     }
     //投稿ページを表示
     public function post(Request $request)
