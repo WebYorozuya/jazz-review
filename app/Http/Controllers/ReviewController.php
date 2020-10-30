@@ -94,6 +94,7 @@ class ReviewController extends Controller
       
       //トップページへ
         return redirect()->route('top')->with('flash_message', '素敵な投稿ありがとうございます！'); 
+        //TODO:herokuでhttpにリダイレクトされてしまう
     }
     //投稿修正ページを表示
     public function edit(Request $request)
