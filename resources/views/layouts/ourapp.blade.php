@@ -11,16 +11,16 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <!-- font awesome -->
   <script src="https://kit.fontawesome.com/aaab412f99.js" crossorigin="anonymous"></script>
-  <!--Import Google Icon Font-->
+  <!--Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css Heroku-->
-  <link type="text/css" rel="stylesheet" href="{{ secure_asset('css/ourmaterialize.css') }}" media="screen,projection" />
-  <!--Import materialize.css Local-->
+  @env('local')
   <link type="text/css" rel="stylesheet" href="{{ asset('css/ourmaterialize.css') }}" media="screen,projection" />
-  <!-- Heroku用 -->
-  <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
-  <!-- ローカル用 -->
   <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+  @endenv
+  @production
+  <link type="text/css" rel="stylesheet" href="{{ secure_asset('css/ourmaterialize.css') }}" media="screen,projection" />
+  <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
+  @endproduction
   @yield('css')
   <title>@yield('title')</title>
 </head>
@@ -108,28 +108,30 @@
     </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/materialize.js') }}"></script>
+  @env('local')
   <script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/highlighted_nav_link.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/highlighted_nav_link.js') }}"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/footer_fig_resize.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/footer_fig_resize.js') }}"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/footer_img_random_change.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/footer_img_random_change.js') }}"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/thanks_message.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/thanks_message.js') }}"></script>
-  <!-- header.blade.phpから移設してみている -->
-  <script type="text/javascript" src="{{ secure_asset('js/login_dd.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/login_dd.js') }}"></script>
-  @if(app('env')=='local')
   <script type="text/javascript" src="{{ asset('js/header_search_form.js') }}"></script>
+  @endenv
+  @production
+  <script type="text/javascript" src="{{ secure_asset('js/materialize.js') }}"></script>
+  <script type="text/javascript" src="{{ secure_asset('js/highlighted_nav_link.js') }}"></script>
+  <script type="text/javascript" src="{{ secure_asset('js/footer_fig_resize.js') }}"></script>
+  <script type="text/javascript" src="{{ secure_asset('js/footer_img_random_change.js') }}"></script>
+  <script type="text/javascript" src="{{ secure_asset('js/thanks_message.js') }}"></script>
+  <script type="text/javascript" src="{{ secure_asset('js/login_dd.js') }}"></script>
+  <script type="text/javascript" src="{{ secure_asset('js/header_search_form.js') }}"></script>
+  @endproduction
+  
+  @if(app('env')=='local')
   @endif
   @if(app('env')=='production')
-  <script type="text/javascript" src="{{ secure_asset('js/header_search_form.js') }}"></script>
   @endif
-  <!-- ここまで -->
 
   @yield('js')
-
 </body>
 </html>
