@@ -23,17 +23,14 @@
           <span>{{$user}} さん</span>
         </div>
         <ul class="header-loginUser-dd-content">
-          @if (Route::has('login'))
           @auth
-          <li><a href="{{ url('/mypage') }}" class="hello-user">マイページ</a></li>
-          <li><a href="{{ route('user.logout') }}" class="hello-user">ログアウト</a></li>
-          @else
-          <li><a href="{{ route('login') }}" class="hello-user login">ログイン</a></li>
-          @if (Route::has('register'))
-          <li><a href="{{ route('register') }}" class="hello-user account-register">アカウント登録</a></li>
-          @endif
+            <li><a href="{{ url('/mypage') }}" class="hello-user">マイページ</a></li>
+            <li><a href="{{ route('user.logout') }}" class="hello-user">ログアウト</a></li>
           @endauth
-          @endif
+          @guest
+            <li><a href="{{ route('login') }}" class="hello-user login">ログイン</a></li>
+            <li><a href="{{ route('register') }}" class="hello-user account-register">アカウント登録</a></li>
+          @endguest
         </ul><!-- /.header-loginUser-dd-content -->
       </div><!-- /.header-loginUser -->
     </div><!-- /.header-end -->
