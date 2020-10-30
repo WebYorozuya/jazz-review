@@ -19,9 +19,6 @@ use Illuminate\Support\Facades\Auth;
 // ----- ユーザー周り -----
 Auth::routes();
 
-// ユーザー別投稿ページ表示
-Route::get('user', 'ReviewController@getReviewsByUser');
-
 //パスワード変更
 Route::get('changepassword','MypageController@showChangePasswordForm');
 Route::post('changepassword','MypageController@changepassword')->name('changepassword');
@@ -40,7 +37,7 @@ Route::post('/upload','UploadImageController@upload')->name('upload_image');
 Route::get('/output','UploadImageController@output')->name('output');
 
 // ----- 投稿周り -----
-Route::get('/', 'ReviewController@index');
+Route::get('/', 'ReviewController@index')->name('top');
 
 //投稿画面の表示
 Route::get('post', 'ReviewController@post');
@@ -66,7 +63,10 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('tags', 'TagController@getTags');
 
 // タグ別投稿ページ表示
-Route::get('tag', 'TagController@getReviewsByTag')->name('tag');
+Route::get('/tag', 'TagController@getReviewsByTag')->name('tag');
+
+// ユーザー別投稿ページ表示
+Route::get('user', 'ReviewController@getReviewsByUser');
 
 //検索
 Route::get('search', 'SearchController@search')->name('search');
