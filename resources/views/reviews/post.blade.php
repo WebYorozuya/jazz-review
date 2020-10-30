@@ -53,12 +53,17 @@
   </form>  
 </div><!-- /.form_container -->
 @endsection
+
 @section('js')
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script type="text/javascript" src="{{ secure_asset('js/chips.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/chips.js') }}"></script>
-<script type="text/javascript" src="{{ secure_asset('js/live_date.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/live_date.js') }}"></script>
-<script type="text/javascript" src="{{ secure_asset('js/character_counter.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/character_counter.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  @env('local')
+    <script type="text/javascript" src="{{ asset('js/chips.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/live_date.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/character_counter.js') }}"></script>
+  @endenv
+  @production
+    <script type="text/javascript" src="{{ secure_asset('js/chips.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/live_date.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/character_counter.js') }}"></script>
+  @endproduction
 @endsection

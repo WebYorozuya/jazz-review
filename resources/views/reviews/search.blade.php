@@ -13,8 +13,8 @@
 @endsection
 
 @section('main')
-<h1 class="main-title"><span>「{{$keyword}}」</span>の検索結果</h1>
-@foreach ($reviews as $review)
+  <h1 class="main-title"><span>「{{$keyword}}」</span>の検索結果</h1>
+  @foreach ($reviews as $review)
   <div class="review">
     <div class="review-left">
       <a href="user?user_id={{$review->user_id}}" class="user-image">
@@ -33,7 +33,7 @@
         <!-- TODO:タグもハイライト出来るようにする -->
         <a href="#" class="tag">{{$tag->tag_name}}</a>
         @endforeach
-      </div>
+      </div><!-- /.tags -->
       <p class="search-review-text review-text">{!! nl2br(e($review->text)) !!}</p>
       <div class="review-bottom">
         <span class="user-name">by <a href="user?user_id={{$review->user_id}}">{{$review->user->account_name}}さん</span></a>

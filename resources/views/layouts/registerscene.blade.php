@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS RESET -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -19,12 +18,13 @@
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/aaab412f99.js" crossorigin="anonymous"></script>
 
-    <!-- Styles -->
-    <!-- Heroku用 -->
-    <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
-    <!-- ローカル用 -->
+    @env('local')
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
     <link href="{{ asset('css/register.css') }}" rel="stylesheet">
+    @endenv
+    @production
+    <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
+    @endproduction
 </head>
 
 <body>
@@ -45,16 +45,14 @@
         </main>
     </div>
 
-    <!-- header.blade.phpから移設してみている -->
-    <script type="text/javascript" src="{{ secure_asset('js/login_dd.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/login_dd.js') }}"></script>
-    @if(app('env')=='local')
-    <script type="text/javascript" src="{{ asset('js/header_search_form.js') }}"></script>
-    @endif
-    @if(app('env')=='production')
-    <script type="text/javascript" src="{{ secure_asset('js/header_search_form.js') }}"></script>
-    @endif
-    <!-- ここまで -->
-
+    @env('local')
+        <script type="text/javascript" src="{{ asset('js/login_dd.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/header_search_form.js') }}"></script>
+    @endenv
+    @production
+        <script type="text/javascript" src="{{ secure_asset('js/login_dd.js') }}"></script>
+        <script type="text/javascript" src="{{ secure_asset('js/header_search_form.js') }}"></script>
+    @endproduction
+  
 </body>
 </html>
