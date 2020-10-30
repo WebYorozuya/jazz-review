@@ -19,11 +19,12 @@
     <script src="https://kit.fontawesome.com/aaab412f99.js" crossorigin="anonymous"></script>
 
     @env('local')
-    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
-    <link href="{{ asset('css/register.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+        <link href="{{ asset('css/register.css') }}" rel="stylesheet">
     @endenv
     @production
-    <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
+        <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
+        <link href="{{ secure_asset('css/register.css') }}" rel="stylesheet">
     @endproduction
 </head>
 

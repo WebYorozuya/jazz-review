@@ -22,9 +22,10 @@
 		<link rel="stylesheet" href="{{asset('css/styles.css')}}">
 		<link href="{{ asset('css/login.css') }}" rel="stylesheet">
 		<script src="{{ asset('js/app.js') }}" defer></script>
-		@endenv
-		@production
+	@endenv
+	@production
 		<link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
+		<link href="{{ secure_asset('css/login.css') }}" rel="stylesheet">
 		<script src="{{ secure_asset('js/app.js') }}" defer></script>
 	@endproduction
 </head>
