@@ -21,7 +21,7 @@ class TagController extends Controller
             $user = 'ゲスト';
         }
         //TODO:0件のタグを除く
-        $items = Tag::orderBy('id', 'desc')->paginate(90);
+        $items = Tag::withCount('reviews')->orderBy('id', 'desc')->paginate(90);
         return view('tags.tags_list', [
             'user' => $user,
             'items' => $items
