@@ -80,10 +80,14 @@
 @endsection
 
 @section('js')
-  <script type="text/javascript" src="{{ secure_asset('js/review_dd.js') }}"></script>
+  @env('local')
   <script type="text/javascript" src="{{ asset('js/review_dd.js') }}"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/review_text_height_change.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/review_text_height_change.js') }}"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/like.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/like.js') }}"></script>
+  @endenv
+  @production
+  <script type="text/javascript" src="{{ secure_asset('js/review_dd.js') }}"></script>
+  <script type="text/javascript" src="{{ secure_asset('js/review_text_height_change.js') }}"></script>
+  <script type="text/javascript" src="{{ secure_asset('js/like.js') }}"></script>
+  @endproduction
 @endsection
