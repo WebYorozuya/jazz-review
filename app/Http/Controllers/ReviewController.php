@@ -93,7 +93,7 @@ class ReviewController extends Controller
         $review->tags()->attach($tags_id);//attachメソッドで紐付け対象のidを紐付け対象のidを引数にしてリレーションを紐付ける
       
       //トップページへ
-        return redirect('/')->with('flash_message', '素敵な投稿ありがとうございます！'); 
+        return redirect()->route('top')->with('flash_message', '素敵な投稿ありがとうございます！'); 
     }
     //投稿修正ページを表示
     public function edit(Request $request)
