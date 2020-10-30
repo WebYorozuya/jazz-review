@@ -24,7 +24,7 @@
     <div class="tags-container">
       @foreach($items as $item)
       <div class="tag-box">
-        <a class="tag-label" href="#" data-count="{{ count($item->reviews) }}">
+        <a class="tag-label" href="#" data-count="{{ $item->reviews_count }}">
           <span>{{$item->tag_name}}</span>
         </a>
       </div>
