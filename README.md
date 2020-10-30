@@ -17,4 +17,6 @@ ayaka
 ## 偉大なるメンター
 おさないさん
 
+Web万屋エンジニアチャンネル
+
 https://www.youtube.com/channel/UCHxqQ8bUg5F2GW79D_DvSjQ/featured
