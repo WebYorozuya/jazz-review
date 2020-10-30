@@ -34,7 +34,7 @@ Route::get('/logout',[
     'as' => 'user.logout'
     ]);
 
-    //プロフ画像
+//プロフ画像
 Route::get('/upload','UploadImageController@input')->name('upload_form');
 Route::post('/upload','UploadImageController@upload')->name('upload_image');
 Route::get('/output','UploadImageController@output')->name('output');
@@ -78,5 +78,5 @@ Route::get('terms', 'TermsController@index');
 //Contact
 Route::get('contact', 'ContactController@index');
 
-// DB挿入、メール送信
+// 問合せメール送信
 Route::post('process', 'ContactController@process');

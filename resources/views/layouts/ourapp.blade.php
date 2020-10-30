@@ -126,11 +126,6 @@
   <script type="text/javascript" src="{{ secure_asset('js/login_dd.js') }}"></script>
   <script type="text/javascript" src="{{ secure_asset('js/header_search_form.js') }}"></script>
   @endproduction
-  
-  @if(app('env')=='local')
-  @endif
-  @if(app('env')=='production')
-  @endif
 
   @yield('js')
 </body>
