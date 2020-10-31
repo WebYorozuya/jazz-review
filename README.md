@@ -4,19 +4,12 @@
 Herokuはこちら（制作中）→https://jazz-review.herokuapp.com/
 
 ## メンバー
-ayaka
-
-ミケ
-
-つかっちゃん
-
-わいと
-
-かく（リーダー）
+ayaka  
+ミケ  
+つかっちゃん  
+わいと  
+かく（リーダー）  
 
 ## 偉大なるメンター
-おさないさん
-
-Web万屋エンジニアチャンネル
-
+おさないさん  Web万屋エンジニアチャンネル  
 https://www.youtube.com/channel/UCHxqQ8bUg5F2GW79D_DvSjQ/featured
