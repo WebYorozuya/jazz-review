@@ -493,12 +493,12 @@ main {
 
 	100% {
 		transform: translate(0px, -3px);
-		color    : rgb(221, 82, 94);
+		color    : rgb(221, 82, 93);
 	}
 }
 
 .liked {
-	color: rgb(221, 82, 94);
+	color: rgb(221, 82, 93);
 }
 
 aside {
