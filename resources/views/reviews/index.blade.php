@@ -1,4 +1,4 @@
-@extends('layouts.ourapp')
+@extends('layouts.public')
 
 @section('title', 'Jazz Log')
 
