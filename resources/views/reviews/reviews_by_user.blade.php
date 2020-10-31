@@ -1,4 +1,4 @@
-@extends('layouts.ourapp')
+@extends('layouts.public')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/reviews_by_user.css')}}">
