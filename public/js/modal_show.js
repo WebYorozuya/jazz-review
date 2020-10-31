@@ -3,57 +3,57 @@
   //（7)モーダルを使用した見せ方
   let teamMember = {
     memberInfo: [{
-        name: "kakudaisuke",
-        nickname: "kaku",
-        imgSrc: "images/kaku.jpeg",
-        inCharge: "リーダー・デザイン担当・サーバーサイド担当",
-        modaltext: "kaku！ マイケル！ マイケル！ マイケル！",
-      },
-      {
-        name: "tsuka",
-        nickname: "tsuka",
-        imgSrc: "images/tsuka.jpg",
-        inCharge: "サーバーサイド担当",
-        modaltext: "tsuka！ マイケル！ マイケル！ マイケル！",
-      },
-      {
-        name: "ayaka",
-        nickname: "ayaka",
-        imgSrc: "images/ayaka.jpg",
-        inCharge: "フロントエンド担当・デザイン担当",
-        modaltext: "ayaka！ マイケル！ マイケル！ マイケル！",
-      },
-      {
-        name: "waito",
-        nickname: "waito",
-        imgSrc: "images/waito.jpg",
-        inCharge: "フロントエンド担当",
-        modaltext: "waito！ マイケル！ マイケル！ マイケル！",
-      },
-      {
-        name: "mikikeisuke",
-        nickname: "mike",
-        imgSrc: "images/mike.jpg",
-        inCharge: "フロントエンド担当",
-        modaltext: "mike！ マイケル！ マイケル！ マイケル！",
-      },
+      name: "kakudaisuke",
+      nickname: "kaku",
+      imgSrc: "images/kaku.jpeg",
+      inCharge: "リーダー・デザイン担当・サーバーサイド担当",
+      modaltext: "kaku！ マイケル！ マイケル！ マイケル！",
+    },
+    {
+      name: "tsuka",
+      nickname: "tsuka",
+      imgSrc: "images/tsuka.jpg",
+      inCharge: "サーバーサイド担当",
+      modaltext: "tsuka！ マイケル！ マイケル！ マイケル！",
+    },
+    {
+      name: "ayaka",
+      nickname: "ayaka",
+      imgSrc: "images/ayaka.jpg",
+      inCharge: "フロントエンド担当・デザイン担当",
+      modaltext: "ayaka！ マイケル！ マイケル！ マイケル！",
+    },
+    {
+      name: "waito",
+      nickname: "waito",
+      imgSrc: "images/waito.jpg",
+      inCharge: "フロントエンド担当",
+      modaltext: "waito！ マイケル！ マイケル！ マイケル！",
+    },
+    {
+      name: "mikikeisuke",
+      nickname: "mike",
+      imgSrc: "images/mike.jpg",
+      inCharge: "フロントエンド担当",
+      modaltext: "mike！ マイケル！ マイケル！ マイケル！",
+    },
     ]
   }
+  
 
-  // member-infoのprofile-img、
   const memberInfo = document.getElementsByClassName("member-info");
-  const section_memberInfo = Array.from(memberInfo);
   const memberInfoImg = document.getElementsByClassName("profile-img");
-  const section_memberInfoImg = Array.from(memberInfoImg);
   const memberInfoName = document.getElementsByClassName("member-name");
-  const section_memberInfoName = Array.from(memberInfoName);
   const modalWrapper = document.getElementsByClassName("modal-wrapper");
-  const section_modalWrapper = Array.from(modalWrapper);
   const closeBtn = document.getElementsByClassName("closeBtn");
-  const section_closeBtn = Array.from(closeBtn);
   const prevBtn = document.getElementsByClassName("prevBtn");
-  const section_prevBtn = Array.from(prevBtn);
   const nextBtn = document.getElementsByClassName("nextBtn");
+  const section_memberInfo = Array.from(memberInfo);
+  const section_memberInfoImg = Array.from(memberInfoImg);
+  const section_memberInfoName = Array.from(memberInfoName);
+  const section_modalWrapper = Array.from(modalWrapper);
+  const section_closeBtn = Array.from(closeBtn);
+  const section_prevBtn = Array.from(prevBtn);
   const section_nextBtn = Array.from(nextBtn);
 
 
@@ -80,10 +80,10 @@
 
   for (let i = 0; i < section_memberInfo.length; i++) {
     let index = i;
-    let nextindex; 
+    let nextindex;
     let previndex;
 
-    section_nextBtn[i].addEventListener('click', function() {
+    section_nextBtn[i].addEventListener('click', function () {
       if (index == section_modalWrapper.length - 1) {
         nextindex = 0;
       } else {
@@ -92,13 +92,13 @@
       section_modalWrapper[index].classList.remove("show");
       section_modalWrapper[nextindex].classList.add("show");
       if (section_modalWrapper[nextindex].classList.contains("show")) {
-        section_closeBtn[nextindex].addEventListener('click', function() {
+        section_closeBtn[nextindex].addEventListener('click', function () {
           section_modalWrapper[nextindex].classList.remove("show");
         })
       };
     });
 
-    section_prevBtn[i].addEventListener('click', function() {
+    section_prevBtn[i].addEventListener('click', function () {
       if (index == 0) {
         previndex = section_modalWrapper.length - 1;
       } else {
@@ -107,16 +107,16 @@
       section_modalWrapper[index].classList.remove("show");
       section_modalWrapper[previndex].classList.add("show");
       if (section_modalWrapper[previndex].classList.contains("show")) {
-        section_closeBtn[previndex].addEventListener('click', function() {
+        section_closeBtn[previndex].addEventListener('click', function () {
           section_modalWrapper[previndex].classList.remove("show");
         })
       };
     });
 
-    section_memberInfo[i].addEventListener('click', function(event) {
+    section_memberInfo[i].addEventListener('click', function (event) {
       section_modalWrapper[i].classList.toggle("show");
       if (section_modalWrapper[i].classList.contains("show")) {
-        section_closeBtn[i].addEventListener('click', function() {
+        section_closeBtn[i].addEventListener('click', function () {
           section_modalWrapper[i].classList.remove("show");
         })
       };

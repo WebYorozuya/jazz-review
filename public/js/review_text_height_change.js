@@ -11,24 +11,27 @@
   const section_readmoreI = Array.from(readmoreI);
   const section_readmoreBtn = Array.from(readmoreBtn);
 
-  // [説明]Reviewtextの文字数が70文字以上になった場合に｢続きを読む｣のボタンが現れる。
+  // [説明]Reviewtextの高さが50以上になった場合に｢続きを読む｣のボタンが現れる。
   for (let i = 0; i < readmoreBlock.length; i++) {
-    if (section_reviewText[i].textContent.length < 70) {
-      section_readmoreBlock[i].classList.add("hideBtn");
-    } else {
+    if (section_reviewText[i].clientHeight > 50) {
       section_readmoreBlock[i].classList.remove("hideBtn");
+      // [説明]50pxの高さをこえた投稿に関しては、Reviewtextの高さをautoから50pxに変更
+      section_reviewText[i].classList.add("reviewText-active");
+    } else {
+      section_readmoreBlock[i].classList.add("hideBtn");
     }
 
     // [説明]｢続きを読む｣のボタンのクリックにより、readmoreIが１８０度回転、reviewTextの高さが変わる。
-    section_readmoreBlock[i].addEventListener("click", (event) => {
-      section_reviewText[i].classList.toggle("reviewText-active");
+    section_readmoreBlock[i].addEventListener("click", (e) => {
       section_readmoreI[i].classList.toggle("readmoreI-active");
 
       // [説明]readmoreIがreadmoreI-activeのクラスを持っていた場合、readmoreBtnの記載が変わる。
       if (section_readmoreI[i].classList.contains("readmoreI-active")) {
         section_readmoreBtn[i].textContent = "もっと少なく読む";
+        section_reviewText[i].classList.remove("reviewText-active");
       } else {
         section_readmoreBtn[i].textContent = "続きを読む";
+        section_reviewText[i].classList.add("reviewText-active");
       }
     })
   };

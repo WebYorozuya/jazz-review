@@ -20,10 +20,16 @@
   <script type="text/javascript" src="{{ asset('js/review_dd.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/review_text_height_change.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/like.js') }}"></script>
+  @guest
+  <script type="text/javascript" src="{{ asset('js/balloon.js') }}"></script>
+  @endguest
   @endenv
   @production
   <script type="text/javascript" src="{{ secure_asset('js/review_dd.js') }}"></script>
   <script type="text/javascript" src="{{ secure_asset('js/review_text_height_change.js') }}"></script>
   <script type="text/javascript" src="{{ secure_asset('js/like.js') }}"></script>
   @endproduction
+  @guest
+  <script type="text/javascript" src="{{ secure_asset('js/balloon.js') }}"></script>
+  @endguest
 @endsection
