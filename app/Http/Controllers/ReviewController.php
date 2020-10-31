@@ -171,7 +171,7 @@ class ReviewController extends Controller
         return redirect('/')->with('flash_message', '投稿を削除しました！');
     }
 
-    public function like (Request $request)
+    public function like(Request $request)
     {
         $user_id = Auth::user()->id;
         $review_id = $request->review_id;
