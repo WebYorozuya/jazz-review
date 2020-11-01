@@ -45,7 +45,7 @@
       <label for="title">レビューのタイトル</label>
       <input type="text" id="title" name="title" value="{{$review->title}}">
       <label for="text">ライブの感想</label>
-      <textarea name="text" id="text" cols="30" rows="10">{{$review->text}}</textarea>
+      <textarea name="text" id="text" cols="30" rows="10" maxlength="1000">{{$review->text}}</textarea>
       <p style="text-align: right; font-size: 0.8rem;">（1000文字以内）</p>
       <input type="submit" id="post-button" class="submit" value="修正">
     </form>
