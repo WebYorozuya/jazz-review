@@ -1,6 +1,6 @@
 $(function () {
   let like = $('.like-toggle');
-  let likeReviewId;
+  let likeReviewId; //なぜここで宣言しないといけない？
   like.on('click', function () {
     let $this = $(this);
     likeReviewId = $this.data('review-id');
@@ -9,7 +9,7 @@ $(function () {
         'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
       },
       url: '/like',
-      type: 'POST',
+      method: 'POST',
       data: {
         'review_id': likeReviewId
       },
