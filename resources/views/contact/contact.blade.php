@@ -44,6 +44,7 @@
         <div class="member-name"></div>
       </div> 
       <div class="modal-wrapper">
+        <div class="modal-back"></div>
         <div class="modal">
           <div class="modal-left">
               <i class="fas fa-angle-left prevBtn"></i>
@@ -75,6 +76,7 @@
         </div>
       </div> 
       <div class="modal-wrapper">
+        <div class="modal-back"></div>
         <div class="modal">
           <div class="modal-left">
               <i class="fas fa-angle-left prevBtn"></i>
@@ -106,6 +108,7 @@
         </div>
       </div> 
       <div class="modal-wrapper">
+        <div class="modal-back"></div>
         <div class="modal">
           <div class="modal-left">
               <i class="fas fa-angle-left prevBtn"></i>
@@ -137,6 +140,7 @@
         </div>
       </div> 
       <div class="modal-wrapper">
+        <div class="modal-back"></div>
         <div class="modal">
           <div class="modal-left">
               <i class="fas fa-angle-left prevBtn"></i>
@@ -168,6 +172,7 @@
         </div>
       </div> 
       <div class="modal-wrapper">
+        <div class="modal-back"></div>
         <div class="modal">
           <div class="modal-left">
               <i class="fas fa-angle-left prevBtn"></i>
@@ -198,7 +203,6 @@
           </div>
         </div>
       </div> 
-    
     </div><!-- .team-member -->
 
     <div class="team-about">
