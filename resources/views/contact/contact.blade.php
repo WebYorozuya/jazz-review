@@ -241,7 +241,7 @@
       
       <div class="contact-form">
         <label class="message" for="message-form">お問い合わせの内容</label>
-        <textarea name="text" cols="40" rows="8" id="message-form" required></textarea>
+        <textarea name="text" cols="40" rows="8" id="message-form" maxlength="1000" required></textarea>
         <!-- <input type="hidden" name="" value="hidden" /> -->
       </div>
       
