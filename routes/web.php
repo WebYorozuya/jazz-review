@@ -46,7 +46,7 @@ Route::get('post', 'ReviewController@post');
 Route::post('insert', 'ReviewController@create');
 
 //投稿の修正、削除ページの表示
-Route::get('edit', 'ReviewController@edit');
+Route::get('edit', 'ReviewController@edit')->name('edit');
 
 //修正
 Route::post('update', 'ReviewController@update');
@@ -63,10 +63,10 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('tags', 'TagController@getTags');
 
 // タグ別投稿ページ表示
-Route::get('/tag', 'TagController@getReviewsByTag')->name('tag');
+Route::get('/tag', 'TagController@getReviewsByTag')->name('tags.tag');
 
 // ユーザー別投稿ページ表示
-Route::get('user', 'ReviewController@getReviewsByUser');
+Route::get('user', 'ReviewController@getReviewsByUser')->name('user');
 
 //検索
 Route::get('search', 'SearchController@search')->name('search');

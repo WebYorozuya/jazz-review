@@ -14,7 +14,7 @@
           <ul class="review-dropdown">
             @auth
             @if (Auth::user()->id === $item->user_id)
-            <a href="edit?id={{ $item->id }}">
+            <a href="{{ route('edit', ['id' => $item->id]) }}">
               <li>編集／削除する</li>
             </a>
             @endif
@@ -28,7 +28,7 @@
       </div><!-- /.review-top -->
       <div class="tags">
         @foreach ($item->tags as $tag)
-        <a href="{{ route('tag', ['id' => $tag->id]) }}" class="tag">{{$tag->tag_name}}</a>
+          <a href="{{route('tags.tag',['id' => $tag->id])}}" class="tag">{{$tag->tag_name}}</a>
         @endforeach
       </div><!-- /.tags -->
       <p class="review-text">{{$item->text}}</p>
@@ -37,7 +37,7 @@
         <span class="readmore-btn">続きを読む</span>
       </div>
       <div class="review-bottom">
-        <span class="user-name">by <a href="user?user_id={{$item->user_id}}">{{$item->getData()}}さん</span></a>
+        <span class="user-name">by <a href="{{ route('user', ['user_id' => $item->user_id]) }}">{{$item->getData()}}さん</span></a>
         <span class="created-at">{{$item->created_at}}</span>
         @auth
           @if (!App\Like::where('user_id', Auth::user()->id)->where('review_id', $item->id)->first())
