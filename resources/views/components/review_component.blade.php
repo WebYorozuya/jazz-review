@@ -55,8 +55,7 @@
         @guest
           <span class="likes">
               <div class="balloon">
-                ゲストの方はいいねができません。</br>
-                ぜひアカウント登録お願いします！！
+                いいねができるのはログインユーザーのみです。
               </div>
               <i class="fas fa-music heart"></i>
             <span class="like-counter">{{$item->likes_count}}</span>
