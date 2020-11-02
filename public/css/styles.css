@@ -16,7 +16,7 @@ body {
 	width   : 100%;
 	height  : 100%;
 	display : none;
-	z-index : 50;
+	z-index : 5;
 }
 
 header {
@@ -513,7 +513,7 @@ main {
     font-size    : 16px;
     background   : #e0edff;
     border-radius: 15px;
-    z-index      : 51;
+		z-index      : 4;
     display      : none;
 }
 
