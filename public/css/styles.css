@@ -504,13 +504,13 @@ main {
 
 .balloon {
     position     : absolute;
-    padding      : 10px 12px;
-    width        : 300px;
-    height       : 100px;
+    padding      : 10px 10px;
+    width        : 250px;
+    height       : 60px;
     bottom       : 30px;
     margin-left  : -60px;
     color        : #555;
-    font-size    : 16px;
+    font-size    : 10px;
     background   : #e0edff;
     border-radius: 15px;
 		z-index      : 4;
@@ -527,10 +527,10 @@ main {
     border-top : 10px solid #e0edff;
 }
 
-.balloon p {
+/* .balloon p { pタグ無い？
     margin : 0;
     padding: 0;
-}
+} */
 
 .block {
     display: block;
