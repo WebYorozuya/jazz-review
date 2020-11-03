@@ -20,11 +20,15 @@ class TagController extends Controller
         } else {
             $user = 'ゲスト';
         }
-        //TODO:0件のタグを除く
-        $items = Tag::withCount('reviews')->orderBy('id', 'desc')->paginate(90);
+        $tags = Tag::withCount('reviews')->orderBy('id', 'desc')->whereNotIn('tag_name', [""])->paginate(90);
+        foreach ($tags as $tag) {
+            if ($tag->reviews_count > 0){
+                $existing_tags [] = $tag;
+            }
+        }
         return view('tags.tags_list', [
             'user' => $user,
-            'items' => $items
+            'tags' => $existing_tags,
         ]);
     }
 
