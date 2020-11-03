@@ -19,8 +19,8 @@
   flex-direction: column;
 }
 
-#live_date {
-  width: 30%;
+.live_date {
+  width: 150px;
 }
 
 .form_container label {

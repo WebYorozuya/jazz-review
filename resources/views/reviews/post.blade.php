@@ -37,7 +37,7 @@
         <input type="hidden" name="user_id" value="2">
       @endguest
       <label for="live_date">ライブに行った日</label>
-      <input type="date" id="live_date" name="live_date">
+      <input type="date" id="live_date" class="live_date" name="live_date">
       <label for="tag">タグ</label>
       <div class="chips chips-initial">
         <input type="text" id="tag" placeholder="Enter a tag">
@@ -50,7 +50,7 @@
       <p style="text-align: right; font-size: 0.8rem;">現在：<span id="realtimeFontLength">0</span>文字（1000文字以内）</p>
       <input type="button" id="post-button" value="投稿する">
       <button>リセットする</button>
-    </form>  
+    </form>
   </div><!-- /.form_container -->
 @endsection
 

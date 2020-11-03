@@ -345,10 +345,9 @@ main {
 	text-decoration       : none;
 	margin                : 0 3px;
 	--review-action-height: 30px;
-	height                : var(--review-action-height);
 	min-width             : 30px;
 	border-radius         : 50%;
-	text-align            : center;
+	text-align            : left;
 	display               : flex;
 	flex                  : row;
 	justify-content       : space-between;
