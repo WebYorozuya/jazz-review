@@ -441,6 +441,15 @@ main {
 	transform: rotate(180deg);
 }
 
+.fa-angle-down {
+	color: gray;	
+}
+
+.readmore-btn {
+	color: gray;
+	font-size: 0.8rem;
+}
+
 .reviewText-active {
     height: 50px;
 }
