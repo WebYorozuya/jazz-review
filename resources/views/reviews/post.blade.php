@@ -44,10 +44,11 @@
       </div>
       <input type="text" id="hiddentag" name="tag_name" hidden>
       <label for="title">レビューのタイトル</label>
-      <input type="text" id="title" name="title">
+      <input type="text" id="title" name="title"  maxlength="80">
+      <p class="max-length">（80文字以内）</p>
       <label for="text">ライブの感想</label>
       <textarea name="text" id="text" cols="30" rows="10" maxlength="1000"></textarea>
-      <p style="text-align: right; font-size: 0.8rem;">現在：<span id="realtimeFontLength">0</span>文字（1000文字以内）</p>
+      <p  class="max-length">現在：<span id="realtimeFontLength">0</span>文字（1000文字以内）</p>
       <input type="button" id="post-button" value="投稿する">
       <button>リセットする</button>
     </form>
