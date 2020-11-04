@@ -6,8 +6,8 @@
 
     // tag入力フォームに入力された文字列を元にtag候補を表示する
     tagArea.addEventListener("keyup", event => {
-        const inputtedTag = tagArea.value;
-        // 入力文字がなければtag候補を消す
+        let inputtedTag = tagArea.value;
+        // 入力文字がなければ表示中のtag候補を消す
         if (!inputtedTag) {
             clearSuggestedTags();
             hideSuggestedTags()
@@ -15,8 +15,10 @@
         }
         // tag候補をリクエストし、存在すれば、ビューに表示する
         getTags(inputtedTag).then(suggestedTags => {
-            // 取得結果がなければtag候補を消す
-            if (!Array.isArray(suggestedTags) || suggestedTags.length === 0) {
+            // 取得結果がなければ表示中のtag候補を消す
+            // 取得中にtag入力フォームの中身がクリアされた場合も表示処理はさせないようにreturnする
+            inputtedTag = tagArea.value;
+            if (!Array.isArray(suggestedTags) || suggestedTags.length === 0 || !tagArea.value) {
                 clearSuggestedTags();
                 hideSuggestedTags()
                 return;
@@ -36,6 +38,7 @@
 
     // tag候補をhtmlのliタグでビューに表示する
     function displaySuggestedTags(suggestedTags) {
+        // タグ候補を初期化
         clearSuggestedTags();
         createModal();
         ul.style.display = 'block';
@@ -47,11 +50,12 @@
 
     function createLi(tag) {
         const li = document.createElement('li');
+        li.classList.add('suggested-tag');
         li.innerText = tag.tag_name;
         li.addEventListener('click', () => {
             console.log(li.innerText);
+            // TODO: chips化する
         });
-        li.classList.add('suggested-tag');
         return li;
     }
 
@@ -64,14 +68,14 @@
         });
     }
 
-    // tag候補の初期化
+    // tag候補の初期化する
     function clearSuggestedTags() {
         while(ul.firstChild) {
             ul.removeChild(ul.firstChild);
         }
     }
 
-    // モーダル解除
+    // tag候補を非表示にする
     function hideSuggestedTags() {
         bg.style.display = 'none';
         ul.style.display = 'none';
