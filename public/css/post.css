@@ -96,6 +96,16 @@
     background-color: #ffffff;
 }
 
+.suggested-tag {
+    cursor: pointer;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.suggested-tag:hover {
+    background-color:#dedede;
+}
+
 .suggested-tags-bg {
     position: fixed;
     z-index : 99;
@@ -104,4 +114,6 @@
     right   : 0;
     bottom  : 0;
 }
+
+
 

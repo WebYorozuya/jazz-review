@@ -40,7 +40,7 @@
       <input type="date" id="live_date" class="live_date" name="live_date">
       <label for="tag">タグ</label>
       <div class="chips chips-initial suggested-tags-parent">
-        <input type="text" id="tag" placeholder="Enter a tag">
+        <input type="text" id="tag" placeholder="Enter a tag" autocomplete="off">
         <ul id="suggested-tags" class="suggested-tags" style="display: none;"></ul>
         <div id="suggested-tags-bg" class="suggested-tags-bg" style="display: none;"></div>
       </div>
