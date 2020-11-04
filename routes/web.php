@@ -42,6 +42,9 @@ Route::get('/', 'ReviewController@index')->name('top');
 //投稿画面の表示
 Route::get('post', 'ReviewController@post');
 
+//投稿画面の表示（仮）
+Route::get('/get_suggeted_tag', 'TagController@getSuggestedTag');
+
 //投稿内容をDBへ登録 
 Route::post('insert', 'ReviewController@create');
 
