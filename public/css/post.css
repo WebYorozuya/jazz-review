@@ -20,7 +20,7 @@
 }
 
 .live_date {
-  width: min(150px, 100%);
+  width: min(180px, 100%);
 }
 
 .form_container label {
@@ -76,5 +76,32 @@
 #del:active {
   transform: translateY(4px);
   border-bottom: none;
+}
+
+.suggested-tags-parent {
+    position: relative;
+    z-index: 100;
+}
+
+.suggested-tags {
+    z-index: 100;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    list-style: none;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    border-radius: 3px;
+    padding: 8px;
+    width: auto;
+    background-color: #ffffff;
+}
+
+.suggested-tags-bg {
+    position: fixed;
+    z-index : 99;
+    top     : 0;
+    left    : 0;
+    right   : 0;
+    bottom  : 0;
 }
 
