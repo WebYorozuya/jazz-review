@@ -8,7 +8,8 @@ body {
 	display       : flex;
 	flex-direction: column;
 	outline       : 1px solid;
-	color         : rgb(51, 51, 51);
+	--base-color  :rgb(51, 51, 51);
+	color         : var(--base-color);
 }
 
 .back-to-escape {
@@ -16,7 +17,7 @@ body {
 	width   : 100%;
 	height  : 100%;
 	display : none;
-	z-index : 5;
+	z-index : 4;
 }
 
 header {
@@ -161,47 +162,45 @@ header {
 	flex-direction  : column;
 	justify-content : center;
 	border          : 1px solid #eeeeee;
-	background-color: #cac7c7;
-	width           : 120px;
-	font-size       : 12px;
+	background-color: #ffffff;
+	width           : 160px;
+	font-size       : 14px;
 	transition      : 0.4s;
 	display         : none;
 	position        : absolute;
-	top             : 60px;
-	z-index         : 30;
+	top             : 65px;
+	z-index         : 5;
 	list-style      : none;
+	filter          : drop-shadow(0 0 0.25rem rgb(190, 190, 190));
 }
 
-.header-loginUser-dd-content li {
+.user-menu-list {
 	text-decoration: none;
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+	line-height    : 2em;
+	text-decoration: none;
+	text-align     : center;
+	width          : 100%;
+}
+
+.user-menu-list:hover {
+	background-color: #dddddd;
 }
 
 .header-loginUser-dd-content a {
 	text-decoration: none;
 	margin         : 7px;
 	padding-right  : 10px;
+	color          : var(--base-color);
 }
 
-.hello-user {
-	display        : flex;
-	justify-content: center;
-	align-items    : center;
-	height         : 30px;
-	text-decoration: none;
-	color          : white;
-	text-align     : center;
-	width          : 100%;
-}
-
-.hello-user:hover {
-	color: #333333;
-}
 
 .home {
 	padding                : 32px 16px 0px 16px;
 	flex                   : 1;
 	--main-background-color: #f6f6f4;
-	/*背景色変数*/
 	background-color       : var(--main-background-color);
 	position               : relative;
 }
@@ -364,7 +363,7 @@ main {
 .review-dropdown-wrapper {
 	position     : relative;
 	border-radius: 50%;
-	z-index      : 5;
+	text-align: center;
 }
 
 .review-dropdown-wrapper:hover {
@@ -378,21 +377,21 @@ main {
 	cursor     : pointer;
 	color      : rgb(82, 80, 80);
 	line-height: var(--review-action-height);
-	/*縦位置中央揃え*/
 }
 
 .review-dropdown {
 	border          : 1px solid #eeeeee;
 	background-color: #ffffff;
 	position        : absolute;
-	top             : 26px;
+	top             : 32px;
 	left            : 0px;
-	width           : 80px;
-	z-index         : 4;
+	width           : 120px;
+	z-index         : 5;
 	display         : none;
 	flex-direction  : column;
 	justify-content : center;
-	font-size       : 12px;
+	font-size       : 14px;
+	filter          : drop-shadow(0 0 0.20rem rgb(190, 190, 190));
 }
 
 .show {
@@ -521,8 +520,9 @@ main {
     font-size    : 10px;
     background   : #e0edff;
     border-radius: 15px;
-		z-index      : 4;
-    display      : none;
+		z-index      : 5;
+		display      : none;
+		filter       : drop-shadow(0 0 0.15rem rgb(190, 190, 190));
 }
 
 .balloon:before {
@@ -763,7 +763,7 @@ footer {
 		font-size: 5px;
 	}
 
-	.li-newInformation,
+	/* .li-newInformation,
 	.li-player,
 	.li-livehouse,
 	.li-reviewer {
@@ -776,7 +776,7 @@ footer {
 		text-align     : center;
 		color          : rgb(51, 51, 51);
 		font-size      : 10px;
-	}
+	} */
 
 	aside {
 		display: flex;
