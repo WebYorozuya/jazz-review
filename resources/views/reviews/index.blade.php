@@ -4,9 +4,6 @@
 
 @section('header')
   @component('components.header')
-    @slot('user')
-      {{$user}}
-    @endslot
   @endcomponent
 @endsection
 
