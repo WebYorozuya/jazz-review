@@ -20,16 +20,21 @@
       <div class="header-usermenu">
         <div class="header-loginUser-dd-label">
           <i class="far fa-user-circle fa-2x"></i>
-          <span>{{$user}} さん</span>
+          @auth
+            <span>{{Auth::user()->account_name}}さん</span>
+          @endauth
+          @guest
+            <span>ゲストさん</span>
+          @endguest
         </div>
         <ul class="header-loginUser-dd-content">
           @auth
-            <li><a href="{{ url('/mypage') }}" class="hello-user">マイページ</a></li>
-            <li><a href="{{ route('user.logout') }}" class="hello-user">ログアウト</a></li>
+            <li  class="user-menu-list"><a href="{{ url('/mypage') }}">マイページ</a></li>
+            <li  class="user-menu-list"><a href="{{ route('user.logout') }}">ログアウト</a></li>
           @endauth
           @guest
-            <li><a href="{{ route('login') }}" class="hello-user login">ログイン</a></li>
-            <li><a href="{{ route('register') }}" class="hello-user account-register">アカウント登録</a></li>
+            <li  class="user-menu-list"><a href="{{ route('login') }}">ログイン</a></li>
+            <li  class="user-menu-list"><a href="{{ route('register') }}">アカウント登録</a></li>
           @endguest
         </ul><!-- /.header-loginUser-dd-content -->
       </div><!-- /.header-loginUser -->

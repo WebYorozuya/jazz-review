@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="images/favicon.ico">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -30,18 +31,19 @@
 <body>
     <div id="app">
         @component('components.header')
-            @slot('user')
-                @if(Auth::check())<!--ログインしているかの確認 -->
-                     {{Auth::user()->account_name}}
-                @else
-                    ゲスト
-                @endif
-             @endslot
         @endcomponent
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+	@env('local')
+    	<script type="text/javascript" src="{{ asset('js/login_dd.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('js/header_search_form.js') }}"></script>
+	@endenv
+	@production
+		<script type="text/javascript" src="{{ secure_asset('js/login_dd.js') }}"></script>
+		<script type="text/javascript" src="{{ secure_asset('js/header_search_form.js') }}"></script>
+	@endproduction
 </body>
 
 </html>

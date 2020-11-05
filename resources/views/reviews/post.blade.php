@@ -10,17 +10,8 @@
 @endsection
 
 @section('header')
-@component('components.header')
-  @slot('user')
-    @if (Route::has('login'))
-    @auth
-      {{$user->account_name}}
-    @else
-      {{$user = 'ゲスト'}}
-    @endauth
-    @endif
-  @endslot
-@endcomponent
+  @component('components.header')
+  @endcomponent
 @endsection
 
 @section('main')
@@ -29,11 +20,11 @@
     <form action="insert" id="create-post" method="POST">
       @csrf
       @auth
-        <h1>{{$user->account_name}}さん、<br>あなたの体験をシェアしましょう</h1>
-        <input type="hidden" name="user_id" value="{{$user->id}}">
+        <h1>{{Auth::user()->account_name}}さん、<br>あなたの体験をシェアしましょう</h1>
+        <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
       @endauth
       @guest
-        <h1>{{$user}}さん、<br>あなたの体験をシェアしましょう</h1>
+        <h1>ゲストさん、<br>あなたの体験をシェアしましょう</h1>
         <input type="hidden" name="user_id" value="2">
       @endguest
       <label for="live_date">ライブに行った日</label>
