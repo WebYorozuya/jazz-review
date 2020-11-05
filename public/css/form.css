@@ -3,59 +3,59 @@ body {
 }
 
 main {
-    width: 450px;
-    margin: 30px auto;
-    border-radius: 10px;
+    width           : 450px;
+    margin          : 30px auto;
+    border-radius   : 10px;
     background-color: #ffffff;
-    color: #3c4a57;
+    color           : #3c4a57;
 }
 
 .form-container {
     background-color: #ffffff;
-    padding-bottom: 50px;
-    border-radius: 10px;
+    padding-bottom  : 50px;
+    border-radius   : 10px;
 }
 
 .form-container h1 {
-    text-align: center;
-    padding: 20px 0 30px 0;
-    font-size: 30px;
-    font-weight: 500;
-    border-top: 1px solid var(--main-background-color);
+    text-align   : center;
+    padding      : 20px 0 30px 0;
+    font-size    : 30px;
+    font-weight  : 500;
+    border-top   : 1px solid var(--main-background-color);
     border-bottom: 1px solid var(--main-background-color);
 }
 
 .form-container form {
     box-sizing: border-box;
-    padding: 10px 40px;
-    margin: 10px 0;
+    padding   : 10px 40px;
+    margin    : 10px 0;
 }
 
 .form-group input {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid rgb(131, 152, 182);
-    box-sizing: border-box;
+    display      : block;
+    width        : 100%;
+    padding      : 10px;
+    border       : 1px solid rgb(131, 152, 182);
+    box-sizing   : border-box;
     border-radius: 7px;
-    font-size: 15px;
-    margin-top: 5px;
+    font-size    : 15px;
+    margin-top   : 5px;
     margin-bottom: 30px;
 }
 
 button.btn.btn-primary {
-    width: 100%;
-    height: 50px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    box-shadow: 3px 3px 4px #666666;
+    width           : 100%;
+    height          : 50px;
+    margin-top      : 30px;
+    margin-bottom   : 30px;
+    border-radius   : 8px;
+    border          : none;
+    outline         : none;
+    cursor          : pointer;
+    box-shadow      : 3px 3px 4px #666666;
     background-color: #9b9b9b;
-    color: #ffffff;
-    font-size: 20px;
+    color           : #ffffff;
+    font-size       : 20px;
 }
 
 /********** レスポンシブ対応 **********/
@@ -63,13 +63,14 @@ button.btn.btn-primary {
     body {
         background-color: #ffffff;
     }
+
     main {
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        width: 100%;
-        height: auto;
-        margin-bottom: 0;
+        display         : flex;
+        flex-direction  : column;
+        box-sizing      : border-box;
+        width           : 100%;
+        height          : auto;
+        margin-bottom   : 0;
         background-color: #ffffff;
     }
 }
@@ -78,13 +79,14 @@ button.btn.btn-primary {
     body {
         background-color: #ffffff;
     }
+
     main {
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        width: 100%;
-        height: auto;
-        padding-bottom: 0;
+        display         : flex;
+        flex-direction  : column;
+        box-sizing      : border-box;
+        width           : 100%;
+        height          : auto;
+        padding-bottom  : 0;
         background-color: #ffffff;
     }
 }
@@ -93,15 +95,17 @@ button.btn.btn-primary {
     body {
         background-color: #ffffff;
     }
+
     main {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-        box-sizing: border-box;
-        padding-bottom: 0;
+        display         : flex;
+        flex-direction  : column;
+        width           : 100%;
+        height          : auto;
+        box-sizing      : border-box;
+        padding-bottom  : 0;
         background-color: #ffffff;
     }
+
     a.btn-link {
         padding: 10px;
     }
@@ -111,13 +115,14 @@ button.btn.btn-primary {
     body {
         background-color: #ffffff;
     }
+
     main {
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        width: 100%;
-        height: auto;
-        padding-bottom: 0;
+        display         : flex;
+        flex-direction  : column;
+        box-sizing      : border-box;
+        width           : 100%;
+        height          : auto;
+        padding-bottom  : 0;
         background-color: #ffffff;
     }
 }

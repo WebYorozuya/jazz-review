@@ -54,7 +54,7 @@
 			</div>
 			@if (Route::has('password.request'))
 			<a class="btn btn-link" href="{{ route('password.request') }}">
-				{{ __('パスワードを忘れた場合 : こちら') }}
+				{{ __('パスワードを忘れた場合はこちら') }}
 			</a>
 			@endif
 		</div> <!-- /.form-group row mb-0 -->
