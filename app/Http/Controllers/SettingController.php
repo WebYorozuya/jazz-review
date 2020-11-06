@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;//パスワード変更
 use Illuminate\Support\Facades\Hash;//パスワード変更
+use App\User;
 
-class MypageController extends Controller
+class SettingController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,7 +26,10 @@ class MypageController extends Controller
      */
     public function index()
     {
-        return view('/auth/mypage');
+        $user_id = Auth::id();
+        $user_images = User::whereid($user_id)->get();
+        return view('auth.settings',['user_images' => $user_images]);
+        
     }
 
     //パスワード変更追加
