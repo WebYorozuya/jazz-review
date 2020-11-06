@@ -1,11 +1,18 @@
 <!-- パスワード変更画面 -->
-@extends('layouts.app')
+@extends('layouts.settings')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/form.css')}}">
 @endsection
 
-@section('content')
+@section('header')
+  @component('components.header')
+  @endcomponent
+@endsection
+
+
+
+@section('main')
 <div class="form-container">
 	<h1>パスワード変更</h1>
 

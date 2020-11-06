@@ -31,17 +31,7 @@
 </head>
 
 <body>
-	@component('components.header')
-	@slot('user')
-	@if(Auth::check())
-	<!--ログインしているかの確認 -->
-	{{Auth::user()->account_name}}
-	@else
-	ゲスト
-	@endif
-	@endslot
-	@endcomponent
-
+	
 	<main class="py-4">
 		@yield('content')
 	</main>
