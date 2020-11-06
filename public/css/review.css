@@ -351,17 +351,16 @@ main {
   font-size: 25px;
   font-weight: 800;
 }
-.review-field {
+
+/* .review-field {
   display: flex;
   flex-direction: column;
   display: inline-block;
-
   width: 80%;
   margin-right: auto;
   margin-left: 10%;
-}
-
-.input-field {
+} */
+/* .input-field {
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
@@ -374,17 +373,16 @@ main {
   border-radius: 7px;
   font-size: 15px;
   margin: 5px;
-}
-.input-field label {
+} */
+/* .input-field label {
   width: 100%;
   min-width: 150px;
   margin: 10px auto;
-
   font-size: 20px;
   font-weight: 600;
-}
+} */
 
-.input-field input,
+/* .input-field input,
 .input-field textarea {
   width: 100%;
   padding: 14px;
@@ -392,9 +390,9 @@ main {
   border-radius: 7px;
   font-size: 15px;
   margin: 5px;
-}
+} */
 
-.title:after,
+/* .title:after,
 .text:after {
   content: " *";
   color: red;
@@ -407,7 +405,7 @@ textarea {
 .upload {
   text-align: center;
   padding-bottom: 80px;
-}
+} */
 
 /* 投稿ボタン */
 .upload_btn {
@@ -421,8 +419,6 @@ textarea {
   cursor: pointer;
   box-shadow: 3px 3px 4px #666666;
   background-color: #9b9b9b;
-  /* background-color: #0378a6; */
-
   color: #ffffff;
   font-size: 20px;
   font-weight: 400;

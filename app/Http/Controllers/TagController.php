@@ -55,4 +55,10 @@ class TagController extends Controller
         return view('reviews.reviews_by_tag', $param);
 
     }
+
+    public function getSuggestedTag(Request $request)
+    {
+        $tags = Tag::where('tag_name', 'like', $request . '%')->get('tag_name');
+        return response()->json($tags);
+    }
 }

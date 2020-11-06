@@ -18,15 +18,6 @@
 
 @section('header')
   @component('components.header')
-    @slot('user')
-    @if (Route::has('login'))
-      @auth
-        {{$user->account_name}}
-        @else
-        {{$user = 'ゲスト'}}
-        @endif
-      @endauth
-    @endslot
   @endcomponent
 @endsection
 
@@ -43,7 +34,8 @@
       <label for="tag">タグ</label>
       <input type="text" id="tag" name="tag_name" value="@foreach ($review->tags as $tag){{$tag->tag_name}} @endforeach">
       <label for="title">レビューのタイトル</label>
-      <input type="text" id="title" name="title" value="{{$review->title}}">
+      <input type="text" id="title" name="title" value="{{$review->title}}" maxlength="80">
+      <p class="max-length">（80文字以内）</p>
       <label for="text">ライブの感想</label>
       <textarea name="text" id="text" cols="30" rows="10" maxlength="1000">{{$review->text}}</textarea>
       <p style="text-align: right; font-size: 0.8rem;">（1000文字以内）</p>
