@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS RESET -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="images/favicon.ico">
@@ -15,15 +17,15 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/aaab412f99.js" crossorigin="anonymous"></script>
-    
+
     @env('local')
-        <link rel="stylesheet" href="{{asset('css/styles.css')}}">
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <script src="{{ asset('js/app.js') }}" defer></script>
+    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}" defer></script>
     @endenv
     @production
-        <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
-        <script src="{{secure_asset('js/app.js') }}" defer></script>
+    <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
+    <script src="{{secure_asset('js/app.js') }}" defer></script>
     @endproduction
     @yield('css')
 </head>
