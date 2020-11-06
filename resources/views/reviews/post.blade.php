@@ -3,10 +3,14 @@
 @section('title', '投稿する')
 
 @section('css')
-  <!-- Heroku -->
-  <link rel="stylesheet" href="{{secure_asset('css/post.css')}}">
-  <!-- Local -->
-  <link rel="stylesheet" href="{{asset('css/post.css')}}">
+@env('local')
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/ourmaterialize.css') }}"  media="screen,projection"/>
+    <link rel="stylesheet" href="{{asset('css/post.css')}}">
+  @endenv
+  @production
+    <link type="text/css" rel="stylesheet" href="{{ secure_asset('css/ourmaterialize.css') }}"  media="screen,projection"/>
+    <link rel="stylesheet" href="{{secure_asset('css/post.css')}}">
+  @endproduction
 @endsection
 
 @section('header')

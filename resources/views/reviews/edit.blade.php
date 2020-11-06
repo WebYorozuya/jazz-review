@@ -5,15 +5,14 @@
 @section('css')
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css Heroku-->
-  <link type="text/css" rel="stylesheet" href="{{ secure_asset('css/ourmaterialize.css') }}"  media="screen,projection"/>
-  <!--Import materialize.css Local-->
-  <link type="text/css" rel="stylesheet" href="{{ asset('css/ourmaterialize.css') }}"  media="screen,projection"/>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <!-- Heroku -->
-  <link rel="stylesheet" href="{{secure_asset('css/post.css')}}">
-  <!-- Local -->
-  <link rel="stylesheet" href="{{asset('css/post.css')}}">
+  @env('local')
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/ourmaterialize.css') }}"  media="screen,projection"/>
+    <link rel="stylesheet" href="{{asset('css/post.css')}}">
+  @endenv
+  @production
+    <link type="text/css" rel="stylesheet" href="{{ secure_asset('css/ourmaterialize.css') }}"  media="screen,projection"/>
+    <link rel="stylesheet" href="{{secure_asset('css/post.css')}}">
+  @endproduction
 @endsection
 
 @section('header')
