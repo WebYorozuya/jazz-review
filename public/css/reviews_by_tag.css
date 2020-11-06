@@ -1,43 +1,44 @@
 .tag-container {
-    display: flex;
-    margin: 20px;
+  display: flex;
+  margin : 20px;
 }
+
 .tag-info-left {
-    flex: 2;
+  flex: 2;
 }
 
 .tag-info-left h2 {
-    display: inline-block;
-    text-align: justify;
-    margin-top: 30px;
-    padding-left: 10px;
-    font-size: 1.5em;
+  display     : inline-block;
+  text-align  : justify;
+  margin-top  : 30px;
+  padding-left: 10px;
+  font-size   : 1.5em;
 }
 
 .tag-info-left ul li {
-    display: block;
-    margin: 0 5px 3px 0;
-    padding: 10px;
-    line-height: 1.5;
-    list-style-type: none;
-    border-left: solid 6px #1d68a7;
-    background: #f1f8ff;
+  display        : block;
+  margin         : 0 5px 3px 0;
+  padding        : 10px;
+  line-height    : 1.5;
+  list-style-type: none;
+  border-left    : solid 6px #1d68a7;
+  background     : #f1f8ff;
 }
 
 ul {
-    margin-top: 45px;
+  margin-top: 45px;
 }
 
 a.hp-url,
 a.address {
-    color: #1a73e8;
+  color: #1a73e8;
 }
 
 .tag-info-right {
-    flex: 2;
-    width: 100%;
+  flex : 2;
+  width: 100%;
 }
 
 iframe {
-    width: 100%;
+  width: 100%;
 }
