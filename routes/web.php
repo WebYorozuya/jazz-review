@@ -20,10 +20,10 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 //パスワード変更
-Route::get('changepassword','MypageController@showChangePasswordForm');
-Route::post('changepassword','MypageController@changepassword')->name('changepassword');
+Route::get('changepassword','SettingController@showChangePasswordForm');
+Route::post('changepassword','SettingController@changepassword')->name('changepassword');
 
-Route::get('mypage', 'MypageController@index')->name('mypage');
+Route::get('settings', 'SettingController@index')->name('settings');
 
 // ログアウト
 Route::get('/logout',[
