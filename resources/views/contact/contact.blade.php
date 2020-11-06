@@ -3,24 +3,23 @@
 @section('title', 'お問い合わせ')
 
 @section('css')
-<!-- Heroku -->
-<link rel="stylesheet" href="{{secure_asset('css/contact.css')}}">
-<!-- Local -->
-<link rel="stylesheet" href="{{asset('css/contact.css')}}">
+  @env('local')
+    <link rel="stylesheet" href="{{asset('css/contact.css')}}">
+  @endenv
+  @production
+    <link rel="stylesheet" href="{{secure_asset('css/contact.css')}}">
+  @endproduction
 @endsection
 
 @section('header')
   @component('components.header')
-    @slot('user')
-      {{$user}}
-    @endslot
   @endcomponent
 @endsection
 
 @section('main')
-<h1 class="main-title">Our team</h1>
-<!-- チーム紹介 -->
-<div class="main-container-team">
+  <h1 class="main-title">Our team</h1>
+  <!-- チーム紹介 -->
+  <div class="main-container-team">
     <h2>members</h2>
     <div class="team-member">
       <div class="member-info">
@@ -213,7 +212,7 @@
         >のコミュニティ内で、学習がてらWebサービスを作ってみようというプロジェクトを立ち上げました。ジャズライブに行った人が感想を書き込んでシェアできる口コミサイトを作っています（このコロナ禍に）。
         現在、おさないさんという超絶強力なメンターと先にプロジェクトを立ち上げている先人にアドバイスを仰ぎながら、初心者しかいない４人のチームでよちよち歩んでいます。
       </p>
-    </div>
+    </div><!-- .team-about -->
     <h2>mentor</h2>
     <div class="supporter">
       <a href="https://www.youtube.com/channel/UCHxqQ8bUg5F2GW79D_DvSjQ/featured" target="blank">
@@ -222,7 +221,7 @@
       <a href="https://twitter.com/YorozuyaOsanai" target="blank">
         <img src="images/webyorozuya.png" alt="web万屋チャンネルロゴ"/>
       </a>
-    </div>
+    </div><!-- .supporter -->
   </div> <!-- .main-container-team -->
 
   <!-- お問い合わせフォーム -->
@@ -255,10 +254,10 @@
       </div>
     </form>
   </div> <!-- main-container-contact -->
-  @endsection
+@endsection
 
-  @section('js')
+@section('js')
   <script type="text/javascript" src="{{ secure_asset('js/modal_show.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/modal_show.js') }}"></script>
-  @endsection
+@endsection
   
