@@ -15,7 +15,18 @@ class Tag extends Model
     //
     public function reviews()
     {
-        // return $this->belongsToMany('App\Review', 'review_tag', 'review_id', 'tag_id')->withTimestamps();//相談会の時のコード
         return $this->belongsToMany('App\Review')->withTimestamps();//相談会後にトライ
+    }
+
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
+    } 
+
+    public function scopeReviewsNotZero($query) {
+        // TODO:スコープで実現したいがreviews_countがないと言われる...
+        // $reviews_count = Tag::withCount('reviews')->get()->reviews_count;
+        // Log::info($reviews_count);
+        // return $query->where(Tag::withCount('reviews')->get()->reviews_count, '>', 0);
     }
 }

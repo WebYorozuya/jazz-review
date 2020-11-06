@@ -11,9 +11,9 @@ class Review extends Model
 
     public static $rules = array(
         'user_id' => 'required',
-        'live_date' => 'before_or_equal:today', //明日以降はダメ
-        'title' => 'required',
-        'text' => 'required'
+        'live_date' => 'before_or_equal:tomorrow',
+        'title' => 'required|max:80',
+        'text' => 'required|max:1000', //TODO:NGワードをフィルターかけたい
     );
 
     public function user()
@@ -30,4 +30,9 @@ class Review extends Model
     {
         return $this->belongsToMany('App\Tag')->withTimestamps();
     }
-}
+
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
+    } 
+} 

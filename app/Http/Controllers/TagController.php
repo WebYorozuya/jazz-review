@@ -3,75 +3,62 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Tag; //タグ用に追加
-use App\Review; //タグ用に追加
+use App\Tag;
+use App\Review;
 use App\User;
+use App\Like;
 use Illuminate\Support\Facades\DB; //両立できるのね
-use Illuminate\Support\Facades\Auth; //ログインユーザ情報取得用に追加
-use Illuminate\Support\Facades\Log;//頻繁に使った方がいい
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class TagController extends Controller
 {
-    //
-    public function index()
+    public function getTags()
     {
-        if (Auth::user()) { //ログインユーザ情報取得
-            $user = Auth::user()->account_name;
-        } else {
-            $user = 'ゲスト';
-        }
-        //tagデータを取得
-        $items = Tag::orderBy('id', 'desc')
-        ->paginate(90);
-        // foreach ($items as $item) {
-        //     ddd($item->reviews()->where('tag_id', $item->id));
-        // }
-        //review_tagから各tag_idの数を数える
-        $tag_counts = DB::table('review_tag')->select('id','tag_id')->groupBy('tag_id')->count(['id']);
-        // $tag_counts = DB::select('select count(id), tag_id from review_tag group by tag_id');
-        // $tag_counts [] = DB::table('review_tag')
-        //     ->select(DB::raw('count(id), tag_id'))
-        //     ->groupBy('tag_id')
-        //     ->get();
-        // print_r($items); exit();
-        return view('tags', [
-            'user' => $user,
-            'items' => $items,
-            'tag_counts' => $tag_counts
-        ]);
-        // return view('tags', ['items' => $items]);
-    }
-
-    public function getTag(Request $request)
-    {
-        //ログインユーザー情報を取得
         if (Auth::user()) {
             $user = Auth::user()->account_name;
         } else {
             $user = 'ゲスト';
         }
-        
-        //タグidを元にそのタグの入った投稿を全て取得する
-        // $tag = Tag::findOrFail($request->id);
-        // foreach ($tag->reviews as $review) {
-        //     $items = $review;
-        // }
-        // $items = Review::with('tags')->where('id', $tag)->paginate(10);
-        // $items = $reviews->$tag_id;
-        $items = Tag::find($request->id)->reviews()->orderBy('id', 'desc')->paginate(10);
-        // ddd($items);
+        $tags = Tag::withCount('reviews')->orderBy('id', 'desc')->whereNotIn('tag_name', [""])->paginate(90);
+        foreach ($tags as $tag) {
+            if ($tag->reviews_count > 0){
+                $existing_tags [] = $tag;
+            }
+        }
+        return view('tags.tags_list', [
+            'user' => $user,
+            'tags' => $existing_tags,
+        ]);
+    }
 
-        //タグ名を取得したい
+    public function getReviewsByTag(Request $request)
+    {
         $tag_name = Tag::find($request->id)->tag_name;
-        // foreach ($items->tags as $tag) {
-        //     $tag_name = $tag->tag_name;
-        // }
-        // $tag_name = $items->tag_name;
-        return view('tagposts', [
+        if (Auth::user()) {
+            $user = Auth::user()->account_name;
+        } else {
+            $user = 'ゲスト';
+        }
+        //タグidを元にそのタグの入った投稿を全て取得
+        $items = Tag::find($request->id)->reviews()->orderBy('id', 'desc')->paginate(10);
+        //タグ名を取得
+        $likes = new Like;
+        $liked = like::all();
+        $param = [
             'user' => $user,
             'items' => $items,
-            'tag_name' => $tag_name
-        ]);
+            'likes' => $likes,
+            'liked' => $liked,
+            'tag_name' => $tag_name,
+        ];
+        return view('reviews.reviews_by_tag', $param);
 
+    }
+
+    public function getSuggestedTag(Request $request)
+    {
+        $tags = Tag::where('tag_name', 'like', $request . '%')->get('tag_name');
+        return response()->json($tags);
     }
 }

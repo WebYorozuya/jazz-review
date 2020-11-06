@@ -1,4 +1,4 @@
-@extends('layouts.ourapp')
+@extends('layouts.public')
 
 @section('title', 'お問い合わせ')
 
@@ -9,78 +9,201 @@
 <link rel="stylesheet" href="{{asset('css/contact.css')}}">
 @endsection
 
-@component('components.header')
-  @slot('user')
-    {{$user}}
-  @endslot
-@endcomponent
+@section('header')
+  @component('components.header')
+    @slot('user')
+      {{$user}}
+    @endslot
+  @endcomponent
+@endsection
 
 @section('main')
 <h1 class="main-title">Our team</h1>
 <!-- チーム紹介 -->
 <div class="main-container-team">
-  <h2>members</h2>
+    <h2>members</h2>
     <div class="team-member">
       <div class="member-info">
-        <img src="images/kaku.jpeg" alt="kakudaisukeの写真" class="profile-img"/>
-        <div class="member-name">kakudaisuke</div>
-        <ul class="member-sns-btn">
-          <li class="twitter-btn">
-            <a href="https://twitter.com/kakudaisuke" target="blank">
-            <i class="fab fa-twitter-square fa-lg"></i></a>
-          </li>
-          <li class="github">
-            <a href="https://github.com/kakudaisuke" target="blank">
-            <i class="fab fa-github"></i></a>
-          </li>
-        </ul>
+        <img src="" alt="#" class="profile-img" />
+        <div class="member-name"></div>
       </div>
-
       <div class="member-info">
-        <img src="images/mike.jpg" alt="mikeの写真" class="profile-img" />
-        <div class="member-name">mike</div>
-        <ul class="member-sns-btn">
-          <li class="twitter-btn">
-            <a href="#" target="blank">
-            <i class="fab fa-twitter-square fa-lg"></i></a>
-          </li>
-          <li class="facebook-btn">
-            <a href="#" target="blank">
-            <i class="fab facebook-square fa-facebook-square fa-lg"></i></a>
-          </li>
-        </ul>
+        <img src="" alt="#" class="profile-img" />
+        <div class="member-name"></div>
       </div>
-
       <div class="member-info">
-        <img src="images/tsuka.jpg" alt="tsukaの写真" class="profile-img" />
-        <div class="member-name">tsuka</div>
-        <ul class="member-sns-btn">
-          <li class="twitter-btn">
-            <a href="#" target="blank">
-            <i class="fab fa-twitter-square fa-lg"></i></a>
-          </li>
-          <li class="facebook-btn">
-            <a href="#" target="blank">
-            <i class="fab facebook-square fa-facebook-square fa-lg"></i></a>
-          </li>
-        </ul>
+        <img src="" alt="#" class="profile-img" />
+        <div class="member-name"></div>
       </div>
-
       <div class="member-info">
-        <img src="images/ayaka.jpg" alt="ayakaの写真" class="profile-img" />
-        <div class="member-name">ayaka</div>
-        <ul class="member-sns-btn">
-          <li class="twitter-btn">
-            <a href="#" target="blank">
-            <i class="fab fa-twitter-square fa-lg"></i></a>
-          </li>
-          <li class="instagram-btn">
-            <a href="#" target="blank">
-            <i class="fab fa-instagram-square fa-lg"></i></a>
-          </li>
-        </ul>
+        <img src="" alt="#" class="profile-img" />
+        <div class="member-name"></div>
       </div>
-    </div> <!-- .team-member -->
+      <div class="member-info">
+        <img src="" alt="#" class="profile-img" />
+        <div class="member-name"></div>
+      </div> 
+      <div class="modal-wrapper">
+        <div class="modal-back"></div>
+        <div class="modal">
+          <div class="modal-left">
+              <i class="fas fa-angle-left prevBtn"></i>
+          </div>
+          <div class="modal-center">
+            <div class="modal-top">
+              <img src="#" alt="#" class="modal-profile-img" />
+              <h2>
+                <p class="role"></p>
+                <p class="name"></p>
+                <ul class="member-sns-btn">
+                  <li class="facebook-btn">
+                    <a href="#">
+                      <i class="fab facebook-square fa-facebook-square fa-lg"></i></a>
+                  </li>
+                  <li class="instagram-btn">
+                    <a href="#">
+                      <i class="fab fa-instagram-square fa-lg"></i></a>
+                  </li>
+                </ul>
+              </h2>
+            </div>
+            <span class="modal-text"></span>
+            <button class="closeBtn">close</button>
+          </div>
+          <div class="modal-right">
+              <i class="fas fa-angle-right nextBtn"></i>
+          </div>
+        </div>
+      </div> 
+      <div class="modal-wrapper">
+        <div class="modal-back"></div>
+        <div class="modal">
+          <div class="modal-left">
+              <i class="fas fa-angle-left prevBtn"></i>
+          </div>
+          <div class="modal-center">
+            <div class="modal-top">
+              <img src="#" alt="#" class="modal-profile-img" />
+              <h2>
+                <p class="role"></p>
+                <p class="name"></p>
+                <ul class="member-sns-btn">
+                  <li class="facebook-btn">
+                    <a href="#">
+                      <i class="fab facebook-square fa-facebook-square fa-lg"></i></a>
+                  </li>
+                  <li class="instagram-btn">
+                    <a href="#">
+                      <i class="fab fa-instagram-square fa-lg"></i></a>
+                  </li>
+                </ul>
+              </h2>
+            </div>
+            <span class="modal-text"></span>
+            <button class="closeBtn">close</button>
+          </div>
+          <div class="modal-right">
+              <i class="fas fa-angle-right nextBtn"></i>
+          </div>
+        </div>
+      </div> 
+      <div class="modal-wrapper">
+        <div class="modal-back"></div>
+        <div class="modal">
+          <div class="modal-left">
+              <i class="fas fa-angle-left prevBtn"></i>
+          </div>
+          <div class="modal-center">
+            <div class="modal-top">
+              <img src="#" alt="#" class="modal-profile-img" />
+              <h2>
+                <p class="role"></p>
+                <p class="name"></p>
+                <ul class="member-sns-btn">
+                  <li class="facebook-btn">
+                    <a href="#">
+                      <i class="fab facebook-square fa-facebook-square fa-lg"></i></a>
+                  </li>
+                  <li class="instagram-btn">
+                    <a href="#">
+                      <i class="fab fa-instagram-square fa-lg"></i></a>
+                  </li>
+                </ul>
+              </h2>
+            </div>
+            <span class="modal-text"></span>
+            <button class="closeBtn">close</button>
+          </div>
+          <div class="modal-right">
+              <i class="fas fa-angle-right nextBtn"></i>
+          </div>
+        </div>
+      </div> 
+      <div class="modal-wrapper">
+        <div class="modal-back"></div>
+        <div class="modal">
+          <div class="modal-left">
+              <i class="fas fa-angle-left prevBtn"></i>
+          </div>
+          <div class="modal-center">
+            <div class="modal-top">
+              <img src="#" alt="#" class="modal-profile-img" />
+              <h2>
+                <p class="role"></p>
+                <p class="name"></p>
+                <ul class="member-sns-btn">
+                  <li class="facebook-btn">
+                    <a href="#">
+                      <i class="fab facebook-square fa-facebook-square fa-lg"></i></a>
+                  </li>
+                  <li class="instagram-btn">
+                    <a href="#">
+                      <i class="fab fa-instagram-square fa-lg"></i></a>
+                  </li>
+                </ul>
+              </h2>
+            </div>
+            <span class="modal-text"></span>
+            <button class="closeBtn">close</button>
+          </div>
+          <div class="modal-right">
+              <i class="fas fa-angle-right nextBtn"></i>
+          </div>
+        </div>
+      </div> 
+      <div class="modal-wrapper">
+        <div class="modal-back"></div>
+        <div class="modal">
+          <div class="modal-left">
+              <i class="fas fa-angle-left prevBtn"></i>
+          </div>
+          <div class="modal-center">
+            <div class="modal-top">
+              <img src="#" alt="#" class="modal-profile-img" />
+              <h2>
+                <p class="role"></p>
+                <p class="name"></p>
+                <ul class="member-sns-btn">
+                  <li class="facebook-btn">
+                    <a href="#">
+                      <i class="fab facebook-square fa-facebook-square fa-lg"></i></a>
+                  </li>
+                  <li class="instagram-btn">
+                    <a href="#">
+                      <i class="fab fa-instagram-square fa-lg"></i></a>
+                  </li>
+                </ul>
+              </h2>
+            </div>
+            <span class="modal-text"></span>
+            <button class="closeBtn">close</button>
+          </div>
+          <div class="modal-right">
+              <i class="fas fa-angle-right nextBtn"></i>
+          </div>
+        </div>
+      </div> 
+    </div><!-- .team-member -->
 
     <div class="team-about">
       <p>
@@ -122,7 +245,7 @@
       
       <div class="contact-form">
         <label class="message" for="message-form">お問い合わせの内容</label>
-        <textarea name="text" cols="40" rows="8" id="message-form" required></textarea>
+        <textarea name="text" cols="40" rows="8" id="message-form" maxlength="1000" required></textarea>
         <!-- <input type="hidden" name="" value="hidden" /> -->
       </div>
       
@@ -132,5 +255,10 @@
       </div>
     </form>
   </div> <!-- main-container-contact -->
+  @endsection
+
+  @section('js')
+  <script type="text/javascript" src="{{ secure_asset('js/modal_show.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/modal_show.js') }}"></script>
   @endsection
   

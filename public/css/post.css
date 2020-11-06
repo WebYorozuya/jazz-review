@@ -19,8 +19,8 @@
   flex-direction: column;
 }
 
-#live_date {
-  width: 30%;
+.live_date {
+  width: min(180px, 100%);
 }
 
 .form_container label {
@@ -28,7 +28,7 @@
 }
 
 .form_container input {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 .form_container input,
 .form_container textarea {
@@ -36,8 +36,14 @@
   padding: 5px 8px;
 }
 
-.form_container .submit,
-.form_container button {
+.max-length {
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.form_container #post-button,
+.form_container button,
+.form_container #del {
   width: 180px;
   font-size: 15px;
   text-align: center;
@@ -48,16 +54,16 @@
   margin: 5px auto;
   padding: 8px;
   cursor: pointer;
-  user-select: none; /*ユーザーが連打しても選択できないように*/
+  user-select: none;
 }
 
-.form_container .submit {
+.form_container #post-button {
   background-color: #0490c7;
   border-bottom: solid 4px  #026186;
   color: white;
   letter-spacing: 1px;
 }
-.form_container .submit:active {
+.form_container #post-button:active {
   transform: translateY(4px);
   border-bottom: none;
 }
@@ -67,7 +73,7 @@
   letter-spacing: 1px;
 }
 
-#del {
+.form_container #del {
   background-color: rgb(240, 133, 133);
   border-bottom: solid 4px  rgb(170, 50, 50);
 }

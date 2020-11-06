@@ -1,0 +1,59 @@
+## ビューのディレクトリとファイル一覧
+
+views/  
+├─ auth/ ......ユーザーログイン周り
+│  ├─ login.blade.php ..... 
+│  ├─ mypage.blade.php ..... 
+│  ├─ register.blade.php ..... 
+│  ├─ verify.blade.php ..... 
+│  ├─ register.blade.php ..... 
+│  └─ passwords/ ..... 
+│  │    └─ changepassword.blade.php ..... 
+│  │    └─ confirm.blade.php ..... 
+│  │    └─ email.blade.php ..... 
+│  │    └─ reset.blade.php ..... 
+├─ components/ ......... パーツ
+│  ├─ header.blade.php ..... ヘッダー
+│  └─ review_component.blade.php ..... 投稿を連続して表示するコンポーネント
+├─ contact/ ......... お問い合わせ
+│  ├─ contact.blade.php ..... 
+│  └─ mail.blade.php ..... 
+├─ layouts/ .......... 継承レイアウトの親
+│  ├─ app.blade.php ..... 削除予定！
+│  ├─ loginscene.blade.php ..... 
+│  ├─ public.blade.php ..... ゲストでもアクセスできるフロント側の親レイアウト
+│  └─ registerscene.blade.php ..... 
+├─ public/ ...... 空
+├─ reviews/ ..... 投稿を表示する
+│  ├─ edit.blade.php ..... 編集、削除
+│  ├─ index.blade.php ......... トップページ
+│  ├─ post.blade.php ..... 投稿
+│  ├─ reviews_by_tag.blade.php ......... タグ別
+│  ├─ reviews_by_user.blade.php ......... ユーザー別
+│  └─ search.blade.php ......... 検索
+├─ tags/ ......... タグ
+│  └─ tags_list.blade.php ....タグ一覧
+├─ terms/ ......... 利用規約
+│  └─ terms.blade.php ..... 
+└─ vendor/ ......... ペジネーション
+
+
+（注）言葉の定義
+* review : 投稿された物体のことを指す
+* post : 投稿するアクションのことを指す
+
+## インデント
+HTML/CSS/JS 1インデント = 2
+他          1インデント = 4
+
+## JavaScriptファイルの設置の仕方
+1. jsのファイルは１機能ごとに１つ作成する。
+2. ファイルの命名はスネークケース。
+3. jsのファイルは機能を使用するblade.phpから呼び込む。body閉じタグの上に置く。
+4. みけメンバーがエクセルにまとめてどのファイルにjsを読み込ませているかを管理していますので、JSを作成した際は連絡する。
+
+## 命名規則
+HTML : 
+CSS : 
+JS : 
+Laravel : Laravelのスタンダードに準拠

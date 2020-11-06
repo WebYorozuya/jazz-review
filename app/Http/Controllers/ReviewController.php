@@ -3,88 +3,65 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Review; //追加
-use Illuminate\Support\Facades\Auth; //ログインユーザ情報取得用に追加
-use Illuminate\Support\Facades\Log;//頻繁に使った方がいい
-use App\Tag; //タグ用に追加
-use App\User; //タグ用に追加
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
+use App\Review;
+use App\Tag;
+use App\User;
+use App\Like;
 
 class ReviewController extends Controller
 {
     //トップページを表示
     public function index(Request $request)
     {
-        // Log::info('hello');
-        // return; 
-        if (Auth::user()) { //ログインユーザ情報取得
-            $user = Auth::user()->account_name;
-        } else {
-            $user = 'ゲスト';
-        }
-        $items = Review::orderBy('id', 'desc')
-        ->paginate(10); //reviewsテーブルから取得
-        // return view('index', ['items' => $items, 'user' => $user]);下に書き換え
-        $param = ['items' => $items, 'user' => $user];
-        return view('index', $param);
+        $items = Review::withCount('likes')->orderBy('id', 'desc')->paginate(10);
+        $likes = new Like;
+        $liked = Like::all();
+        $param = [
+            'items' => $items,
+            'likes' => $likes,
+            'liked' => $liked,
+        ];
+        return view('reviews.index', $param);
     }
     //ユーザー別投稿ページを表示
-    public function userposts(Request $request)
+    public function getReviewsByUser(Request $request)
     {
-        //$items = Review::where('user_id', $request->user_id)->get();//これだとpeginate追加できないのはなぜ？
-        $items = Review::where('user_id', $request->user_id)->orderBy('id', 'desc')->paginate(10);//pegination要追加
-        if (Auth::user()) { //ログインユーザ情報取得
-            $user = Auth::user()->account_name;
-        } else {
-            $user = 'ゲスト';
-        }
-        $account_name = User::find($request->user_id)->account_name;
-        return view('userposts', ['items' => $items, 'user' => $user, 'account_name' => $account_name]);
-    }
-    //タグ別投稿ページを表示
-    public function tagposts(Request $request)
-    {
-        $tag = Tag::find($request->id);
-        $items = $tag->reviews; //Tag.phpのreviews()
-        // foreach ($items as $item) {
-            // Log::info('hogehoge');
-            // Log::info($item);
-            // var_dump($item);
-        // }
-        // exit();
-        // var_dump($items);
-        if (Auth::user()) { //ログインユーザ情報取得
-            $user = Auth::user()->account_name;
-        } else {
-            $user = 'ゲスト';
-        }
-        return view('tagposts', ['items' => $items, 'user' => $user]);
+        $selected_user = User::find($request->user_id);
+        $items = Review::withCount('likes')->where('user_id', $request->user_id)->orderBy('id', 'desc')->paginate(10);
+        Log::info($items);
+        $likes = new Like;
+        $liked = like::all();
+        $param = [
+            'selected_user' => $selected_user,
+            'items' => $items,
+            'likes' => $likes,
+            'liked' => $liked,
+        ];
+        return view('reviews.reviews_by_user', $param);
     }
     //投稿ページを表示
-    public function post(Request $request)
-    {
-        if (Auth::user()) { //ログインユーザ情報取得
-            $user = Auth::user();
-        } else {
-            $user = 'ゲスト';
-        }
-        // var_dump($user); exit();
-        return view('review.post', ['user' => $user]);
-    }
+    // public function post(Request $request)
+    // {
+    //     return view('reviews.post', ['user' => $user]);
+    // }
     //フォームの値を取得しDBにレコード挿入
     public function create(Request $request)
     {
       //まずレビューのINSERT
-        $this->validate($request, Review::$rules); //バリデーションの実行
-        $review = new Review; //Reviewインスタンス作成
+        $this->validate($request, Review::$rules);
+        $review = new Review; //Reviewクラスのインスタンス作成
         $form = $request->all(); //送信されたフォームの値を保管
         unset($form['_token']); //CSRF非表示フィールド_token削除
         $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
-
       //次にタグのINSERT
         //送信されたタグをスペース区切りで整える
         $spaces = array("　", "  ", "   ");
         $tags = trim(str_replace($spaces, " ", $request->tag_name));
         $tags = explode(" ", $tags);
+        $tags = array_unique($tags);
         //新規タグだけtagsテーブルに挿入
         $array = [];
         foreach ($tags as $tag) {
@@ -96,42 +73,101 @@ class ReviewController extends Controller
         foreach ($array as $tag) {
             array_push($tags_id, $tag['id']);
         };
-        //中間テーブルにレコード挿入//tagsメソッドinReview.php
+        //中間テーブルにレコード挿入
         $review->tags()->attach($tags_id);//attachメソッドで紐付け対象のidを紐付け対象のidを引数にしてリレーションを紐付ける
       
       //トップページへ
-        return redirect('/')->with('flash_message', '素敵な投稿ありがとうございます！'); 
+        return redirect()->route('top')->with('flash_message', '素敵な投稿ありがとうございます！'); 
+        //TODO:herokuでhttpにリダイレクトされてしまう
     }
     //投稿修正ページを表示
-    public function modify(Request $request)
+    public function edit(Request $request)
     {
-        if (Auth::user()) {
-            $user = Auth::user();
-        } else {
-            $user = 'ゲスト';
-        }
         $review = Review::find($request->id);
-        $tags = Review::find($request->id)->tags();
-        // var_dump($tags);exit();
-        return view('review.modify', [
-            'user' => $user,
-            'review' => $review
+        return view('reviews.edit', [
+            'review' => $review,
             ]);
     }
     //投稿修正送信
     public function update(Request $request)
     {
-        $this->validate($request, Review::$rules); //バリデーションの実行
-        $review = Review::find($request->id); //Reviewインスタンス作成
-        $form = $request->all(); //送信されたフォームの値を保管
-        unset($form['_token']); //CSRF非表示フィールド_token削除
-        $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
-        return redirect('/'); //トップページへ
+        $this->validate($request, Review::$rules);
+        $review = Review::find($request->id);
+        $form = $request->all();
+        unset($form['_token']);
+        $review->fill($form)->save();
+
+    //次にタグのINSERT
+        //送信されたタグをスペース区切りで整えるTODO:validationでやれる？
+        $spaces = array("　", "  ", "   ");
+        $tags = trim(str_replace($spaces, " ", $request->tag_name));
+        $tags = explode(" ", $tags);
+        $tags_unique = array_unique($tags);
+        $existing_tags = Review::find($request->id)->tags;
+        foreach ($existing_tags as $existing_tag) {
+            $existing_tags_name [] = $existing_tag->tag_name;
+        }
+        $tags = array_diff($tags_unique, $existing_tags_name);
+        //TODO:タグを消せるようにする。てことは一旦タグを全部削除してからもう一回新たに入れ直すべき？？
+
+        //新規タグだけtagsテーブルに挿入
+        $array = [];
+        foreach ($tags as $tag) {
+            $record = Tag::firstOrCreate(['tag_name' => $tag]);
+            array_push($array, $record);
+        };
+        //投稿に紐付けされるタグのidを配列化、中間テーブルへ
+        $tags_id = [];
+        foreach ($array as $tag) {
+            array_push($tags_id, $tag['id']);
+        };
+        //中間テーブルにレコード挿入
+        $review->tags()->attach($tags_id);
+      
+      //トップページへ
+        return redirect('/')->with('flash_message', '投稿を修正しました！');
     }
     //投稿削除
     public function delete(Request $request)
     {
-        Review::find($request->id)->delete();
-        return redirect('/');
+        //TODO:削除していいですか？確認
+        $review_tags = DB::table('review_tag')->where('review_id', $request->id)->get();
+        if (!empty($review_tags)) {
+            foreach ($review_tags as $review_tag)
+            {
+                $count_tag = DB::table('review_tag')->where('tag_id', $review_tag->tag_id)->count();
+                $delete_review_tag = DB::table('review_tag')
+                    ->where('review_id', $request->id)
+                    ->where('tag_id', $review_tag->tag_id)
+                    ->delete();
+                if ($count_tag <= 1) {
+                    $tags = Tag::find($review_tag->tag_id)->delete();
+                }
+            }
+        }
+        $review = Review::find($request->id)->delete();
+        return redirect('/')->with('flash_message', '投稿を削除しました！');
+    }
+
+    public function like(Request $request)
+    {
+        $user_id = Auth::user()->id;
+        $review_id = $request->review_id;
+        $like = new Like;        
+        $already_liked = Like::where('user_id', $user_id)->where('review_id', $review_id)->first();
+        
+        if (!$already_liked) {
+            $like = new Like;
+            $like->review_id = $request->review_id;
+            $like->user_id = $user_id;
+            $like->save();
+        } else {
+            $like = Like::where('review_id', $review_id)->where('user_id', $user_id)->delete();
+        }
+        $review_likes_count = Review::withCount('likes')->findOrFail($review_id)->likes_count;
+        $param = [
+            'review_likes_count' => $review_likes_count,
+        ];
+        return response()->json($param);
     }
 }

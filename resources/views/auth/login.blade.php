@@ -3,83 +3,63 @@
 
 @section('title','ログイン画面')
 
-@section('content') 
+@section('content')
+<div class="login-container">
+  <h1>Jazz Log にログイン</h1>
 
-<body class="UI_Build_Assistant">
-  
-<div class="main">
-    <h1>Jazz Log にログイン</h1>
+  <form method="POST" action="{{ route('login') }}">
+    @csrf
 
-  <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+    <div class="login-form">
+      <label for="account_name" class="col-md-4 col-form-label text-md-right">{{ __('アカウント名 or メールアドレス') }}</label>
 
-                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+      <div class="col-md-6">
+        <input id="account_name" type="text" class="form-control @error('account_name') is-invalid @enderror" name="account_name" value="{{ old('account_name') }}" required autocomplete="account_name" autofocus>
 
-                        <div class="login_form">
-                            <label for="account_name" class="col-md-4 col-form-label text-md-right">{{ __('account_name/E-Mail Address') }}</label>
+        @if($errors->has('account_name'))
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $errors->first('account_name') }}</strong>
+        </span>
+        @endif
+      </div>
+    </div> <!-- /.login-form -->
 
-                            <div class="col-md-6">
-                                <input id="account_name" type="text" class="form-control @error('account_name') is-invalid @enderror" name="account_name" value="{{ old('account_name') }}" required autocomplete="account_name" autofocus>
+    <div class="login-form">
+      <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('パスワード') }}</label>
 
-                                @if($errors->has('account_name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('account_name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+      <div class="col-md-6">
+        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
-                        <div class="login_form">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+        @error('password')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+      </div>
+    </div> <!-- /.login-form -->
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>   
-        </div>
+      <label class="form-check-label" for="remember">
+        {{ __('パスワードを保存する') }}
+      </label>
     </div>
- </div>
-</div>
-@endsection
 
-<footer>
-    <p><small> &copy; Jazz Log </small></p>
-  </footer>
+    <div class="form-group row mb-0">
+      <div class="col-md-8 offset-md-4">
+        <button type="submit" class="btn btn-primary">
+          {{ __('ログイン') }}
+        </button>
+      </div>
+      @if (Route::has('password.request'))
+      <a class="btn btn-link" href="{{ route('password.request') }}">
+        {{ __('パスワードを忘れた場合はこちら') }}
+      </a>
+      @endif
+    </div> <!-- /.form-group row mb-0 -->
+
+  </form>
+
+</div><!-- /.login -->
+@endsection
