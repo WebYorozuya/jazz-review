@@ -1,8 +1,18 @@
 @foreach ($items as $item)
   <div class="review">    
     <div class="review-left">
-      <a href="user?user_id={{$item->user_id}}" class="user-image">
-        <img src="images/icons8-user-male-30-black.png" alt="">
+      <a href="{{ route('user', ['user_id' => $item->user_id]) }}" class="user-image">
+        @env('local')
+          @if ($item->user->user_image)
+            <img src="/storage/uploads/{{ $item->user->user_image }}" alt="">
+          @else
+            <img src="images/icons8-user-male-30-black.png" alt="">
+          @endif
+        @endenv
+        @production
+          <img src="images/icons8-user-male-30-black.png" alt="">
+        @endproduction
+
       </a>
     </div><!-- /.review-left -->
     <div class="review-right">

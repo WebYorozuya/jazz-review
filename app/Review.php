@@ -13,7 +13,7 @@ class Review extends Model
         'user_id' => 'required',
         'live_date' => 'before_or_equal:tomorrow',
         'title' => 'required|max:80',
-        'text' => 'required|max:1000', //TODO:NGワードをフィルターかける
+        'text' => 'required|max:1000', //TODO:NGワードをフィルターかけたい
     );
 
     public function user()
