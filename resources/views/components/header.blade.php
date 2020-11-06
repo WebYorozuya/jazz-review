@@ -24,7 +24,7 @@
         </div>
         <ul class="header-loginUser-dd-content">
           @auth
-            <li><a href="{{ url('/mypage') }}" class="hello-user">マイページ</a></li>
+            <li><a href="{{ url('/settings') }}" class="hello-user">マイページ</a></li>
             <li><a href="{{ route('user.logout') }}" class="hello-user">ログアウト</a></li>
           @endauth
           @guest

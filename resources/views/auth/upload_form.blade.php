@@ -2,10 +2,6 @@
 
 @section('content')
 
-<!-- ローカル用 -->
-<link rel="stylesheet" href="{{asset('css/output.css')}}">
-<link href="{{ asset('css/output.css') }}" rel="stylesheet">
-
 @if($errors->any())
 <ul>
     @foreach($errors->all() as $error)
