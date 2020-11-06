@@ -1,7 +1,12 @@
 @extends('layouts.public')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/reviews_by_user.css')}}">
+  @env('local')
+   <link rel="stylesheet" href="{{asset('css/reviews_by_user.css')}}">
+  @endenv
+  @production
+    <link rel="stylesheet" href="{{secure_asset('css/reviews_by_user.css')}}">
+  @endproduction
 @endsection
 
 @section('title', 'ユーザー別投稿')
