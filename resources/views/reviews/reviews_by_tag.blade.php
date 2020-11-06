@@ -1,16 +1,18 @@
 @extends('layouts.public')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/reviews_by_tag.css')}}">
+  @env('local')
+    <link rel="stylesheet" href="{{asset('css/reviews_by_tag.css')}}">
+  @endenv
+  @production
+    <link rel="stylesheet" href="{{secure_asset('css/reviews_by_tag.css')}}">
+  @endproduction
 @endsection
 
 @section('title', 'タグ別投稿')
 
 @section('header')
   @component('components.header')
-    @slot('user')
-    {{$user}}
-    @endslot
   @endcomponent
 @endsection
 
