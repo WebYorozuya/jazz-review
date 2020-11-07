@@ -1,6 +1,15 @@
-@extends('auth.settings')
+@extends('layouts.settings')
 
-@section('content')
+@section('css')
+<link rel="stylesheet" href="{{asset('css/mypage.css')}}">
+@endsection
+
+@section('header')
+  @component('components.header')
+  @endcomponent
+@endsection
+
+@section('main')
 
 @if($errors->any())
 <ul>

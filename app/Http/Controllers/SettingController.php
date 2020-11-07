@@ -28,7 +28,7 @@ class SettingController extends Controller
     {
         $user_id = Auth::id();
         $user_images = User::whereid($user_id)->get();
-        return view('auth.settings',['user_images' => $user_images]);
+        return view('layouts.settings',['user_images' => $user_images]);
         
     }
 
