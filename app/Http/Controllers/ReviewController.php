@@ -16,16 +16,10 @@ class ReviewController extends Controller
     //トップページを表示
     public function index(Request $request)
     {
-        if (Auth::user()) {
-            $user = Auth::user()->account_name;
-        } else {
-            $user = 'ゲスト';
-        }
         $items = Review::withCount('likes')->orderBy('id', 'desc')->paginate(10);
         $likes = new Like;
         $liked = Like::all();
         $param = [
-            'user' => $user,
             'items' => $items,
             'likes' => $likes,
             'liked' => $liked,
@@ -35,35 +29,21 @@ class ReviewController extends Controller
     //ユーザー別投稿ページを表示
     public function getReviewsByUser(Request $request)
     {
-        if (Auth::user()) {
-            $user = Auth::user()->account_name;
-        } else {
-            $user = 'ゲスト';
-        }
-        $account_name = User::find($request->user_id)->account_name;
-        $items = Review::withCount('likes')->where('user_id', $request->user_id)->orderBy('id', 'desc')->paginate(10);
+        $account_name = $request->account_name;
+        $selected_user = User::where('account_name', $account_name)->first();
+        $items = Review::withCount('likes')->where('user_id', $selected_user->id)->orderBy('id', 'desc')->paginate(10);
         $likes = new Like;
         $liked = like::all();
         $param = [
-            'user' => $user,
             'account_name' => $account_name,
+            'selected_user' => $selected_user,
             'items' => $items,
             'likes' => $likes,
             'liked' => $liked,
         ];
         return view('reviews.reviews_by_user', $param);
     }
-    //投稿ページを表示
-    public function post(Request $request)
-    {
-        if (Auth::user()) {
-            $user = Auth::user();
-        } else {
-            $user = 'ゲスト';
-        }
-        return view('reviews.post', ['user' => $user]);
-    }
-    //フォームの値を取得しDBにレコード挿入
+
     public function create(Request $request)
     {
       //まずレビューのINSERT
@@ -99,15 +79,9 @@ class ReviewController extends Controller
     //投稿修正ページを表示
     public function edit(Request $request)
     {
-        if (Auth::user()) {
-            $user = Auth::user();
-        } else {
-            $user = 'ゲスト';
-        }
         $review = Review::find($request->id);
         return view('reviews.edit', [
-            'user' => $user,
-            'review' => $review
+            'review' => $review,
             ]);
     }
     //投稿修正送信

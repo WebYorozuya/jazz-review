@@ -87,6 +87,13 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user = Auth::user();
+
+        Auth::logout();
+        $user->items()->delete;
+        $user->delete;
+
+        return redirect("/");
+
     }
 }

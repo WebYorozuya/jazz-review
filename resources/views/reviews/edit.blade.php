@@ -5,28 +5,18 @@
 @section('css')
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css Heroku-->
-  <link type="text/css" rel="stylesheet" href="{{ secure_asset('css/ourmaterialize.css') }}"  media="screen,projection"/>
-  <!--Import materialize.css Local-->
-  <link type="text/css" rel="stylesheet" href="{{ asset('css/ourmaterialize.css') }}"  media="screen,projection"/>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <!-- Heroku -->
-  <link rel="stylesheet" href="{{secure_asset('css/post.css')}}">
-  <!-- Local -->
-  <link rel="stylesheet" href="{{asset('css/post.css')}}">
+  @env('local')
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/ourmaterialize.css') }}"  media="screen,projection"/>
+    <link rel="stylesheet" href="{{asset('css/post.css')}}">
+  @endenv
+  @production
+    <link type="text/css" rel="stylesheet" href="{{ secure_asset('css/ourmaterialize.css') }}"  media="screen,projection"/>
+    <link rel="stylesheet" href="{{secure_asset('css/post.css')}}">
+  @endproduction
 @endsection
 
 @section('header')
   @component('components.header')
-    @slot('user')
-    @if (Route::has('login'))
-      @auth
-        {{$user->account_name}}
-        @else
-        {{$user = 'ゲスト'}}
-        @endif
-      @endauth
-    @endslot
   @endcomponent
 @endsection
 
@@ -43,7 +33,8 @@
       <label for="tag">タグ</label>
       <input type="text" id="tag" name="tag_name" value="@foreach ($review->tags as $tag){{$tag->tag_name}} @endforeach">
       <label for="title">レビューのタイトル</label>
-      <input type="text" id="title" name="title" value="{{$review->title}}">
+      <input type="text" id="title" name="title" value="{{$review->title}}" maxlength="80">
+      <p class="max-length">（80文字以内）</p>
       <label for="text">ライブの感想</label>
       <textarea name="text" id="text" cols="30" rows="10" maxlength="1000">{{$review->text}}</textarea>
       <p style="text-align: right; font-size: 0.8rem;">（1000文字以内）</p>

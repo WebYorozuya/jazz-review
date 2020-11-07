@@ -1,8 +1,18 @@
 @foreach ($items as $item)
   <div class="review">    
     <div class="review-left">
-      <a href="user?user_id={{$item->user_id}}" class="user-image">
-        <img src="images/icons8-user-male-30-black.png" alt="">
+      <a href="{{ route('user', ['user_id' => $item->user_id]) }}" class="user-image">
+        @env('local')
+          @if ($item->user->user_image)
+            <img src="/storage/uploads/{{ $item->user->user_image }}" alt="">
+          @else
+            <img src="images/icons8-user-male-30-black.png" alt="">
+          @endif
+        @endenv
+        @production
+          <img src="images/icons8-user-male-30-black.png" alt="">
+        @endproduction
+
       </a>
     </div><!-- /.review-left -->
     <div class="review-right">
@@ -28,7 +38,7 @@
       </div><!-- /.review-top -->
       <div class="tags">
         @foreach ($item->tags as $tag)
-          <a href="{{route('tags.tag',['id' => $tag->id])}}" class="tag">{{$tag->tag_name}}</a>
+          <a href="{{route('tags.tag', ['tag_name' => $tag->tag_name])}}" class="tag">{{$tag->tag_name}}</a>
         @endforeach
       </div><!-- /.tags -->
       <p class="review-text">{{$item->text}}</p>
@@ -37,7 +47,7 @@
         <span class="readmore-btn">続きを読む</span>
       </div>
       <div class="review-bottom">
-        <span class="user-name">by <a href="{{ route('user', ['user_id' => $item->user_id]) }}">{{$item->getData()}}さん</span></a>
+        <span class="user-name">by <a href="{{ route('user', ['account_name' => $item->user->account_name]) }}">{{$item->getData()}}さん</span></a>
         <span class="created-at">{{$item->created_at}}</span>
         @auth
           @if (!App\Like::where('user_id', Auth::user()->id)->where('review_id', $item->id)->first())
