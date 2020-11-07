@@ -3,6 +3,10 @@
 
 @section('title','ログイン画面')
 
+@component('components.header')
+@endcomponent
+
+
 @section('content')
 <div class="login-container">
   <h1>Jazz Log にログイン</h1>
