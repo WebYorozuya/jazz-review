@@ -13,12 +13,6 @@ class SearchController extends Controller
 {
     public function search(Request $request)
     {
-        if (Auth::user()) {
-            $user = Auth::user()->account_name;
-        } else {
-            $user = 'ゲスト';
-        }
-
         $keyword = $request->input('keyword');
         if (!empty($keyword))
         {
@@ -33,7 +27,6 @@ class SearchController extends Controller
         }
 
         return view('reviews.search', [
-            'user' => $user,
             'keyword' => $keyword,
             'reviews' => $reviews
         ]);

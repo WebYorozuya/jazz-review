@@ -29,12 +29,13 @@ class ReviewController extends Controller
     //ユーザー別投稿ページを表示
     public function getReviewsByUser(Request $request)
     {
-        $selected_user = User::find($request->user_id);
-        $items = Review::withCount('likes')->where('user_id', $request->user_id)->orderBy('id', 'desc')->paginate(10);
-        Log::info($items);
+        $account_name = $request->account_name;
+        $selected_user = User::where('account_name', $account_name)->first();
+        $items = Review::withCount('likes')->where('user_id', $selected_user->id)->orderBy('id', 'desc')->paginate(10);
         $likes = new Like;
         $liked = like::all();
         $param = [
+            'account_name' => $account_name,
             'selected_user' => $selected_user,
             'items' => $items,
             'likes' => $likes,
@@ -42,12 +43,7 @@ class ReviewController extends Controller
         ];
         return view('reviews.reviews_by_user', $param);
     }
-    //投稿ページを表示
-    // public function post(Request $request)
-    // {
-    //     return view('reviews.post', ['user' => $user]);
-    // }
-    //フォームの値を取得しDBにレコード挿入
+
     public function create(Request $request)
     {
       //まずレビューのINSERT

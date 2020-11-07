@@ -11,9 +11,6 @@
 
 @section('header')
   @component('components.header')
-    @slot('user')
-      {{$user}}
-    @endslot
   @endcomponent
 @endsection
 
@@ -24,7 +21,7 @@
     <div class="tags-container">
       @foreach($tags as $tag)
         <div class="tag-box">
-          <a class="tag-label" href="{{route('tags.tag',['id' => $tag->id])}}" data-count="{{ $tag->reviews_count }}">
+          <a class="tag-label" href="{{route('tags.tag', ['tag_name' => $tag->tag_name])}}" data-count="{{ $tag->reviews_count }}">
             <span>{{$tag->tag_name}}</span>
           </a>
         </div>
