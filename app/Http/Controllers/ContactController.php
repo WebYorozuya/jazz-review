@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Auth; //ログインユーザ情報取得用に�
 
 class ContactController extends Controller
 {
-    //contact表示
-    public function index()
-    {
-        return view('contact.contact');
-    }
     //DB挿入とメール送信
     public function process(Request $request)
     {
