@@ -12,12 +12,7 @@ class ContactController extends Controller
     //contact表示
     public function index()
     {
-        if (Auth::user()) { //ログインユーザ情報取得
-            $user = Auth::user()->account_name;
-        } else {
-            $user = 'ゲスト';
-        }
-        return view('contact.contact', ['user' => $user]);
+        return view('contact.contact');
     }
     //DB挿入とメール送信
     public function process(Request $request)
@@ -28,8 +23,7 @@ class ContactController extends Controller
             'text'     => 'required',
         ]);
         $input = $request->all();
-        unset($input['_token']); //CSRF非表示フィールド_token削除
-        // Mail::to($input['email'])->send(new ContactMail('mailxs.contact', 'お問い合わせありがとうございます', $input));
+        unset($input['_token']);
         Mail::to('jazzreview.team@gmail.com')->send(new ContactMail('contact.mail', 'お問い合わせを受信しました', $input));
         return redirect('/');
     }
