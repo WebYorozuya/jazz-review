@@ -40,7 +40,7 @@ Route::get('/output','UploadImageController@output')->name('output');
 Route::get('/', 'ReviewController@index')->name('top');
 
 //投稿画面の表示
-Route::get('post', function () {
+Route::get('post', function() {
     return view('reviews.post');
 });
 
@@ -71,17 +71,20 @@ Route::get('tags', 'TagController@getTags');
 Route::get('/tag', 'TagController@getReviewsByTag')->name('tags.tag');
 
 // ユーザー別投稿ページ表示
-Route::get('user', 'ReviewController@getReviewsByUser')->name('user');
+Route::get('/user', 'ReviewController@getReviewsByUser')->name('user');
 
 //検索
 Route::get('search', 'SearchController@search')->name('search');
 
 // ----- その他 -----
 // 利用規約ページ表示
-Route::get('terms', 'TermsController@index'); 
-
 //Contact
-Route::get('contact', 'ContactController@index');
+Route::get('contact', function() {
+    return view('contact.contact');
+}
+);
+
+Route::get('terms', 'TermsController@index'); 
 
 // 問合せメール送信
 Route::post('process', 'ContactController@process');
