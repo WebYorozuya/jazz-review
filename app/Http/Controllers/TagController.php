@@ -58,7 +58,8 @@ class TagController extends Controller
 
     public function getSuggestedTag(Request $request)
     {
-        $tags = Tag::where('tag_name', 'like', $request . '%')->get('tag_name');
+        $tag = $request->input('tag');
+        $tags = Tag::where('tag_name', 'like', $tag . '%')->get('tag_name');
         return response()->json($tags);
     }
 }

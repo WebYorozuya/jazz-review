@@ -16,13 +16,14 @@
         // tag候補をリクエストし、存在すれば、ビューに表示する
         getTags(inputtedTag).then(suggestedTags => {
             // 取得結果がなければ表示中のtag候補を消す
-            // 取得中にtag入力フォームの中身がクリアされた場合も表示処理はさせないようにreturnする
+            // 取得中にtag入力フォームの中身がクリアされた場合も表示処理をさせないようにreturnする
             inputtedTag = tagArea.value;
             if (!Array.isArray(suggestedTags) || suggestedTags.length === 0 || !tagArea.value) {
                 clearSuggestedTags();
                 hideSuggestedTags()
                 return;
             }
+
             displaySuggestedTags(suggestedTags);
         });
     });
@@ -41,6 +42,7 @@
         // タグ候補を初期化
         clearSuggestedTags();
         createModal();
+        // タグ候補を表示
         ul.style.display = 'block';
         suggestedTags.forEach(tag => {
             const li = createLi(tag);

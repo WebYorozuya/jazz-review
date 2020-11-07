@@ -43,9 +43,10 @@ Route::get('/', 'ReviewController@index')->name('top');
 Route::get('post', 'ReviewController@post');
 
 //投稿画面の表示（仮）
-Route::get('/get_suggeted_tag', 'TagController@getSuggestedTag');
+// Route::post('/get_suggested_tag', 'TagController@getSuggestedTag');
+Route::get('/get_suggested_tag', 'TagController@getSuggestedTag');
 
-//投稿内容をDBへ登録 
+//投稿内容をDBへ登録
 Route::post('insert', 'ReviewController@create');
 
 //投稿の修正、削除ページの表示
@@ -76,7 +77,7 @@ Route::get('search', 'SearchController@search')->name('search');
 
 // ----- その他 -----
 // 利用規約ページ表示
-Route::get('terms', 'TermsController@index'); 
+Route::get('terms', 'TermsController@index');
 
 //Contact
 Route::get('contact', 'ContactController@index');

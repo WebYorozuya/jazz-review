@@ -39,7 +39,7 @@
       <label for="live_date">ライブに行った日</label>
       <input type="date" id="live_date" class="live_date" name="live_date">
       <label for="tag">タグ</label>
-      <div class="chips chips-initial suggested-tags-parent">
+      <div class="chips suggested-tags-parent">
         <input type="text" id="tag" placeholder="Enter a tag" autocomplete="off">
         <ul id="suggested-tags" class="suggested-tags" style="display: none;"></ul>
         <div id="suggested-tags-bg" class="suggested-tags-bg" style="display: none;"></div>
@@ -62,12 +62,12 @@
     <script type="text/javascript" src="{{ asset('js/chips.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/live_date.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/character_counter.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/suggest_tag.js') }}"></script>
+    <!-- <script type="text/javascript" src="{{ asset('js/suggest_tag.js') }}"></script> -->
   @endenv
   @production
     <script type="text/javascript" src="{{ secure_asset('js/chips.js') }}"></script>
     <script type="text/javascript" src="{{ secure_asset('js/live_date.js') }}"></script>
     <script type="text/javascript" src="{{ secure_asset('js/character_counter.js') }}"></script>
-    <script type="text/javascript" src="{{ secure_asset('js/suggest_tag.js') }}"></script>
+    <!-- <script type="text/javascript" src="{{ secure_asset('js/suggest_tag.js') }}"></script> -->
   @endproduction
 @endsection

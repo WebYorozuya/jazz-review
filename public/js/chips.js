@@ -1,13 +1,5 @@
 'use strict';
 
-$(function () {
-  $('.chips').chips();
-  $('.chips-placeholder').chips({
-    placeholder: 'Enter a tag',
-    secondaryPlaceholder: '+Tag',
-  });
-});
-
 const elems = document.querySelectorAll('.chips');
 const instances = M.Chips.init(elems);
 const postButton = document.getElementById('post-button');
