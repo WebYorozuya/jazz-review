@@ -22,6 +22,5 @@ $(function () {
       console.log('fail'); 
       console.log(err);
     });
-    // return false; これいるのか？？
   });
   });

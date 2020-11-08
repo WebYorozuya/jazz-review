@@ -19,8 +19,8 @@
   flex-direction: column;
 }
 
-#live_date {
-  width: 30%;
+.live_date {
+  width: min(180px, 100%);
 }
 
 .form_container label {
@@ -28,12 +28,17 @@
 }
 
 .form_container input {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 .form_container input,
 .form_container textarea {
   border: .5px solid rgb(219, 217, 217);
   padding: 5px 8px;
+}
+
+.max-length {
+  text-align: right;
+  font-size: 0.8rem;
 }
 
 .form_container #post-button,

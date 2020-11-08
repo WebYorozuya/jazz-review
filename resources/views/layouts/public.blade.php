@@ -14,12 +14,12 @@
   <!--Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   @env('local')
-  <link type="text/css" rel="stylesheet" href="{{ asset('css/ourmaterialize.css') }}" media="screen,projection" />
-  <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/ourmaterialize.css') }}" media="screen,projection" />
+    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
   @endenv
   @production
-  <link type="text/css" rel="stylesheet" href="{{ secure_asset('css/ourmaterialize.css') }}" media="screen,projection" />
-  <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{ secure_asset('css/ourmaterialize.css') }}" media="screen,projection" />
+    <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
   @endproduction
   @yield('css')
   <title>@yield('title')</title>
@@ -28,9 +28,9 @@
   @yield('header')
   <div class="home">
     @if (session('flash_message'))
-    <div class="flash_message alert alert-success" style="margin:0">
-      {{ session('flash_message') }}
-    </div>
+      <div class="flash_message alert alert-success" style="margin:0">
+        {{ session('flash_message') }}
+      </div>
     @endif
     <div class="home-container">
       <nav>
@@ -109,22 +109,22 @@
   </footer>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   @env('local')
-  <script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/highlighted_nav_link.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/footer_fig_resize.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/footer_img_random_change.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/thanks_message.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/login_dd.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/header_search_form.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/highlighted_nav_link.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/footer_fig_resize.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/footer_img_random_change.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/thanks_message.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/login_dd.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/header_search_form.js') }}"></script>
   @endenv
   @production
-  <script type="text/javascript" src="{{ secure_asset('js/materialize.js') }}"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/highlighted_nav_link.js') }}"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/footer_fig_resize.js') }}"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/footer_img_random_change.js') }}"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/thanks_message.js') }}"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/login_dd.js') }}"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/header_search_form.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/materialize.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/highlighted_nav_link.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/footer_fig_resize.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/footer_img_random_change.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/thanks_message.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/login_dd.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/header_search_form.js') }}"></script>
   @endproduction
 
   @yield('js')

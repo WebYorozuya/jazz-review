@@ -20,10 +20,10 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 //パスワード変更
-Route::get('changepassword','MypageController@showChangePasswordForm');
-Route::post('changepassword','MypageController@changepassword')->name('changepassword');
+Route::get('changepassword','SettingController@showChangePasswordForm');
+Route::post('changepassword','SettingController@changepassword')->name('changepassword');
 
-Route::get('mypage', 'MypageController@index')->name('mypage');
+Route::get('settings', 'SettingController@index')->name('settings');
 
 // ログアウト
 Route::get('/logout',[
@@ -40,13 +40,18 @@ Route::get('/output','UploadImageController@output')->name('output');
 Route::get('/', 'ReviewController@index')->name('top');
 
 //投稿画面の表示
-Route::get('post', 'ReviewController@post');
+Route::get('post', function() {
+    return view('reviews.post');
+});
+
+//投稿画面の表示（仮）
+Route::get('/get_suggested_tag', 'TagController@getSuggestedTag');
 
 //投稿内容をDBへ登録 
 Route::post('insert', 'ReviewController@create');
 
 //投稿の修正、削除ページの表示
-Route::get('edit', 'ReviewController@edit');
+Route::get('edit', 'ReviewController@edit')->name('edit');
 
 //修正
 Route::post('update', 'ReviewController@update');
@@ -55,28 +60,29 @@ Route::post('update', 'ReviewController@update');
 Route::post('del', 'ReviewController@delete');
 
 //いいね
-Route::group(['middleware' => ['auth']], function () {
-    Route::post('like', 'ReviewController@like')->name('reviews.like');
-});
+Route::post('like', 'ReviewController@like')->name('reviews.like');
 
 // タグ一覧ページ表示
 Route::get('tags', 'TagController@getTags');
 
 // タグ別投稿ページ表示
-Route::get('/tag', 'TagController@getReviewsByTag')->name('tag');
+Route::get('/tag', 'TagController@getReviewsByTag')->name('tags.tag');
 
 // ユーザー別投稿ページ表示
-Route::get('user', 'ReviewController@getReviewsByUser');
+Route::get('/user', 'ReviewController@getReviewsByUser')->name('user');
 
 //検索
 Route::get('search', 'SearchController@search')->name('search');
 
 // ----- その他 -----
 // 利用規約ページ表示
-Route::get('terms', 'TermsController@index'); 
-
 //Contact
-Route::get('contact', 'ContactController@index');
+Route::get('contact', function() {
+    return view('contact.contact');
+}
+);
+
+Route::get('terms', 'TermsController@index'); 
 
 // 問合せメール送信
 Route::post('process', 'ContactController@process');

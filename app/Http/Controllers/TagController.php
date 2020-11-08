@@ -15,40 +15,36 @@ class TagController extends Controller
 {
     public function getTags()
     {
-        if (Auth::user()) {
-            $user = Auth::user()->account_name;
-        } else {
-            $user = 'ゲスト';
+        $tags = Tag::withCount('reviews')->orderBy('id', 'desc')->whereNotIn('tag_name', [""])->paginate(90);
+        foreach ($tags as $tag) {
+            if ($tag->reviews_count > 0){
+                $existing_tags [] = $tag;
+            }
         }
-        //TODO:0件のタグを除く
-        $items = Tag::withCount('reviews')->orderBy('id', 'desc')->paginate(90);
         return view('tags.tags_list', [
-            'user' => $user,
-            'items' => $items
+            'tags' => $existing_tags,
         ]);
     }
 
     public function getReviewsByTag(Request $request)
     {
-        $tag_name = Tag::find($request->id)->tag_name;
-        if (Auth::user()) {
-            $user = Auth::user()->account_name;
-        } else {
-            $user = 'ゲスト';
-        }
-        //タグidを元にそのタグの入った投稿を全て取得
-        $items = Tag::find($request->id)->reviews()->orderBy('id', 'desc')->paginate(10);
-        //タグ名を取得
+        $tag_name = $request->tag_name;
+        $tag_id = Tag::where('tag_name', $tag_name)->first('id');
+        $items = Tag::find($tag_id->id)->reviews()->orderBy('id', 'desc')->paginate(10);
         $likes = new Like;
         $liked = like::all();
         $param = [
-            'user' => $user,
+            'tag_name' => $tag_name,
             'items' => $items,
             'likes' => $likes,
             'liked' => $liked,
-            'tag_name' => $tag_name,
         ];
         return view('reviews.reviews_by_tag', $param);
+    }
 
+    public function getSuggestedTag(Request $request)
+    {
+        $tags = Tag::where('tag_name', 'like', $request . '%')->get('tag_name');
+        return response()->json($tags);
     }
 }

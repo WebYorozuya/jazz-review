@@ -1,13 +1,31 @@
-@extends('layouts.app')
+@extends('layouts.settings')
 
-@section('content')
+@section('css')
+<link rel="stylesheet" href="{{asset('css/mypage.css')}}">
+@endsection
 
-<!-- ローカル用 -->
-<link rel="stylesheet" href="{{asset('css/output.css')}}">
-<link href="{{ asset('css/output.css') }}" rel="stylesheet">
+@section('header')
+  @component('components.header')
+  @endcomponent
+@endsection
 
-<a href="/upload">画像のアップロードに戻る</a>
-<br>
+@section('main')
+
+@if($errors->any())
+<ul>
+    @foreach($errors->all() as $error)
+    <li>{{ $error }}</li>
+    @endforeach
+</ul>
+@endif
+
+<form method="post" action="{{ route('upload_image') }}" enctype="multipart/form-data">
+    @csrf
+    <input type="file" name="image" accept="image/png, image/jpeg">
+    <br>
+    <input type="submit" value="Upload">
+</form>
+
 @foreach($user_images as $user_image)
 <img class='image-round1' src="{{ asset('../storage/uploads/' . $user_image['user_image']) }}">
 <br>

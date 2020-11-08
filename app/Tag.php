@@ -22,4 +22,11 @@ class Tag extends Model
     {
         return $this->hasMany('App\Like');
     } 
+
+    public function scopeReviewsNotZero($query) {
+        // TODO:スコープで実現したいがreviews_countがないと言われる...
+        // $reviews_count = Tag::withCount('reviews')->get()->reviews_count;
+        // Log::info($reviews_count);
+        // return $query->where(Tag::withCount('reviews')->get()->reviews_count, '>', 0);
+    }
 }
