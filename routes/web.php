@@ -78,11 +78,6 @@ Route::get('search', 'SearchController@search')->name('search');
 
 // ----- その他 -----
 // 利用規約ページ表示
-<<<<<<< HEAD
-Route::get('terms', 'TermsController@index');
-
-=======
->>>>>>> develop
 //Contact
 Route::get('contact', function() {
     return view('contact.contact');

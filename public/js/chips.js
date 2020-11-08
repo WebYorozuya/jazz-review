@@ -8,7 +8,7 @@ postButton.addEventListener("click", function () {
 
   const chips = M.Chips.getInstance(elems[0]);
   let num = "";
-  const hiddenTag = document.getElementById('hiddentag');
+  const hiddenTag = document.getElementById('hidden-tag');
   const createPost = document.getElementById('create-post');
 
   for (let i = 0; i < chips.chipsData.length; i++) {

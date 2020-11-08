@@ -1,8 +1,10 @@
 'use strict';
 {
+    const tagsParent = document.getElementById('tags-parent');
     const tagArea = document.getElementById('tag');
     const ul = document.getElementById('suggested-tags');
     const bg = document.getElementById('suggested-tags-bg');
+    const postButton = document.getElementById('post-button');
 
     // tag入力フォームに入力された文字列を元にtag候補を表示する
     tagArea.addEventListener("keyup", event => {
@@ -45,21 +47,45 @@
         // タグ候補を表示
         ul.style.display = 'block';
         suggestedTags.forEach(tag => {
-            const li = createLi(tag);
+            const li = createLi(tag.tag_name);
             ul.appendChild(li);
         });
     }
 
-    function createLi(tag) {
+    // liタグ生成
+    function createLi(tagName) {
         const li = document.createElement('li');
         li.classList.add('suggested-tag');
-        li.innerText = tag.tag_name;
+        const a = createA(tagName);
+        li.appendChild(a);
         li.addEventListener('click', () => {
-            console.log(li.innerText);
-            // TODO: chips化する
+            tagArea.value = '';
+            const span = createChip(tagName);
+            tagsParent.insertBefore(span, tagArea);
+            clearSuggestedTags();
+            hideSuggestedTags();
         });
         return li;
     }
+
+    // aタグ生成
+    function createA(tagName) {
+        const a = document.createElement('a');
+        a.innerText = tagName;
+        return a;
+    }
+
+    // chip（spanタグ）生成
+    function createChip(tagName) {
+        const span = document.createElement('span');
+        span.classList.add('chip');
+        span.innerText = tagName;
+        span.addEventListener('click', () => {
+            span.remove();
+        });
+        return span;
+    }
+
 
     // tag候補の表示・非表示を切り替える（タグ候補をモーダル化する）
     function createModal() {
@@ -82,4 +108,16 @@
         bg.style.display = 'none';
         ul.style.display = 'none';
     }
+
+    // 送信時にchipの内容をhiddenにセット
+    postButton.addEventListener("click", function () {
+        let num = '';
+        const hiddenTag = document.getElementById('hidden-tag');
+        const chips = Array.from(document.getElementsByClassName("chip"));
+        const tags = chips.map(chip => chip.innerText);
+        const tagStr = tags.join(' ');
+
+        hiddenTag.value = tagStr;
+        document.getElementById('create-post').submit();
+      });
 }
