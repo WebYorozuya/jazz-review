@@ -177,7 +177,6 @@ h2 {
 }
 
 .member-sns-btn {
-<<<<<<< HEAD
   display       : flex;
   flex-direction: row;
   text-align    : start;
@@ -188,6 +187,7 @@ h2 {
 }
 
 .member-sns-btn a {
+  width     : 30px;
   height    : 30px;
   margin    : 0 5px;
   transition: 0.2s;
@@ -214,7 +214,7 @@ h2 {
 
 .showBtn {
   display: block;
-
+}
 
 .fa-twitter-square {
   color: #1da1f2;
@@ -409,7 +409,6 @@ aside {
 
   .member-sns-btn {
     margin: 0px 5px 0px 0px;
-
   }
 
   .member-sns-btn a {

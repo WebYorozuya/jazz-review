@@ -10,11 +10,8 @@
 @endsection
 
 @section('header')
-@component('components.header')
-@slot('user')
-{{$user}}
-@endslot
-@endcomponent
+  @component('components.header')
+  @endcomponent
 @endsection
 
 @section('main')

@@ -51,7 +51,7 @@ let teamMember = {
     nickname: "mike",
     imgSrc: "images/mike.jpg",
     inCharge: "フロントエンド担当",
-    modaltext: "ジャズは私にとって未知の世界でしたが、まさかジャズのためのWEBアプリ制作に関われることになるとは！試行錯誤したコードがうまく動いたときの達成感がいいですね。エラーと向き合って、成長痛を楽しんで、日々前進でフルスタックを目指したいです!（*^_^*）",
+    modaltext: "ジャズは私にとって未知の世界でしたが、まさかジャズのためのWEBアプリ制作に関われることになるとは！エラーと向き合って、成長痛を楽しんで、少しずつでも日々前進します!",
     twitterHref: "https:",
     facebookHref: "https:",
     githubHref: "https://github.com/mike3104",
