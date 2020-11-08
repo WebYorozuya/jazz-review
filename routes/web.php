@@ -60,9 +60,7 @@ Route::post('update', 'ReviewController@update');
 Route::post('del', 'ReviewController@delete');
 
 //いいね
-Route::group(['middleware' => ['auth']], function () {
-    Route::post('like', 'ReviewController@like')->name('reviews.like');
-});
+Route::post('like', 'ReviewController@like')->name('reviews.like');
 
 // タグ一覧ページ表示
 Route::get('tags', 'TagController@getTags');
