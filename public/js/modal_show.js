@@ -7,148 +7,180 @@ let teamMember = {
     nickname: "kaku",
     imgSrc: "images/kaku.jpeg",
     inCharge: "リーダー・デザイン担当・サーバーサイド担当",
-    modaltext: "kaku！ マイケル！ マイケル！ マイケル！",
+    modaltext: "大好きでお世話になってるジャズのためのWebアプリを作れたらなと思い、このプロジェクトを立ち上げました。いろんな人の顔を思い浮かべながら制作に励んでいます！",
+    twitterHref: "https://twitter.com/kakudaisuke",
+    facebookHref: "https:",
+    githubHref: "https://github.com/kakudaisuke",
+    instagramHref: "https:",
   },
   {
     name: "tsuka",
     nickname: "tsuka",
     imgSrc: "images/tsuka.jpg",
     inCharge: "サーバーサイド担当",
-    modaltext: "tsuka！ マイケル！ マイケル！ マイケル！",
+    modaltext: "Webアプリに初挑戦！！Jazz Logを通して自分を含めJazzに興味持つ人が増えれば嬉しい！！",
+    twitterHref: "https:",
+    facebookHref: "https:",
+    githubHref: "https://github.com/tuka1031",
+    instagramHref: "https:",
   },
   {
     name: "ayaka",
     nickname: "ayaka",
     imgSrc: "images/ayaka.jpg",
     inCharge: "フロントエンド担当・デザイン担当",
-    modaltext: "ayaka！ マイケル！ マイケル！ マイケル！",
+    modaltext: "このJazz Logの作成をきっかけにJAZZに興味を持ちそうな予感♪Jazz Logを通じてJAZZを語れるようになればいいな。",
+    twitterHref: "https:",
+    facebookHref: "https:",
+    githubHref: "https://github.com/ayakaaa182",
+    instagramHref: "https://www.instagram.com/yozora223/",
   },
   {
     name: "waito",
     nickname: "waito",
     imgSrc: "images/waito.jpg",
     inCharge: "フロントエンド担当",
-    modaltext: "waito！ マイケル！ マイケル！ マイケル！",
+    modaltext: "楽しくWebアプリ作れればと思い、PJの後半から参加させてもらいました！マンガ「BLUE GIANT」が大好きなのでリアルなJAZZにも触れたいです(^^)",
+    twitterHref: "https:",
+    facebookHref: "https:",
+    githubHref: "https://github.com/uekiGityuto",
+    instagramHref: "https:",
   },
   {
-    name: "mikikeisuke",
+    name: "mike",
     nickname: "mike",
     imgSrc: "images/mike.jpg",
     inCharge: "フロントエンド担当",
-    modaltext: "mike！ マイケル！ マイケル！ マイケル！",
+    modaltext: "ジャズは私にとって未知の世界でしたが、まさかジャズのためのWEBアプリ制作に関われることになるとは！試行錯誤したコードがうまく動いたときの達成感がいいですね。エラーと向き合って、成長痛を楽しんで、日々前進でフルスタックを目指したいです!（*^_^*）",
+    twitterHref: "https:",
+    facebookHref: "https:",
+    githubHref: "https://github.com/mike3104",
+    instagramHref: "https:",
   },
   ]
 }
 
 // member-infoのprofile-img、
-const modalBack = document.getElementsByClassName("modal-back");
-const section_modalBack = Array.from(modalBack);
-const memberInfo = document.getElementsByClassName("member-info");
-const section_memberInfo = Array.from(memberInfo);
-const memberInfoImg = document.getElementsByClassName("profile-img");
-const section_memberInfoImg = Array.from(memberInfoImg);
-const memberInfoName = document.getElementsByClassName("member-name");
-const section_memberInfoName = Array.from(memberInfoName);
-const modalWrapper = document.getElementsByClassName("modal-wrapper");
-const section_modalWrapper = Array.from(modalWrapper);
-const closeBtn = document.getElementsByClassName("closeBtn");
-const section_closeBtn = Array.from(closeBtn);
-const prevBtn = document.getElementsByClassName("prevBtn");
-const section_prevBtn = Array.from(prevBtn);
-const nextBtn = document.getElementsByClassName("nextBtn");
-const section_nextBtn = Array.from(nextBtn);
+const modalBack = document.querySelectorAll(".modal-back");
+const memberInfo = document.querySelectorAll(".member-info");
+const memberInfoImg = document.querySelectorAll(".profile-img");
+const memberInfoName = document.querySelectorAll(".member-name");
+const modalWrapper = document.querySelectorAll(".modal-wrapper");
+const closeBtn = document.querySelectorAll(".closeBtn");
+const prevBtn = document.querySelectorAll(".prevBtn");
+const nextBtn = document.querySelectorAll(".nextBtn");
+const twitterAtag = document.querySelectorAll('.twitter');
+const facebookAtag = document.querySelectorAll('.facebook');
+const githubAtag = document.querySelectorAll('.github');
+const instagramAtag = document.querySelectorAll('.instagram');
+const twitterBtn = document.querySelectorAll('.twitter-btn');
+const facebookBtn = document.querySelectorAll('.facebook-btn');
+const githubBtn = document.querySelectorAll('.github-btn');
+const instagramBtn = document.querySelectorAll('.instagram-btn');
 
-
-for (let i = 0; i < section_memberInfo.length; i++) {
-  section_memberInfoImg[i].src = teamMember.memberInfo[i].imgSrc;
-  section_memberInfoName[i].innerHTML = teamMember.memberInfo[i].nickname;
+for (let i = 0; i < memberInfo.length; i++) {
+  memberInfoImg[i].src = teamMember.memberInfo[i].imgSrc;
+  memberInfoName[i].innerHTML = teamMember.memberInfo[i].nickname;
+  twitterAtag[i].href = teamMember.memberInfo[i].twitterHref;
+  facebookAtag[i].href = teamMember.memberInfo[i].facebookHref;
+  githubAtag[i].href = teamMember.memberInfo[i].githubHref;
+  instagramAtag[i].href = teamMember.memberInfo[i].instagramHref;
+  if (twitterAtag[i].href !== "https:") {
+    twitterBtn[i].classList.add("showBtn");
+  }
+  if (facebookAtag[i].href != "https:") {
+    facebookBtn[i].classList.add("showBtn");
+  }
+  if (githubAtag[i].href != "https:") {
+    githubBtn[i].classList.add("showBtn");
+  }
+  if (instagramAtag[i].href != "https:") {
+    instagramBtn[i].classList.add("showBtn");
+  }
 }
 
-for (let i = 0; i < section_modalWrapper.length; i++) {
-  const memberInfoModalProfileImg = document.getElementsByClassName("modal-profile-img");
-  const section_memberInfoModalProfileImg = Array.from(memberInfoModalProfileImg);
-  const memberInfoName = document.getElementsByClassName("name");
-  const section_memberInfoName = Array.from(memberInfoName);
-  const memberInfoInCharge = document.getElementsByClassName("role");
-  const section_memberInfoInCharge = Array.from(memberInfoInCharge);
-  const memberInfoText = document.getElementsByClassName("modal-text");
-  const section_memberInfoText = Array.from(memberInfoText);
+for (let i = 0; i < modalWrapper.length; i++) {
+  const memberInfoModalProfileImg = document.querySelectorAll(".modal-profile-img");
+  const memberInfoName = document.querySelectorAll(".name");
+  const memberInfoInCharge = document.querySelectorAll(".role");
+  const memberInfoText = document.querySelectorAll(".modal-text");
 
-  section_memberInfoModalProfileImg[i].src = teamMember.memberInfo[i].imgSrc;
-  section_memberInfoName[i].innerHTML = teamMember.memberInfo[i].name;
-  section_memberInfoInCharge[i].innerHTML = teamMember.memberInfo[i].inCharge;
-  section_memberInfoText[i].innerHTML = teamMember.memberInfo[i].modaltext;
+
+  memberInfoModalProfileImg[i].src = teamMember.memberInfo[i].imgSrc;
+  memberInfoName[i].innerHTML = teamMember.memberInfo[i].name;
+  memberInfoInCharge[i].innerHTML = teamMember.memberInfo[i].inCharge;
+  memberInfoText[i].innerHTML = teamMember.memberInfo[i].modaltext;
 }
 
-for (let i = 0; i < section_memberInfo.length; i++) {
+for (let i = 0; i < memberInfo.length; i++) {
   let index = i;
   let nextindex;
   let previndex;
 
-  section_memberInfo[i].addEventListener('click', function (event) {
-    section_modalWrapper[i].classList.toggle("show");
-    section_modalBack[i].classList.toggle("spread");
-    if (section_modalWrapper[i].classList.contains("show")) {
-      section_closeBtn[i].addEventListener('click', function () {
-        section_modalWrapper[i].classList.remove("show");
-        section_modalBack[i].classList.remove("spread");
+  memberInfo[i].addEventListener('click', function () {
+    modalWrapper[i].classList.toggle("show");
+    modalBack[i].classList.toggle("spread");
+    if (modalWrapper[i].classList.contains("show")) {
+      closeBtn[i].addEventListener('click', function () {
+        modalWrapper[i].classList.remove("show");
+        modalBack[i].classList.remove("spread");
       })
-      section_modalBack[i].addEventListener('click', function() {
-        section_modalWrapper[i].classList.remove("show");
-        section_modalBack[i].classList.remove("spread");
+      modalBack[i].addEventListener('click', function () {
+        modalWrapper[i].classList.remove("show");
+        modalBack[i].classList.remove("spread");
       })
     };
-    if (section_modalWrapper[i].classList.contains("show")) {
-      section_modalBack[i].addEventListener('click', function () {
-        section_modalWrapper[i].classList.remove("show");
-        section_modalBack[i].classList.remove("spread");
+    if (modalWrapper[i].classList.contains("show")) {
+      modalBack[i].addEventListener('click', function () {
+        modalWrapper[i].classList.remove("show");
+        modalBack[i].classList.remove("spread");
       });
 
     };
   });
 
-  section_nextBtn[i].addEventListener('click', function () {
-    if (index == section_modalWrapper.length - 1) {
+  nextBtn[i].addEventListener('click', function () {
+    if (index == modalWrapper.length - 1) {
       nextindex = 0;
     } else {
       nextindex = index + 1;
     }
-    section_modalWrapper[index].classList.remove("show");
-    section_modalBack[index].classList.remove("spread");
-    section_modalWrapper[nextindex].classList.add("show");
-    section_modalBack[nextindex].classList.add("spread");
-    if (section_modalWrapper[nextindex].classList.contains("show")) {
-      section_closeBtn[nextindex].addEventListener('click', function () {
-        section_modalWrapper[nextindex].classList.remove("show");
+    modalWrapper[index].classList.remove("show");
+    modalBack[index].classList.remove("spread");
+    modalWrapper[nextindex].classList.add("show");
+    modalBack[nextindex].classList.add("spread");
+    if (modalWrapper[nextindex].classList.contains("show")) {
+      closeBtn[nextindex].addEventListener('click', function () {
+        modalWrapper[nextindex].classList.remove("show");
       })
     };
-    if (section_modalWrapper[nextindex].classList.contains("show")) {
-      section_modalBack[nextindex].addEventListener('click', function () {
-        section_modalWrapper[nextindex].classList.remove("show");
+    if (modalWrapper[nextindex].classList.contains("show")) {
+      modalBack[nextindex].addEventListener('click', function () {
+        modalWrapper[nextindex].classList.remove("show");
       })
     };
   });
 
-  section_prevBtn[i].addEventListener('click', function () {
+  prevBtn[i].addEventListener('click', function () {
     if (index == 0) {
-      previndex = section_modalWrapper.length - 1;
+      previndex = modalWrapper.length - 1;
     } else {
       previndex = index - 1;
     }
-    section_modalWrapper[index].classList.remove("show");
-    section_modalBack[index].classList.remove("spread");
-    section_modalWrapper[previndex].classList.add("show");
-    section_modalBack[previndex].classList.add("spread");
-    if (section_modalWrapper[previndex].classList.contains("show")) {
-      section_closeBtn[previndex].addEventListener('click', function () {
-        section_modalWrapper[previndex].classList.remove("show");
-        section_modalBack[index].classList.remove("spread");
+    modalWrapper[index].classList.remove("show");
+    modalBack[index].classList.remove("spread");
+    modalWrapper[previndex].classList.add("show");
+    modalBack[previndex].classList.add("spread");
+    if (modalWrapper[previndex].classList.contains("show")) {
+      closeBtn[previndex].addEventListener('click', function () {
+        modalWrapper[previndex].classList.remove("show");
+        modalBack[index].classList.remove("spread");
       })
     };
-    if (section_modalWrapper[previndex].classList.contains("show")) {
-      section_modalBack[previndex].addEventListener('click', function () {
-        section_modalWrapper[previndex].classList.remove("show");
-        section_modalBack[previndex].classList.remove("spread");
+    if (modalWrapper[previndex].classList.contains("show")) {
+      modalBack[previndex].addEventListener('click', function () {
+        modalWrapper[previndex].classList.remove("show");
+        modalBack[previndex].classList.remove("spread");
       })
     };
   });
