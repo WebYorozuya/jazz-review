@@ -36,6 +36,7 @@
       <label for="tag">タグ</label>
       <div id="tags-parent" class="suggested-tags-parent">
         <input id="tag" class="tag-input" type="text" placeholder="タグを入力して候補から選択" autocomplete="off">
+        <div id="tag-error-msg" class="tag-error-msg" style="display: none;">入力されたタグが存在しません</div>
         <ul id="suggested-tags" class="suggested-tags" style="display: none;"></ul>
         <div id="suggested-tags-bg" class="suggested-tags-bg" style="display: none;"></div>
       </div>

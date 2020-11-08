@@ -2,12 +2,15 @@
 {
     const tagsParent = document.getElementById('tags-parent');
     const tagArea = document.getElementById('tag');
+    const tagErrMsg = document.getElementById('tag-error-msg');
     const ul = document.getElementById('suggested-tags');
     const bg = document.getElementById('suggested-tags-bg');
     const postButton = document.getElementById('post-button');
+    let chipsed = false;
 
     // tag入力フォームに入力された文字列を元にtag候補を表示する
     tagArea.addEventListener("keyup", event => {
+        clearError();
         let inputtedTag = tagArea.value;
         // 入力文字がなければ表示中のtag候補を消す
         if (!inputtedTag) {
@@ -52,7 +55,7 @@
         });
     }
 
-    // liタグ生成
+    // liタグを生成する
     function createLi(tagName) {
         const li = document.createElement('li');
         li.classList.add('suggested-tag');
@@ -60,45 +63,59 @@
         li.appendChild(a);
         li.addEventListener('click', () => {
             tagArea.value = '';
-            const span = createChip(tagName);
-            tagsParent.insertBefore(span, tagArea);
+            createChip(tagName);
             clearSuggestedTags();
             hideSuggestedTags();
+            clearError();
         });
         return li;
     }
 
-    // aタグ生成
+    // aタグを生成する
     function createA(tagName) {
         const a = document.createElement('a');
         a.innerText = tagName;
         return a;
     }
 
-    // chip（spanタグ）生成
+    // 選択したtagが既にchip化されているかどうかチェックする
+    function isDuplicate(tagName) {
+        let isDuplicate = false;
+        const chips = Array.from(document.getElementsByClassName("chip"));
+        const tags = chips.map(chip => chip.innerText);
+        tags.forEach(tag => {
+            if (tag === tagName) {
+                isDuplicate = true;
+            }
+        });
+        return isDuplicate;
+    }
+
+    // chip化する（spanタグを生成する）
     function createChip(tagName) {
+        if (isDuplicate(tagName)) {
+            return;
+        }
         const span = document.createElement('span');
         span.classList.add('chip');
         span.innerText = tagName;
         span.addEventListener('click', () => {
             span.remove();
         });
-        return span;
+        tagsParent.insertBefore(span, tagArea);
     }
-
 
     // tag候補の表示・非表示を切り替える（タグ候補をモーダル化する）
     function createModal() {
         bg.style.display = 'block';
         bg.addEventListener('click', () => {
             hideSuggestedTags();
-            // TODO:tipsがなければ「入力されたタグは存在しません」というメッセージを出す処理を追加
         });
     }
 
-    // tag候補の初期化する
+    // tag候補を初期化する
     function clearSuggestedTags() {
-        while(ul.firstChild) {
+        while (ul.firstChild) {
             ul.removeChild(ul.firstChild);
         }
     }
@@ -109,9 +126,42 @@
         ul.style.display = 'none';
     }
 
+    // 存在しないタグが入力されていればエラーメッセージ
+    // （フォーカスが離れたときにinputフィールドに文字列が残っていれば、
+    // 　存在しないタグが入力されていると判断する）
+    // tag候補選択時にblurになってしまうため、chip化時にtagAreaがクリアされるのを待つ
+    tagArea.addEventListener("blur", event => {
+        window.setTimeout(() => {
+            if (tagArea.value === '') {
+                return;
+            }
+            // 入力したタグが存在していればchip化
+            const suggestedTags = Array.from(document.getElementsByClassName('suggested-tag'));
+            const tags = suggestedTags.map(suggestedTag => suggestedTag.firstElementChild.innerText);
+            tags.forEach(tag => {
+                if(tag === tagArea.value) {
+                    tagArea.value = '';
+                    createChip(tag);
+                    return;
+                }
+                displayError();
+            });
+        }, 200);
+    });
+
+    function displayError() {
+        tagArea.classList.add('tag-error');
+        tagErrMsg.style.display = 'block';
+    }
+
+    function clearError() {
+        tagArea.classList.remove('tag-error');
+        tagErrMsg.style.display = 'none';
+    }
+
+
     // 送信時にchipの内容をhiddenにセット
     postButton.addEventListener("click", function () {
-        let num = '';
         const hiddenTag = document.getElementById('hidden-tag');
         const chips = Array.from(document.getElementsByClassName("chip"));
         const tags = chips.map(chip => chip.innerText);
@@ -119,5 +169,5 @@
 
         hiddenTag.value = tagStr;
         document.getElementById('create-post').submit();
-      });
+    });
 }
