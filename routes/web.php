@@ -47,7 +47,7 @@ Route::get('post', function() {
 //投稿画面の表示（仮）
 Route::get('/get_suggested_tag', 'TagController@getSuggestedTag');
 
-//投稿内容をDBへ登録 
+//投稿内容をDBへ登録
 Route::post('insert', 'ReviewController@create');
 
 //投稿の修正、削除ページの表示
@@ -82,7 +82,7 @@ Route::get('contact', function() {
 }
 );
 
-Route::get('terms', 'TermsController@index'); 
+Route::get('terms', 'TermsController@index');
 
 // 問合せメール送信
 Route::post('process', 'ContactController@process');
