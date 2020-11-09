@@ -6,20 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Like extends Model
 {
-    protected $fillable = ['user_id', 'review_id', 'tag_id'];
-
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo('App\User');
     }
 
     public function review()
     {
-        return $this->belongsTo(Review::class);
+        return $this->belongsTo('App\Review');
     }
 
     public function tag()
     {
-        return $this->belongsTo(Tag::class);
+        return $this->belongsTo('App\Tag');
     }
 }

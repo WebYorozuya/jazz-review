@@ -17,12 +17,8 @@ class ReviewController extends Controller
     public function index(Request $request)
     {
         $items = Review::withCount('likes')->orderBy('id', 'desc')->paginate(10);
-        $likes = new Like;
-        $liked = Like::all();
         $param = [
             'items' => $items,
-            'likes' => $likes,
-            'liked' => $liked,
         ];
         return view('reviews.index', $param);
     }
@@ -148,22 +144,24 @@ class ReviewController extends Controller
     public function like(Request $request)
     {
         $user_id = Auth::user()->id;
-        $review_id = $request->review_id;
-        $like = new Like;        
+        $review_id = $request->review_id; 
         $already_liked = Like::where('user_id', $user_id)->where('review_id', $review_id)->first();
         
         if (!$already_liked) {
             $like = new Like;
-            $like->review_id = $request->review_id;
+            $like->review_id = $review_id;
             $like->user_id = $user_id;
             $like->save();
         } else {
-            $like = Like::where('review_id', $review_id)->where('user_id', $user_id)->delete();
+            Like::where('review_id', $review_id)->where('user_id', $user_id)->delete();
         }
+
         $review_likes_count = Review::withCount('likes')->findOrFail($review_id)->likes_count;
+        
         $param = [
             'review_likes_count' => $review_likes_count,
         ];
+
         return response()->json($param);
     }
 }

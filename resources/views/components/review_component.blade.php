@@ -12,7 +12,6 @@
         @production
           <img src="images/icons8-user-male-30-black.png" alt="">
         @endproduction
-
       </a>
     </div><!-- /.review-left -->
     <div class="review-right">
