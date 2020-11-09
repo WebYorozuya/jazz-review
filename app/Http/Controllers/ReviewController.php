@@ -17,12 +17,8 @@ class ReviewController extends Controller
     public function index(Request $request)
     {
         $items = Review::withCount('likes')->orderBy('id', 'desc')->paginate(10);
-        $likes = new Like;
-        $liked = Like::all();
         $param = [
             'items' => $items,
-            'likes' => $likes,
-            'liked' => $liked,
         ];
         return view('reviews.index', $param);
     }
@@ -165,7 +161,7 @@ class ReviewController extends Controller
         $param = [
             'review_likes_count' => $review_likes_count,
         ];
-        
+
         return response()->json($param);
     }
 }
