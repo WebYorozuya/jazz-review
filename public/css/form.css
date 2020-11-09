@@ -2,7 +2,7 @@ body {
   background-color: #f6f6f4;
 }
 
-main {
+.form-container {
   width           : 450px;
   margin          : 30px auto;
   border-radius   : 10px;
