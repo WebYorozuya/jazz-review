@@ -18,14 +18,9 @@ class Review extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User'); //主テーブルusersへの関連付け
+        return $this->belongsTo('App\User'); 
     }
-    //投稿の中で投稿者を表示するのに使用
-    public function getData()
-    {
-        return $this->user->account_name; //上のuserメソッドからnameを引っ張る?
-    }
-    //タグとのリレーション
+
     public function tags()
     {
         return $this->belongsToMany('App\Tag')->withTimestamps();
