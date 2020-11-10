@@ -31,31 +31,21 @@
 </head>
 
 <body>
-  @component('components.header')
-  @slot('user')
-  @if(Auth::check())
-  <!--ログインしているかの確認 -->
-  {{Auth::user()->account_name}}
-  @else
-  ゲスト
-  @endif
-  @endslot
-  @endcomponent
+	
+	<main class="py-4">
+		@yield('content')
+	</main>
 
-  <main class="py-4">
-    @yield('content')
-  </main>
-
-  @env('local')
-  <script src="{{ asset('js/app.js') }}" defer></script>
-  <script type="text/javascript" src="{{ asset('js/login_dd.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/header_search_form.js') }}"></script>
-  @endenv
-  @production
-  <script src="{{ secure_asset('js/app.js') }}" defer></script>
-  <script type="text/javascript" src="{{ secure_asset('js/login_dd.js') }}"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/header_search_form.js') }}"></script>
-  @endproduction
+	@env('local')
+		<script src="{{ asset('js/app.js') }}" defer></script>
+		<script type="text/javascript" src="{{ asset('js/login_dd.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('js/header_search_form.js') }}"></script>
+	@endenv
+	@production
+		<script src="{{ secure_asset('js/app.js') }}" defer></script>
+		<script type="text/javascript" src="{{ secure_asset('js/login_dd.js') }}"></script>
+		<script type="text/javascript" src="{{ secure_asset('js/header_search_form.js') }}"></script>
+	@endproduction
 </body>
 
 </html>

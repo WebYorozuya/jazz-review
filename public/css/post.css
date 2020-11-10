@@ -1,44 +1,46 @@
 .form_container {
-  width: 100%;
-  margin: 10px auto;
-  background-color: #fff;
+    width           : 100%;
+    margin          : 10px auto;
+    background-color: #fff;
 }
 
 .form_container h1 {
-  font-size: 1.5rem;
-  line-height: 2.2rem;
-  margin-bottom: 20px;
-  text-align: center;
+    font-size    : 1.5rem;
+    line-height  : 2.2rem;
+    margin-bottom: 20px;
+    text-align   : center;
 }
 
 .form_container form {
-  width: 85%;
-  margin: 2px auto;
-  padding-top: 40px;
-  display: flex;
-  flex-direction: column;
+    width         : 85%;
+    margin        : 2px auto;
+    padding-top   : 40px;
+    display       : flex;
+    flex-direction: column;
 }
 
 .live_date {
-  width: min(180px, 100%);
+    width: min(180px, 100%);
 }
 
 .form_container label {
-  margin-bottom: 3px;
+    margin-bottom: 3px;
 }
 
 .form_container input {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
+    height       : 45px;
 }
+
 .form_container input,
 .form_container textarea {
-  border: .5px solid rgb(219, 217, 217);
-  padding: 5px 8px;
+    border : .5px solid rgb(219, 217, 217);
+    padding: 5px 8px;
 }
 
 .max-length {
-  text-align: right;
-  font-size: 0.8rem;
+    text-align: right;
+    font-size : 0.8rem;
 }
 
 .error-messages li {
@@ -51,42 +53,125 @@
 .form_container #post-button,
 .form_container button,
 .form_container #del {
-  width: 180px;
-  font-size: 15px;
-  text-align: center;
-  font-weight: 550;
-  border: none;
-  border-radius: 5px;
-  color: rgb(39, 37, 37);
-  margin: 5px auto;
-  padding: 8px;
-  cursor: pointer;
-  user-select: none;
+    width        : 180px;
+    font-size    : 15px;
+    text-align   : center;
+    font-weight  : 550;
+    border       : none;
+    border-radius: 5px;
+    color        : rgb(39, 37, 37);
+    margin       : 5px auto;
+    padding      : 8px;
+    cursor       : pointer;
+    user-select  : none;
 }
 
 .form_container #post-button {
-  background-color: #0490c7;
-  border-bottom: solid 4px  #026186;
-  color: white;
-  letter-spacing: 1px;
+    background-color: #0490c7;
+    border-bottom   : solid 4px #026186;
+    color           : white;
+    letter-spacing  : 1px;
 }
+
 .form_container #post-button:active {
-  transform: translateY(4px);
-  border-bottom: none;
+    transform    : translateY(4px);
+    border-bottom: none;
 }
 
 .form_container button {
-  background-color: rgb(209, 209, 209);
-  letter-spacing: 1px;
+    background-color: rgb(209, 209, 209);
+    letter-spacing  : 1px;
 }
 
 .form_container #del {
-  background-color: rgb(240, 133, 133);
-  border-bottom: solid 4px  rgb(170, 50, 50);
+    background-color: rgb(240, 133, 133);
+    border-bottom   : solid 4px rgb(170, 50, 50);
 }
 
 #del:active {
-  transform: translateY(4px);
-  border-bottom: none;
+    transform    : translateY(4px);
+    border-bottom: none;
 }
 
+.suggested-tags-parent {
+    height     : 45px;
+    border     : .5px solid rgb(219, 217, 217);
+    display    : flex;
+    align-items: center;
+    position   : relative;
+    z-index    : 100;
+    padding    : 4px;
+}
+
+.chip {
+    border          : 1px solid #b2cdde;
+    border-radius   : 4px;
+    background-color: #d0edff;
+    color           : #545b67;
+    padding         : 0 4px 0 4px;
+    margin          : 0 4px 0 0;
+    cursor          : pointer;
+}
+
+.chip::after {
+    content    : '✕';
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+.suggested-tags-parent input {
+    height: 100%;
+    border: none;
+    margin: 0;
+    flex  : 1;
+}
+
+.suggested-tags-parent input:focus {
+    outline: none;
+}
+
+.tag-error {
+    color: #e9606d;
+}
+
+.tag-error-msg {
+    color           : #fff;
+    background-color: #e9606d;
+    border          : 1px solid #e9606d;
+    border-radius   : 4px;
+    box-shadow      : 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+    position        : absolute;
+    top             : 45px;
+}
+
+.suggested-tags {
+    z-index         : 100;
+    position        : absolute;
+    top             : 40px;
+    left            : 0;
+    list-style      : none;
+    box-shadow      : 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+    border-radius   : 3px;
+    padding         : 8px;
+    width           : auto;
+    background-color: #ffffff;
+}
+
+.suggested-tag {
+    cursor       : pointer;
+    padding-right: 8px;
+    padding-left : 8px;
+}
+
+.suggested-tag:hover {
+    background-color: #dedede;
+}
+
+.suggested-tags-bg {
+    position: fixed;
+    z-index : 99;
+    top     : 0;
+    left    : 0;
+    right   : 0;
+    bottom  : 0;
+}

@@ -1,6 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.settings')
 
-@section('content')
+@section('header')
+  @component('components.header')
+  @endcomponent
+@endsection
+
+@section('main')
 
 @if($errors->any())
 <ul>
