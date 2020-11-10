@@ -54,7 +54,6 @@
         </div><!-- .error-messages -->
       @endif
       <input type="button" id="post-button" value="投稿する">
-      <button>リセットする</button>
     </form>
   </div><!-- /.form_container -->
 @endsection
