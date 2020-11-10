@@ -47,6 +47,15 @@
       <label for="text">ライブの感想</label>
       <textarea name="text" id="text" cols="30" rows="10" maxlength="1000">{{$review->text}}</textarea>
       <p style="text-align: right; font-size: 0.8rem;">（1000文字以内）</p>
+      @if (count($errors) > 0)
+        <div class="error-messages">
+          <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div><!-- .error-messages -->
+      @endif
       <input type="submit" id="post-button" class="submit" value="修正">
     </form>
     <form action="del" method="post">

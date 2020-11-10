@@ -43,6 +43,13 @@
     font-size : 0.8rem;
 }
 
+.error-messages li {
+  list-style: none;
+  background-color: tomato;
+  color: rgb(247, 242, 241);
+  margin-bottom: 2px;
+}
+
 .form_container #post-button,
 .form_container button,
 .form_container #del {
