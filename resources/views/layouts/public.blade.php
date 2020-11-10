@@ -65,9 +65,10 @@
             <div class="pulldown">
               <select name="pulldown" class="pulldown-option" required>
                 <option value="">選択してください</option>
-                <option value="選択肢1">新着順</option>
-                <option value="選択肢2">プレイヤー</option>
-                <option value="選択肢3">ライブハウス</option>
+                <option value="選択肢1">新着レビュー</option>
+                <option value="選択肢2">タグ</option>
+                <option value="選択肢3">投稿する</option>
+                <option value="選択肢4">お問い合わせ</option>
               </select>
             </div>
             <div class="pulldown-select">
