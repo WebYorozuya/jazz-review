@@ -1,3 +1,5 @@
+// tag候補を表示し、選択されたタグをchip化する処理
+// 送信時に選択したタグをhiddenタグにセットする処理
 'use strict';
 {
     const tagsParent = document.getElementById('tags-parent');
@@ -6,7 +8,6 @@
     const ul = document.getElementById('suggested-tags');
     const bg = document.getElementById('suggested-tags-bg');
     const postButton = document.getElementById('post-button');
-    let chipsed = false;
 
     // tag入力フォームに入力された文字列を元にtag候補を表示する
     tagArea.addEventListener("keyup", event => {
