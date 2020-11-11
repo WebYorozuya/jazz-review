@@ -12,7 +12,6 @@
         @production
           <img src="images/icons8-user-male-30-black.png" alt="">
         @endproduction
-
       </a>
     </div><!-- /.review-left -->
     <div class="review-right">
@@ -47,7 +46,7 @@
         <span class="readmore-btn">続きを読む</span>
       </div>
       <div class="review-bottom">
-        <span class="user-name">by <a href="{{ route('user', ['account_name' => $item->user->account_name]) }}">{{$item->getData()}}さん</span></a>
+        <span class="user-name">by <a href="{{ route('user', ['account_name' => $item->user->account_name]) }}">{{$item->user->account_name}}さん</span></a>
         <span class="created-at">{{$item->created_at}}</span>
         @auth
           @if (!App\Like::where('user_id', Auth::user()->id)->where('review_id', $item->id)->first())

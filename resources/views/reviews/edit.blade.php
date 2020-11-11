@@ -31,13 +31,31 @@
       <label for="live_date">ライブに行った日</label>
       <input type="date" id="live_date" class="live_date" name="live_date" value="{{$review->live_date}}">
       <label for="tag">タグ</label>
-      <input type="text" id="tag" name="tag_name" value="@foreach ($review->tags as $tag){{$tag->tag_name}} @endforeach">
+      <div id="tags-parent" class="suggested-tags-parent">
+        @foreach ($review->tags as $tag)
+        <span class="chip">{{$tag->tag_name}}</span>
+        @endforeach
+        <input id="tag" class="tag-input" type="text" placeholder="タグを入力して候補から選択" autocomplete="off">
+        <div id="tag-error-msg" class="tag-error-msg" style="display: none;">入力されたタグが存在しません</div>
+        <ul id="suggested-tags" class="suggested-tags" style="display: none;"></ul>
+        <div id="suggested-tags-bg" class="suggested-tags-bg" style="display: none;"></div>
+      </div>
+      <input type="text" id="hidden-tag" name="tag_name" hidden>
       <label for="title">レビューのタイトル</label>
       <input type="text" id="title" name="title" value="{{$review->title}}" maxlength="80">
       <p class="max-length">（80文字以内）</p>
       <label for="text">ライブの感想</label>
       <textarea name="text" id="text" cols="30" rows="10" maxlength="1000">{{$review->text}}</textarea>
       <p style="text-align: right; font-size: 0.8rem;">（1000文字以内）</p>
+      @if (count($errors) > 0)
+        <div class="error-messages">
+          <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div><!-- .error-messages -->
+      @endif
       <input type="submit" id="post-button" class="submit" value="修正">
     </form>
     <form action="del" method="post">
@@ -53,9 +71,13 @@
   @env('local')
     <script type="text/javascript" src="{{ asset('js/chips.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/character_counter.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/layout_tag.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/suggest_tag.js') }}"></script>
   @endenv
   @production
     <script type="text/javascript" src="{{ secure_asset('js/chips.js') }}"></script>
     <script type="text/javascript" src="{{ secure_asset('js/character_counter.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/layout_tag.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/suggest_tag.js') }}"></script>
   @endproduction
 @endsection
