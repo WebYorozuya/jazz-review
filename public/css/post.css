@@ -168,7 +168,7 @@
     padding-left : 8px;
 }
 
-.suggested-tag:hover {
+.suggested-tag-active {
     background-color: #dedede;
 }
 
