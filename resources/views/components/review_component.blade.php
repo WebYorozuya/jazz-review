@@ -1,31 +1,31 @@
 @foreach ($items as $item)
-  <div class="review">    
-    <div class="review-left">
-      <a href="{{ route('user', ['user_id' => $item->user_id]) }}" class="user-image">
-        @env('local')
-          @if ($item->user->user_image)
-            <img src="/storage/uploads/{{ $item->user->user_image }}" alt="">
-          @else
-            <img src="images/icons8-user-male-30-black.png" alt="">
-          @endif
-        @endenv
-        @production
-          <img src="images/icons8-user-male-30-black.png" alt="">
-        @endproduction
-      </a>
-    </div><!-- /.review-left -->
-    <div class="review-right">
-      <div class="review-top">
-        <h2>{{$item->live_date}} {{$item->title}}</h2>
-        <!-- ドロップダウンメニュー -->
-        <div class="review-dropdown-wrapper">
-          <i class="fas fa-ellipsis-h showIcon"></i>
-          <ul class="review-dropdown">
-            @auth
-            @if (Auth::user()->id === $item->user_id)
-            <a href="{{ route('edit', ['id' => $item->id]) }}">
-              <li>編集／削除する</li>
-            </a>
+<div class="review">
+  <div class="review-left">
+    <a href="{{ route('user', ['user_id' => $item->user_id]) }}" class="user-image">
+      @env('local')
+      @if ($item->user->user_image)
+      <img src="/storage/uploads/{{ $item->user->user_image }}" alt="">
+      @else
+      <img src="images/icons8-user-male-30-black.png" alt="">
+      @endif
+      @endenv
+      @production
+      <img src="images/icons8-user-male-30-black.png" alt="">
+      @endproduction
+    </a>
+  </div><!-- /.review-left -->
+  <div class="review-right">
+    <div class="review-top">
+      <h2>{{$item->live_date}} {{$item->title}}</h2>
+      <!-- ドロップダウンメニュー -->
+      <div class="review-dropdown-wrapper">
+        <i class="fas fa-ellipsis-h showIcon"></i>
+        <ul class="review-dropdown">
+          @auth
+          @if (Auth::user()->id === $item->user_id)
+          <a href="{{ route('edit', ['id' => $item->id]) }}">
+            <li>編集／削除する</li>
+          </a>
             @endif
             @endauth
             <a href="contact#contact">
@@ -63,9 +63,10 @@
         @endauth
         @guest
           <span class="likes">
-              <div class="balloon">
-                いいねができるのはログインユーザーのみです。
-              </div>
+            <div class="balloon">
+              いいねができるのはログインユーザーのみです。<br>
+            <a href="#">ログイン </a>または<a href="#"> 新規登録 </a>する
+            </div>
               <i class="fas fa-music heart"></i>
             <span class="like-counter">{{$item->likes_count}}</span>
           </span><!-- /.likes -->
