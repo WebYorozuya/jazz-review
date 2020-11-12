@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Like;
 
 class Review extends Model
 {
@@ -29,5 +30,9 @@ class Review extends Model
     public function likes()
     {
         return $this->hasMany('App\Like');
-    } 
+    }
+
+    public function isLikedBy($user): bool {
+        return Like::where('user_id', $user->id)->where('review_id', $this->id)->first() !==null;
+    }
 } 

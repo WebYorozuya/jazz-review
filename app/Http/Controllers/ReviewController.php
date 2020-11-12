@@ -16,9 +16,9 @@ class ReviewController extends Controller
     //トップページを表示
     public function index(Request $request)
     {
-        $items = Review::withCount('likes')->orderBy('id', 'desc')->paginate(10);
+        $reviews = Review::withCount('likes')->orderBy('id', 'desc')->paginate(10);
         $param = [
-            'items' => $items,
+            'reviews' => $reviews,
         ];
         return view('reviews.index', $param);
     }
@@ -27,13 +27,13 @@ class ReviewController extends Controller
     {
         $account_name = $request->account_name;
         $selected_user = User::where('account_name', $account_name)->first();
-        $items = Review::withCount('likes')->where('user_id', $selected_user->id)->orderBy('id', 'desc')->paginate(10);
+        $reviews = Review::withCount('likes')->where('user_id', $selected_user->id)->orderBy('id', 'desc')->paginate(10);
         $likes = new Like;
         $liked = like::all();
         $param = [
             'account_name' => $account_name,
             'selected_user' => $selected_user,
-            'items' => $items,
+            'reviews' => $reviews,
             'likes' => $likes,
             'liked' => $liked,
         ];
