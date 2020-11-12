@@ -22,7 +22,7 @@ tagArea.addEventListener("keyup", event => {
         return;
     }
 
-    // Enterキー、または、タブキーが押下された場合はactiveなタグ候補をchip化する
+    // Enterキーが押下された場合はactiveなタグ候補をchip化する
     if (ul.hasChildNodes && (event.key === 'Enter' || event.ley === 'Tab')) {
         const suggestedTags = Array.from(document.getElementsByClassName('suggested-tag'));
         const index = suggestedTags.findIndex(suggestedTag =>
