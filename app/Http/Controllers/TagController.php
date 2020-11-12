@@ -7,7 +7,7 @@ use App\Tag;
 use App\Review;
 use App\User;
 use App\Like;
-use Illuminate\Support\Facades\DB; //両立できるのね
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
@@ -26,16 +26,16 @@ class TagController extends Controller
         ]);
     }
 
-    public function getReviewsByTag(Request $request)
+    public function getReviewsByTag(Request $request, $id)
     {
         $tag_name = $request->tag_name;
         $tag_id = Tag::where('tag_name', $tag_name)->first('id');
-        $items = Tag::find($tag_id->id)->reviews()->orderBy('id', 'desc')->paginate(10);
+        $reviews = Tag::find($tag_id->id)->reviews()->orderBy('id', 'desc')->paginate(10);
         $likes = new Like;
         $liked = like::all();
         $param = [
             'tag_name' => $tag_name,
-            'items' => $items,
+            'reviews' => $reviews,
             'likes' => $likes,
             'liked' => $liked,
         ];
