@@ -17,36 +17,36 @@ input[type="checkbox"] {
   left: -100vw;
 } */
 
-.closeImg {
+.close-img {
   width: 15px;
   margin: 3px;
   display: none;
   background-color: #fff;
 }
 
-.openImg {
+.open-img {
   width: 15px;
   margin: 3px;
   background-color: #fff;
 }
 
-.editImg {
+.edit-img {
   margin: 5px;
 }
 
-.userMaleImg {
+.usermale-img {
   border: 1px solid #ffffff;
   border-radius: 20px;
   margin: 5px;
 }
 
-.main-userMaleImg {
+.main-usermale-img {
   border: 1px solid #111111;
   border-radius: 20px;
   margin: 0px 5px 0px 5px;
 }
 
-.loginSortDownImg {
+.login-sortdown-img {
   height: 15px;
 }
 
@@ -74,12 +74,12 @@ header {
   position: relative;
 }
 /* サイトロゴ */
-.header-siteName {
+.header-sitename {
   flex: 1;
   min-width: 100px;
 }
 
-.siteLogo {
+.site-logo {
   height: 60px;
   margin-top: 8px;
 }
@@ -152,14 +152,14 @@ header {
 }
 
 /* ログイン機能 */
-.header-loginUser {
+.header-loginuser {
   flex: 1;
   display: flex;
   justify-content: row;
 }
 
 /* ログイン機能のアコーディオンメニュー */
-.header-loginUser-acd-label {
+.header-loginuser-acd-label {
   flex: 1;
   display: flex;
   justify-content: row;
@@ -175,11 +175,11 @@ header {
   width: 80px;
 }
 
-.header-loginUser-acd-label:hover {
+.header-loginuser-acd-label:hover {
   opacity: 0.8;
 }
 
-.header-loginUser-acd-content {
+.header-loginuser-acd-content {
   border: 1px solid #eeeeee;
   background-color: #ffffff;
   display: block;
@@ -195,13 +195,13 @@ header {
   font-size: 12px;
 }
 
-.header-loginUser-acd-content a {
+.header-loginuser-acd-content a {
   text-decoration: none;
 }
 
-.header-loginUser-acd-content-login,
-.header-loginUser-acd-content-logout,
-.header-loginUser-acd-content-account {
+.header-loginuser-acd-content-login,
+.header-loginuser-acd-content-logout,
+.header-loginuser-acd-content-account {
   border: 0.5px solid #dddddd;
   height: 30px;
   display: flex;
@@ -211,23 +211,20 @@ header {
   color: rgb(51, 51, 51);
 }
 
-.header-loginUser-acd-content-login:hover,
-.header-loginUser-acd-content-logout:hover,
-.header-loginUser-acd-content-account:hover {
+.header-loginuser-acd-content-login:hover,
+.header-loginuser-acd-content-logout:hover,
+.header-loginuser-acd-content-account:hover {
   background-color: #dddddd;
 }
 
-.header-loginUser-acd-check:checked + .header-loginUser-acd-label:after {
-}
-
-.header-loginUser-acd-check:checked
-  + .header-loginUser-acd-label
-  + .header-loginUser-acd-content {
+.header-loginuser-acd-check:checked
+  + .header-loginuser-acd-label
+  + .header-loginuser-acd-content {
   opacity: 1;
   visibility: visible;
 }
 
-.header-loginUser-btn {
+.header-loginuser-btn {
   display: block;
   margin: 5px 30px 5px 0px;
   color: #ffffff;
@@ -310,7 +307,7 @@ nav ul li img {
   background-color: #01648b;
   border-radius: 8px;
 }
-.top-li-newInformation,
+.top-li-newinformation,
 .top-li-player,
 .top-li-livehouse,
 .top-li-contact {
@@ -321,7 +318,7 @@ nav ul li img {
   color: rgb(51, 51, 51);
   font-size: 12px;
 }
-.top-li-newInformation:hover,
+.top-li-newinformation:hover,
 .top-li-player:hover,
 .top-li-livehouse:hover,
 .top-li-contact:hover {
@@ -344,7 +341,7 @@ main {
   border: 1px solid #f6f6f4;
 }
 
-.form_container h1 {
+.form-container h1 {
   text-align: center;
   width: 100%;
   padding: 50px 30px;
@@ -408,7 +405,7 @@ textarea {
 } */
 
 /* 投稿ボタン */
-.upload_btn {
+.upload-btn {
   width: 30%;
   height: 50px;
   margin-top: 20px;
@@ -454,11 +451,11 @@ footer {
   padding: 10px;
 }
 
-.footer-siteLogo {
+.footer-sitelogo {
   height: 100px;
 }
 
-.footer-subTitle {
+.footer-subtitle {
   margin-left: 20px;
 }
 

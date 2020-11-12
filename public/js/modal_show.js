@@ -66,9 +66,9 @@ const memberInfo = document.querySelectorAll(".member-info");
 const memberInfoImg = document.querySelectorAll(".profile-img");
 const memberInfoName = document.querySelectorAll(".member-name");
 const modalWrapper = document.querySelectorAll(".modal-wrapper");
-const closeBtn = document.querySelectorAll(".closeBtn");
-const prevBtn = document.querySelectorAll(".prevBtn");
-const nextBtn = document.querySelectorAll(".nextBtn");
+const closeBtn = document.querySelectorAll(".close-btn");
+const prevBtn = document.querySelectorAll(".prev-btn");
+const nextBtn = document.querySelectorAll(".next-btn");
 const twitterAtag = document.querySelectorAll('.twitter');
 const facebookAtag = document.querySelectorAll('.facebook');
 const githubAtag = document.querySelectorAll('.github');
@@ -86,16 +86,16 @@ for (let i = 0; i < memberInfo.length; i++) {
   githubAtag[i].href = teamMember.memberInfo[i].githubHref;
   instagramAtag[i].href = teamMember.memberInfo[i].instagramHref;
   if (twitterAtag[i].href !== "https:") {
-    twitterBtn[i].classList.add("showBtn");
+    twitterBtn[i].classList.add("show-btn");
   }
   if (facebookAtag[i].href != "https:") {
-    facebookBtn[i].classList.add("showBtn");
+    facebookBtn[i].classList.add("show-btn");
   }
   if (githubAtag[i].href != "https:") {
-    githubBtn[i].classList.add("showBtn");
+    githubBtn[i].classList.add("show-btn");
   }
   if (instagramAtag[i].href != "https:") {
-    instagramBtn[i].classList.add("showBtn");
+    instagramBtn[i].classList.add("show-btn");
   }
 }
 

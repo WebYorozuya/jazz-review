@@ -1,8 +1,8 @@
 <header>
   <div class="header-container">
     <div class="header-start">
-      <div class="header-siteName">
-        <a href="/"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
+      <div class="header-sitename">
+        <a href="/"><img src="images/JazzLog-logo-white.png" class="site-logo"></a>
       </div>
       <form id="header-search" class="header-search header-search-min" action="{{ url('/search')}}" method="get">
         <i id="header-search-button" class="header-search-button fas fa-search"></i>
@@ -18,7 +18,7 @@
         </a>
       </div><!-- ./header-post -->
       <div class="header-usermenu">
-        <div class="header-loginUser-dd-label">
+        <div class="header-loginuser-dd-label">
           <i class="far fa-user-circle fa-2x"></i>
           @auth
             <span>{{Auth::user()->account_name}}さん</span>
@@ -27,7 +27,7 @@
             <span>ゲストさん</span>
           @endguest
         </div>
-        <ul class="header-loginUser-dd-content">
+        <ul class="header-loginuser-dd-content">
           @auth
             <li  class="user-menu-list"><a href="{{ url('/settings') }}">マイページ</a></li>
             <li  class="user-menu-list"><a href="{{ route('user.logout') }}">ログアウト</a></li>

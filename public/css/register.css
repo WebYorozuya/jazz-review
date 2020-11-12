@@ -68,30 +68,30 @@ main {
   padding: 0 30px;
 }
 
-.input_form {
+.input-form {
   text-align      : center;
   background-color: #ffffff;
 }
 
-.signup_form label {
+.signup-form label {
   min-width: 150px;
   margin   : 10px auto;
   color    : #3c4a57;
   font-size: 17px;
 }
 
-.signup_form label::after {
+.signup-form label::after {
   content: " *";
   color  : red;
 }
 
-.signup_form p {
+.signup-form p {
   display  : inline-block;
   margin   : 0;
   font-size: small;
 }
 
-.signup_form input {
+.signup-form input {
   display      : block;
   width        : 100%;
   padding      : 10px;
@@ -110,7 +110,7 @@ main {
   font-size       : 1em;
 }
 
-.login .not_register {
+.login .not-register {
   margin: 0;
 }
 
@@ -127,7 +127,7 @@ a:hover {
 }
 
 /* 登録ボタン */
-.btn_signup {
+.btn-signup {
   text-align: center;
 }
 

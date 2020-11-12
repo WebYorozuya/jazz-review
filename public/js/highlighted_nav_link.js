@@ -7,7 +7,7 @@
     let target;
     switch (currentPath) {
       case '/':
-        target = document.getElementById('newInformation');
+        target = document.getElementById('newinformation');
         target.classList.add('current-page');
         break;
       case '/tags':

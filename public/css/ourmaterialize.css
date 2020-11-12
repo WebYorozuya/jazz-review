@@ -34,7 +34,7 @@
   padding-left: 8px;
 }
 
-.chips, .live_date {
+.chips, .live-date {
   border: none;
   border-bottom: 1px solid #9e9e9e;
   -webkit-box-shadow: none;
@@ -47,7 +47,7 @@
 }
 
 .chips.focus,
-.live_date.focus {
+.live-date.focus {
   border-bottom: 1px solid #26a69a;
   -webkit-box-shadow: 0 1px 0 0 #26a69a;
           box-shadow: 0 1px 0 0 #26a69a;

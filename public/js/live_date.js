@@ -20,6 +20,6 @@
     var dd = toTwoDigits(day, 2)
     var ymd = yyyy + "-" + mm + "-" + dd;
 
-    document.getElementById("live_date").value = ymd;
+    document.getElementById("live-date").value = ymd;
   }
 }

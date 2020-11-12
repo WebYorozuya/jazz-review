@@ -19,7 +19,7 @@
         <h2>{{$review->live_date}} {{$review->title}}</h2>
         <!-- ドロップダウンメニュー -->
         <div class="review-dropdown-wrapper">
-          <i class="fas fa-ellipsis-h showIcon"></i>
+          <i class="fas fa-ellipsis-h show-icon"></i>
           <ul class="review-dropdown">
             @auth
             @if (Auth::user()->id === $review->user_id)

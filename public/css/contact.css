@@ -141,7 +141,7 @@ h2 {
   width          : 30px;
 }
 
-.prevBtn {
+.prev-btn {
   width           : 20px;
   height          : 30px;
   background-color: #eeeece;
@@ -212,7 +212,7 @@ h2 {
   transform: scale(1.3);
 }
 
-.showBtn {
+.show-btn {
   display: block;
 }
 
@@ -254,7 +254,7 @@ h2 {
   height      : 100px;
 }
 
-.closeBtn {
+.close-btn {
   background-color: #aaa;
   color           : #fff;
   border-radius   : 5px;
@@ -269,7 +269,7 @@ h2 {
   width          : 30px;
 }
 
-.nextBtn {
+.next-btn {
   width           : 20px;
   height          : 30px;
   background-color: #eeeece;
@@ -278,9 +278,9 @@ h2 {
   padding-top     : 6px;
 }
 
-.closeBtn:hover,
-.nextBtn:hover,
-.prevBtn:hover {
+.close-btn:hover,
+.next-btn:hover,
+.prev-btn:hover {
   opacity: 0.4;
 }
 
@@ -433,7 +433,7 @@ aside {
     height      : 140px;
   }
 
-  .closeBtn {
+  .close-btn {
     display: none;
   }
 }

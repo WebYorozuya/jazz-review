@@ -47,7 +47,7 @@ header {
   min-width: 100px;
 }
 
-.siteLogo {
+.site-logo {
   height    : 75px;
   margin-top: 8px;
 }
@@ -108,7 +108,7 @@ header {
   cursor         : pointer;
 }
 
-.header-loginUser-dd-label {
+.header-loginuser-dd-label {
   display        : flex;
   align-items    : center;
   justify-content: center;
@@ -125,7 +125,7 @@ header {
 }
 
 .header-post:hover,
-.header-loginUser-dd-label:hover {
+.header-loginuser-dd-label:hover {
   background     : rgba(42, 104, 151, 0.7);
   color          : rgb(255, 255, 255);
   text-decoration: none;
@@ -152,12 +152,12 @@ header {
   margin-right: 4px;
 }
 
-.header-loginUser-dd-label i {
+.header-loginuser-dd-label i {
   font-size   : 20px;
   margin-right: 4px;
 }
 
-.header-loginUser-dd-content {
+.header-loginuser-dd-content {
 	display         : flex;
 	flex-direction  : column;
 	justify-content : center;
@@ -189,13 +189,12 @@ header {
   background-color: #dddddd;
 }
 
-.header-loginUser-dd-content a {
-  text-decoration: none;
-  margin         : 7px;
-  padding-right  : 10px;
-  color          : var(--base-color);
+.header-loginuser-dd-content a {
+	text-decoration: none;
+	margin         : 7px;
+	padding-right  : 10px;
+	color          : var(--base-color);
 }
-
 
 .home {
   padding                : 32px 16px 0px 16px;
@@ -205,7 +204,7 @@ header {
   position               : relative;
 }
 
-.flash_message {
+.flash-message {
   margin    : 0;
   position  : absolute;
   top       : 0;
@@ -273,7 +272,7 @@ nav li a:hover {
   margin-right: 10px;
 }
 
-.li-newInformation {
+.li-newinformation {
   white-space: nowrap;
 }
 
@@ -432,11 +431,11 @@ main {
   white-space: pre-wrap;
 }
 
-.hideBtn {
+.hide-btn {
   display: none;
 }
 
-.readmoreI-active {
+.readmorei-active {
   transform: rotate(180deg);
 }
 
@@ -449,7 +448,7 @@ main {
   font-size: 0.8rem;
 }
 
-.reviewText-active {
+.reviewtext-active {
   height: 50px;
 }
 
@@ -476,7 +475,7 @@ main {
   margin-right: 3px;
 }
 
-.colorChange {
+.color-change {
   animation-name     : heart;
   animation-duration : 0.4s;
   animation-fill-mode: forwards;
@@ -670,11 +669,11 @@ footer {
   padding: 10px;
 }
 
-.footer-siteLogo {
+.footer-sitelogo {
   height: 100px;
 }
 
-.footer-subTitle {
+.footer-subtitle {
   margin-left: 20px;
 }
 
@@ -786,19 +785,19 @@ footer {
   }
 
   /* ヘッダー ログイン機能 */
-  .header-loginUser-dd-label {
+  .header-loginuser-dd-label {
     width: 40px;
   }
 
-  .header-loginUser-dd-label i {
+  .header-loginuser-dd-label i {
     margin: 0;
   }
 
-  .header-loginUser-dd-label span {
+  .header-loginuser-dd-label span {
     display: none;
   }
 
-  .header-loginUser-dd-content {
+  .header-loginuser-dd-content {
     right: 40px;
   }
 
@@ -833,7 +832,7 @@ footer {
     font-size: 5px;
   }
 
-  .li-newInformation,
+  .li-newinformation,
   .li-player,
   .li-livehouse,
   .li-reviewer {
@@ -860,7 +859,7 @@ footer {
     padding-left: 40px;
   }
 
-  .siteLogo {
+  .site-logo {
     width : 100px;
     height: 40px;
   }

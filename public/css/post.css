@@ -1,17 +1,17 @@
-.form_container {
+.form-container {
     width           : 100%;
     margin          : 10px auto;
     background-color: #fff;
 }
 
-.form_container h1 {
+.form-container h1 {
     font-size    : 1.5rem;
     line-height  : 2.2rem;
     margin-bottom: 20px;
     text-align   : center;
 }
 
-.form_container form {
+.form-container form {
     width         : 85%;
     margin        : 2px auto;
     padding-top   : 40px;
@@ -19,21 +19,21 @@
     flex-direction: column;
 }
 
-.live_date {
+.live-date {
     width: min(180px, 100%);
 }
 
-.form_container label {
+.form-container label {
     margin-bottom: 3px;
 }
 
-.form_container input {
+.form-container input {
     margin-bottom: 5px;
     height       : 45px;
 }
 
-.form_container input,
-.form_container textarea {
+.form-container input,
+.form-container textarea {
     border : .5px solid rgb(219, 217, 217);
     padding: 5px 8px;
 }
@@ -50,9 +50,9 @@
   margin-bottom: 2px;
 }
 
-.form_container #post-button,
-.form_container button,
-.form_container #del {
+.form-container #post-button,
+.form-container button,
+.form-container #del {
     width        : 180px;
     font-size    : 15px;
     text-align   : center;
@@ -66,24 +66,24 @@
     user-select  : none;
 }
 
-.form_container #post-button {
+.form-container #post-button {
     background-color: #0490c7;
     border-bottom   : solid 4px #026186;
     color           : white;
     letter-spacing  : 1px;
 }
 
-.form_container #post-button:active {
+.form-container #post-button:active {
     transform    : translateY(4px);
     border-bottom: none;
 }
 
-.form_container button {
+.form-container button {
     background-color: rgb(209, 209, 209);
     letter-spacing  : 1px;
 }
 
-.form_container #del {
+.form-container #del {
     background-color: rgb(240, 133, 133);
     border-bottom   : solid 4px rgb(170, 50, 50);
 }

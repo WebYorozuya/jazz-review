@@ -22,7 +22,7 @@
 
   // (2) mainのドロップダウンメニューの開閉
   // [説明]各クラスおよび配列の定義
-  let showIcon = document.getElementsByClassName("showIcon");
+  let showIcon = document.getElementsByClassName("show-icon");
   let ddContent = document.getElementsByClassName("review-dropdown");
   const section_showIcon = Array.from(showIcon);
   const section_ddContent = Array.from(ddContent);
@@ -57,14 +57,14 @@
   // [説明]Reviewtextの文字数が70文字以上になった場合に｢続きを読む｣のボタンが現れる。
   for (let i = 0; i < readmoreBlock.length; i++) {
     if (section_reviewText[i].textContent.length < 70) {
-      section_readmoreBlock[i].classList.add("hideBtn");
+      section_readmoreBlock[i].classList.add("hide-btn");
     } else {
-      section_readmoreBlock[i].classList.remove("hideBtn");
+      section_readmoreBlock[i].classList.remove("hide-btn");
     }
 
     // [説明]｢続きを読む｣のボタンのクリックにより、readmoreIが１８０度回転、reviewTextの高さが変わる。
     section_readmoreBlock[i].addEventListener("click", (event) => {
-      section_reviewText[i].classList.toggle("reviewText-active");
+      section_reviewText[i].classList.toggle("reviewtext-active");
       section_readmoreI[i].classList.toggle("readmoreI-active");
 
       // [説明]readmoreIがreadmoreI-activeのクラスを持っていた場合、readmoreBtnの記載が変わる。

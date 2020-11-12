@@ -28,7 +28,7 @@
   @yield('header')
   <div class="home">
     @if (session('flash_message'))
-      <div class="flash_message alert alert-success" style="margin:0">
+      <div class="flash-message alert alert-success" style="margin:0">
         {{ session('flash_message') }}
       </div>
     @endif
@@ -36,7 +36,7 @@
       <nav>
         <ul class="pc-nav">
           <li>
-            <a href="/" class="li-newInformation" id="newInformation">
+            <a href="/" class="li-newinformation" id="newinformation">
               <i class="fas fa-music fa-lg"></i>
               <span>新着レビュー</span>
             </a>
@@ -98,8 +98,8 @@
     <div class="footer-container">
       <div class="footer-left">
         <div class="footer-left">
-          <a href="#"><img src="images/JazzLog-logo-white.png" class="footer-siteLogo"></a>
-          <div class="footer-subTitle">♪♪ Jazz for all people ♪♪</div>
+          <a href="#"><img src="images/JazzLog-logo-white.png" class="footer-sitelogo"></a>
+          <div class="footer-subtitle">♪♪ Jazz for all people ♪♪</div>
         </div>
       </div>
       <div class="footer-right">

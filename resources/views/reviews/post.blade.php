@@ -20,7 +20,7 @@
 
 @section('main')
   <h1 class="main-title">レビューを投稿する</h1>
-  <div class="form_container">
+  <div class="form-container">
     <form action="insert" id="create-post" method="POST">
       @csrf
       @auth
@@ -31,8 +31,8 @@
         <h1>ゲストさん、<br>あなたの体験をシェアしましょう</h1>
         <input type="hidden" name="user_id" value="2">
       @endguest
-      <label for="live_date">ライブに行った日</label>
-      <input type="date" id="live_date" class="live_date" name="live_date" value="{{old('live_date')}}">
+      <label for="live-date">ライブに行った日</label>
+      <input type="date" id="live-date" class="live-date" name="live_date" value="{{old('live_date')}}">
       <label for="tag">タグ</label>
       <div id="tags-parent" class="suggested-tags-parent">
         <input id="tag" class="tag-input" type="text" placeholder="タグを入力して候補から選択" autocomplete="off">
@@ -46,7 +46,7 @@
       <p class="max-length">（80文字以内）</p>
       <label for="text">ライブの感想</label>
       <textarea name="text" id="text" cols="30" rows="10" maxlength="1000">{{old('text')}}</textarea>
-      <p  class="max-length">現在：<span id="realtimeFontLength">0</span>文字（1000文字以内）</p>
+      <p  class="max-length">現在：<span id="realtime-font-length">0</span>文字（1000文字以内）</p>
       @if (count($errors) > 0)
         <div class="error-messages">
           <ul>

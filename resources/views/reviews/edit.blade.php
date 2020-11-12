@@ -22,14 +22,14 @@
 
 @section('main')
   <h1 class="main-title">レビューを修正／削除する</h1>
-  <div class="form_container">
+  <div class="form-container">
     <form action="update" id="create-account" method="POST">
       @csrf
       <h1>投稿を修正する</h1>
       <input type="hidden" name="user_id" value="{{$review->user_id}}">
       <input type="hidden" name="id" value="{{$review->id}}">
-      <label for="live_date">ライブに行った日</label>
-      <input type="date" id="live_date" class="live_date" name="live_date" value="{{$review->live_date}}">
+      <label for="live-date">ライブに行った日</label>
+      <input type="date" id="live-date" class="live-date" name="live_date" value="{{$review->live_date}}">
       <label for="tag">タグ</label>
       <div id="tags-parent" class="suggested-tags-parent">
         @foreach ($review->tags as $tag)
