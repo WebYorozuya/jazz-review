@@ -1,5 +1,6 @@
-// tag候補を表示し、選択されたタグをchip化する処理
-// 送信時に選択したタグをhiddenタグにセットする処理
+// 1.tag候補を表示し、選択されたタグをchip化する処理
+// 2.存在しないタグが入力されていればエラーメッセージを表示する処理
+// 3.送信時に、chip化したタグをhiddenタグにセットする処理
 
 const tagsParent = document.getElementById('tags-parent');
 const tagArea = document.getElementById('tag');
@@ -8,7 +9,7 @@ const ul = document.getElementById('suggested-tags');
 const bg = document.getElementById('suggested-tags-bg');
 const postButton = document.getElementById('post-button');
 
-// tag入力フォームに入力された文字列を元にtag候補を表示する
+// 1.tag候補を表示し、選択されたタグをchip化する処理
 tagArea.addEventListener("keyup", event => {
     // 初期処理
     clearError();
@@ -177,7 +178,7 @@ function activateHeadTag() {
     suggestedTags[0].classList.add('suggested-tag-active');
 }
 
-// 存在しないタグが入力されていればエラーメッセージ
+// 2.存在しないタグが入力されていればエラーメッセージを表示する処理
 // （フォーカスが離れたときにinputフィールドに文字列が残っていれば、
 // 　存在しないタグが入力されていると判断する）
 // tag候補選択時にblurになってしまうため、chip化時にtagAreaがクリアされるのを待つ
@@ -218,7 +219,7 @@ function clearError() {
     tagErrMsg.style.display = 'none';
 }
 
-// 送信時にchipの内容をhiddenにセットする
+// 3.送信時に、chip化したタグをhiddenタグにセットする処理
 postButton.addEventListener("click", function () {
     const hiddenTag = document.getElementById('hidden-tag');
     const chips = Array.from(document.getElementsByClassName("chip"));
