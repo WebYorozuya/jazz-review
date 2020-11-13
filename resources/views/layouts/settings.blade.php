@@ -20,12 +20,12 @@
   <script src="https://kit.fontawesome.com/aaab412f99.js" crossorigin="anonymous"></script>
 
   @env('local')
-  <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+  <link rel="stylesheet" href="{{asset('css/settings.css')}}">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <script src="{{ asset('js/app.js') }}" defer></script>
   @endenv
   @production
-  <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
+  <link rel="stylesheet" href="{{secure_asset('css/settings.css')}}">
   <script src="{{secure_asset('js/app.js') }}" defer></script>
   @endproduction
   @yield('css')
@@ -34,39 +34,56 @@
 <body>
   @yield('header')
   <div class="home">
-    <div class="card-header">{{ __('アカウント設定') }}</div>
+    <!-- <div class="card-header">{{ __('アカウント設定') }}</div> -->
 
-    <div class="card-body">
+    <!-- <div class="card-body">
       @if (session('status'))
       <div class="alert alert-success" role="alert">
         {{ session('status') }}
       </div>
       @endif
-    </div>
+    </div> -->
 
     <!-- home画面にpassword変更ボタン -->
     <div class="home-container">
       <nav>
         <ul class="pc-nav">
           <li>
+            <a href="{{url('output')}}">
+              <span>プロフィールの編集</span>
+            </a>
+          </li>
+          <li>
             <a href="{{url('changepassword')}}">
               <span>パスワード変更</span>
             </a>
           </li>
-          <!-- プロフィール画像 -->
           <li>
-            <a href="{{url('output')}}">
-              <span>プロフィール画像設定</span>
+            <a href="#">
+              <span>退会</span>
             </a>
           </li>
         </ul>
+        <div class="mobile-nav">
+          <form method="get" action="" class="mobile-nav-form">
+            <div class="pulldown">
+              <select name="pulldown" class="pulldown-option" required>
+                <option value="">選択してください</option>
+                <option value="選択肢1">プロフィール編集</option>
+                <option value="選択肢2">パスワード変更<</option>
+                <option value="選択肢4">退会</option>
+              </select>
+            </div>
+            <div class="pulldown-select">
+              <input type="submit" value="選択">
+            </div>
+          </form>
+        </div><!-- /.mobile-nav -->
       </nav>
-      <div class="right-container">
-        <main>
-          @section('main')
-          @show
-        </main>
-      </div><!-- /.right-container -->
+      <main>
+        @section('main')
+        @show
+      </main>
     </div><!-- /.home-container -->
   </div><!-- /.home -->
 
