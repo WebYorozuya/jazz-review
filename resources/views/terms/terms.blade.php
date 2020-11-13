@@ -3,10 +3,12 @@
 @section('title', '利用規約')
 
 @section('css')
-  <!-- Heroku -->
-  <link rel="stylesheet" href="{{secure_asset('css/terms.css')}}">
-  <!-- Local -->
-  <link rel="stylesheet" href="{{asset('css/terms.css')}}">
+  @env('local')
+    <link rel="stylesheet" href="{{asset('css/terms.css')}}">
+  @endenv
+  @production
+    <link rel="stylesheet" href="{{secure_asset('css/terms.css')}}">
+  @endproduction
 @endsection
 
 @section('header')
