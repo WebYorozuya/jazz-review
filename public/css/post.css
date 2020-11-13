@@ -43,6 +43,10 @@
     font-size : 0.8rem;
 }
 
+.label {
+    margin-top: 1rem;
+}
+
 .error-messages li {
   list-style: none;
   background-color: tomato;
@@ -164,7 +168,7 @@
     padding-left : 8px;
 }
 
-.suggested-tag:hover {
+.suggested-tag-active {
     background-color: #dedede;
 }
 
