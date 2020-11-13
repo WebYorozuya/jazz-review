@@ -3,10 +3,12 @@
 @section('title', '投稿のタグ一覧')
 
 @section('css')
-  <!-- Heroku -->
-  <link rel="stylesheet" href="{{secure_asset('css/tags.css')}}">
-  <!-- Local -->
-  <link rel="stylesheet" href="{{asset('css/tags.css')}}">
+  @env('local')
+    <link rel="stylesheet" href="{{asset('css/tags.css')}}">
+  @endenv
+  @production
+    <link rel="stylesheet" href="{{secure_asset('css/tags.css')}}">
+  @endproduction
 @endsection
 
 @section('header')
