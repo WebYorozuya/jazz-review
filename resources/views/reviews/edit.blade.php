@@ -23,7 +23,7 @@
 @section('main')
   <h1 class="main-title">レビューを修正／削除する</h1>
   <div class="form_container">
-    <form action="update" id="create-account" method="POST">
+    <form action="update" id="create-post" method="POST">
       @csrf
       <h1>投稿を修正する</h1>
       <input type="hidden" name="user_id" value="{{$review->user_id}}">
@@ -56,7 +56,7 @@
           </ul>
         </div><!-- .error-messages -->
       @endif
-      <input type="submit" id="post-button" class="submit" value="修正">
+      <input type="button" id="post-button" class="submit" value="修正">
     </form>
     <form action="del" method="post">
       @csrf
