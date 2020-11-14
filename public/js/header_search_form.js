@@ -5,6 +5,8 @@ const searchText = document.getElementById('header-search-text');
 const searchTextBg = document.getElementById('header-search-text-bg');
 const headerRight = document.getElementById('header-right');
 
+// viewportの横幅が800より大きければ検索フォームを出す
+// 検索フォームはモーダル化する
 searchButton.addEventListener('click', () => {
     if(window.innerWidth > 800) {
         return;
@@ -16,6 +18,8 @@ searchButton.addEventListener('click', () => {
     headerRight.classList.add('header-right-searching');
 });
 
+// 検索フォームを出している時に、
+// 検索フォーム以外がクリックされたら検索フォームを消す
 searchTextBg.addEventListener('click', () => {
     if(!searchText.className.indexOf('header-search-text-searching')) {
         return;

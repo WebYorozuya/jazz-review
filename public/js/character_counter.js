@@ -7,7 +7,6 @@
   // [説明]keｙを入力したら、文字数をカウントする
   textarea.addEventListener("keyup", function () {
     const len = textarea.value.length;
-    console.log(textarea.value);
     realtimeFontLength.innerHTML = len;
   })
 }
