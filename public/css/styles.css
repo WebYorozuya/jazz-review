@@ -482,7 +482,7 @@ main {
   animation-fill-mode: forwards;
 }
 
-.liked:hover {
+.heart-move {
   animation: liked 0.5s;
 }
 
