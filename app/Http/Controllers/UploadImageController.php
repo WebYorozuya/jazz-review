@@ -45,9 +45,9 @@ class UploadImageController extends Controller
     {
         $this->validate($request, User::$rules);
         if ($request->file('image')->isValid()){
-            $path = $request->file('image')->store('user_image');
+            $path = $request->file('image')->store('user_images');
             $file_name = basename($path);
-            $user_id = Auth::find();
+            $user_id = Auth::id();
             $new_image_data = User::find($user_id);
             $new_image_data->user_image = $file_name;
             $new_image_data->save();
