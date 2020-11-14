@@ -26,11 +26,11 @@ class TagController extends Controller
         ]);
     }
 
-    public function getReviewsByTag(Request $request, $id)
+    public function getReviewsByTag(Request $request)
     {
         $tag_name = $request->tag_name;
         $tag_id = Tag::where('tag_name', $tag_name)->first('id');
-        $reviews = Tag::find($tag_id->id)->reviews()->orderBy('id', 'desc')->paginate(10);
+        $reviews = Tag::find($tag_id->id)->reviews()->withCount('likes')->orderBy('id', 'desc')->paginate(10);
         $likes = new Like;
         $liked = like::all();
         $param = [
