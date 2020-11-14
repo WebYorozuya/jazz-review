@@ -27,8 +27,7 @@
         </div><!-- /.review-right-top -->
         <div class="tags">
           @foreach ($review->tags as $tag)
-            <!-- TODO:タグもハイライト出来るようにする -->
-            <a href="#" class="tag">{{$tag->tag_name}}</a>
+            <a class="search-review-text tag" href="#">{{$tag->tag_name}}</a>
           @endforeach
         </div><!-- /.tags -->
         <p class="search-review-text review-text">{!! nl2br(e($review->text)) !!}</p>
@@ -53,7 +52,7 @@
     const keyword = '{{$keyword}}';
     const highlightedKeyword = '<span style="background-color:#FFFF00;">' + keyword + '</span>';
 
-    let reviewHTMLs = Array.prototype.slice.call(document.getElementsByClassName('search-review-text'));
+    const reviewHTMLs = Array.prototype.slice.call(document.getElementsByClassName('search-review-text'));
     reviewHTMLs.forEach((reviewHTML, i) => {
         let reviewText = reviewHTML.innerText;
         let highlightedReviewText = reviewText.replace(new RegExp(keyword, 'g'), highlightedKeyword);
