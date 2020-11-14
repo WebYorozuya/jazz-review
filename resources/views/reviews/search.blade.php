@@ -82,7 +82,7 @@
         }
         const highlightedReviewText = highlightedReviewTexts.join('');
 
-        // 元のhtmlをspanタグでキーワードをハイライトしたhtmlで上書きする
+        // 元のhtmlをspanタグでハイライトしたhtmlで上書きする
         reviewHTML = reviewHTML.innerHTML;
         const highlightedReviewHTML = reviewHTML.replace(new RegExp(reviewText,'g'), highlightedReviewText);
         document.getElementsByClassName('search-review-text')[i].innerHTML = highlightedReviewHTML;
