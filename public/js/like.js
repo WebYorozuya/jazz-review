@@ -18,8 +18,9 @@ $(function () {
       $this.toggleClass('liked');
       if($this.hasClass('liked')) {
           $this.addClass('heart-move');
+          console.log('msg');
           setTimeout(function() {
-            $touch.removeClass('heart-move');
+            $this.removeClass('heart-move');
             }, 500);
       }
       $this.next('.like-counter').html(data.review_likes_count);
