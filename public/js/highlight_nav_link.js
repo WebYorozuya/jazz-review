@@ -22,8 +22,6 @@
         target = document.getElementById('contact');
         target.classList.add('current-page');
         break;
-      default:
-        console.log('パスが一致しません。');
     }
   }
   highlightCurrentNavLink();
