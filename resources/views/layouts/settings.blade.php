@@ -33,8 +33,7 @@
 
 <body>
   @yield('header')
-  <div class="home">
-    <div class="card-header">{{ __('アカウント設定') }}</div>
+  <div class="settings-container">
 
     <div class="card-body">
       @if (session('status'))
@@ -42,33 +41,39 @@
         {{ session('status') }}
       </div>
       @endif
-    </div>
+      <h1>{{ __('アカウント設定') }}</h1>
+      <ul class="settings-menu">
+        <li>
+          <a href="#">
+            <span>プロフィール編集</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{url('output')}}">
+            <span>プロフィール画像設定</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{url('changepassword')}}">
+            <span>パスワード変更</span>
+          </a>
+        </li>
+        <li>
+          <a href="#"">
+            <span>退会</span>
+          </a>
+        </li>
+      </ul>
+      </div><!-- /.card-body -->
 
-    <!-- home画面にpassword変更ボタン -->
-    <div class="home-container">
-      <nav>
-        <ul class="pc-nav">
-          <li>
-            <a href="{{url('changepassword')}}">
-              <span>パスワード変更</span>
-            </a>
-          </li>
-          <!-- プロフィール画像 -->
-          <li>
-            <a href="{{url('output')}}">
-              <span>プロフィール画像設定</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div class="right-container">
-        <main>
-          @section('main')
-          @show
-        </main>
-      </div><!-- /.right-container -->
-    </div><!-- /.home-container -->
-  </div><!-- /.home -->
+    <div class=" right-container">
+            <main>
+              @section('main')
+              @show
+            </main>
+    </div><!-- /.right-container -->
+
+  </div><!-- /.settings-container -->
 
   @env('local')
   <script type="text/javascript" src="{{ asset('js/login_dd.js') }}"></script>
