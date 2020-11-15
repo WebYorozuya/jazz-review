@@ -447,6 +447,7 @@ main {
 .readmore-btn {
   color    : gray;
   font-size: 0.8rem;
+  cursor: pointer;
 }
 
 .reviewText-active {

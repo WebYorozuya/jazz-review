@@ -30,7 +30,7 @@
             <a class="search-review-text tag" href="#">{{$tag->tag_name}}</a>
           @endforeach
         </div><!-- /.tags -->
-        <p class="search-review-text review-text">{!! nl2br(e($review->text)) !!}</p>
+        <p class="search-review-text review-text">{{$review->text}}</p>
         <div class="review-bottom">
           <span class="user-name">by <a href="user?user_id={{$review->user_id}}">{{$review->user->account_name}}さん</span></a>
           <span class="created-at">{{$review->created_at}}</span>
@@ -46,25 +46,60 @@
 @endsection
 
 @section('js')
-  <script>
-    // 検索ワードをハイライトする処理
-    // TODO:平仮名とカタカナを区別しないでハイライト出来るようにする
-    const keyword = '{{$keyword}}';
-    const highlightedKeyword = '<span style="background-color:#FFFF00;">' + keyword + '</span>';
+<script>
+    /* 検索ワード（キーワード）をハイライトする処理（平仮名とカタカナを区別しない） */
+    // 平仮名とカタカナの区別なく検索するために検索ワードを平仮名に変換
+    const hiraKeyword = kanaToHira('{{$keyword}}');
+    const keywordLength = '{{$keyword}}'.length;
+    const spanHead = '<span style="background-color:#FFFF00;">';
+    const spanTail = '</span>';
 
     const reviewHTMLs = Array.prototype.slice.call(document.getElementsByClassName('search-review-text'));
     reviewHTMLs.forEach((reviewHTML, i) => {
         let reviewText = reviewHTML.innerText;
-        let highlightedReviewText = reviewText.replace(new RegExp(keyword, 'g'), highlightedKeyword);
-        // 置換対象テキスト作成
-        reviewText = reviewText.replace(/\n/g, '<br>');
-        // 置換先テキスト作成
-        highlightedReviewText = highlightedReviewText.replace(/\n/g, '<br>');
-        // 置換できるように不要な改行コードを削除
-        reviewHTML = reviewHTML.innerHTML.replace(/\n/g, '');
-        // reviewHTMLに含まれている全ての置換対象テキストを置換先テキストに置換
-        const highlightedReviewHTML = reviewHTML.replace(new RegExp(reviewText,'g'), highlightedReviewText);
+        // 平仮名とカタカナの区別なく検索するために検索対象を平仮名に変換
+        let reviewHiraText = kanaToHira(reviewText);
+
+        // 検索ワードが見つからなくなるまでループを回す
+        // 検索ワードが見つかれば、spanHeadとspanTailで検索ワードを挟んで、
+        // 検索開始位置からspanTailまでを配列に追加する
+        // 検索ワードが見つからなければ、検索開始位置から最後の文字列までを配列に追加する
+        let foundIdx = 0;
+        let beginIdx = 0;
+        let highlightedReviewTexts = [];
+        while(true) {
+            foundIdx = reviewHiraText.indexOf(hiraKeyword, beginIdx);
+            if (foundIdx === -1) {
+                const restStr = reviewText.slice(beginIdx)
+                highlightedReviewTexts.push(restStr);
+                break;
+            }
+            const headStr = reviewText.slice(beginIdx, foundIdx);
+            const highlightedStr = spanHead + reviewText.slice(foundIdx, foundIdx + keywordLength) + spanTail;
+            const tailStr = reviewText.slice(beginIdx + foundIdx + keywordLength);
+            highlightedReviewTexts.push(headStr + highlightedStr);
+            beginIdx = foundIdx + keywordLength;
+        }
+        const highlightedReviewText = highlightedReviewTexts.join('');
+
+        // 元のhtmlをspanタグでハイライトしたhtmlで上書きする
+        const reviewInnerHTML = reviewHTML.innerHTML;
+        const highlightedReviewHTML = reviewInnerHTML.replace(new RegExp(reviewText,'g'), highlightedReviewText);
         document.getElementsByClassName('search-review-text')[i].innerHTML = highlightedReviewHTML;
     });
+
+    // カタカナを平仮名に変換する
+    function kanaToHira(str) {
+        return str.replace(/[\u30A1-\u30F6]/g, function(match) {
+            var chr = match.charCodeAt(0) - 0x60;
+            return String.fromCharCode(chr);
+        });
+    }
   </script>
+  @env('local')
+    <script type="text/javascript" src="{{ asset('js/review_text_height_change.js') }}"></script>
+  @endenv
+  @production
+    <script type="text/javascript" src="{{ secure_asset('js/review_text_height_change.js') }}"></script>
+  @endproduction
 @endsection
