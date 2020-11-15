@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/changepassword','SettingController@showChangePasswordForm');
 Route::post('/changepassword','SettingController@changepassword')->name('changepassword');
 
-Route::get('/ettings', 'SettingController@index')->name('settings');
+Route::get('/settings', 'SettingController@index')->name('settings');
 
 // ログアウト
 Route::get('/logout',[
