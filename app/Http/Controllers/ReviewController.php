@@ -44,14 +44,13 @@ class ReviewController extends Controller
     {
       //まずレビューのINSERT
         $this->validate($request, Review::$rules);
-        $review = new Review; //Reviewクラスのインスタンス作成
+        $review = new Review;
         $form = $request->all(); //送信されたフォームの値を保管
         unset($form['_token']); //CSRF非表示フィールド_token削除
         $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
       //次にタグのINSERT
         //送信されたタグをスペース区切りで整える
-        $spaces = array("　", "  ", "   ");
-        $tags = trim(str_replace($spaces, " ", $request->tag_name));
+        $tags = trim($request->tag_name);
         $tags = explode(" ", $tags);
         $tags = array_unique($tags);
         //新規タグだけtagsテーブルに挿入
@@ -70,7 +69,6 @@ class ReviewController extends Controller
       
       //トップページへ
         return redirect()->route('top')->with('flash_message', '素敵な投稿ありがとうございます！'); 
-        //TODO:herokuでhttpにリダイレクトされてしまう
     }
     //投稿修正ページを表示
     public function edit(Request $request)
@@ -91,16 +89,24 @@ class ReviewController extends Controller
 
     //次にタグのINSERT
         //送信されたタグをスペース区切りで整えるTODO:validationでやれる？
-        $spaces = array("　", "  ", "   ");
-        $tags = trim(str_replace($spaces, " ", $request->tag_name));
+        $tags = trim($request->tag_name);
         $tags = explode(" ", $tags);
         $tags_unique = array_unique($tags);
-        $existing_tags = Review::find($request->id)->tags;
+        $existing_tags = Review::find($review->id)->tags;
         foreach ($existing_tags as $existing_tag) {
             $existing_tags_name [] = $existing_tag->tag_name;
         }
         $tags = array_diff($tags_unique, $existing_tags_name);
-        //TODO:タグを消せるようにする。てことは一旦タグを全部削除してからもう一回新たに入れ直すべき？？
+
+        $delete_tags = array_diff($existing_tags_name, $tags_unique);
+        foreach ($delete_tags as $delete_tag) {
+            $delete_tag_id = Tag::where('tag_name', $delete_tag)->first('id');
+            Log::info($delete_tag_id);
+            DB::table('review_tag')
+                ->where('tag_id', $delete_tag_id->id)
+                ->where('review_id', $review->id)
+                ->delete();
+        }
 
         //新規タグだけtagsテーブルに挿入
         $array = [];
@@ -108,7 +114,7 @@ class ReviewController extends Controller
             $record = Tag::firstOrCreate(['tag_name' => $tag]);
             array_push($array, $record);
         };
-        //投稿に紐付けされるタグのidを配列化、中間テーブルへ
+        //投稿に紐付けされるタグのidを配列化
         $tags_id = [];
         foreach ($array as $tag) {
             array_push($tags_id, $tag['id']);
@@ -116,28 +122,22 @@ class ReviewController extends Controller
         //中間テーブルにレコード挿入
         $review->tags()->attach($tags_id);
       
-      //トップページへ
         return redirect('/')->with('flash_message', '投稿を修正しました！');
     }
     //投稿削除
     public function delete(Request $request)
     {
-        //TODO:削除していいですか？確認
         $review_tags = DB::table('review_tag')->where('review_id', $request->id)->get();
         if (!empty($review_tags)) {
             foreach ($review_tags as $review_tag)
             {
-                $count_tag = DB::table('review_tag')->where('tag_id', $review_tag->tag_id)->count();
                 $delete_review_tag = DB::table('review_tag')
                     ->where('review_id', $request->id)
                     ->where('tag_id', $review_tag->tag_id)
                     ->delete();
-                if ($count_tag <= 1) {
-                    $tags = Tag::find($review_tag->tag_id)->delete();
-                }
             }
         }
-        $review = Review::find($request->id)->delete();
+        Review::find($request->id)->delete();
         return redirect('/')->with('flash_message', '投稿を削除しました！');
     }
 
