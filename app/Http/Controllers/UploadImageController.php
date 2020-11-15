@@ -49,8 +49,10 @@ class UploadImageController extends Controller
             $image = $request->file('image');
             $path = Storage::disk('s3')->putFile('/user_images', $image, 'public');
 
-            $image->path = Storage::disk('s3')->url($path);
-            $image->save();
+            $user_id = Auth::id();
+            $user = User::find($user_id);
+            $user->user_image = Storage::url($path);
+            $user->save();
 
             return redirect('/output');
         }
