@@ -33,7 +33,8 @@ Route::get('/logout',[
 
 //プロフ画像
 Route::get('/upload','UploadImageController@input')->name('upload_form');
-Route::post('/upload','UploadImageController@upload')->name('upload_image');
+//Route::post('/upload','UploadImageController@upload')->name('upload_image');
+Route::post('/upload','UploadImageController@storeInS3')->name('upload_image');
 Route::get('/output','UploadImageController@output')->name('output');
 
 // ----- 投稿周り -----
