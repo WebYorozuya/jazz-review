@@ -510,6 +510,9 @@ main {
   position: relative;
 }
 
+.balloon-parent {
+  position: relative;
+}
 
 .balloon {
   position     : absolute;
@@ -554,10 +557,24 @@ main {
   border-left : 15px solid transparent;
 }
 
-/* .balloon p { pタグ無い？
-    margin : 0;
+@media screen and (max-width: 900px) {
+    .balloon {
+      left: -120px;
+    }
+
+    .balloon::before {
+      left: 140px;
+    }
+
+    .balloon::after {
+      left: 140px;
+    }
+}
+
+.balloon p {
+    margin-bottom : 0.5rem;
     padding: 0;
-} */
+}
 
 .block {
   display   : block;

@@ -1,5 +1,5 @@
 @foreach ($reviews as $review)
-  <div class="review">    
+  <div class="review">
     <div class="review-left">
       <a href="{{ route('user', ['user_id' => $review->user_id]) }}" class="user-image">
         @env('local')
@@ -63,11 +63,12 @@
         @endauth
         @guest
           <span class="likes">
-            <div class="balloon">
-              いいねができるのはログインユーザーのみです。<br>
-            <a href="{{ route('login') }}">ログイン </a>または<a href="{{ route('register') }}"> 新規登録 </a>する
-            </div>
-              <i class="fas fa-music heart"></i>
+            <i class="fas fa-music heart balloon-parent">
+              <div class="balloon">
+                <p>いいねができるのはログインユーザーのみです。</p>
+                <p><a href="{{ route('login') }}">ログイン </a>または<a href="{{ route('register') }}"> 新規登録 </a>する</p>
+              </div>
+            </i>
             <span class="like-counter">{{$review->likes_count}}</span>
           </span><!-- /.likes -->
         @endguest
