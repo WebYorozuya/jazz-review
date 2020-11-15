@@ -44,9 +44,10 @@ class UploadImageController extends Controller
     public function storeInS3(Request $request)
     {
         $this->validate($request, User::$rules);
-        if (request()->file) {
+
+        if ($request->file('image')->isValid()) {
             $image = $request->file('image');
-            $path = Storage::disk('s3')->put('/user_images', $image, 'public');
+            $path = Storage::disk('s3')->putFile('/user_images', $image, 'public');
 
             $image->path = Storage::disk('s3')->url($path);
             $image->save();
