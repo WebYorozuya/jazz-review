@@ -1,22 +1,34 @@
-// tag候補を表示し、選択されたタグをchip化する処理
-// 送信時に選択したタグをhiddenタグにセットする処理
-'use strict';
-{
-    const tagsParent = document.getElementById('tags-parent');
-    const tagArea = document.getElementById('tag');
-    const tagErrMsg = document.getElementById('tag-error-msg');
-    const ul = document.getElementById('suggested-tags');
-    const bg = document.getElementById('suggested-tags-bg');
-    const postButton = document.getElementById('post-button');
 
-    // tag入力フォームに入力された文字列を元にtag候補を表示する
-    tagArea.addEventListener("keyup", event => {
-        clearError();
-        let inputtedTag = tagArea.value;
-        // 入力文字がなければ表示中のtag候補を消す
-        if (!inputtedTag) {
-            clearSuggestedTags();
-            hideSuggestedTags()
+/* 1.tag候補を表示し、選択されたタグをchip化する処理
+   2.存在しないタグが入力されていればエラーメッセージを表示する処理
+   3.送信時に、chip化したタグをhiddenタグにセットする処理 */
+
+const tagsParent = document.getElementById('tags-parent');
+const tagArea = document.getElementById('tag');
+const tagErrMsg = document.getElementById('tag-error-msg');
+const ul = document.getElementById('suggested-tags');
+const bg = document.getElementById('suggested-tags-bg');
+const postButton = document.getElementById('post-button');
+
+// 1.tag候補を表示し、選択されたタグをchip化する処理
+tagArea.addEventListener("keyup", event => {
+    // 初期処理
+    clearError();
+    let inputtedTag = tagArea.value;
+
+    // 入力文字がなければ表示中のtag候補を消す
+    if (!inputtedTag) {
+        clearSuggestedTags();
+        hideSuggestedTags()
+        return;
+    }
+
+    // Enterキーが押下された場合はactiveなタグ候補をchip化する
+    if (ul.hasChildNodes && (event.key === 'Enter' || event.ley === 'Tab')) {
+        const suggestedTags = Array.from(document.getElementsByClassName('suggested-tag'));
+        const index = suggestedTags.findIndex(suggestedTag =>
+            suggestedTag.className.indexOf('suggested-tag-active') !== -1);
+        if (index === -1) {
             return;
         }
         // tag候補をリクエストし、存在すれば、ビューに表示する

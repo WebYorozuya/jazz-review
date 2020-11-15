@@ -446,6 +446,7 @@ main {
 .readmore-btn {
   color    : gray;
   font-size: 0.8rem;
+  cursor: pointer;
 }
 
 .reviewtext-active {
@@ -481,7 +482,7 @@ main {
   animation-fill-mode: forwards;
 }
 
-.liked:hover {
+.heart-move {
   animation: liked 0.5s;
 }
 

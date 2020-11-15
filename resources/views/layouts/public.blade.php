@@ -111,7 +111,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   @env('local')
     <script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/highlighted_nav_link.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/highlight_nav_link.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/footer_fig_resize.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/footer_img_random_change.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/thanks_message.js') }}"></script>
@@ -120,7 +120,7 @@
   @endenv
   @production
     <script type="text/javascript" src="{{ secure_asset('js/materialize.js') }}"></script>
-    <script type="text/javascript" src="{{ secure_asset('js/highlighted_nav_link.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/highlight_nav_link.js') }}"></script>
     <script type="text/javascript" src="{{ secure_asset('js/footer_fig_resize.js') }}"></script>
     <script type="text/javascript" src="{{ secure_asset('js/footer_img_random_change.js') }}"></script>
     <script type="text/javascript" src="{{ secure_asset('js/thanks_message.js') }}"></script>

@@ -16,10 +16,17 @@ $(function () {
     })
     .done(function (data) {
       $this.toggleClass('liked');
+      if($this.hasClass('liked')) {
+          $this.addClass('heart-move');
+          console.log('msg');
+          setTimeout(function() {
+            $this.removeClass('heart-move');
+            }, 500);
+      }
       $this.next('.like-counter').html(data.review_likes_count);
     })
     .fail(function (err) {
-      console.log('fail'); 
+      console.log('fail');
       console.log(err);
     });
   });
