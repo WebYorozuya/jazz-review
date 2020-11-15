@@ -58,7 +58,7 @@
       @endif
       <input type="button" id="post-button" class="submit" value="修正">
     </form>
-    <form action="del" method="post">
+    <form action="del" method="post" onsubmit="return confirmDelete()">
       @csrf
       <input type="hidden" name="id" value="{{$review->id}}">
       <input type="submit" class="submit" id="del" value="削除">
@@ -69,15 +69,15 @@
 @section('js')
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   @env('local')
-    <script type="text/javascript" src="{{ asset('js/chips.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/character_counter.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/layout_tag.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/suggest_tag.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/confirm_delete.js') }}"></script>
   @endenv
   @production
-    <script type="text/javascript" src="{{ secure_asset('js/chips.js') }}"></script>
     <script type="text/javascript" src="{{ secure_asset('js/character_counter.js') }}"></script>
     <script type="text/javascript" src="{{ secure_asset('js/layout_tag.js') }}"></script>
     <script type="text/javascript" src="{{ secure_asset('js/suggest_tag.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/confirm_delete.js') }}"></script>
   @endproduction
 @endsection

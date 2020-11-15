@@ -1,6 +1,6 @@
-// 1.tag候補を表示し、選択されたタグをchip化する処理
-// 2.存在しないタグが入力されていればエラーメッセージを表示する処理
-// 3.送信時に、chip化したタグをhiddenタグにセットする処理
+/* 1.tag候補を表示し、選択されたタグをchip化する処理
+   2.存在しないタグが入力されていればエラーメッセージを表示する処理
+   3.送信時に、chip化したタグをhiddenタグにセットする処理 */
 
 const tagsParent = document.getElementById('tags-parent');
 const tagArea = document.getElementById('tag');
