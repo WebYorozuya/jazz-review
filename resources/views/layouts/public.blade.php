@@ -33,7 +33,7 @@
       </div>
     @endif
     <div class="home-container">
-      <nav>
+      <nav class="navigation-menu">
         <ul class="pc-nav">
           <li>
             <a href="/" class="li-newInformation" id="newInformation">

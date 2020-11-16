@@ -864,7 +864,7 @@ footer {
     display: none;
   }
 
-  .home nav {
+  .navigation-menu {
     width: 100%;
     top  : 0;
     background-color: var(--main-background-color);
