@@ -55,7 +55,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{url('destroy')}}">
               <span>退会</span>
             </a>
           </li>
