@@ -27,6 +27,7 @@
 <body>
   @yield('header')
   <div class="home">
+    
     @if (session('flash_message'))
       <div class="flash_message alert alert-success" style="margin:0">
         {{ session('flash_message') }}
