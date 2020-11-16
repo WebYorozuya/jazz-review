@@ -194,6 +194,7 @@ header {
   margin         : 7px;
   padding-right  : 10px;
   color          : var(--base-color);
+  width          : 100%;
 }
 
 
