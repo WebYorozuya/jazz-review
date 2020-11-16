@@ -730,6 +730,14 @@ footer {
     width: 100%;
   }
 
+  .aside1 {
+    margin-top       : 0px;
+  }
+
+  .aside2 {
+    margin-top       : 40px;
+  }
+
 }
 
 @media screen and (max-width: 800px) {
@@ -838,19 +846,6 @@ footer {
     position: relative;
   }
 
-  aside {
-    display       : flex;
-    flex-direction: column;
-  }
-
-  .aside1 {
-    margin-top       : 0px;
-  }
-
-  .aside2 {
-    margin-top       : 40px;
-  }
-
   .header-start {
     width       : 110px;
     padding-left: 40px;
@@ -865,7 +860,7 @@ footer {
     display: none;
   }
 
-  .navigation-menu {
+  #navigation-menu {
     width: 100%;
     top  : 0;
     background-color: var(--main-background-color);
