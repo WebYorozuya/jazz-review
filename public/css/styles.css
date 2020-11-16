@@ -194,6 +194,7 @@ header {
   margin         : 7px;
   padding-right  : 10px;
   color          : var(--base-color);
+  width          : 100%;
 }
 
 
@@ -510,6 +511,9 @@ main {
   position: relative;
 }
 
+.balloon-parent {
+  position: relative;
+}
 
 .balloon {
   position     : absolute;
@@ -526,6 +530,7 @@ main {
   z-index      : 5;
   display      : none;
   filter       : drop-shadow(0 0 0.15rem rgb(190, 190, 190));
+  cursor: default;
 }
 
 .balloon::before {
@@ -554,10 +559,24 @@ main {
   border-left : 15px solid transparent;
 }
 
-/* .balloon p { pタグ無い？
-    margin : 0;
+@media screen and (max-width: 900px) {
+    .balloon {
+      left: -160px;
+    }
+
+    .balloon::before {
+      left: 180px;
+    }
+
+    .balloon::after {
+      left: 180px;
+    }
+}
+
+.balloon p {
+    margin-bottom : 0.5rem;
     padding: 0;
-} */
+}
 
 .block {
   display   : block;
@@ -573,48 +592,6 @@ main {
   color: #0378a6;
 }
 
-/*********** settings.blade.phpの左nav部分 **********/
-.homehome-container nav {
-  display       : flex;
-  flex-direction: column;
-  align-items   : flex-start;
-  width         : 250px;
-  position      : sticky;
-  top           : 1em;
-  --title-height: 50px;
-  margin-top    : var(--title-height);
-  /*h1と連動*/
-}
-
-.home-container nav ul {
-  padding   : 0px;
-  width     : 100%;
-  list-style: none;
-}
-
-.home-container nav li {
-  margin-bottom: 10px;
-}
-
-.home-container nav li a {
-  text-decoration: none;
-  display        : flex;
-  align-items    : center;
-  font-size      : 0.9rem;
-  text-decoration: none;
-  color          : #555;
-  padding        : 10px 10px 10px 16px;
-  border-radius  : 3px;
-}
-
-.home-container nav li a:hover {
-  background-color: rgb(192, 192, 192, 0.6);
-  border-radius   : 3px;
-  text-decoration : none;
-}
-
-/*********** settings.blade.phpここまで ***********/
-
 aside {
   width           : 400px;
   background-color: #f6f6f4;
@@ -622,12 +599,12 @@ aside {
 }
 
 .aside1 {
-  margin-top       : 300px;
   background-image : url(../images/onuma_top-slide.jpg);
   background-size  : contain;
   background-repeat: no-repeat;
-  height           : 90px;
+  height           : 100px;
   width            : 300px;
+  margin-top       : 100px;
 }
 
 .aside2 {
@@ -635,7 +612,8 @@ aside {
   background-image : url(../images/musicmaster_logo.jpg);
   background-size  : contain;
   background-repeat: no-repeat;
-  height           : 90px;
+  height           : 100px;
+  width            : 300px;
 }
 
 .pagination {
@@ -709,6 +687,15 @@ footer {
   aside {
     width: 100%;
   }
+
+  .aside1 {
+    margin-top       : 0px;
+  }
+
+  .aside2 {
+    margin-top       : 40px;
+  }
+
 }
 
 @media screen and (max-width: 800px) {
@@ -817,45 +804,6 @@ footer {
     position: relative;
   }
 
-  nav ul {
-    display    : flex;
-    align-items: center;
-  }
-
-  nav ul li {
-    width          : 33.3%;
-    padding-top    : 0px;
-    display        : flex;
-    align-items    : center;
-    justify-content: space-around;
-  }
-
-  nav ul li a span {
-    font-size: 5px;
-  }
-
-  .li-newInformation,
-  .li-player,
-  .li-livehouse,
-  .li-reviewer {
-    width          : 120px;
-    text-decoration: none;
-    padding        : 0px;
-    display        : flex;
-    flex-direction : row;
-    justify-content: center;
-    text-align     : center;
-    color          : rgb(51, 51, 51);
-    font-size      : 10px;
-  }
-
-  aside {
-    display: flex;
-  }
-
-}
-
-@media screen and (max-width: 470px) {
   .header-start {
     width       : 110px;
     padding-left: 40px;
@@ -870,48 +818,54 @@ footer {
     display: none;
   }
 
+  #navigation-menu {
+    width: 100%;
+    top  : 0;
+    background-color: var(--main-background-color);
+  }
+
   .mobile-nav {
-    display      : block;
-    margin-bottom: 10px;
+    display       : block;
+    padding-top   : 8px;
+    padding-left  : 16px;
+    padding-bottom: 8px;
   }
 
   .mobile-nav-form {
     display       : flex;
     flex-direction: row;
-    font-size     : 10px;
   }
 
   .pulldown {
-    height          : 20px;
+    height          : 24px;
     width           : 200px;
     background-color: #ffffff;
-    border-radius   : 5px;
-    margin-right    : 10px;
+    border-radius   : 4px;
+    border          : 1px solid #dbdbdb;
+    display         : block;
   }
 
   .pulldown-option {
-    height: 20px;
-    width : 200px;
+    height      : 100%;
+    width       : 200px;
+    padding-left: 8px;
   }
 
   .pulldown-select {
     display         : flex;
     justify-content : column;
     align-items     : center;
-    margin          : 3px;
-    height          : 14px;
-    width           : 25px;
+    height          : 24px;
+    width           : 40px;
     background-color: #cccccc;
     text-align      : center;
     vertical-align  : center;
+    border-radius   : 4px;
+    margin-left     : 8px;
   }
 
   .mobile-nav p {
     margin: 5px;
-  }
-
-  .pulldown {
-    display: block;
   }
 
   footer {
