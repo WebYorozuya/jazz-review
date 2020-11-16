@@ -35,23 +35,20 @@ class UploadImageController extends Controller
         }
     }
 
-    public function output(){
-        $user_id = Auth::id();
-        $user_images = User::whereid($user_id)->get();
-        return view('auth.output',['user_images' => $user_images]);
-    }
-
     public function storeInS3(Request $request)
     {
         $this->validate($request, User::$rules);
+        Log::info($request);
 
         if ($request->file('image')->isValid()) {
             $image = $request->file('image');
+            Log::info($image);
             $path = Storage::disk('s3')->putFile('/', $image, 'public');
-
+            Log::info($path);
             $user_id = Auth::id();
             $user = User::find($user_id);
             $user->user_image = Storage::url($path);
+            Log::info($user);
             $user->save();
 
             return redirect('/output');
@@ -67,5 +64,11 @@ class UploadImageController extends Controller
         //     return redirect('/output');
         //     redirect()->back()->withInput();
         // }
+    }
+
+    public function output(){
+        $user_id = Auth::id();
+        $user_images = User::whereid($user_id)->get();
+        return view('auth.output',['user_images' => $user_images]);
     }
 }
