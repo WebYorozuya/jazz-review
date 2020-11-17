@@ -39,10 +39,10 @@ class UploadImageController extends Controller
     {
         $this->validate($request, User::$rules);
 
-        Log::info($request);
         if ($request->file('image')->isValid()) {
             $image = $request->file('image');
-            $path = Storage::disk('s3')->putFile('user_images', $image, 'public');
+            Log::info($image);
+            $path = Storage::disk('s3')->putFile('user_images', $image);
             $user = User::find(Auth::id());
             $user->user_image = Storage::url($path);
             $user->save();
