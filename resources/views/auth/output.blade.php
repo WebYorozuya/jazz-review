@@ -20,14 +20,14 @@
 @endif
 
 <form method="post" action="{{ route('upload_image') }}" enctype="multipart/form-data">
-    @csrf
-    <input type="file" name="image" accept="image/png, image/jpeg">
-    <br>
-    <input type="submit" value="Upload">
+  @csrf
+  <input type="file" name="image" accept="image/png, image/jpeg">
+  <br>
+  <input type="submit" value="Upload">
 </form>
 
 @foreach($user_images as $user_image)
-<img class='image-round1' src="{{ asset('../storage/uploads/' . $user_image['user_image']) }}">
-<br>
+  <img class='image-round1' src="{{ Auth::user()->user_image }}">
+  <br>
 @endforeach
 @endsection

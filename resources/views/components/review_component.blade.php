@@ -4,13 +4,13 @@
       <a href="{{ route('user', ['user_id' => $review->user_id]) }}" class="user-image">
         @env('local')
           @if ($review->user->user_image)
-            <img src="/storage/uploads/{{ $review->user->user_image }}" alt="">
+            <img src="{{ $review->user->user_image }}" alt="user-image">
           @else
-            <img src="images/icons8-user-male-30-black.png" alt="">
+            <img src="images/icons8-user-male-30-black.png" alt="guest-image">
           @endif
         @endenv
         @production
-          <img src="images/icons8-user-male-30-black.png" alt="">
+          <img src="images/icons8-user-male-30-black.png" alt="guest-image">
         @endproduction
       </a>
     </div><!-- /.review-left -->
@@ -22,6 +22,7 @@
           <i class="fas fa-ellipsis-h showIcon"></i>
           <ul class="review-dropdown">
             @auth
+            <!-- TODO:Modelに移設 -->
             @if (Auth::user()->id === $review->user_id)
             <a href="{{ route('edit', ['id' => $review->id]) }}">
               <li>編集／削除する</li>
