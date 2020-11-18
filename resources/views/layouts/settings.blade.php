@@ -20,13 +20,13 @@
   <script src="https://kit.fontawesome.com/aaab412f99.js" crossorigin="anonymous"></script>
 
   @env('local')
-  <link rel="stylesheet" href="{{asset('css/settings.css')}}">
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <script src="{{ asset('js/app.js') }}" defer></script>
+    <link rel="stylesheet" href="{{asset('css/settings.css')}}">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}" defer></script>
   @endenv
   @production
-  <link rel="stylesheet" href="{{secure_asset('css/settings.css')}}">
-  <script src="{{secure_asset('js/app.js') }}" defer></script>
+    <link rel="stylesheet" href="{{secure_asset('css/settings.css')}}">
+    <script src="{{secure_asset('js/app.js') }}" defer></script>
   @endproduction
   @yield('css')
 </head>
@@ -84,12 +84,12 @@
   </div><!-- /.settings-container -->
 
   @env('local')
-  <script type="text/javascript" src="{{ asset('js/login_dd.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/header_search_form.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/login_dd.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/header_search_form.js') }}"></script>
   @endenv
   @production
-  <script type="text/javascript" src="{{ secure_asset('js/login_dd.js') }}"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/header_search_form.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/login_dd.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/header_search_form.js') }}"></script>
   @endproduction
 </body>
 
