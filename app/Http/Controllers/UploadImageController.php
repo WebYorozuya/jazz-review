@@ -14,26 +14,26 @@ class UploadImageController extends Controller
 		return view("/auth/upload_form");
     }
     
-	function upload(Request $request, User $user){
-		$request->validate([
-			'image' => 'required|file|image|mimes:png,jpeg'
-        ]);
+	// function upload(Request $request, User $user){
+	// 	$request->validate([
+	// 		'image' => 'required|file|image|mimes:png,jpeg'
+    //     ]);
 
-        if ($request->file('image')->isValid()){
-            $path = $request->file('image')->store('uploads','public');
-            $file_name = basename($path);
-            $user_id = Auth::id();
-            $new_image_data = User::find($user_id);
-            $new_image_data->user_image = $file_name;
-            $new_image_data->save();
+    //     if ($request->file('image')->isValid()){
+    //         $path = $request->file('image')->store('uploads','public');
+    //         $file_name = basename($path);
+    //         $user_id = Auth::id();
+    //         $new_image_data = User::find($user_id);
+    //         $new_image_data->user_image = $file_name;
+    //         $new_image_data->save();
 
-            return redirect('/output');
-        } else {
-            return redirect()
-                ->back()
-                ->withInput();       
-        }
-    }
+    //         return redirect('/output');
+    //     } else {
+    //         return redirect()
+    //             ->back()
+    //             ->withInput();       
+    //     }
+    // }
 
     public function storeS3(Request $request)
     {

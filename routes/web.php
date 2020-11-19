@@ -28,6 +28,7 @@ Route::delete('destroy','UserController@destroy')->name('destroy');
 Route::get('/changepassword','SettingController@showChangePasswordForm');
 Route::post('/changepassword','SettingController@changepassword')->name('changepassword');
 
+//ユーザー設定画面
 Route::get('/settings', 'SettingController@index')->name('settings');
 
 // ログアウト
