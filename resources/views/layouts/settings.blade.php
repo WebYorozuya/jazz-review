@@ -21,12 +21,9 @@
 
   @env('local')
     <link rel="stylesheet" href="{{asset('css/settings.css')}}">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/app.js') }}" defer></script>
   @endenv
   @production
     <link rel="stylesheet" href="{{secure_asset('css/settings.css')}}">
-    <script src="{{secure_asset('js/app.js') }}" defer></script>
   @endproduction
   @yield('css')
 </head>
@@ -34,13 +31,6 @@
 <body>
   @yield('header')
   <div class="settings-container">
-
-    <!-- <div class="card-body">
-      @if (session('status'))
-      <div class="alert alert-success" role="alert">
-        {{ session('status') }}
-      </div>
-      @endif -->
     <div class="home-container">
       <nav>
         <ul class="settings-menu">
