@@ -2,10 +2,10 @@
 
 @section('css')
   @env('local')
-    <link rel="stylesheet" href="{{asset('css/mypage.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
   @endenv
   @production
-    <link rel="stylesheet" href="{{secure_asset('css/mypage.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('css/mypage.css') }}">
   @endproduction
 @endsection
 
