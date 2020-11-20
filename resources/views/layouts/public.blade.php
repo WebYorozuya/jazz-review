@@ -11,11 +11,11 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   @env('local')
     <link type="text/css" rel="stylesheet" href="{{ asset('css/ourmaterialize.css') }}" media="screen,projection" />
-    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
   @endenv
   @production
     <link type="text/css" rel="stylesheet" href="{{ secure_asset('css/ourmaterialize.css') }}" media="screen,projection" />
-    <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('css/styles.css') }}">
   @endproduction
   @yield('css')
   <title>@yield('title')</title>
@@ -94,7 +94,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <div class="footer-left">
-          <a href="#"><img src="images/JazzLog-logo-white.png" class="footer-siteLogo"></a>
+          <a href="/"><img src="images/JazzLog-logo-white.png" class="footer-siteLogo"></a>
           <div class="footer-subTitle">♪♪ Jazz for all people ♪♪</div>
         </div>
       </div>

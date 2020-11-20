@@ -2,16 +2,11 @@
   <div class="review">
     <div class="review-left">
       <a href="{{ route('user', ['account_name' => $review->user->account_name]) }}" class="user-image">
-        @env('local')
-          @if ($review->user->user_image)
-            <img src="{{ $review->user->user_image }}" alt="user-image">
-          @else
-            <img src="images/icons8-user-male-30-black.png" alt="guest-image">
-          @endif
-        @endenv
-        @production
+        @if ($review->user->user_image)
+          <img src="{{ $review->user->user_image }}" alt="user-image">
+        @else
           <img src="images/icons8-user-male-30-black.png" alt="guest-image">
-        @endproduction
+        @endif
       </a>
     </div><!-- /.review-left -->
     <div class="review-right">

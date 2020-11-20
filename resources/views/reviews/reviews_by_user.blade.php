@@ -20,16 +20,11 @@
   <h1 class="main-title">{{ $selected_user->account_name }}さんの投稿</h1>
   <div class="user-info-container">
     <div class="user-info-left">
-      @env('local')
-        @if ($selected_user->user_image)
-          <img src="{{ $selected_user->user_image }}" alt="">
-        @else
-          <img src="images/icons8-user-male-30-black.png" alt="">
-        @endif
-      @endenv
-      @production
-        <img src="images/icons8-user-male-30-black.png" alt="">
-      @endproduction
+      @if ($selected_user->user_image)
+        <img src="{{ $selected_user->user_image }}" alt="user-image">
+      @else
+        <img src="images/icons8-user-male-30-black.png" alt="guest-image">
+      @endif
       <ul class="user-sns-btn">
         <li class="twitter-btn">
           <a href="#">
