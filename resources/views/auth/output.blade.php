@@ -15,13 +15,12 @@
 @endsection
 
 @section('main')
-
-@if($errors->any())
-  <ul>
-    @foreach($errors->all() as $error)
-      <li>{{ $error }}</li>
-    @endforeach
-  </ul>
+  @if($errors->any())
+    <ul>
+      @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+    </ul>
   @endif
   <h1>プロフィール画像を設定する</h1>
   <form method="post" action="{{ route('upload_image') }}" enctype="multipart/form-data">
@@ -30,7 +29,6 @@
     <br>
     <input type="submit" value="Upload">
   </form>
-
   @foreach($user_images as $user_image)
     <img class='image-round1' src="{{ Auth::user()->user_image }}">
     <br>

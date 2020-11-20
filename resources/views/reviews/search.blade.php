@@ -14,14 +14,14 @@
   @foreach ($reviews as $review)
     <div class="review">
       <div class="review-left">
-        <a href="user?user_id={{$review->user_id}}" class="user-image">
+        <a href="user?user_id={{ $review->user_id }}" class="user-image">
           <img src="images/icons8-user-male-30-black.png" alt="user-image">
         </a>
       </div><!-- /.review-left -->
       <div class="review-right">
         <div class="review-top">
           <h2>{{$review->live_date}} <span class="search-review-text">{{$review->title}}</span></h2>
-          <a href="modify?id={{$review->id}}" class="review-action">
+          <a href="modify?id={{ $review->id }}" class="review-action">
             <i class="fas fa-ellipsis-h"></i>
           </a>
         </div><!-- /.review-right-top -->
@@ -32,8 +32,8 @@
         </div><!-- /.tags -->
         <p class="search-review-text review-text">{{$review->text}}</p>
         <div class="review-bottom">
-          <span class="user-name">by <a href="user?user_id={{$review->user_id}}">{{$review->user->account_name}}さん</span></a>
-          <span class="created-at">{{$review->created_at}}</span>
+          <span class="user-name">by <a href="user?user_id={ $review->user_id }">{{$review->user->account_name}}さん</span></a>
+          <span class="created-at">{{ $review->created_at }}</span>
           <span class="likes">
             <i class="far fa-heart"></i>
             <span class="like-counter">00</span>
