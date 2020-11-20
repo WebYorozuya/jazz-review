@@ -17,7 +17,6 @@
   <form method="post" action="{{ route('upload_image') }}" enctype="multipart/form-data">
     @csrf
     <input type="file" name="image" accept="image/png, image/jpeg">
-    <br>
     <input type="submit" value="Upload">
   </form>
 @endsection
