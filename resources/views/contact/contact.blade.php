@@ -4,10 +4,10 @@
 
 @section('css')
   @env('local')
-    <link rel="stylesheet" href="{{asset('css/contact.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
   @endenv
   @production
-    <link rel="stylesheet" href="{{secure_asset('css/contact.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('css/contact.css') }}">
   @endproduction
 @endsection
 
@@ -257,7 +257,11 @@
 @endsection
 
 @section('js')
-  <script type="text/javascript" src="{{ secure_asset('js/modal_show.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/modal_show.js') }}"></script>
+  @env('local')
+    <script type="text/javascript" src="{{ asset('js/modal_show.js') }}"></script>
+  @endenv
+  @production
+    <script type="text/javascript" src="{{ secure_asset('js/modal_show.js') }}"></script>
+  @endproduction
 @endsection
   

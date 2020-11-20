@@ -5,13 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="icon" href="images/favicon.ico">
-  <!-- CSS RESET -->
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <!-- font awesome -->
   <script src="https://kit.fontawesome.com/aaab412f99.js" crossorigin="anonymous"></script>
-  <!--Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   @env('local')
     <link type="text/css" rel="stylesheet" href="{{ asset('css/ourmaterialize.css') }}" media="screen,projection" />
