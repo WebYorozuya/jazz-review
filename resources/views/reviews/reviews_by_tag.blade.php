@@ -2,10 +2,10 @@
 
 @section('css')
   @env('local')
-    <link rel="stylesheet" href="{{asset('css/reviews_by_tag.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/reviews_by_tag.css') }}">
   @endenv
   @production
-    <link rel="stylesheet" href="{{secure_asset('css/reviews_by_tag.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('css/reviews_by_tag.css') }}">
   @endproduction
 @endsection
 
