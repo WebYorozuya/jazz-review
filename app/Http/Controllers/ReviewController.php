@@ -42,14 +42,14 @@ class ReviewController extends Controller
 
     public function create(Request $request)
     {
-      //まずレビューのINSERT
+      //投稿の処理
         $this->validate($request, Review::$rules);
         $review = new Review;
         $form = $request->all(); //送信されたフォームの値を保管
         unset($form['_token']); //CSRF非表示フィールド_token削除
         $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
-      //次にタグのINSERT
-        //送信されたタグをスペース区切りで整える
+        
+        //タグの処理
         $tags = trim($request->tag_name);
         $tags = explode(" ", $tags);
         $tags = array_unique($tags);
@@ -87,8 +87,6 @@ class ReviewController extends Controller
         unset($form['_token']);
         $review->fill($form)->save();
 
-    //次にタグのINSERT
-        //送信されたタグをスペース区切りで整えるTODO:validationでやれる？
         $tags = trim($request->tag_name);
         $tags = explode(" ", $tags);
         $tags_unique = array_unique($tags);

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\UserController;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -19,10 +20,15 @@ use Illuminate\Support\Facades\Auth;
 // ----- ユーザー周り -----
 Auth::routes();
 
+//user削除（論理的削除)
+Route::get('destroy', 'UserController@index')->name('destroy');
+Route::delete('destroy','UserController@destroy')->name('destroy');
+
 //パスワード変更
 Route::get('/changepassword','SettingController@showChangePasswordForm');
 Route::post('/changepassword','SettingController@changepassword')->name('changepassword');
 
+//ユーザー設定画面
 Route::get('/settings', 'SettingController@index')->name('settings');
 
 // ログアウト
@@ -33,8 +39,7 @@ Route::get('/logout',[
 
 //プロフ画像
 Route::get('/upload','UploadImageController@input')->name('upload_form');
-//Route::post('/upload','UploadImageController@upload')->name('upload_image');
-Route::post('/upload','UploadImageController@storeInS3')->name('upload_image');
+Route::post('/upload','UploadImageController@storeS3')->name('upload_image');
 Route::get('/output','UploadImageController@output')->name('output');
 
 // ----- 投稿周り -----

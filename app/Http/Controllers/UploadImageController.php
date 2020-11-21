@@ -13,57 +13,21 @@ class UploadImageController extends Controller
     function input(){
 		return view("/auth/upload_form");
     }
-    
-	function upload(Request $request, User $user){
-		$request->validate([
-			'image' => 'required|file|image|mimes:png,jpeg'
-        ]);
-        
-        if ($request->file('image')->isValid()){
-            $path = $request->file('image')->store('uploads','public');
-            $file_name = basename($path);
-            $user_id = Auth::id();
-            $new_image_data = User::find($user_id);
-            $new_image_data->user_image = $file_name;
-            $new_image_data->save();
 
-            return redirect('/output');
-        } else {
-            return redirect()
-                ->back()
-                ->withInput();       
-        }
-    }
-
-    public function storeInS3(Request $request)
+    public function storeS3(Request $request)
     {
         $this->validate($request, User::$rules);
-        Log::info($request);
 
         if ($request->file('image')->isValid()) {
             $image = $request->file('image');
-            Log::info($image);
-            $path = Storage::disk('s3')->putFile('/', $image, 'public');
-            Log::info($path);
-            $user_id = Auth::id();
-            $user = User::find($user_id);
-            $user->user_image = Storage::url($path);
-            Log::info($user);
+            $path = Storage::disk('s3')->putFile('user_images', $image, 'public');
+            $user = User::find(Auth::id());
+            $user->user_image = Storage::disk('s3')->url($path);
             $user->save();
-
             return redirect('/output');
+        } else {
+            return redirect('/upload');
         }
-        // if ($request->file('image')->isValid()){
-        //     $path = $request->file('image')->store('user_images');
-        //     $file_name = basename($path);
-        //     $user_id = Auth::id();
-        //     $new_image_data = User::find($user_id);
-        //     $new_image_data->user_image = $file_name;
-        //     $new_image_data->save();
-        // } else {
-        //     return redirect('/output');
-        //     redirect()->back()->withInput();
-        // }
     }
 
     public function output(){

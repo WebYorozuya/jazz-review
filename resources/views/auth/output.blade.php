@@ -1,7 +1,12 @@
 @extends('layouts.settings')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/mypage.css')}}">
+  @env('local')
+    <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
+  @endenv
+  @production
+    <link rel="stylesheet" href="{{ secure_asset('css/mypage.css') }}">
+  @endproduction
 @endsection
 
 @section('header')
@@ -10,7 +15,6 @@
 @endsection
 
 @section('main')
-
 @if($errors->any())
 <ul>
   @foreach($errors->all() as $error)
@@ -30,6 +34,9 @@
     <input type="file" class="img-file" name="image" accept="image/png, image/jpeg">
     <input type="submit" class="img-upload" value="写真をアップロード">
   </form>
+    @foreach($user_images as $user_image)
+    <img class='image-round1' src="{{ Auth::user()->user_image }}">
+    @endforeach
 </div>
 
 <!--**********自己紹介文（仮）エリア **********-->
@@ -46,5 +53,4 @@
 
   </form>
 </div>
-
 @endsection
