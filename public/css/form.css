@@ -18,8 +18,8 @@ body {
 
 .form-container h1 {
   text-align   : center;
-  padding      : 10px 0;
-  font-size    : 20px;
+  padding      : 20px 0 30px 0;
+  font-size    : 30px;
   font-weight  : 500;
   border-top   : 1px solid var(--main-background-color);
   border-bottom: 1px solid var(--main-background-color);
@@ -58,6 +58,7 @@ button.btn.btn-primary {
   font-size       : 20px;
 }
 
+/********** レスポンシブ対応 **********/
 @media screen and (max-width: 1000px) {
   body {
     background-color: #ffffff;
