@@ -32,3 +32,4 @@
     <img class='image-round1' src="{{ Auth::user()->user_image }}">
   @endforeach
 @endsection
+
