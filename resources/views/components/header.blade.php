@@ -2,7 +2,7 @@
   <div class="header-container">
     <div class="header-start">
       <div class="header-siteName">
-        <a href="/"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
+        <a href="{{ route('top') }}"><img src="images/JazzLog-logo-white.png" class="siteLogo"></a>
       </div>
       <form id="header-search" class="header-search header-search-min" action="{{ url('/search') }}" method="get">
         <i id="header-search-button" class="header-search-button fas fa-search"></i>

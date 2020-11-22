@@ -32,25 +32,25 @@
       <nav id="navigation-menu">
         <ul class="pc-nav">
           <li>
-            <a href="/" class="li-newInformation" id="newInformation">
+            <a href="{{ route('top') }}" class="li-newInformation" id="newInformation">
               <i class="fas fa-music fa-lg"></i>
               <span>新着レビュー</span>
             </a>
           </li>
           <li>
-            <a href="tags" class="li-player" id="tags">
+            <a href="{{ route('tags') }}" class="li-player" id="tags">
               <i class="fas fa-tags"></i>
               <span>タグ</span>
             </a>
           </li>
           <li>
-            <a href="post" class="li-livehouse" id="post">
+            <a href="{{ route('post') }}" class="li-livehouse" id="post">
               <i class="fas fa-pen-nib"></i>
               <span>投稿する</span>
             </a>
           </li>
           <li>
-            <a href="contact" class="li-livehouse" id="contact">
+            <a href="{{ route('contact') }}" class="li-livehouse" id="contact">
               <i class="far fa-smile"></i>
               <span>お問い合わせ</span>
             </a>
