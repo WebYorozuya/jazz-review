@@ -72,7 +72,7 @@ Route::post('/like', 'ReviewController@like')->name('reviews.like');
 Route::get('/tags', 'TagController@getTags')->name('tags');
 
 // タグ別投稿ページ表示
-Route::get('/tag/{tag_name}', 'TagController@getReviewsByTag')->name('tags.tag');
+Route::get('/tag', 'TagController@getReviewsByTag')->name('tags.tag');
 
 // ユーザー別投稿ページ表示
 Route::get('/user', 'ReviewController@getReviewsByUser')->name('user');
