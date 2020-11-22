@@ -22,22 +22,7 @@
   <div class="main-container-team">
     <h2>members</h2>
     <div class="team-member">
-      <div class="member-info">
-        <img src="" alt="#" class="profile-img" />
-        <div class="member-name"></div>
-      </div>
-      <div class="member-info">
-        <img src="" alt="#" class="profile-img" />
-        <div class="member-name"></div>
-      </div>
-      <div class="member-info">
-        <img src="" alt="#" class="profile-img" />
-        <div class="member-name"></div>
-      </div>
-      <div class="member-info">
-        <img src="" alt="#" class="profile-img" />
-        <div class="member-name"></div>
-      </div>
+    @for($i=1 ; $i <= 5; $i++) 
       <div class="member-info">
         <img src="" alt="#" class="profile-img" />
         <div class="member-name"></div>
@@ -56,11 +41,19 @@
                 <p class="name"></p>
                 <ul class="member-sns-btn">
                   <li class="facebook-btn">
-                    <a href="#">
+                    <a class="facebook">
                       <i class="fab facebook-square fa-facebook-square fa-lg"></i></a>
                   </li>
+                  <li class="twitter-btn">
+                    <a class="twitter">
+                      <i class="fab fa-twitter-square fa-lg"></i></a>
+                  </li>
+                  <li class="github-btn">
+                    <a class="github">
+                      <i class="fab fa-github"></i></a>
+                  </li>
                   <li class="instagram-btn">
-                    <a href="#">
+                    <a class="instagram">
                       <i class="fab fa-instagram-square fa-lg"></i></a>
                   </li>
                 </ul>
@@ -74,134 +67,7 @@
           </div>
         </div>
       </div> 
-      <div class="modal-wrapper">
-        <div class="modal-back"></div>
-        <div class="modal">
-          <div class="modal-left">
-              <i class="fas fa-angle-left prevBtn"></i>
-          </div>
-          <div class="modal-center">
-            <div class="modal-top">
-              <img src="#" alt="#" class="modal-profile-img" />
-              <h2>
-                <p class="role"></p>
-                <p class="name"></p>
-                <ul class="member-sns-btn">
-                  <li class="facebook-btn">
-                    <a href="#">
-                      <i class="fab facebook-square fa-facebook-square fa-lg"></i></a>
-                  </li>
-                  <li class="instagram-btn">
-                    <a href="#">
-                      <i class="fab fa-instagram-square fa-lg"></i></a>
-                  </li>
-                </ul>
-              </h2>
-            </div>
-            <span class="modal-text"></span>
-            <button class="closeBtn">close</button>
-          </div>
-          <div class="modal-right">
-              <i class="fas fa-angle-right nextBtn"></i>
-          </div>
-        </div>
-      </div> 
-      <div class="modal-wrapper">
-        <div class="modal-back"></div>
-        <div class="modal">
-          <div class="modal-left">
-              <i class="fas fa-angle-left prevBtn"></i>
-          </div>
-          <div class="modal-center">
-            <div class="modal-top">
-              <img src="#" alt="#" class="modal-profile-img" />
-              <h2>
-                <p class="role"></p>
-                <p class="name"></p>
-                <ul class="member-sns-btn">
-                  <li class="facebook-btn">
-                    <a href="#">
-                      <i class="fab facebook-square fa-facebook-square fa-lg"></i></a>
-                  </li>
-                  <li class="instagram-btn">
-                    <a href="#">
-                      <i class="fab fa-instagram-square fa-lg"></i></a>
-                  </li>
-                </ul>
-              </h2>
-            </div>
-            <span class="modal-text"></span>
-            <button class="closeBtn">close</button>
-          </div>
-          <div class="modal-right">
-              <i class="fas fa-angle-right nextBtn"></i>
-          </div>
-        </div>
-      </div> 
-      <div class="modal-wrapper">
-        <div class="modal-back"></div>
-        <div class="modal">
-          <div class="modal-left">
-              <i class="fas fa-angle-left prevBtn"></i>
-          </div>
-          <div class="modal-center">
-            <div class="modal-top">
-              <img src="#" alt="#" class="modal-profile-img" />
-              <h2>
-                <p class="role"></p>
-                <p class="name"></p>
-                <ul class="member-sns-btn">
-                  <li class="facebook-btn">
-                    <a href="#">
-                      <i class="fab facebook-square fa-facebook-square fa-lg"></i></a>
-                  </li>
-                  <li class="instagram-btn">
-                    <a href="#">
-                      <i class="fab fa-instagram-square fa-lg"></i></a>
-                  </li>
-                </ul>
-              </h2>
-            </div>
-            <span class="modal-text"></span>
-            <button class="closeBtn">close</button>
-          </div>
-          <div class="modal-right">
-              <i class="fas fa-angle-right nextBtn"></i>
-          </div>
-        </div>
-      </div> 
-      <div class="modal-wrapper">
-        <div class="modal-back"></div>
-        <div class="modal">
-          <div class="modal-left">
-              <i class="fas fa-angle-left prevBtn"></i>
-          </div>
-          <div class="modal-center">
-            <div class="modal-top">
-              <img src="#" alt="#" class="modal-profile-img" />
-              <h2>
-                <p class="role"></p>
-                <p class="name"></p>
-                <ul class="member-sns-btn">
-                  <li class="facebook-btn">
-                    <a href="#">
-                      <i class="fab facebook-square fa-facebook-square fa-lg"></i></a>
-                  </li>
-                  <li class="instagram-btn">
-                    <a href="#">
-                      <i class="fab fa-instagram-square fa-lg"></i></a>
-                  </li>
-                </ul>
-              </h2>
-            </div>
-            <span class="modal-text"></span>
-            <button class="closeBtn">close</button>
-          </div>
-          <div class="modal-right">
-              <i class="fas fa-angle-right nextBtn"></i>
-          </div>
-        </div>
-      </div> 
+      @endfor
     </div><!-- .team-member -->
 
     <div class="team-about">
