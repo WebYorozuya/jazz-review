@@ -1,6 +1,81 @@
-.image-round1{
-    border-radius: 50%;
-    width: 125px;
-    height: 125px;
+main {
+  display       : flex;
+  flex-direction: column;
+  margin        : auto;
 }
 
+.profile-img {
+  display: flex;
+}
+
+.image-round1 {
+  display      : flex;
+  margin       : 30px auto;
+  border-radius: 50%;
+  width        : 150px;
+  height       : 150px;
+}
+
+.upload-image form {
+  display       : flex;
+  flex-direction: column;
+}
+
+input.image {
+  margin-top   : 50px;
+  margin-bottom: 10px;
+}
+
+input.img-upload {
+  display      : block;
+  text-align   : center;
+  width        : 70%;
+  padding      : 7px;
+  border-radius: 3px;
+  border       : 2px solid #0378a6;
+  color        : #0378a6;
+}
+
+input.img-upload:hover {
+  background-color: #0378a6;
+  color           : #ffffff;
+}
+
+.user-img,
+label.introduction {
+  display    : block;
+  margin-top : 15px;
+  margin-left: 20px;
+  font-size  : 18px;
+}
+
+textarea#introduction {
+  display      : flex;
+  width        : 90%;
+  margin       : 20px auto;
+  padding      : 10px;
+  border       : 1px solid rgb(131, 152, 182);
+  border-radius: 7px;
+  font-size    : 15px;
+}
+
+input.settings {
+  width           : 50%;
+  height          : 50px;
+  margin-top      : 20px;
+  margin-bottom   : 30px;
+  border-radius   : 2px;
+  border          : none;
+  outline         : none;
+  cursor          : pointer;
+  box-shadow      : 3px 3px 4px #666666;
+  background-color: #9b9b9b;
+  color           : #ffffff;
+  font-size       : 20px;
+}
+
+.settings-btn {
+  display        : flex;
+  justify-content: center;
+  margin-bottom  : 20px;
+}
