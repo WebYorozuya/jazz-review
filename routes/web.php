@@ -48,9 +48,9 @@ Route::get('/', 'ReviewController@index')->name('top');
 //投稿画面の表示
 Route::get('/post', function() {
     return view('reviews.post');
-});
+})->name('post');
 
-//投稿画面の表示（仮）
+//タグのサジェスト
 Route::get('/get_suggested_tag', 'TagController@getSuggestedTag');
 
 //投稿内容をDBへ登録
@@ -69,10 +69,10 @@ Route::post('/del', 'ReviewController@delete');
 Route::post('/like', 'ReviewController@like')->name('reviews.like');
 
 // タグ一覧ページ表示
-Route::get('/tags', 'TagController@getTags');
+Route::get('/tags', 'TagController@getTags')->name('tags');
 
 // タグ別投稿ページ表示
-Route::get('/tag', 'TagController@getReviewsByTag')->name('tags.tag');
+Route::get('/tag/{tag_name}', 'TagController@getReviewsByTag')->name('tags.tag');
 
 // ユーザー別投稿ページ表示
 Route::get('/user', 'ReviewController@getReviewsByUser')->name('user');
@@ -81,13 +81,12 @@ Route::get('/user', 'ReviewController@getReviewsByUser')->name('user');
 Route::get('/search', 'SearchController@search')->name('search');
 
 // ----- その他 -----
-// 利用規約ページ表示
 //Contact
 Route::get('/contact', function() {
     return view('contact.contact');
-}
-);
+})->name('contact');
 
+// 利用規約ページ表示
 Route::get('/terms', 'TermsController@index');
 
 // 問合せメール送信
