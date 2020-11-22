@@ -14,17 +14,13 @@ class SearchController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->input('keyword');
-        if (!empty($keyword))
-        {
-            $reviews = Review::where('title', 'like', '%' . $keyword . '%')
-            ->orWhere('text', 'like', '%' . $keyword . '%')
-            ->orWhereHas('tags', function ($query) use ($keyword){
-                $query->where('tag_name', 'like', '%' . $keyword . '%');
-            })
-            ->paginate(10);
-        } else {
-            return redirect('/');
-        }
+        $reviews = Review::withCount('likes')
+        ->where('title', 'like', '%' . $keyword . '%')
+        ->orWhere('text', 'like', '%' . $keyword . '%')
+        ->orWhereHas('tags', function ($query) use ($keyword){
+            $query->where('tag_name', 'like', '%' . $keyword . '%');
+        })
+        ->paginate(10);
 
         return view('reviews.search', [
             'keyword' => $keyword,
