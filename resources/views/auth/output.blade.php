@@ -1,17 +1,17 @@
 @extends('layouts.settings')
 
 @section('css')
-@env('local')
-<link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
-@endenv
-@production
-<link rel="stylesheet" href="{{ secure_asset('css/mypage.css') }}">
-@endproduction
+  @env('local')
+  <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
+  @endenv
+  @production
+  <link rel="stylesheet" href="{{ secure_asset('css/mypage.css') }}">
+  @endproduction
 @endsection
 
 @section('header')
-@component('components.header')
-@endcomponent
+  @component('components.header')
+  @endcomponent
 @endsection
 
 @section('main')
@@ -29,7 +29,7 @@
   <br>
   @endforeach
 
-  <form method="post" action="{{ route('upload_image') }}" enctype="multipart/form-data" class="upload-image"> 
+  <form method="post" action="{{ route('upload_image') }}" enctype="multipart/form-data" class="upload-image">
     @csrf
     <input type="file" class="image" name="image" accept="image/png, image/jpeg">
     <input type="submit" class="img-upload" value="写真をアップロード">
@@ -42,13 +42,9 @@
     @csrf
     <label class="introduction" for="introduction">自己紹介文</label>
     <textarea name="text" id="introduction" cols="40" rows="8" maxlength="1000" required></textarea>
+    <div class="settings-btn">
+      <input type="submit" class="settings" value="設定する">
+    </div>
+  </form>
 </div>
-
-<div class="settings-btn">
-  <input type="submit" class="settings" value="設定する">
-</div>
-
-</form>
-</div>
-
 @endsection
