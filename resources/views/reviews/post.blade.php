@@ -3,7 +3,7 @@
 @section('title', '投稿する')
 
 @section('css')
-@env('local')
+  @env('local')
     <link type="text/css" rel="stylesheet" href="{{ asset('css/ourmaterialize.css') }}"  media="screen,projection"/>
     <link rel="stylesheet" href="{{asset('css/post.css')}}">
   @endenv
