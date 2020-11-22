@@ -17,7 +17,7 @@
           <i class="fas fa-ellipsis-h showIcon"></i>
           <ul class="review-dropdown">
             @auth
-            <!-- TODO:Modelに移設 -->
+            <!-- TODO:Modelに移設検討 -->
             @if (Auth::user()->id === $review->user_id)
             <a href="{{ route('edit', ['id' => $review->id]) }}">
               <li>編集／削除する</li>

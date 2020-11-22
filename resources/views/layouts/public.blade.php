@@ -32,49 +32,39 @@
       <nav id="navigation-menu">
         <ul class="pc-nav">
           <li>
-            <a href="/" class="li-newInformation" id="newInformation">
+            <a href="{{ route('top') }}" class="li-newInformation" id="newInformation">
               <i class="fas fa-music fa-lg"></i>
               <span>新着レビュー</span>
             </a>
           </li>
           <li>
-            <a href="tags" class="li-player" id="tags">
+            <a href="{{ route('tags') }}" class="li-player" id="tags">
               <i class="fas fa-tags"></i>
               <span>タグ</span>
             </a>
           </li>
           <li>
-            <a href="post" class="li-livehouse" id="post">
+            <a href="{{ route('post') }}" class="li-livehouse" id="post">
               <i class="fas fa-pen-nib"></i>
               <span>投稿する</span>
             </a>
           </li>
           <li>
-            <a href="contact" class="li-livehouse" id="contact">
+            <a href="{{ route('contact') }}" class="li-livehouse" id="contact">
               <i class="far fa-smile"></i>
               <span>お問い合わせ</span>
             </a>
           </li>
         </ul>
-        <div class="mobile-nav">
-          <form method="get" action="" class="mobile-nav-form">
-            <div class="pulldown">
-              <select name="pulldown" class="pulldown-option" required>
-                <option value="">選択してください</option>
-                <option value="選択肢1">新着レビュー</option>
-                <option value="選択肢2">タグ</option>
-                <option value="選択肢3">投稿する</option>
-                <option value="選択肢4">お問い合わせ</option>
-              </select>
-            </div>
-            <div class="pulldown-select">
-              <input type="submit" value="選択">
-            </div>
-          </form>
-        </div><!-- /.mobile-nav -->
+        <select class="pulldown" onchange="location.href=value;" required>
+          <option class="default-menu">---  Menu  ---</option>
+          <option value="{{ route('top') }}">新着レビュー</option>
+          <option value="{{ route('tags') }}">タグ</option>
+          <option value="{{ route('post') }}">投稿する</option>
+          <option value="{{ route('contact') }}">お問い合わせ</option>
+        </select>
       </nav>
       <div class="right-container">
-        <!-- 投稿表示スペース -->
         <main>
           @section('main')
           @show
