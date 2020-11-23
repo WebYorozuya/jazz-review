@@ -208,9 +208,9 @@
       <p>
         プログラミング初学者の私たちですが、<a
           href="https://www.youtube.com/channel/UCHxqQ8bUg5F2GW79D_DvSjQ/featured"
-          target="blank">YouTube万屋エンジニアチャンネル</a
+          target="blank">YouTubeプログラミングアカデミーチャンネル</a
         >のコミュニティ内で、学習がてらWebサービスを作ってみようというプロジェクトを立ち上げました。ジャズライブに行った人が感想を書き込んでシェアできる口コミサイトを作っています（このコロナ禍に）。
-        現在、おさないさんという超絶強力なメンターと先にプロジェクトを立ち上げている先人にアドバイスを仰ぎながら、初心者しかいない４人のチームでよちよち歩んでいます。
+        現在、おさないさんという超絶強力なメンターと先にプロジェクトを立ち上げている先人にアドバイスを仰ぎながら５人チームでよちよち歩んでいます。
       </p>
     </div><!-- .team-about -->
     <h2>mentor</h2>
@@ -218,8 +218,8 @@
       <a href="https://www.youtube.com/channel/UCHxqQ8bUg5F2GW79D_DvSjQ/featured" target="blank">
         <i class="fab fa-youtube fa-5x"></i>
       </a>
-      <a href="https://twitter.com/YorozuyaOsanai" target="blank">
-        <img src="images/webyorozuya.png" alt="web万屋チャンネルロゴ"/>
+      <a href="https://www.youtube.com/channel/UCHxqQ8bUg5F2GW79D_DvSjQ/featured" target="blank">
+        <img src="images/programming-academy-logo.jpg" alt="ロゴ"/>
       </a>
     </div><!-- .supporter -->
   </div> <!-- .main-container-team -->
