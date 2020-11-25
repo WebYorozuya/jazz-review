@@ -24,10 +24,8 @@ class UploadImageController extends Controller
             $user = User::find(Auth::id());
             $user->user_image = Storage::disk('s3')->url($path);
             $user->save();
-            return redirect('/output');
-        } else {
-            return redirect('/upload');
         }
+        return redirect()->route('profile');
     }
 
     public function output(){
