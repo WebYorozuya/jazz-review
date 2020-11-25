@@ -13,7 +13,6 @@ use App\Like;
 
 class ReviewController extends Controller
 {
-    //トップページを表示
     public function index(Request $request)
     {
         $reviews = Review::withCount('likes')->orderBy('id', 'desc')->paginate(10);
@@ -22,7 +21,7 @@ class ReviewController extends Controller
         ];
         return view('reviews.index', $param);
     }
-    //ユーザー別投稿ページを表示
+
     public function getReviewsByUser(Request $request)
     {
         $account_name = $request->account_name;
@@ -42,35 +41,32 @@ class ReviewController extends Controller
 
     public function create(Request $request)
     {
-      //投稿の処理
         $this->validate($request, Review::$rules);
         $review = new Review;
-        $form = $request->all(); //送信されたフォームの値を保管
-        unset($form['_token']); //CSRF非表示フィールド_token削除
-        $review->fill($form)->save(); //fillメソッドでモデルのプロパティにまとめて代入
+        $form = $request->all();
+        unset($form['_token']);
+        $review->fill($form)->save();
         
-        //タグの処理
         $tags = trim($request->tag_name);
         $tags = explode(" ", $tags);
         $tags = array_unique($tags);
-        //新規タグだけtagsテーブルに挿入
+
         $array = [];
         foreach ($tags as $tag) {
             $record = Tag::firstOrCreate(['tag_name' => $tag]);
             array_push($array, $record);
         };
-        //投稿に紐付けされるタグのidを配列化、中間テーブルへ
+
         $tags_id = [];
         foreach ($array as $tag) {
             array_push($tags_id, $tag['id']);
         };
-        //中間テーブルにレコード挿入
-        $review->tags()->attach($tags_id);//attachメソッドで紐付け対象のidを紐付け対象のidを引数にしてリレーションを紐付ける
+
+        $review->tags()->attach($tags_id);
       
-      //トップページへ
         return redirect()->route('top')->with('flash_message', '素敵な投稿ありがとうございます！'); 
     }
-    //投稿修正ページを表示
+
     public function edit(Request $request)
     {
         $review = Review::find($request->id);
@@ -78,7 +74,7 @@ class ReviewController extends Controller
             'review' => $review,
             ]);
     }
-    //投稿修正送信
+
     public function update(Request $request)
     {
         $this->validate($request, Review::$rules);
@@ -106,23 +102,22 @@ class ReviewController extends Controller
                 ->delete();
         }
 
-        //新規タグだけtagsテーブルに挿入
         $array = [];
         foreach ($tags as $tag) {
             $record = Tag::firstOrCreate(['tag_name' => $tag]);
             array_push($array, $record);
         };
-        //投稿に紐付けされるタグのidを配列化
+
         $tags_id = [];
         foreach ($array as $tag) {
             array_push($tags_id, $tag['id']);
         };
-        //中間テーブルにレコード挿入
+
         $review->tags()->attach($tags_id);
       
         return redirect('/')->with('flash_message', '投稿を修正しました！');
     }
-    //投稿削除
+
     public function delete(Request $request)
     {
         $review_tags = DB::table('review_tag')->where('review_id', $request->id)->get();
