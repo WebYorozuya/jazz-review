@@ -24,10 +24,13 @@
   @endif
   <div class="user-img">プロフィール画像を設定</div>
   <div class="profile-img">
-    @foreach($user_images as $user_image)
+    @if (Auth::user()->user_image)
       <img class='image-round1' src="{{ Auth::user()->user_image }}">
       <br>
-    @endforeach
+    @elseif (!Auth::user()->user_image)
+      <!-- <img class='image-round1' src="images/icons8-user-male-30-black.png" alt="guest-image"> -->
+      <i class="fas fa-user image-round1" style="font-size: 50px;"></i>
+    @endif
     <form method="post" action="{{ route('upload_image') }}" enctype="multipart/form-data" class="upload-image"> 
       @csrf
       <input type="file" class="image" name="image" accept="image/png, image/jpeg">
