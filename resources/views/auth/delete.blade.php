@@ -2,15 +2,13 @@
 @extends('layouts.settings')
 
 @section('css')
-	<link rel="stylesheet" href="{{asset('css/form.css')}}">
+	<link rel="stylesheet" href="{{ asset('css/form.css') }}">
 @endsection
 
 @section('header')
   @component('components.header')
   @endcomponent
 @endsection
-
-
 
 @section('main')
 	<div class="panel panel-default">

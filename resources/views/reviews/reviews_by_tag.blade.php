@@ -17,10 +17,10 @@
 @endsection
 
 @section('main')
-  <h1 class="main-title">タグ「{{$tag_name}}」の投稿一覧</h1>
+  <h1 class="main-title">タグ「{{ $tag_name }}」の投稿一覧</h1>
   <div class="tag-container">
     <div class="tag-info-left">
-      <h2>{{$tag_name}}</h2>
+      <h2>{{ $tag_name }}</h2>
       <ul>
         <li>
           <a class="hp-url" href="#">ホームページ</a>
