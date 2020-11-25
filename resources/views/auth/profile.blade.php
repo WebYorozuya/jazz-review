@@ -37,10 +37,10 @@
 
   <!--**********自己紹介文（仮）エリア **********-->
   <div class="user-introduction">
-    <form action="process" accept-charset="UTF-8" method="post" class="main-form">
+    <form action="" accept-charset="UTF-8" method="post" class="main-form">
       @csrf
       <label class="introduction" for="introduction">自己紹介文</label>
-      <textarea name="text" id="introduction" cols="40" rows="8" maxlength="1000" required></textarea>
+      <textarea name="text" id="introduction" cols="40" rows="8" maxlength="200"></textarea>
   </div>
   <div class="settings-btn">
     <input type="submit" class="settings" value="設定する">

@@ -29,7 +29,7 @@
         </div>
         <ul class="header-loginUser-dd-content">
           @auth
-            <li  class="user-menu-list"><a href="{{ url('/settings') }}">設定</a></li>
+            <li  class="user-menu-list"><a href="{{ route('profile') }}">設定</a></li>
             <li  class="user-menu-list"><a href="{{ route('user.logout') }}">ログアウト</a></li>
           @endauth
           @guest

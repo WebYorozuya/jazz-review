@@ -25,7 +25,7 @@
       <nav>
         <ul class="pc-nav">
           <li>
-            <a href="{{ url('output') }}" class="settings">プロフィールの編集</a>
+            <a href="{{ route('profile') }}" class="settings">プロフィールの編集</a>
           </li>
           <li>
             <a href="{{ url('changepassword') }}" class="settings">パスワード変更</a>
