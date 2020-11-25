@@ -4,18 +4,15 @@
 
 @section('css')
   @env('local')
-    <link rel="stylesheet" href="{{asset('css/terms.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/terms.css') }}">
   @endenv
   @production
-    <link rel="stylesheet" href="{{secure_asset('css/terms.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('css/terms.css') }}">
   @endproduction
 @endsection
 
 @section('header')
   @component('components.header')
-    @slot('user')
-      {{$user}}
-    @endslot
   @endcomponent
 @endsection
 
