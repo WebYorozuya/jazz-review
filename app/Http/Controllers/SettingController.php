@@ -28,8 +28,7 @@ class SettingController extends Controller
     {
         $user_id = Auth::id();
         $user_images = User::whereid($user_id)->get();
-        return view('auth.output',['user_images' => $user_images]);
-        
+        return view('auth.profile',['user_images' => $user_images]); 
     }
 
     //パスワード変更追加

@@ -29,7 +29,7 @@ Route::get('/changepassword','SettingController@showChangePasswordForm');
 Route::post('/changepassword','SettingController@changepassword')->name('changepassword');
 
 //ユーザー設定画面
-Route::get('/settings', 'SettingController@index')->name('settings');
+Route::get('/profile', 'SettingController@index')->name('profile');
 
 // ログアウト
 Route::get('/logout',[
@@ -38,9 +38,7 @@ Route::get('/logout',[
     ]);
 
 //プロフ画像
-Route::get('/upload','UploadImageController@input')->name('upload_form');
 Route::post('/upload','UploadImageController@storeS3')->name('upload_image');
-Route::get('/output','UploadImageController@output')->name('output');
 
 // ----- 投稿周り -----
 Route::get('/', 'ReviewController@index')->name('top');
@@ -87,7 +85,9 @@ Route::get('/contact', function() {
 })->name('contact');
 
 // 利用規約ページ表示
-Route::get('/terms', 'TermsController@index');
+Route::get('/terms', function() {
+    return view('terms.terms');
+})->name('terms');
 
 // 問合せメール送信
 Route::post('/process', 'ContactController@process');
