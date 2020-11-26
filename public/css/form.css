@@ -58,6 +58,46 @@ button.btn.btn-primary {
   font-size       : 20px;
 }
 
+/********** 退会 **********/
+.panel-body h1 {
+  text-align : center;
+  padding-top: 50px;
+  font-size  : 25px;
+}
+
+.warning p {
+  text-align : center;
+  padding-top: 50px;
+  font-size: 1em;
+}
+
+.submit-btn {
+  display       : flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+button.cancel-btn,
+button.delete-btn {
+  display: flex;
+  display: block;
+  text-align: center;
+  width: 200px;
+  margin: 20px 5px;
+  padding: 10px;
+}
+
+button.cancel-btn{
+  border: 2px solid rgb(16, 16, 160);
+  border-radius: 7px;
+}
+
+button.delete-btn{
+background-color: rgb(212, 48, 48);
+border-radius: 7px;
+color: #ffffff;
+}
+
 /********** レスポンシブ対応 **********/
 @media screen and (max-width: 1000px) {
   body {

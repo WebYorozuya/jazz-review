@@ -26,7 +26,6 @@
 <div class="profile-img">
   @foreach($user_images as $user_image)
   <img class='image-round1' src="{{ Auth::user()->user_image }}">
-  <br>
   @endforeach
 
   <form method="post" action="{{ route('upload_image') }}" enctype="multipart/form-data" class="upload-image">
