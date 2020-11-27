@@ -3,7 +3,7 @@
   // ログインユーザーのドロップダウンメニューの開閉
   const loginUserDdLabel = document.querySelector(".header-loginUser-dd-label");
 
-  // クリックによるクラスを着脱により、ドロップダウンメニューを開閉する。
+  // クリックによるクラスの着脱により、ドロップダウンメニューを開閉する。
   function showHide(event) {
     const loginUserDdContent = document.querySelector(".header-loginUser-dd-content");
     loginUserDdContent.classList.toggle("show");
