@@ -15,18 +15,28 @@
 @endsection
 
 @section('main')
-@if($errors->any())
-<ul>
-  @foreach($errors->all() as $error)
-  <li>{{ $error }}</li>
-  @endforeach
-</ul>
-@endif
-<div class="user-img">プロフィール画像を設定</div>
-<div class="profile-img">
-  @foreach($user_images as $user_image)
-  <img class='image-round1' src="{{ Auth::user()->user_image }}">
-  @endforeach
+  @if($errors->any())
+    <ul>
+      @foreach($errors->all() as $error)
+      <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  @endif
+  <div class="user-img">プロフィール画像を設定</div>
+  <div class="profile-img">
+    @if (Auth::user()->user_image)
+      <img class='image-round1' src="{{ Auth::user()->user_image }}">
+      <br>
+    @elseif (!Auth::user()->user_image)
+      <!-- <img class='image-round1' src="images/icons8-user-male-30-black.png" alt="guest-image"> -->
+      <i class="fas fa-user image-round1" style="font-size: 50px;"></i>
+    @endif
+    <form method="post" action="{{ route('upload_image') }}" enctype="multipart/form-data" class="upload-image"> 
+      @csrf
+      <input type="file" class="image" name="image" accept="image/png, image/jpeg">
+      <input type="submit" class="img-upload" value="写真をアップロード">
+    </form>
+  </div><!-- profile-img -->
 
   <form method="post" action="{{ route('upload_image') }}" enctype="multipart/form-data" class="upload-image">
     @csrf

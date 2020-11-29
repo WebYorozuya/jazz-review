@@ -175,15 +175,16 @@ h2 {
 }
 
 .member-sns-btn {
-  text-align   : start;
-  margin-top   : 10px;
-  margin-left  : 5px;
-  margin-bottom: 10px;
-  padding      : 0;
+  display       : flex;
+  flex-direction: row;
+  text-align    : start;
+  margin-top    : 10px;
+  margin-left   : 5px;
+  margin-bottom : 10px;
+  padding       : 0;
 }
 
 .member-sns-btn a {
-  display   : inline-block;
   width     : 30px;
   height    : 30px;
   margin    : 0 5px;
@@ -195,8 +196,26 @@ h2 {
 }
 
 .member-sns-btn li {
-  display        : inline-block;
   list-style-type: none;
+}
+
+.facebook-btn,
+.twitter-btn,
+.github-btn,
+.instagram-btn {
+  display     : none;
+  margin-right: 5px;
+}
+
+.facebook-btn:hover,
+.twitter-btn:hover,
+.github-btn:hover,
+.instagram-btn:hover {
+  transform: scale(1.3);
+}
+
+.showBtn {
+  display: block;
 }
 
 .fa-twitter-square {

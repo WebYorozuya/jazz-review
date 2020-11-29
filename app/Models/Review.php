@@ -32,6 +32,10 @@ class Review extends Model
         return $this->hasMany('App\Like');
     }
 
+    // public function isCreatedBy($user, $review_id): bool {
+    //     return $user->id !== Review::where('id', $review_id)->first()->user_id;
+    // }
+
     public function isLikedBy($user): bool {
         return Like::where('user_id', $user->id)->where('review_id', $this->id)->first() !==null;
     }
