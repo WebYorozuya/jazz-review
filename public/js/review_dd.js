@@ -1,14 +1,12 @@
 'use strict';
 {
-  // (2) mainのドロップダウンメニューの開閉
-  // [説明]各クラスおよび配列の定義
+  // レビューのドロップダウンメニューの開閉
   let showIcon = document.getElementsByClassName("showIcon");
   let ddContent = document.getElementsByClassName("review-dropdown");
   const section_showIcon = Array.from(showIcon);
   const section_ddContent = Array.from(ddContent);
 
-  // [説明]showIconをクリックすることでsection_ddContent・backからshowのクラスを着脱させる関数
-  // backは全画面のどこを押してもsection_ddContent
+ // クリックによるクラスの着脱により、ドロップダウンメニューを開閉する。
   for (let i = 0; i < section_showIcon.length; i++) {
     section_showIcon[i].addEventListener('click', function () {
       const back = document.querySelector(".back-to-escape");

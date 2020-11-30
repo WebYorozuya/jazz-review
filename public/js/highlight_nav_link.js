@@ -1,4 +1,4 @@
-/* (11)現在表示しているページのナビゲーションリンクをハイライトする処理 */
+/* 現在表示しているページのナビゲーションリンクをハイライトする処理 */
 function highlightCurrentNavLink() {
     const currentPath = location.pathname;
     let target;
