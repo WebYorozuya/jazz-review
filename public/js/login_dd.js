@@ -1,10 +1,9 @@
 'use strict';
 {
-  // (1) ログインユーザーのドロップダウンメニューの開閉
-  // [説明]loginUserDdLabel の定義
+  // ログインユーザーのドロップダウンメニューの開閉
   const loginUserDdLabel = document.querySelector(".header-loginUser-dd-label");
 
-  // [説明]loginUserDdLabelをクリックすることでloginUserDdContent・backからShowのクラスを着脱させる関数
+  // クリックによるクラスの着脱により、ドロップダウンメニューを開閉する。
   function showHide(event) {
     const loginUserDdContent = document.querySelector(".header-loginUser-dd-content");
     loginUserDdContent.classList.toggle("show");

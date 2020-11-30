@@ -1,3 +1,4 @@
+// いいね機能
 $(function () {
   let like = $('.like-toggle');
   like.on('click', function () {

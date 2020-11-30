@@ -1,4 +1,4 @@
-/* (10)フッターの背景写真のランダム表示する処理 */
+/* フッターの背景写真のランダム表示する処理 */
 function changeFooterImgRandomly() {
     const imgs = [
         'url(../images/trumpet.jpg)',

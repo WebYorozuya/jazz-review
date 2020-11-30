@@ -1,6 +1,6 @@
 'use strict';
 {
-  // (12)投稿後のありがとうメッセージ
+  // 投稿後のありがとうメッセージ
   (function () {
     'use strict';
     $(function () {

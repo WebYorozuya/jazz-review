@@ -1,6 +1,6 @@
 'use strict';
 
-//（7)モーダルを使用した見せ方
+//モーダルによる開発者紹介
 let teamMember = {
   memberInfo: [{
     name: "kakudaisuke",
@@ -60,7 +60,6 @@ let teamMember = {
   ]
 }
 
-// member-infoのprofile-img、
 const modalBack = document.querySelectorAll(".modal-back");
 const memberInfo = document.querySelectorAll(".member-info");
 const memberInfoImg = document.querySelectorAll(".profile-img");
@@ -78,6 +77,7 @@ const facebookBtn = document.querySelectorAll('.facebook-btn');
 const githubBtn = document.querySelectorAll('.github-btn');
 const instagramBtn = document.querySelectorAll('.instagram-btn');
 
+// 各空タグへの値の代入
 for (let i = 0; i < memberInfo.length; i++) {
   memberInfoImg[i].src = teamMember.memberInfo[i].imgSrc;
   memberInfoName[i].innerHTML = teamMember.memberInfo[i].nickname;
@@ -85,6 +85,7 @@ for (let i = 0; i < memberInfo.length; i++) {
   facebookAtag[i].href = teamMember.memberInfo[i].facebookHref;
   githubAtag[i].href = teamMember.memberInfo[i].githubHref;
   instagramAtag[i].href = teamMember.memberInfo[i].instagramHref;
+  // リンクがされているSNSアイコンのみ表示
   if (twitterAtag[i].href !== "https:") {
     twitterBtn[i].classList.add("showBtn");
   }
@@ -105,13 +106,14 @@ for (let i = 0; i < modalWrapper.length; i++) {
   const memberInfoInCharge = document.querySelectorAll(".role");
   const memberInfoText = document.querySelectorAll(".modal-text");
 
-
+// 各空タグへの値の代入
   memberInfoModalProfileImg[i].src = teamMember.memberInfo[i].imgSrc;
   memberInfoName[i].innerHTML = teamMember.memberInfo[i].name;
   memberInfoInCharge[i].innerHTML = teamMember.memberInfo[i].inCharge;
   memberInfoText[i].innerHTML = teamMember.memberInfo[i].modaltext;
 }
 
+// モーダルのページ移動とモーダル開閉
 for (let i = 0; i < memberInfo.length; i++) {
   let index = i;
   let nextindex;
