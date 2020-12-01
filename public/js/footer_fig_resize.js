@@ -1,6 +1,6 @@
 'use strict';
 {
-  //(8)フッターの写真のサイズを画面サイズに合わせてリサイズ
+  //フッターの写真のサイズを画面サイズに合わせてリサイズ
   // http://keylopment.com/faq/529/ こちらを参照
   if ($('.footer').length) {
     var imgpass = "../images/";

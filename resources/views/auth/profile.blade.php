@@ -2,10 +2,10 @@
 
 @section('css')
   @env('local')
-  <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
   @endenv
   @production
-  <link rel="stylesheet" href="{{ secure_asset('css/mypage.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/mypage.css') }}">
   @endproduction
 @endsection
 
@@ -26,7 +26,6 @@
   <div class="profile-img">
     @if (Auth::user()->user_image)
       <img class='image-round1' src="{{ Auth::user()->user_image }}">
-      <br>
     @elseif (!Auth::user()->user_image)
       <!-- <img class='image-round1' src="images/icons8-user-male-30-black.png" alt="guest-image"> -->
       <i class="fas fa-user image-round1" style="font-size: 50px;"></i>

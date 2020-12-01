@@ -1,6 +1,6 @@
 'use strict';
 {
-  //(9)今日の日時の表示
+  //今日の日時の表示
   window.onload = function () {
     var date = new Date()
     var year = date.getFullYear()
